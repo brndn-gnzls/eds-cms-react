@@ -18,7 +18,7 @@ const cache = new InMemoryCache({
 
 // Apollo Client config.
 const client = new ApolloClient({
-    uri: 'http://localhost:1337/graphql', // This will need to be updated to prod URL.
+    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT, // This will need to be updated to prod URL.
     cache,
 });
 
