@@ -1,41 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React from 'react';
+import { useQuery, gql} from "@apollo/client";
+
+// GQL test query for articles with Title and Content.
+const GET_ARTICLES = gql`
+    query GetArticles {
+        articles {
+            Title
+            Content
+        }
+    }
+`;
 
 function App() {
-    const [articles, setArticles] = useState([]);
+    // Use Apollo's useQuery hook to fetch the data.
+    const { loading, error, data } = useQuery(GET_ARTICLES)
 
-    // runs when the component loads, making a GET request to Strapi's
-    // /api/articles endpoint.
-    useEffect(() => {
-        axios.get('http://localhost:1337/api/articles')
-            .then(response => {
-                // articles are stored in the articles state using setArticles.
-                setArticles(response.data.data)
-            })
-            .catch(error => {
-                console.error('[-] Error fetching articles from Strapi: ', error);
-            });
-    }, []);
+    // Handle the states.
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>
 
-    // articles are mapped over to display the title and content from the
-    // attributes of each article.
     return (
         <div>
-            <h1>Strapi React Configuration</h1>
+            <h1>GraphQL Test</h1>
             <ul>
-                {articles.map(article => (
-                    <li key={article.id}>
+                {data.articles.map((article, index) => (
+                    <li key={index}>
                         <h2>{article.Title}</h2>
-                        {article.Content.map((contentBlock, index) => (
-                            contentBlock.children.map((child, childIndex) => (
-                                <p key={`${index}-${childIndex}`}>{child.text}</p>
-                            ))
+                        {article.Content.map((contentBlock, blockIndex) => (
+                            <div key={blockIndex}>
+                                {contentBlock.children.map((child, childIndex) => (
+                                    <p key={childIndex}>{child.text}</p>
+                                ))}
+                            </div>
                         ))}
                     </li>
                 ))}
             </ul>
         </div>
-    )
+    );
 }
 
 export default App;
