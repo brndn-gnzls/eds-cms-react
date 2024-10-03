@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useQuery, gql} from "@apollo/client";
+import {useQuery, gql, InMemoryCache} from "@apollo/client";
 
 // GQL test query for articles with Title and Content.
 // Fetch articles with pagination.
@@ -26,6 +26,7 @@ function App() {
     // Use Apollo's useQuery hook to fetch the data.
     const { loading, error, data } = useQuery(GET_ARTICLES, {
         variables: {start, limit},
+        cache: new InMemoryCache(),
     });
 
     // Handle the states.
