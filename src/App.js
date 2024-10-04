@@ -1,11 +1,10 @@
 import React from "react";
-import ArticleList from "./components/ArticleList/ArticleList";
+import AppRouter from'./routes/AppRouter';
 
 function App() {
     return (
-        <div>
-            <h1>Strapi Skeleton App</h1>
-            <ArticleList />
+        <div className="App">
+            <AppRouter />
         </div>
     )
 }

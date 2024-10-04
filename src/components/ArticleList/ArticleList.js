@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery, gql, InMemoryCache} from "@apollo/client";
+import styles from './ArticleList.module.css'
 
 // GQL query for articles with Title, Content, and Images.
 // Fetch articles with pagination.
@@ -51,31 +52,30 @@ const ArticleList = () => {
 
     return (
         <div>
-            <h1>Articles</h1>
-            <ul>
+            <ul className={styles.articleList}>
                 {data.articles.map((article, index) => (
-                    <li key={index}>
-                        <h2>{article.Title}</h2>
+                    <li key={index} className={styles.articleItem}>
+                        <h2 className={styles.articleTitle}>{article.Title}</h2>
                         {article.Content.map((contentBlock, blockIndex) => (
-                            <div key={blockIndex}>
+                            <div key={blockIndex} className={styles.articleContent}>
                                 {contentBlock.children.map((child, childIndex) => (
                                     <p key={childIndex}>{child.text}</p>
                                 ))}
                             </div>
                         ))}
                         {/* Article Image*/}
-                        <img src={`${STR_URL}${article.Image[0].url}`} alt={article.Title} name={article.Title}/>
+                        <img src={`${STR_URL}${article.Image[0].url}`} alt={article.Title} name={article.Title} className={styles.articleImage}/>
                     </li>
                 ))}
             </ul>
 
             {/* Pagination Controls */}
-            <div>
-                <button onClick={goToPreviousPage} disabled={page === 1}>
+            <div className={styles.paginationContainer}>
+                <button onClick={goToPreviousPage} disabled={page === 1} className={styles.paginationButton}>
                     Previous
                 </button>
                 <span> Page {page} of {totalPages}</span>
-                <button onClick={goToNextPage} disabled={page === totalPages}>
+                <button onClick={goToNextPage} disabled={page === totalPages} className={styles.paginationButton}>
                     Next
                 </button>
             </div>
