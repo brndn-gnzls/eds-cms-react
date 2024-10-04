@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 // Lazy load components.
 const ExamplePage = lazy(() => import('../pages/ExamplePage/ExamplePage'));
 const ArticlePage = lazy(() => import('../pages/ArticlePage/ArticlePage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 
 const AppRouter = () => {
     return (
@@ -12,6 +13,7 @@ const AppRouter = () => {
                 <Routes>
                     <Route path="/example" element={<ExamplePage />}/>
                     <Route path="/articles" element={<ArticlePage />}/>
+                    <Route path="/login" element={<LoginPage />}/>
                 </Routes>
             </Suspense>
         </Router>

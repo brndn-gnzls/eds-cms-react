@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import App from './App'
+import {setContext} from "@apollo/client/link/context";
 
 // Define cache type policies to handle pagination correctly
 const cache = new InMemoryCache({
@@ -16,9 +17,28 @@ const cache = new InMemoryCache({
     },
 });
 
+// HTTP link to GraphQL endpoint.
+const httpLink = createHttpLink({
+    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
+})
+
+// Authentication link including JWT in the headers.
+const authLink = setContext((_, { headers }) => {
+    // Get token from localStorage.
+    const token = localStorage.getItem('token');
+
+    // Return headers to the context and include the authorization header.
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : "",
+        },
+    };
+});
+
 // Apollo Client config.
 const client = new ApolloClient({
-    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT, // This will need to be updated to prod URL.
+    link: authLink.concat(httpLink),
     cache,
 });
 
