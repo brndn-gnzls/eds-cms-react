@@ -10,3 +10,20 @@
     margin-bottom: 2rem;
     text-align: center;
 }
+
+/* Back button */
+.backButton {
+    padding: 1rem 2.0rem;
+    background-color: #28a745; /* Different shade of blue-green */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.backButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
