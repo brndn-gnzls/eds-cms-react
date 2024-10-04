@@ -7,7 +7,7 @@ const ArticlePage = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Articles</h1>
-            <Link to="/" className={styles.backButton}>Back To Root</Link>
+            <Link to="/example" className={styles.backButton}>Back To Example Root</Link>
             <ArticleList />
         </div>
     )
