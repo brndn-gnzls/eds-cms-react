@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from './ExamplePage.module.css'; // Use css module for styling.
 
-const HomePage = () => {
+const ExamplePage = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Strapi/React Skeleton Root</h1>
@@ -13,5 +13,5 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default ExamplePage;
 
