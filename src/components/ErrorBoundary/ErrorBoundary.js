@@ -30,4 +30,4 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-export default Sentry.withErrorBoundary(ErrorBoundary, { fallback: <h1>Something went wrong.</h1> });
+export default ErrorBoundary;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from './ExamplePage.module.css'; // Use css module for styling.
 
 const ExamplePage = () => {
+
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Strapi/React Skeleton Root</h1>

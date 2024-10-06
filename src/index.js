@@ -13,7 +13,7 @@ Sentry.init({
             tracePropagationTargets: ["localhost", /^\//],
         }),
     ],
-    tracesSampleRate: 1.0,
+    tracesSampleRate: 1.0
 });
 
 // Define cache type policies to handle pagination correctly
