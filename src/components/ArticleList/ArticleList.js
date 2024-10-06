@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useQuery, gql, InMemoryCache} from "@apollo/client";
-import styles from './ArticleList.module.css'
+import styles from './ArticleList.module.css';
 
 // GQL query for articles with Title, Content, and Images.
 // Fetch articles with pagination.

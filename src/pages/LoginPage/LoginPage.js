@@ -38,7 +38,7 @@ const LoginPage = () => {
             if (data.jwt) {
                 // Store JWT in localStorage
                 localStorage.setItem('token', data.jwt);
-                navigate('/example');
+                navigate('/');
             } else {
                 setError('[-] Invalid Credentials');
             }
