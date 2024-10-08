@@ -7,6 +7,7 @@ const ExamplePage = lazy(() => import('../pages/ExamplePage/ExamplePage'));
 const ArticlePage = lazy(() => import('../pages/ArticlePage/ArticlePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const ProductsPage = lazy(() => import('../pages/ProductsPage/ProductPage'));
 
 const AppRouter = () => {
     return (
@@ -31,6 +32,12 @@ const AppRouter = () => {
                     <Route path="/" element={
                         <ProtectedRoute>
                             <HomePage />
+                        </ProtectedRoute>
+                    }
+                    />
+                    <Route path="/products" element={
+                        <ProtectedRoute>
+                            <ProductsPage />
                         </ProtectedRoute>
                     }
                     />

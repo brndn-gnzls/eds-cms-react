@@ -1,6 +1,6 @@
 import React from "react";
 // import {useQuery, gql, InMemoryCache} from "@apollo/client";
-import styles from './HomePage.module.css';
+// import styles from './HomePage.module.css';
 
 const HomePage = () => {
     return (
