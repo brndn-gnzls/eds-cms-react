@@ -1,0 +1,68 @@
+/* Container for the entire product page */
+.productContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Styling the unordered list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Individual product item styling */
+.productItem {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Product image styling */
+.productImage {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+/* Styling the product details */
+.productDetails {
+    flex: 1;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Price styling */
+.productPrice {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Adding space between description blocks */
+.productDescription p {
+    margin-bottom: 10px;
+}
