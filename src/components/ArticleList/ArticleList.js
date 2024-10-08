@@ -33,7 +33,7 @@ const ArticleList = () => {
     // Use Apollo's useQuery hook to fetch the data.
     const { loading, error, data } = useQuery(GET_ARTICLES, {
         variables: {start, limit},
-        cache: new InMemoryCache(),
+        fetchPolicy: 'cache-and-network'
     });
 
     // Handle the states.
