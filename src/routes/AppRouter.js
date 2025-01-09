@@ -7,6 +7,7 @@ const ExamplePage = lazy(() => import('../pages/ExamplePage/ExamplePage'));
 const ArticlePage = lazy(() => import('../pages/ArticlePage/ArticlePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const TestPage = lazy(() => import("../pages/TestPage/TestPage"));
 
 const AppRouter = () => {
     return (
@@ -32,6 +33,12 @@ const AppRouter = () => {
                         <ProtectedRoute>
                             <HomePage />
                         </ProtectedRoute>
+                    }
+                    />
+                    <Route path="/test-page" element={
+                       <ProtectedRoute>
+                           <TestPage />
+                       </ProtectedRoute>
                     }
                     />
                 </Routes>

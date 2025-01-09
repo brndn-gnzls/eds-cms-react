@@ -5,6 +5,7 @@ import App from './App'
 import {setContext} from "@apollo/client/link/context";
 import * as Sentry from '@sentry/react';
 import { browserTracingIntegration } from "@sentry/react";
+import "./global.css";
 
 Sentry.init({
     dsn: 'https://69a40c264a8b244489b619435fb10e95@o4508077516128256.ingest.us.sentry.io/4508077519077376',
