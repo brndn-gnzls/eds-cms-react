@@ -13,4 +13,9 @@
         color: #000;
         font-weight: bold;
     }
+
+
+    .util-bg-footer {
+        background-color: #FAFAFA;
+    }
 }
