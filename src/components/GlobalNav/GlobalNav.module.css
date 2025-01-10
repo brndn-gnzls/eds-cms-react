@@ -1,0 +1,80 @@
+/* src/components/GlobalNav/GlobalNav.module.css */
+
+/*
+  Outer wrapper for the entire nav bar.
+  Sticky at top, 78px height, white background.
+*/
+.navWrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 50; /* or higher if needed, to float above other elements */
+    height: 78px; /* total height as specified */
+    /* If you want to ensure content is centered vertically,
+       you can rely on the child flex container or set line-height. */
+    border-bottom: 1px solid #EEEEEE;
+}
+
+/*
+  Inner container: We rely on .container from Tailwind
+  to handle horizontal spacing. Just ensure we center content vertically.
+*/
+.navInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; /* make the child flex container fill the .navWrapper height */
+}
+
+/* Left side: brand text "eDS" */
+.navLeft {
+    /* no special styles needed beyond alignment, but you could add more if you like */
+}
+
+.brandTitle {
+    font-size: 1.125rem; /* ~18px */
+    font-weight: bold;
+    color: #000;
+    /* If you'd like spacing or transform, do so here */
+}
+
+/* Right side: icons + pipe + toggle */
+.navRight {
+    display: flex;
+    align-items: center;
+}
+
+/* Anchor styling for icons */
+.iconLink {
+    display: inline-block;
+    margin-right: 24px; /* 24px spacing to the next element */
+    /* last element might need no margin, but we have a pipe next, so it's OK */
+}
+
+.iconLink img {
+    height: 24px; /* or a suitable size for the icons */
+    width: auto;
+}
+
+/* The pipe */
+.pipe {
+    margin-right: 24px; /* spacing after the pipe before the toggle */
+    color: #000;
+    /* adjust font-size/vertical alignment as needed */
+}
+
+/* The toggle button */
+.toggleBtn {
+    display: inline-flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* This ensures the icon in the toggle button is a consistent size */
+.toggleBtn img {
+    height: 24px;
+    width: auto;
+}
