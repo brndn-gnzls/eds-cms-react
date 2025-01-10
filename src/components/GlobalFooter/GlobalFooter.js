@@ -23,15 +23,16 @@ const GET_FOOTER = gql`
 `;
 
 /**
- * Helper to turn newline-delimited text into <a> links.
+ * Helper to transform newline-delimited text into <a> links.
  */
 function renderLinks(text) {
     if (!text) return null;
     return text
         .split("\n")
-        .filter(line => line.trim() !== "") // remove empty lines
+        .filter((line) => line.trim() !== "") // ignore empty lines
         .map((line, i) => (
-            <a key={i} href="someroute" className={styles.footerLink}>
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
+            <a key={i} href="#" className={styles.footerLink}>
                 {line}
             </a>
         ));
@@ -46,52 +47,44 @@ const GlobalFooter = () => {
     const footerData = data?.footer ?? {};
 
     return (
-        <footer className={`divider util-bg-footer ${styles.footerContainer}`}>
-            <div className={styles.footerRow1}>
-                {/* Column 1 */}
-                <div>
-                    <div className={styles.columnHeader}>{footerData.footerColumn1Header}</div>
-                    <div className={styles.columnBody}>
-                        {renderLinks(footerData.footerColumn1Body)}
+        // 1) Outermost footer is full-width
+        //    so background color can fill the entire browser width.
+        <footer className={`divider util-bg-footer ${styles.footerFullWidth}`}>
+            {/* 2) Inside, we have a container for the 1128px constraint */}
+            <div className={`container ${styles.footerInner}`}>
+                <div className={styles.footerRow1}>
+                    {/* Column 1 */}
+                    <div>
+                        <div className={styles.columnHeader}>{footerData.footerColumn1Header}</div>
+                        <div className={styles.columnBody}>{renderLinks(footerData.footerColumn1Body)}</div>
+                    </div>
+
+                    {/* Column 2 */}
+                    <div>
+                        <div className={styles.columnHeader}>{footerData.footerColumn2Header}</div>
+                        <div className={styles.columnBody}>{renderLinks(footerData.footerColumn2Body)}</div>
+                    </div>
+
+                    {/* Column 3 */}
+                    <div>
+                        <div className={styles.columnHeader}>{footerData.footerColumn3Header}</div>
+                        <div className={styles.columnBody}>{renderLinks(footerData.footerColumn3Body)}</div>
+                    </div>
+
+                    {/* Column 4 */}
+                    <div>
+                        <div className={styles.columnHeader}>{footerData.footerColumn4Header}</div>
+                        <div className={styles.columnBody}>{renderLinks(footerData.footerColumn4Body)}</div>
+                    </div>
+
+                    {/* Column 5 */}
+                    <div>
+                        <div className={styles.columnHeader}>{footerData.footerColumn5Header}</div>
+                        <div className={styles.columnBody}>{renderLinks(footerData.footerColumn5Body)}</div>
                     </div>
                 </div>
 
-                {/* Column 2 */}
-                <div>
-                    <div className={styles.columnHeader}>{footerData.footerColumn2Header}</div>
-                    <div className={styles.columnBody}>
-                        {renderLinks(footerData.footerColumn2Body)}
-                    </div>
-                </div>
-
-                {/* Column 3 */}
-                <div>
-                    <div className={styles.columnHeader}>{footerData.footerColumn3Header}</div>
-                    <div className={styles.columnBody}>
-                        {renderLinks(footerData.footerColumn3Body)}
-                    </div>
-                </div>
-
-                {/* Column 4 */}
-                <div>
-                    <div className={styles.columnHeader}>{footerData.footerColumn4Header}</div>
-                    <div className={styles.columnBody}>
-                        {renderLinks(footerData.footerColumn4Body)}
-                    </div>
-                </div>
-
-                {/* Column 5 */}
-                <div>
-                    <div className={styles.columnHeader}>{footerData.footerColumn5Header}</div>
-                    <div className={styles.columnBody}>
-                        {renderLinks(footerData.footerColumn5Body)}
-                    </div>
-                </div>
-            </div>
-
-            {/* Legal row at the bottom */}
-            <div className={styles.legalRow}>
-                {footerData.legalNotice}
+                <div className={styles.legalRow}>{footerData.legalNotice}</div>
             </div>
         </footer>
     );

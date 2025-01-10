@@ -1,4 +1,9 @@
-.footerContainer {
+/* This ensures the footer itself stretches 100% horizontally */
+.footerFullWidth {
+    width: 100%;
+}
+
+.footerInner {
     padding-top: 130px;
     border-top: 1px solid #EEEEEE;
 }
