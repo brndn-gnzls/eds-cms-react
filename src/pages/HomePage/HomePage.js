@@ -1,11 +1,12 @@
-// src/pages/HomePage/HomePage.js
-
 import React from "react";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
+import GlobalNav from "../../components/GlobalNav/GlobalNav";
 
 const HomePage = () => {
     return (
         <>
+            <GlobalNav />
+
             {/* Main page content (constrained to .container) */}
             <div className="container mx-auto flex flex-col min-h-screen">
                 <section className="bg-gray-100 py-8 mb-4">
@@ -23,6 +24,7 @@ const HomePage = () => {
                     <p className="mt-2">[ Future content goes here ]</p>
                 </section>
             </div>
+
             <GlobalFooter />
         </>
     );
