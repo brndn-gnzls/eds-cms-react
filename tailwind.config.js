@@ -9,18 +9,17 @@ module.exports = {
     },
     container: {
       center: true,
-      // For the container plugin, we define min-width breakpoints:
+      // We'll use the same max-width for medium & large => 1128px
       screens: {
-        // At >=768px (medium), container's max-width is 1128px
         medium: "1128px",
-        // At >=1280px (large), container's max-width is also 1128px
-        // so plus 76px padding on each side = total 1280px
         large: "1128px",
       },
       padding: {
-        DEFAULT: "1rem", // 16px for small screens
-        medium: "76px",   // 76px each side at medium
-        large: "76px",    // 76px each side at large
+        // For small screens (<768px), we can still have a little padding
+        DEFAULT: "1rem",  // e.g. 16px left/right
+        // But once we hit medium/large, remove the extra side padding
+        medium: "0px",
+        large: "0px",
       },
     },
     extend: {},
