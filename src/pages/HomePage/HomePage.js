@@ -1,6 +1,8 @@
 import React from "react";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
+import HomeMasthead from "../../components/HomeMasthead/HomeMasthead";
+
 
 const HomePage = () => {
     return (
@@ -9,10 +11,7 @@ const HomePage = () => {
 
             {/* Main page content (constrained to .container) */}
             <div className="container mx-auto flex flex-col min-h-screen">
-                <section className="bg-gray-100 py-8 mb-4">
-                    <h1 className="text-3xl font-bold">Home Page Masthead</h1>
-                    <p className="mt-2">[ Future content goes here ]</p>
-                </section>
+                <HomeMasthead />
 
                 <section className="bg-white py-8 mb-4">
                     <h2 className="text-2xl font-semibold">Marketing Section</h2>
