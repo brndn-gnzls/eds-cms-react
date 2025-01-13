@@ -1,29 +1,54 @@
 // src/components/HomeMasthead/HomeMasthead.js
+
 import React from "react";
+import { useQuery, gql } from "@apollo/client";
 import styles from "./HomeMasthead.module.css";
 
+// 1) Define the query inline with the component
+const GET_HOME_MASTHEAD = gql`
+    query GetHomeMasthead {
+        homeMasthead {
+            title
+            description
+            button1Label
+            button2Label
+        }
+    }
+`;
+
 const HomeMasthead = () => {
+    // 2) Use Apollo’s useQuery hook to fetch the data
+    const { loading, error, data } = useQuery(GET_HOME_MASTHEAD);
+
+    // 3) Handle loading/error states
+    if (loading) return <p>Loading Masthead...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
+    // 4) Destructure the fields from the returned data
+    const { title, description, button1Label, button2Label } = data?.homeMasthead || {};
+
     return (
         <div className={styles.mastheadWrapper}>
+            {/* Animated background */}
             <span className={styles.gradientContainer}>
-                <span className={styles.gradientColor}></span>
-                <span className={styles.gradientColor}></span>
-                <span className={styles.gradientColor}></span>
-                <span className={styles.gradientColor}></span>
-                <span className={styles.gradientBackdrop}></span>
-            </span>
+        <span className={styles.gradientColor}></span>
+        <span className={styles.gradientColor}></span>
+        <span className={styles.gradientColor}></span>
+        <span className={styles.gradientColor}></span>
+        <span className={styles.gradientBackdrop}></span>
+      </span>
 
-            {/* CTA lock-up (no absolute positioning) */}
+            {/* 5) Render the CTA lock-up with dynamic values */}
             <div className={styles.mastheadContent}>
-                <h1>Unify Your Vision,<br/>Elevate Your Design.</h1>
-                <p>
-                    eDS is Elevance Health's enterprise product design system, aiding in
-                    upholding user experience integrity and maximizing design development
-                    resources.
-                </p>
+                {/* If title or description is missing for any reason,
+            you could fallback to some default text, but here we assume it's provided */}
+                <h1>{title}</h1>
+
+                <p>{description}</p>
+
                 <div className={styles.ctaButtons}>
-                    <button className={styles.getStartedBtn}>Get Started</button>
-                    <button className={styles.componentsBtn}>Components</button>
+                    <button className={styles.getStartedBtn}>{button1Label}</button>
+                    <button className={styles.componentsBtn}>{button2Label}</button>
                 </div>
             </div>
         </div>
@@ -31,4 +56,3 @@ const HomeMasthead = () => {
 };
 
 export default HomeMasthead;
-;
