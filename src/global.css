@@ -9,12 +9,23 @@
 
     }
 
+    h1 {
+        font-size: 2.5rem;
+        line-height: 2.85rem;
+    }
+
     h4 {
         font-size: 1.125rem;
         color: #000;
         font-weight: bold;
     }
 
+    .button-copy {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: #000;
+        font-weight: bold;
+    }
 
     .util-bg-footer {
         background-color: #FAFAFA;

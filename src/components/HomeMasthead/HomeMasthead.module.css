@@ -1,0 +1,123 @@
+.mastheadWrapper {
+    /* Full 760px height, grid-based center alignment */
+    display: grid;
+    place-items: center;
+    height: 760px;
+    margin: 0;
+    padding: 0;
+    position: relative; /* so gradientContainer can be absolutely positioned, if desired */
+    overflow: hidden;   /* prevents blob overflow scrollbars if large on small screens */
+}
+
+.gradientContainer {
+    /* Animated background covers the entire masthead */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #794cfe;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.gradientColor {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    border-radius: 30% 80% 75% 40% / 40% 40% 70% 50%;
+    animation-name: animateBlobs;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animateBlobs {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 60%;
+        transform: scale(2) rotate(0deg) translate(10%, 10%);
+    }
+    100% {
+        border-radius: 88% 10% 22% 58% / 73% 56% 34% 77%;
+        transform: scale(2) rotate(180deg) translate(10%, -10%);
+    }
+}
+
+.gradientColor:nth-of-type(1) {
+    background-color: #2b1c49;
+    animation-direction: backwards;
+}
+
+.gradientColor:nth-of-type(2) {
+    background-color: #794cfe;
+}
+
+.gradientColor:nth-of-type(3) {
+    background-color: #1a3673;
+    animation-direction: backwards;
+}
+
+.gradientColor:nth-of-type(4) {
+    background-color: #794cfe;
+}
+
+.gradientBackdrop {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    backdrop-filter: blur(120px);
+}
+
+.mastheadContent {
+    max-width: 600px;
+    color: #fff;
+    z-index: 1;
+}
+
+.mastheadContent h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px; /* 16px gap to p */
+}
+
+.mastheadContent p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 32px; /* 32px gap to buttons */
+}
+
+.ctaButtons {
+    display: flex;
+}
+
+.ctaButtons button + button {
+    margin-left: 12px;
+}
+
+.getStartedBtn {
+    width: 174px;
+    height: 44px;
+    padding: 8px 16px;
+    background: #fff;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.componentsBtn {
+    width: 174px;
+    height: 44px;
+    padding: 8px 16px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
