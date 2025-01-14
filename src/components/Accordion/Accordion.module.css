@@ -1,5 +1,6 @@
 .accordionWrapper {
-    padding: 0 16px;
+    padding: 0 36px 16px 0;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 .headerRow {
@@ -10,19 +11,16 @@
     position: relative;
 }
 
-/* Label is normal by default */
 .headerLabel {
     margin: 0;
-    font-weight: 400; /* normal weight */
+    font-weight: 400;
     user-select: none;
 }
 
-/* When open, label should be bold */
 .open {
     font-weight: 700;
 }
 
-/* Caret: bold, center origin for rotation, no text selection */
 .caret {
     margin-left: auto;
     font-weight: 700;
@@ -33,13 +31,11 @@
     user-select: none;         /* prevents caret from being text-selected */
 }
 
-/* Container for the two links */
 .linksContainer {
     display: flex;
     flex-direction: column;
 }
 
-/* Each link: 172x42, left-aligned, hover effect */
 .navLink {
     display: flex;
     align-items: center;
@@ -47,14 +43,13 @@
     height: 42px;
     color: #000;
     text-decoration: none;
-    background-color: #eeeeee;
+    background-color: #fafafa;
     margin-bottom: 8px;
     transition: background 0.3s ease;
     padding-left: 8px;
     user-select: none;
 }
 
-/* On hover, darker background */
 .navLink:hover {
-    background-color: #cccccc;
+    background-color: #EEEEEE;
 }

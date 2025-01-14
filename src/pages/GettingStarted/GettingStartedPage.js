@@ -1,29 +1,26 @@
-// src/pages/GettingStartedPage/GettingStartedPage.js
-
 import React from "react";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
-import Accordion from "../../components/Accordion/Accordion"; // We'll create this next.
-import styles from "./GettingStartedPage.module.css";
+import LeftRail from "../../components/LeftRail/LeftRail";
 
 const GettingStartedPage = () => {
     return (
         <>
             <GlobalNav />
 
-            {/*
-        Tailwind container or .container class for horizontal margins,
-        plus a custom 2-column layout in CSS modules
-      */}
-            <div className={`container ${styles.getStartedLayout}`}>
-                {/* Left column (fixed) */}
-                <div className={styles.leftColumn}>
-                    <Accordion />
-                </div>
+            <div className="container mx-auto min-h-screen relative">
+                <LeftRail />
 
-                {/* Right column (scrollable placeholder) */}
-                <div className={styles.rightColumn}>
-                    <h1>Getting Started Landing Page</h1>
-                    <p>This area is for future content...</p>
+                <div className="ml-[300px] p-8 min-h-screen">
+                    <h1 className="text-2xl font-bold mb-4">Getting Started Landing Page</h1>
+                    <p>This is the scrollable area on the right side.</p>
+                    <p>
+                        Because the left rail is fixed, we offset this content with
+                        <code>ml-[300px]</code>.
+                    </p>
+                    <p>
+                        Add more content here. The browser window will scroll this area,
+                        while the left rail remains pinned in place.
+                    </p>
                 </div>
             </div>
         </>
@@ -31,3 +28,4 @@ const GettingStartedPage = () => {
 };
 
 export default GettingStartedPage;
+
