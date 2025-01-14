@@ -8,6 +8,7 @@ const ArticlePage = lazy(() => import('../pages/ArticlePage/ArticlePage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const TestPage = lazy(() => import("../pages/TestPage/TestPage"));
+const GettingStartedPage = lazy(() => import("../pages/GettingStarted/GettingStartedPage"));
 
 const AppRouter = () => {
     return (
@@ -32,6 +33,12 @@ const AppRouter = () => {
                     <Route path="/" element={
                         <ProtectedRoute>
                             <HomePage />
+                        </ProtectedRoute>
+                    }
+                    />
+                    <Route path="/get-started" element={
+                        <ProtectedRoute>
+                            <GettingStartedPage />
                         </ProtectedRoute>
                     }
                     />

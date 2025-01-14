@@ -1,0 +1,60 @@
+.accordionWrapper {
+    padding: 0 16px;
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+/* Label is normal by default */
+.headerLabel {
+    margin: 0;
+    font-weight: 400; /* normal weight */
+    user-select: none;
+}
+
+/* When open, label should be bold */
+.open {
+    font-weight: 700;
+}
+
+/* Caret: bold, center origin for rotation, no text selection */
+.caret {
+    margin-left: auto;
+    font-weight: 700;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    user-select: none;         /* prevents caret from being text-selected */
+}
+
+/* Container for the two links */
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Each link: 172x42, left-aligned, hover effect */
+.navLink {
+    display: flex;
+    align-items: center;
+    width: 172px;
+    height: 42px;
+    color: #000;
+    text-decoration: none;
+    background-color: #eeeeee;
+    margin-bottom: 8px;
+    transition: background 0.3s ease;
+    padding-left: 8px;
+    user-select: none;
+}
+
+/* On hover, darker background */
+.navLink:hover {
+    background-color: #cccccc;
+}

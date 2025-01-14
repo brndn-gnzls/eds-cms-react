@@ -1,0 +1,27 @@
+.getStartedLayout {
+    display: flex;
+    /* If you’re using container from Tailwind,
+       it might already have a max-width & side margins. */
+    min-height: 100vh; /* ensure it spans the full viewport */
+}
+
+/* The left column is fixed ~300px wide, background #EEEEEE */
+.leftColumn {
+    width: 300px; /* or 280, or whichever you prefer */
+    background-color: #eeeeee;
+    /* “Fixed” in the sense that it doesn’t scroll with the page:
+       position: sticky is often more user-friendly than absolute or fixed */
+    position: sticky;
+    top: 0;
+    height: 100vh; /* or auto if you prefer */
+    padding-top: 32px; /* 32px top padding as specified */
+    box-sizing: border-box;
+    overflow-y: auto; /* if you want it to scroll if content is tall */
+}
+
+/* The right column takes the remaining space */
+.rightColumn {
+    flex: 1;
+    padding: 20px; /* or some spacing for the content area */
+    box-sizing: border-box;
+}
