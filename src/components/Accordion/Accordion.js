@@ -1,9 +1,7 @@
-// src/components/Accordion/Accordion.js
-
 import React, { useState } from "react";
 import styles from "./Accordion.module.css";
 
-const Accordion = () => {
+const Accordion = ({ label, links = [] }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {
@@ -15,7 +13,7 @@ const Accordion = () => {
             {/* Header row */}
             <div className={styles.headerRow} onClick={toggleAccordion}>
                 <p className={`${styles.headerLabel} ${isOpen ? styles.open : ""}`}>
-                    Get Started
+                    {label}
                 </p>
                 <span
                     className={styles.caret}
@@ -29,12 +27,11 @@ const Accordion = () => {
 
             {isOpen && (
                 <div className={styles.linksContainer}>
-                    <a href="#" className={styles.navLink}>
-                        &nbsp;&nbsp;Design
-                    </a>
-                    <a href="#" className={styles.navLink}>
-                        &nbsp;&nbsp;Develop
-                    </a>
+                    {links.map((linkText, idx) => (
+                        <a href="#" className={styles.navLink} key={idx}>
+                            &nbsp;&nbsp;{linkText}
+                        </a>
+                    ))}
                 </div>
             )}
         </div>
