@@ -1,8 +1,5 @@
-/* src/components/GettingHelp/GettingHelp.module.css */
-
 /* Wrapper for the entire block */
 .gettingHelpWrapper {
-    /* optional: top/bottom spacing if needed */
     margin-top: 32px;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -17,21 +14,23 @@
     margin-bottom: 24px;
 }
 
+.helpList li {
+    padding-bottom: 14px;
+}
+
 .space24 {
     height: 24px;
 }
 
-.space42 {
-    height: 16px;
-}
-
-/* Link style => #007032, underlined */
 .helpLink {
     color: #007032;
     text-decoration: underline;
 }
 
-/* You can style <h2>, <h4> if you want consistent line-heights, e.g.: */
+.gettingHelpWrapper p {
+    padding-bottom: 16px;
+}
+
 .gettingHelpWrapper h2 {
     font-size: 1.5rem;
     line-height: 2rem;

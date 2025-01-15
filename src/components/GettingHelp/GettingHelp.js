@@ -27,8 +27,6 @@ const GettingHelp = () => {
                 </li>
             </ul>
 
-            {/* 82px of space */}
-            <div className={styles.space24} />
 
             <h4>Need Help?</h4>
             <p className={styles.helpTopParagraph}>
@@ -36,9 +34,6 @@ const GettingHelp = () => {
                 evolve our design system. We're committed to improvement with your help,
                 so please, <a href="#" className={styles.helpLink}>get in touch</a>.
             </p>
-
-            {/* 42px of space */}
-            <div className={styles.space42} />
 
             <div className={styles.bulletListWrapper}>
             <p>
