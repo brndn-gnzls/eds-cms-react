@@ -1,25 +1,25 @@
+// src/components/GettingStartedPath/GettingStartedPath.js
+
 import React from "react";
+import { Link } from "react-router-dom"; // or remove if using <a>
 import styles from "./GettingStartedPath.module.css";
 
-const GettingStartedPath = ({ icon, heading, body }) => {
+const GettingStartedPath = ({ icon, heading, body, link }) => {
     return (
-        <div className={styles.pathWrapper}>
-            {/* Left column: 24x24 icon */}
+        <Link to={link} className={styles.pathWrapper}>
             <div className={styles.iconCol}>
                 <img src={icon} alt="icon" />
             </div>
 
-            {/* Middle column: heading + text */}
             <div className={styles.textCol}>
                 <p className={styles.heading}>{heading}</p>
                 <p className={styles.bodyText}>{body}</p>
             </div>
 
-            {/* Right column: caret pointing right, spaced 34px from text */}
             <div className={styles.caretCol}>
                 <span className={styles.caret}>˃</span>
             </div>
-        </div>
+        </Link>
     );
 };
 

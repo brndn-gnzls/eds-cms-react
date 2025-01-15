@@ -9,6 +9,8 @@ const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const TestPage = lazy(() => import("../pages/TestPage/TestPage"));
 const GettingStartedPage = lazy(() => import("../pages/GettingStarted/GettingStartedPage"));
+const GetStartedDevelop = lazy(() => import("../pages/GetStartedDevelop/GetStartedDevelopPage"));
+const GetStartedDesign = lazy(() => import("../pages/GetStartedDesign/GetStartedDesignPage"));
 
 const AppRouter = () => {
     return (
@@ -48,6 +50,19 @@ const AppRouter = () => {
                        </ProtectedRoute>
                     }
                     />
+                    <Route path="/get-start/design" element={
+                        <ProtectedRoute>
+                            <GetStartedDesign/>
+                        </ProtectedRoute>
+                    }
+                    />
+                    <Route path="/get-start/develop" element={
+                        <ProtectedRoute>
+                            <GetStartedDevelop/>
+                        </ProtectedRoute>
+                    }
+                    />
+
                 </Routes>
             </Suspense>
         </Router>

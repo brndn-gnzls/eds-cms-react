@@ -1,4 +1,7 @@
+// src/pages/GettingStartedPage/GettingStartedPage.js
+
 import React from "react";
+import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GettingStartedPath from "../../components/GettingStartedPath/GettingStartedPath";
@@ -6,7 +9,53 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelp from "../../components/GettingHelp/GettingHelp";
 import styles from "./GettingStartedPage.module.css";
 
+/** 1) Query for the page banner content */
+const GET_GETTING_STARTED_PAGE = gql`
+    query GettingStartedPage {
+        gettingStartedPage {
+            documentId
+            heading
+            body
+        }
+    }
+`;
+
+/** 2) Query for the path components */
+const GET_GETTING_STARTED_PATHS = gql`
+    query GettingStartedPaths {
+        gettingStartedPaths {
+            documentId
+            icon
+            heading
+            body
+        }
+    }
+`;
+
 const GettingStartedPage = () => {
+    // A) Fetch banner text
+    const {
+        loading: pageLoading,
+        error: pageError,
+        data: pageData,
+    } = useQuery(GET_GETTING_STARTED_PAGE);
+
+    // B) Fetch path components
+    const {
+        loading: pathsLoading,
+        error: pathsError,
+        data: pathsData,
+    } = useQuery(GET_GETTING_STARTED_PATHS);
+
+    if (pageLoading || pathsLoading) return <p>Loading Getting Started Page...</p>;
+    if (pageError) return <p>Error: {pageError.message}</p>;
+    if (pathsError) return <p>Error: {pathsError.message}</p>;
+
+    // Extract the banner heading/body
+    const gsPage = pageData?.gettingStartedPage;
+    // Extract array of paths
+    const pathItems = pathsData?.gettingStartedPaths || [];
+
     return (
         <>
             <GlobalNav />
@@ -15,45 +64,56 @@ const GettingStartedPage = () => {
                 <LeftRail />
 
                 <div className={`${styles.rightSide} min-h-screen`}>
+                    {/* Banner using the data from Strapi */}
                     <div
                         className={styles.banner}
                         style={{
                             backgroundImage: `url("/images/gettingStartedLanding/img-header-getstarted.jpg")`,
                         }}
                     >
-                        <h1>Get Started</h1>
+                        <h1>{gsPage.heading}</h1>
+                        <p>{gsPage.body}</p>
+                    </div>
+
+                    <div className={styles.postBannerSpace} />
+
+                    <div className={styles.introText}>
+                        <h2>Choose your path</h2>
                         <p>
-                            Get started with eDS to streamline your workflow and maintain consistency
-                            across every aspect of our design system.
+                            Let's tailor your journey to fit your needs! Select the path that
+                            matches your role to discover personalized tools, resources, and
+                            guidance that will help you make the most of eDS.
                         </p>
                     </div>
 
-                    <div className={styles.postBannerSpace}/>
-                    <div className={styles.introText}>
-                        <h2>Choose your path</h2>
-                        <p>Let's tailor your journey to fit your needs! Select the path that matches your role
-                        to discover personalized tools, resources, and guidance that will help you make the most
-                        of eDS.</p>
-                    </div>
-
+                    {/* Render the path items from Strapi, each with a link */}
                     <div className={styles.contentArea}>
-                        <GettingStartedPath
-                            icon="/images/gettingStartedLanding/img-icon-getstarted-design.svg"
-                            heading="Design"
-                            body="As a designer, use the eDS to create engaging, unified user experiences with the
-                tools needed for innovative products"
-                        />
+                        {pathItems.map((item) => {
+                            // Decide link based on heading
+                            let link = "/get-started"; // Fallback
+                            if (item.heading === "Design") {
+                                link = "/get-started/design";
+                            } else if (item.heading === "Develop") {
+                                link = "/get-started/develop";
+                            }
 
-                        <GettingStartedPath
-                            icon="/images/gettingStartedLanding/img-icon-getstarted-develop.svg"
-                            heading="Develop"
-                            body="As a developer, seamlessly integrate eDS into codebases for consistent brand experiences."
-                        />
+                            return (
+                                <GettingStartedPath
+                                    key={item.documentId}
+                                    icon={item.icon}
+                                    heading={item.heading}
+                                    body={item.body}
+                                    link={link}
+                                />
+                            );
+                        })}
                     </div>
-                    <GettingHelp/>
+
+                    <GettingHelp />
                 </div>
             </div>
-            <GlobalFooter/>
+
+            <GlobalFooter />
         </>
     );
 };
