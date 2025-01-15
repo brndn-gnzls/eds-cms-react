@@ -1,12 +1,9 @@
-// src/components/LeftRail/LeftRail.js
 
 import React from "react";
 import Accordion from "../Accordion/Accordion";
 import styles from "./LeftRail.module.css";
 
 const LeftRail = () => {
-    // This simulates how you might eventually fetch from Strapi:
-    // Two separate accordion data sets
     const leftRailAccordions = [
         {
             label: "Get Started",

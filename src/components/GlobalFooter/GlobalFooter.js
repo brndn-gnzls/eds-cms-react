@@ -49,7 +49,7 @@ const GlobalFooter = () => {
     return (
         // 1) Outermost footer is full-width
         //    so background color can fill the entire browser width.
-        <footer className={`divider util-bg-footer ${styles.footerFullWidth}`}>
+        <footer className={`divider global-footer-wrapper util-bg-footer ${styles.footerFullWidth}`}>
             {/* 2) Inside, we have a container for the 1128px constraint */}
             <div className={`container ${styles.footerInner}`}>
                 <div className={styles.footerRow1}>

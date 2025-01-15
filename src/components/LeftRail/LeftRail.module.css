@@ -9,12 +9,9 @@
     overflow-y: auto;
     border-left: 1px solid #eeeeee;
     border-right: 1px solid #eeeeee;
+    z-index: 1;
 }
 
-/*
-  Add extra margin-top only for the second Accordion.
-  This targets the second direct child <div> inside .leftRailWrapper
-*/
 .leftRailWrapper > div:nth-child(2) {
     margin-top: 32px;
     border-bottom: none;

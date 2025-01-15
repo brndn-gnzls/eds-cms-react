@@ -1,9 +1,9 @@
-// src/pages/GettingStartedPage/GettingStartedPage.js
-
 import React from "react";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GettingStartedPath from "../../components/GettingStartedPath/GettingStartedPath";
+import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
+import GettingHelp from "../../components/GettingHelp/GettingHelp";
 import styles from "./GettingStartedPage.module.css";
 
 const GettingStartedPage = () => {
@@ -37,7 +37,6 @@ const GettingStartedPage = () => {
                     </div>
 
                     <div className={styles.contentArea}>
-                        {/* This is where we place one or more GettingStartedPath components */}
                         <GettingStartedPath
                             icon="/images/gettingStartedLanding/img-icon-getstarted-design.svg"
                             heading="Design"
@@ -45,15 +44,16 @@ const GettingStartedPage = () => {
                 tools needed for innovative products"
                         />
 
-                        {/* Example: a second instance for demonstration */}
                         <GettingStartedPath
                             icon="/images/gettingStartedLanding/img-icon-getstarted-develop.svg"
                             heading="Develop"
                             body="As a developer, seamlessly integrate eDS into codebases for consistent brand experiences."
                         />
                     </div>
+                    <GettingHelp/>
                 </div>
             </div>
+            <GlobalFooter/>
         </>
     );
 };

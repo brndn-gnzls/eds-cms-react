@@ -1,0 +1,57 @@
+/* src/components/GettingHelp/GettingHelp.module.css */
+
+/* Wrapper for the entire block */
+.gettingHelpWrapper {
+    /* optional: top/bottom spacing if needed */
+    margin-top: 32px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #000; /* normal text color */
+    padding-left: 404px;
+}
+
+/* The bullet list */
+.helpList {
+    list-style: disc;
+    margin-left: 20px; /* or something that lines up the bullet with text */
+    margin-bottom: 24px;
+}
+
+.space24 {
+    height: 24px;
+}
+
+.space42 {
+    height: 16px;
+}
+
+/* Link style => #007032, underlined */
+.helpLink {
+    color: #007032;
+    text-decoration: underline;
+}
+
+/* You can style <h2>, <h4> if you want consistent line-heights, e.g.: */
+.gettingHelpWrapper h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 16px;
+}
+
+.gettingHelpWrapper h4 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.helpTopParagraph {
+    margin-bottom: 16px;
+}
+
+.bulletListWrapper {
+    padding-left: 16px;
+}
+
+.bulletListWrapper p {
+    padding-bottom: 14px;
+}
