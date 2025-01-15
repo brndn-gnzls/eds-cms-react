@@ -1,26 +1,43 @@
+// src/pages/GettingStartedPage/GettingStartedPage.js
+
 import React from "react";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
+import styles from "./GettingStartedPage.module.css";
 
 const GettingStartedPage = () => {
     return (
         <>
             <GlobalNav />
 
+            {/*
+        Container centered at max width (like the homepage),
+        with left rail pinned. The right content is in .rightSide area.
+      */}
             <div className="container mx-auto min-h-screen relative">
                 <LeftRail />
 
-                <div className="ml-[300px] p-8 min-h-screen">
-                    <h1 className="text-2xl font-bold mb-4">Getting Started Landing Page</h1>
-                    <p>This is the scrollable area on the right side.</p>
-                    <p>
-                        Because the left rail is fixed, we offset this content with
-                        <code>ml-[300px]</code>.
-                    </p>
-                    <p>
-                        Add more content here. The browser window will scroll this area,
-                        while the left rail remains pinned in place.
-                    </p>
+                <div className={`${styles.rightSide} min-h-screen`}>
+                    {/* 1) Banner at top of right side */}
+                    <div
+                        className={styles.banner}
+                        style={{
+                            backgroundImage: `url("/images/gettingStartedLanding/img-header-getstarted.jpg")`,
+                        }}
+                    >
+                        <h1>Get Started</h1>
+                        <p>
+                            Get started with eDS to streamline your workflow and maintain consistency
+                            across every aspect of our design system.
+                        </p>
+                    </div>
+
+                    {/* 2) 48px spacing under the banner → done in CSS or a margin class */}
+                    <div className={styles.postBannerSpace} />
+
+                    {/* 3) 96px from the left rail → we apply margin-left in CSS */}
+                    <div className={styles.contentArea}>
+                    </div>
                 </div>
             </div>
         </>
@@ -28,4 +45,3 @@ const GettingStartedPage = () => {
 };
 
 export default GettingStartedPage;
-

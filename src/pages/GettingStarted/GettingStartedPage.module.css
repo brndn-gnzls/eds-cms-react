@@ -1,6 +1,57 @@
-.rightContent {
-    margin-left: 300px;  /* same width as LeftRail */
-    padding: 20px;       /* optional spacing */
-    min-height: 100vh;   /* fill the screen vertically so it can scroll */
+/* src/pages/GettingStartedPage/GettingStartedPage.module.css */
+
+/* Right side container from the left rail
+   (since .leftRail is 300px pinned).
+   We'll just let it fill the screen, but style it.
+*/
+.rightSide {
+    /* fill vertical space, can also apply background if needed */
+    min-height: 100vh;
+    background-color: #fff; /* or transparent, if you'd like */
+}
+
+/* Banner at top of the right side */
+.banner {
+    width: 100%;
+    height: 200px; /* or whichever height is needed */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* White text + line-heights as previously used:
+       h1 => 2.5rem, line-height 2.85rem
+       p => 1rem, line-height 1.5rem
+    */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center text */
+    padding: 48px 148px 0 338px;         /* horizontal padding for text */
     box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+/* 48px space below the banner */
+.postBannerSpace {
+    height: 48px;
+}
+
+/* The area where we place GettingStartedPath components,
+   offset 96px from the left rail
+*/
+.contentArea {
+    margin-left: 96px;
+    /* additional vertical spacing if needed */
+    padding-bottom: 40px; /* or up to you */
 }
