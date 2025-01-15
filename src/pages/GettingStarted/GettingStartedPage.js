@@ -3,6 +3,7 @@
 import React from "react";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
+import GettingStartedPath from "../../components/GettingStartedPath/GettingStartedPath";
 import styles from "./GettingStartedPage.module.css";
 
 const GettingStartedPage = () => {
@@ -10,15 +11,10 @@ const GettingStartedPage = () => {
         <>
             <GlobalNav />
 
-            {/*
-        Container centered at max width (like the homepage),
-        with left rail pinned. The right content is in .rightSide area.
-      */}
             <div className="container mx-auto min-h-screen relative">
                 <LeftRail />
 
                 <div className={`${styles.rightSide} min-h-screen`}>
-                    {/* 1) Banner at top of right side */}
                     <div
                         className={styles.banner}
                         style={{
@@ -32,11 +28,29 @@ const GettingStartedPage = () => {
                         </p>
                     </div>
 
-                    {/* 2) 48px spacing under the banner → done in CSS or a margin class */}
-                    <div className={styles.postBannerSpace} />
+                    <div className={styles.postBannerSpace}/>
+                    <div className={styles.introText}>
+                        <h2>Choose your path</h2>
+                        <p>Let's tailor your journey to fit your needs! Select the path that matches your role
+                        to discover personalized tools, resources, and guidance that will help you make the most
+                        of eDS.</p>
+                    </div>
 
-                    {/* 3) 96px from the left rail → we apply margin-left in CSS */}
                     <div className={styles.contentArea}>
+                        {/* This is where we place one or more GettingStartedPath components */}
+                        <GettingStartedPath
+                            icon="/images/gettingStartedLanding/img-icon-getstarted-design.svg"
+                            heading="Design"
+                            body="As a designer, use the eDS to create engaging, unified user experiences with the
+                tools needed for innovative products"
+                        />
+
+                        {/* Example: a second instance for demonstration */}
+                        <GettingStartedPath
+                            icon="/images/gettingStartedLanding/img-icon-getstarted-develop.svg"
+                            heading="Develop"
+                            body="As a developer, seamlessly integrate eDS into codebases for consistent brand experiences."
+                        />
                     </div>
                 </div>
             </div>

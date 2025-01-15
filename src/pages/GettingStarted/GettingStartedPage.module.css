@@ -1,32 +1,19 @@
-/* src/pages/GettingStartedPage/GettingStartedPage.module.css */
-
-/* Right side container from the left rail
-   (since .leftRail is 300px pinned).
-   We'll just let it fill the screen, but style it.
-*/
 .rightSide {
-    /* fill vertical space, can also apply background if needed */
     min-height: 100vh;
-    background-color: #fff; /* or transparent, if you'd like */
+    background-color: #fff;
 }
 
-/* Banner at top of the right side */
 .banner {
     width: 100%;
-    height: 200px; /* or whichever height is needed */
+    height: 200px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    /* White text + line-heights as previously used:
-       h1 => 2.5rem, line-height 2.85rem
-       p => 1rem, line-height 1.5rem
-    */
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertically center text */
-    padding: 48px 148px 0 338px;         /* horizontal padding for text */
+    justify-content: center;
+    padding: 48px 148px 0 338px;
     box-sizing: border-box;
 }
 
@@ -42,16 +29,29 @@
     margin: 0;
 }
 
-/* 48px space below the banner */
 .postBannerSpace {
     height: 48px;
+    margin-left: 345px;
 }
 
-/* The area where we place GettingStartedPath components,
-   offset 96px from the left rail
-*/
 .contentArea {
-    margin-left: 96px;
+    margin-left: 393px;
     /* additional vertical spacing if needed */
     padding-bottom: 40px; /* or up to you */
+}
+
+.introText {
+    margin-left: 396px;
+    margin-bottom: 62px;
+}
+
+h2 {
+    font-size: 2.125rem; /* 34px */
+    line-height: 2.125rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.contentArea > div:nth-child(2) {
+    border-bottom: none;
 }
