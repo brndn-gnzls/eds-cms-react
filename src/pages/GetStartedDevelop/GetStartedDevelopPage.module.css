@@ -1,21 +1,39 @@
+/* src/pages/GetStartedDevelopPage.module.css */
+
 .rightSide {
+    /* The rest of your layout, no special overflow or position needed */
     min-height: 100vh;
     background-color: #fff;
 }
 
+/*
+  Banner + tabs container is pinned under the nav (78px).
+  We'll fix the total height = 300 (banner) + 52 (tabs) = 352px.
+  Or let the banner remain flexible if you prefer, see note below.
+*/
+.bannerAndTabs {
+    position: sticky;
+    top: 78px; /* pinned below global nav */
+    z-index: 50; /* ensures it’s on top of main content, below nav if nav has higher z-index */
+    height: 352px; /* 300 for banner + 52 for tabs, if you want them both pinned as one block */
+    display: flex;
+    flex-direction: column;
+}
+
+/* The banner portion inside bannerAndTabs */
 .banner {
-    width: 100%;
-    height: 200px;
+    flex: 0 0 200px; /* locked at 300px tall, part of the pinned container */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     color: #fff;
-    padding: 48px 158px 0 361px;
+    padding: 48px 158px 0 68px;
+    margin-left: 300px;
+    width: 827px;
     box-sizing: border-box;
 }
 
@@ -31,25 +49,16 @@
     margin: 0;
 }
 
-.postBannerSpace {
-    height: 48px;
+/* The DevTabs is at bottom 52px inside the pinned container,
+   or we can let DevTabs do its own height. Just remove margin-top or spacing. */
+.devTabsWrapper {
+    flex: 0 0 52px;
+    /* or let the DevTabs define the height in its .tabBar.
+       The key is to ensure the total container is 352 if you want a fixed total. */
 }
 
-.introText {
-    padding: 0 32px;
-    margin-bottom: 24px;
-    margin-left: 326px;
-}
-
-.introText h2 {
-    font-size: 2.125rem;
-    line-height: 2.125rem;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
-
-.introText p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5rem;
+/* For spacing below the pinned section, if needed */
+.mainContent {
+    padding: 32px;
+    background-color: #fff;
 }
