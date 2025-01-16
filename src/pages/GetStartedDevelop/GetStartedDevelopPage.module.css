@@ -1,0 +1,55 @@
+.rightSide {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+    padding: 48px 158px 0 361px;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+.postBannerSpace {
+    height: 48px;
+}
+
+.introText {
+    padding: 0 32px;
+    margin-bottom: 24px;
+    margin-left: 326px;
+}
+
+.introText h2 {
+    font-size: 2.125rem;
+    line-height: 2.125rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.introText p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}

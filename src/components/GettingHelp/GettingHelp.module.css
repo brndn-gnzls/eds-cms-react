@@ -1,15 +1,13 @@
-/* Wrapper for the entire block */
 .gettingHelpWrapper {
     font-size: 1rem;
     line-height: 1.5rem;
     color: #000; /* normal text color */
-    padding-left: 404px;
+    padding-left: 366px;
 }
 
-/* The bullet list */
 .helpList {
     list-style: disc;
-    margin-left: 20px; /* or something that lines up the bullet with text */
+    margin-left: 20px;
     margin-bottom: 24px;
 }
 

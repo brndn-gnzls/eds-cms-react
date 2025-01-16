@@ -50,13 +50,13 @@ const AppRouter = () => {
                        </ProtectedRoute>
                     }
                     />
-                    <Route path="/get-start/design" element={
+                    <Route path="/get-started/design" element={
                         <ProtectedRoute>
                             <GetStartedDesign/>
                         </ProtectedRoute>
                     }
                     />
-                    <Route path="/get-start/develop" element={
+                    <Route path="/get-started/develop" element={
                         <ProtectedRoute>
                             <GetStartedDevelop/>
                         </ProtectedRoute>
