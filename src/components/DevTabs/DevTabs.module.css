@@ -1,25 +1,63 @@
-/* src/components/DevTabs/DevTabs.module.css */
-
-.devTabsWrapper {
+.devTabsContainer {
+    position: relative;
     width: 100%;
 }
 
-/* The sticky tab bar pinned below the global nav. */
-.tabBar {
+/* The pinned block => 352px tall.
+   top: 78px => pinned below nav.
+*/
+.pinnedArea {
     position: sticky;
-    top: 0px; /* If your GlobalNav is pinned at the top with height 78px. */
-    z-index: 10; /* or some layering that keeps it under nav if nav is higher. */
+    top: 78px; /* pinned below global nav */
+    z-index: 50;
+    height: 252px; /* 300 for banner, 52 for tabs */
+    overflow: hidden; /* so the tab content can't bleed in here */
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+/* Banner portion => 300px of the pinned area */
+.banner {
+    flex: 0 0 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+    padding: 48px 158px 0 68px;
+    margin-left: 300px;
+    width: 827px;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+/* Tab bar => 52px of the pinned area */
+.tabBar {
+    flex: 0 0 52px;
+    margin-left: 300px;
     display: flex;
     align-items: center;
-    height: 52px;
-    margin-left: 300px;
     border-bottom: 1px solid #eeeeee;
     background-color: #fff;
     padding: 0 32px 0 67px;
     box-sizing: border-box;
 }
 
-/* Tab button styles */
 .tabButton {
     font-size: 1.125rem;
     font-weight: bold;
@@ -36,7 +74,6 @@
     margin-right: 0;
 }
 
-/* Hover: text black + 10px #007032 line below text */
 .tabButton:hover {
     color: #000;
 }
@@ -47,34 +84,39 @@
     bottom: -10px;
     left: 0;
     width: 0;
-    height: 10px;
+    height: 6px;
     background-color: #007032;
+    border-radius: 4px;
     transition: width 0.2s ease;
 }
-
-/* On hover, widen the 10px line */
 .tabButton:hover::after {
     width: 100%;
 }
-
-/* Active/selected tab => black text + full 10px line */
 .active {
     color: #000;
 }
-
 .active::after {
     content: "";
     position: absolute;
     bottom: -10px;
     left: 0;
     width: 100%;
-    height: 10px;
+    height: 6px;
     background-color: #007032;
+    border-radius: 4px;
 }
 
-/* Tab content area under the sticky bar */
+/* The scrollable region =>
+   I defined a height so it can scroll internally.
+   Typically: total viewport minus pinned area minus nav.
+   For example: calc(100vh - 78px - 352px) => leftover space.
+*/
 .tabContent {
+    margin-left: 336px;
+    /* leftover as: calc(100vh - 78px - 352px) */
+    height: calc(100vh - 78px - 352px);
+    overflow-y: auto;
     padding: 24px 32px;
     background-color: #fff;
-    margin-left: 336px;
+    box-sizing: border-box;
 }

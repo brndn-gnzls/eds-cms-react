@@ -1,20 +1,13 @@
-// src/components/GlobalNav/GlobalNav.js
 import React, { useState } from "react";
 import styles from "./GlobalNav.module.css";
 
-// We'll assume your images live in public/images/...
-// e.g., /images/github.svg, /images/figma.svg, /images/light.svg, /images/dark.svg
-
 const GlobalNav = () => {
-    // State for light/dark toggle
     const [isLight, setIsLight] = useState(true);
 
-    // Toggle handler
     const handleToggle = () => {
         setIsLight(!isLight);
     };
 
-    // Icon paths (adjust to your actual public directory structure)
     const githubIcon = "/images/globalNav/github.svg";
     const figmaIcon = "/images/globalNav/figma.svg";
     const lightIcon = "/images/globalNav/light.svg";
@@ -22,11 +15,6 @@ const GlobalNav = () => {
 
     return (
         <header className={`${styles.navWrapper}`}>
-            {/*
-                Tailwind's container centers and constrains to 1128px at medium/large,
-                providing left/right margins. We'll place content in a flex or grid
-                for "eDS" left, icons right.
-            */}
             <div className={`container ${styles.navInner}`}>
                 {/* Left side: eDS */}
                 <div className={styles.navLeft}>

@@ -1,5 +1,3 @@
-// src/pages/GettingStartedPage/GettingStartedPage.js
-
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
@@ -9,7 +7,7 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelp from "../../components/GettingHelp/GettingHelp";
 import styles from "./GettingStartedPage.module.css";
 
-/** 1) Query for the page banner content */
+/* Query for the page banner content */
 const GET_GETTING_STARTED_PAGE = gql`
     query GettingStartedPage {
         gettingStartedPage {
@@ -20,7 +18,7 @@ const GET_GETTING_STARTED_PAGE = gql`
     }
 `;
 
-/** 2) Query for the path components */
+/* Query for the path components */
 const GET_GETTING_STARTED_PATHS = gql`
     query GettingStartedPaths {
         gettingStartedPaths {
@@ -33,14 +31,12 @@ const GET_GETTING_STARTED_PATHS = gql`
 `;
 
 const GettingStartedPage = () => {
-    // A) Fetch banner text
     const {
         loading: pageLoading,
         error: pageError,
         data: pageData,
     } = useQuery(GET_GETTING_STARTED_PAGE);
 
-    // B) Fetch path components
     const {
         loading: pathsLoading,
         error: pathsError,
@@ -51,9 +47,7 @@ const GettingStartedPage = () => {
     if (pageError) return <p>Error: {pageError.message}</p>;
     if (pathsError) return <p>Error: {pathsError.message}</p>;
 
-    // Extract the banner heading/body
     const gsPage = pageData?.gettingStartedPage;
-    // Extract array of paths
     const pathItems = pathsData?.gettingStartedPaths || [];
 
     return (
@@ -64,7 +58,6 @@ const GettingStartedPage = () => {
                 <LeftRail />
 
                 <div className={`${styles.rightSide} min-h-screen`}>
-                    {/* Banner using the data from Strapi */}
                     <div
                         className={styles.banner}
                         style={{
@@ -86,7 +79,6 @@ const GettingStartedPage = () => {
                         </p>
                     </div>
 
-                    {/* Render the path items from Strapi, each with a link */}
                     <div className={styles.contentArea}>
                         {pathItems.map((item) => {
                             // Decide link based on heading

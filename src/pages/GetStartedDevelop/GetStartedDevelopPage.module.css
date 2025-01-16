@@ -1,39 +1,40 @@
 /* src/pages/GetStartedDevelopPage.module.css */
 
 .rightSide {
-    /* The rest of your layout, no special overflow or position needed */
     min-height: 100vh;
     background-color: #fff;
 }
 
 /*
-  Banner + tabs container is pinned under the nav (78px).
-  We'll fix the total height = 300 (banner) + 52 (tabs) = 352px.
-  Or let the banner remain flexible if you prefer, see note below.
+   352px total => 300 for banner + 52 for tab bar,
+   pinned beneath nav at top: 78px,
+   you can adjust these values if your banner is a different height
 */
 .bannerAndTabs {
     position: sticky;
-    top: 78px; /* pinned below global nav */
-    z-index: 50; /* ensures it’s on top of main content, below nav if nav has higher z-index */
-    height: 352px; /* 300 for banner + 52 for tabs, if you want them both pinned as one block */
+    top: 78px;
+    z-index: 50; /* under nav if nav is z-index: 100 */
+    height: 352px;
     display: flex;
     flex-direction: column;
+    /* No overflow here,
+       because the actual scrolling happens inside DevTabs' content. */
 }
 
-/* The banner portion inside bannerAndTabs */
 .banner {
-    flex: 0 0 200px; /* locked at 300px tall, part of the pinned container */
+    flex: 0 0 200px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     color: #fff;
-    padding: 48px 158px 0 68px;
-    margin-left: 300px;
-    width: 827px;
+    padding: 48px 158px 0 68px; /* example offsets matching your partial code */
+    margin-left: 300px; /* if you want the banner offset from left rail */
+    width: 827px;       /* total width if you want a fixed banner width */
     box-sizing: border-box;
 }
 
@@ -47,18 +48,4 @@
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 0;
-}
-
-/* The DevTabs is at bottom 52px inside the pinned container,
-   or we can let DevTabs do its own height. Just remove margin-top or spacing. */
-.devTabsWrapper {
-    flex: 0 0 52px;
-    /* or let the DevTabs define the height in its .tabBar.
-       The key is to ensure the total container is 352 if you want a fixed total. */
-}
-
-/* For spacing below the pinned section, if needed */
-.mainContent {
-    padding: 32px;
-    background-color: #fff;
 }
