@@ -116,7 +116,12 @@
     /* leftover as: calc(100vh - 78px - 352px) */
     height: calc(100vh - 78px - 352px);
     overflow-y: auto;
-    padding: 24px 32px;
+    padding: 62px 32px 24px;
     background-color: #fff;
     box-sizing: border-box;
+}
+/* Hide scrollbar in WebKit browsers (Chrome, Safari, Opera) */
+.tabContent::-webkit-scrollbar {
+    width: 0px;       /* or display: none; */
+    background: transparent;
 }
