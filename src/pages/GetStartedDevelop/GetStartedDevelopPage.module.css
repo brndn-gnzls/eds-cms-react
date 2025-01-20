@@ -1,0 +1,51 @@
+/* src/pages/GetStartedDevelopPage.module.css */
+
+.rightSide {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+/*
+   352px total => 300 for banner + 52 for tab bar,
+   pinned beneath nav at top: 78px,
+   you can adjust these values if your banner is a different height
+*/
+.bannerAndTabs {
+    position: sticky;
+    top: 78px;
+    z-index: 50; /* under nav if nav is z-index: 100 */
+    height: 352px;
+    display: flex;
+    flex-direction: column;
+    /* No overflow here,
+       because the actual scrolling happens inside DevTabs' content. */
+}
+
+.banner {
+    flex: 0 0 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+    padding: 48px 158px 0 68px; /* example offsets matching your partial code */
+    margin-left: 300px; /* if you want the banner offset from left rail */
+    width: 827px;       /* total width if you want a fixed banner width */
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}

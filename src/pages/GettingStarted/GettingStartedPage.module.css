@@ -1,0 +1,67 @@
+.rightSide {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 158px 0 361px;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    line-height: 2.85rem;
+    margin-bottom: 16px;
+}
+
+.banner p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+.postBannerSpace {
+    height: 48px;
+    margin-left: 345px;
+}
+
+.contentArea {
+    margin-left: 393px;
+    padding-bottom: 40px;
+}
+
+.introText {
+    margin-left: 360px;
+    margin-bottom: 62px;
+}
+
+h2 {
+    font-size: 2.125rem;
+    line-height: 2.125rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* Turns off border on second GettingStartedPath component */
+/*.contentArea > div:nth-child(2) {*/
+/*    border-bottom: none;*/
+/*}*/
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.topCopy {
+    padding-bottom: 32px;
+}
+

@@ -3,6 +3,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import styles from "./HomeMasthead.module.css";
+import {Link} from "react-router-dom";
 
 // 1) Define the query inline with the component
 const GET_HOME_MASTHEAD = gql`
@@ -47,7 +48,10 @@ const HomeMasthead = () => {
                 <p>{description}</p>
 
                 <div className={styles.ctaButtons}>
-                    <button className={styles.getStartedBtn}>{button1Label}</button>
+                    <Link to="/get-started">
+                        <button className={styles.getStartedBtn}>{button1Label}</button>
+                    </Link>
+
                     <button className={styles.componentsBtn}>{button2Label}</button>
                 </div>
             </div>

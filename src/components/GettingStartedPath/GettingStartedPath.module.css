@@ -1,0 +1,61 @@
+.pathWrapper {
+    display: flex;
+    align-items: center;
+    max-width: 605px;
+    height: 84px;
+    margin-bottom: 52px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 26px 0 74px 0;
+}
+
+.iconCol {
+    width: 44px;
+    height: 44px;
+    margin-right: 16px; /* space before text col */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconCol img {
+    width: 44px;
+    height: 44px;
+}
+
+/* Middle column: heading + body text */
+.textCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.heading {
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+
+.bodyText {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.caretCol {
+    margin-left: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.caret {
+    font-size: 1.2rem;
+    font-weight: bold;
+    user-select: none;
+    transform: rotate(0deg);
+}
+
+.postBannerSpace {
+    padding-left: 396px;
+}

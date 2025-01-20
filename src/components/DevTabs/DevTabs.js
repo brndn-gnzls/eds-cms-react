@@ -1,0 +1,141 @@
+// src/components/DevTabs/DevTabs.js
+
+import React, { useState } from "react";
+import styles from "./DevTabs.module.css";
+import GettingHelpInternal from "../GettingHelpInteral/GettingHelpInternal";
+import LargeAccordion from "../LargeAccordion/LargeAccordion";
+
+/**
+ * DevTabs expects 4 props:
+ * - bannerHeading
+ * - bannerBody
+ * - bannerImage
+ * - tabsData (array of 3 items: each { label, blocks })
+ *
+ * Example tabsData:
+ * [
+ *   {
+ *     label: "Get Started",
+ *     blocks: [ { type: "h2", content: "... }, ... ]
+ *   },
+ *   {
+ *     label: "Developer Resources",
+ *     blocks: [ ... ]
+ *   },
+ *   {
+ *     label: "FAQs",
+ *     blocks: [ ... ]
+ *   }
+ * ]
+ */
+const DevTabs = ({
+                     bannerHeading,
+                     bannerBody,
+                     bannerImage,
+                     tabsData = [],
+                 }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleTabClick = (index) => {
+        setActiveIndex(index);
+    };
+
+    // If the user has selected index i, we display tabsData[i].blocks
+    const currentTabBlocks = tabsData[activeIndex]?.blocks || [];
+
+    return (
+        <div className={styles.devTabsContainer}>
+            {/* pinned area => banner + tab bar */}
+            <div className={styles.pinnedArea}>
+                <div
+                    className={styles.banner}
+                    style={{ backgroundImage: `url("${bannerImage}")` }}
+                >
+                    <h1>{bannerHeading}</h1>
+                    <p>{bannerBody}</p>
+                </div>
+
+                {/* The tab bar => we read each tab's label from the tabs array */}
+                <div className={styles.tabBar}>
+                    {tabsData.map((tabItem, idx) => {
+                        const isActive = idx === activeIndex;
+                        return (
+                            <button
+                                key={idx}
+                                onClick={() => handleTabClick(idx)}
+                                className={`${styles.tabButton} ${isActive ? styles.active : ""}`}
+                            >
+                                {tabItem.label}
+                            </button>
+                        );
+                    })}
+                </div>
+            </div>
+
+            <div className={styles.tabContent}>
+                {currentTabBlocks.map((block, idx) => renderBlock(block, idx))}
+            </div>
+        </div>
+    );
+};
+
+function renderBlock(block, idx) {
+    switch (block.type) {
+        case "h2":
+            return <h2 key={idx}>{block.content}</h2>;
+        case "h4":
+            return <h4 key={idx}>{block.content}</h4>;
+        case "p":
+            return <p key={idx}>{block.content}</p>;
+        case "pBold":
+            return (
+                <p key={idx} style={{ fontWeight: "bold" }}>
+                    {block.content}
+                </p>
+            );
+        case "pItalicSmall":
+            return (
+                <p key={idx} style={{ fontStyle: "italic", fontSize: "14px" }}>
+                    {block.content}
+                </p>
+            );
+        case "spacing":
+            return <div key={idx} style={{ height: block.height || 16 }} />;
+        case "img":
+            return (
+                <img
+                    key={idx}
+                    src={block.src}
+                    alt="placeholder"
+                    style={{ margin: "16px 0" }}
+                />
+            );
+        case "hr":
+            return (
+                <hr
+                    key={idx}
+                    style={{
+                        border: 0,
+                        borderTop: `1px solid ${block.color || "#eeeeee"}`,
+                        margin: "16px 0",
+                    }}
+                />
+            );
+        case "gettingHelpInternal":
+            return (
+                <div key={idx}>
+                    <GettingHelpInternal />
+                </div>
+            );
+        case "largeAccordion":
+            return (
+                <div key={idx}>
+                    <LargeAccordion />
+                </div>
+            );
+        default:
+            return <div key={idx}>[Unknown block type: {block.type}]</div>;
+    }
+}
+
+export default DevTabs;

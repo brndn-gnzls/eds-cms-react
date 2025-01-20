@@ -1,33 +1,25 @@
-/*
-  Outer wrapper for the entire nav bar.
-  Sticky at top, 78px height, white background.
-*/
 .navWrapper {
     position: sticky;
     top: 0;
     width: 100%;
     background-color: #fff;
-    z-index: 50;
+    z-index: 100;
     height: 78px;
     border-bottom: 1px solid #EEEEEE;
 }
 
-/*
-  Inner container: We rely on .container from Tailwind
-  to handle horizontal spacing. Just ensure to center content vertically.
-*/
 .navInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%; /* make the child flex container fill the .navWrapper height */
+    height: 100%;
 }
 
 /* Left side: brand text "eDS" */
 .navLeft {}
 
 .brandTitle {
-    font-size: 1.125rem; /* ~18px */
+    font-size: 1.125rem;
     font-weight: bold;
     color: #000;
 }
@@ -37,7 +29,6 @@
     align-items: center;
 }
 
-/* Anchor styling for icons */
 .iconLink {
     display: inline-block;
     margin-right: 24px; /* 24px spacing to the next element */
@@ -62,7 +53,6 @@
     padding: 0;
 }
 
-/* This ensures the icon in the toggle button is a consistent size */
 .toggleBtn img {
     height: 24px;
     width: auto;

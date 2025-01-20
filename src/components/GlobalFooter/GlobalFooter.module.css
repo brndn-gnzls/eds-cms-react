@@ -1,6 +1,9 @@
-/* This ensures the footer itself stretches 100% horizontally */
 .footerFullWidth {
     width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .footerInner {
@@ -8,10 +11,6 @@
     border-top: 1px solid #EEEEEE;
 }
 
-/*
-   The row that holds your 5 columns.
-   Set up a grid with 5 equal columns and some gap.
- */
 .footerRow1 {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));

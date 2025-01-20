@@ -1,0 +1,59 @@
+.accordionWrapper {
+    padding: 0px 36px 16px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.headerRow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.headerLabel {
+    margin: 0;
+    font-weight: 400;
+    user-select: none;
+}
+
+.open {
+    font-weight: 700;
+}
+
+.caret {
+    margin-left: auto;
+    font-weight: 700;
+    display: inline-block;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    user-select: none;         /* prevents caret from being text-selected */
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    width: 172px;
+    height: 42px;
+    color: #000;
+    text-decoration: none;
+    background-color: #fafafa;
+    margin-bottom: 8px;
+    transition: background 0.3s ease;
+    padding-left: 8px;
+    user-select: none;
+}
+
+.navLink:hover {
+    background-color: #EEEEEE;
+}
+
+.activeLink {
+    background-color: #EEEEEE;
+}
