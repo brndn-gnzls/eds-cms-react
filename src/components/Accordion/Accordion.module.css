@@ -53,3 +53,7 @@
 .navLink:hover {
     background-color: #EEEEEE;
 }
+
+.activeLink {
+    background-color: #EEEEEE;
+}

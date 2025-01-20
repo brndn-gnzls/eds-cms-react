@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+// src/components/Accordion/Accordion.js
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Accordion.module.css";
 
-const Accordion = ({ label, links = [] }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
+    // If defaultOpen is true, we start isOpen as true.
+    const [isOpen, setIsOpen] = useState(defaultOpen);
+
+    // If you want the accordion to auto-update open/closed
+    // if the route changes, you can watch defaultOpen in a useEffect:
+    useEffect(() => {
+        setIsOpen(defaultOpen);
+    }, [defaultOpen]);
 
     const toggleAccordion = () => {
-        setIsOpen(!isOpen);
+        setIsOpen((prev) => !prev);
     };
 
     return (
@@ -27,11 +37,23 @@ const Accordion = ({ label, links = [] }) => {
 
             {isOpen && (
                 <div className={styles.linksContainer}>
-                    {links.map((linkText, idx) => (
-                        <a href="#" className={styles.navLink} key={idx}>
-                            &nbsp;&nbsp;{linkText}
-                        </a>
-                    ))}
+                    {links.map(({ label: linkLabel, route }, index) => {
+                        // If route matches currentPath, highlight
+                        const isActive = route === currentPath;
+
+                        return (
+                            <Link
+                                key={index}
+                                to={route}
+                                className={`${styles.navLink} ${isActive ? styles.activeLink : ""}`}
+                                onClick={(e) => {
+                                    if (route === "#") e.preventDefault();
+                                }}
+                            >
+                                &nbsp;&nbsp;{linkLabel}
+                            </Link>
+                        );
+                    })}
                 </div>
             )}
         </div>
