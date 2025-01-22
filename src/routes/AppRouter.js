@@ -11,6 +11,8 @@ const TestPage = lazy(() => import("../pages/TestPage/TestPage"));
 const GettingStartedPage = lazy(() => import("../pages/GettingStarted/GettingStartedPage"));
 const GetStartedDevelop = lazy(() => import("../pages/GetStartedDevelop/GetStartedDevelopPage"));
 const GetStartedDesign = lazy(() => import("../pages/GetStartedDesign/GetStartedDesignPage"));
+const ComponentCatalogPage= lazy(() => import("../pages/ComponentCatalogPage/ComponentCatalogPage"));
+
 
 const AppRouter = () => {
     return (
@@ -53,6 +55,12 @@ const AppRouter = () => {
                     <Route path="/get-started/design" element={
                         <ProtectedRoute>
                             <GetStartedDesign/>
+                        </ProtectedRoute>
+                    }
+                    />
+                    <Route path="/components" element={
+                        <ProtectedRoute>
+                            <ComponentCatalogPage/>
                         </ProtectedRoute>
                     }
                     />
