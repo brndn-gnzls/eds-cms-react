@@ -44,7 +44,7 @@ const ComponentCatalogPage = () => {
 
                 <div className={styles.rightSide}>
                     {/* 92px top margin */}
-                    <div style={{ marginTop: "92px", marginLeft: "64px" }}>
+                    <div style={{ marginTop: "64px", marginLeft: "64px" }}>
                         <h1 style={{paddingBottom: "16px"}}>Overview</h1>
                         <p style={{paddingBottom: "32px"}} >
                             An a-z component guide, featuring everything from basic elements
