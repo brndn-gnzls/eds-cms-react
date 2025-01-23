@@ -1,0 +1,52 @@
+<svg width="200" height="124" viewBox="0 0 200 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2666_5226)">
+<rect width="200" height="124" fill="#F7F7F7"/>
+<mask id="path-3-outside-1_2666_5226" maskUnits="userSpaceOnUse" x="1" y="1" width="65" height="123" fill="black">
+<rect fill="white" x="1" y="1" width="65" height="123"/>
+<path d="M1 1H65V124H1V1Z"/>
+</mask>
+<path d="M1 1H65V124H1V1Z" fill="white"/>
+<path d="M64 1V124H66V1H64Z" fill="#EEEEEE" mask="url(#path-3-outside-1_2666_5226)"/>
+<g filter="url(#filter0_i_2666_5226)">
+<rect width="64" height="14" transform="translate(1 1)" fill="white"/>
+<rect x="5" y="7" width="18" height="2" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M60.0705 9.60425L60.75 8.92471L58 6.17471L55.25 8.92471L55.9295 9.60425L58 7.53378L60.0705 9.60425Z" fill="#286CE2"/>
+</g>
+<rect width="64" height="15" transform="translate(1 15)" fill="#EEEEEE"/>
+<rect x="9" y="23" width="12" height="2" fill="black"/>
+<path d="M9 14.8281H11.8284H14.6569L11.8284 17.6566L9 14.8281Z" fill="white"/>
+<rect width="64" height="12" transform="translate(1 30)" fill="#EEEEEE"/>
+<rect x="9" y="35" width="18" height="2" fill="black"/>
+<rect width="64" height="15" transform="translate(1 42)" fill="#EEEEEE"/>
+<rect x="9" y="47" width="31" height="2" fill="black"/>
+<rect width="64" height="14" transform="translate(1 57)" fill="white"/>
+<rect x="5" y="63" width="29" height="2" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55.9295 62.3958L55.25 63.0753L58 65.8253L60.75 63.0753L60.0705 62.3958L58 64.4662L55.9295 62.3958Z" fill="#286CE2"/>
+<rect width="64" height="14" transform="translate(1 71)" fill="white"/>
+<rect x="5" y="77" width="43" height="2" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55.9295 76.3958L55.25 77.0753L58 79.8253L60.75 77.0753L60.0705 76.3958L58 78.4662L55.9295 76.3958Z" fill="#286CE2"/>
+<rect width="64" height="14" transform="translate(1 85)" fill="white"/>
+<rect x="5" y="91" width="16" height="2" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M55.9295 90.3958L55.25 91.0753L58 93.8253L60.75 91.0753L60.0705 90.3958L58 92.4662L55.9295 90.3958Z" fill="#286CE2"/>
+<rect x="1" y="99" width="64" height="1" fill="#EEEEEE"/>
+<rect width="64" height="14" transform="translate(1 100)" fill="white"/>
+<rect x="5" y="106" width="33" height="2" fill="black"/>
+<rect width="64" height="14" transform="translate(1 114)" fill="white"/>
+<rect x="5" y="120" width="29" height="2" fill="black"/>
+</g>
+<rect x="0.5" y="0.5" width="199" height="123" stroke="#EEEEEE"/>
+<defs>
+<filter id="filter0_i_2666_5226" x="1" y="1" width="64" height="14" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="1"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.101961 0 0 0 0 0.211765 0 0 0 0 0.45098 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_2666_5226"/>
+</filter>
+<clipPath id="clip0_2666_5226">
+<rect width="200" height="124" fill="white"/>
+</clipPath>
+</defs>
+</svg>
