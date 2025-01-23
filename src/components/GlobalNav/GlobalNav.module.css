@@ -1,3 +1,6 @@
+/* src/components/GlobalNav/GlobalNav.module.css */
+
+/* Original nav styles (unchanged) */
 .navWrapper {
     position: sticky;
     top: 0;
@@ -15,7 +18,6 @@
     height: 100%;
 }
 
-/* Left side: brand text "eDS" */
 .navLeft {}
 
 .brandTitle {
@@ -29,9 +31,10 @@
     align-items: center;
 }
 
+/* The existing icons + pipe + toggle classes remain the same */
 .iconLink {
     display: inline-block;
-    margin-right: 24px; /* 24px spacing to the next element */
+    margin-right: 24px;
 }
 
 .iconLink img {
@@ -40,11 +43,10 @@
 }
 
 .pipe {
-    margin-right: 24px; /* spacing after the pipe before the toggle */
+    margin-right: 24px;
     color: #000;
 }
 
-/* The toggle button */
 .toggleBtn {
     display: inline-flex;
     background: none;
@@ -56,4 +58,100 @@
 .toggleBtn img {
     height: 24px;
     width: auto;
+}
+
+/* NEW brand switcher styles */
+.brandSwitcher {
+    position: relative;
+    margin-right: 24px; /* spacing before the GH icon */
+}
+
+/* The button that shows current brand + caret */
+.brandButton {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #000;
+    margin-right: 8px; /* small gap if needed */
+    padding-top: 10px;
+    user-select: none;
+}
+
+.brandButtonIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.dropdownBox {
+    position: absolute;
+    top: 40px; /* below the brandButton */
+    left: 0;
+    width: 280px;
+    /* height: 214px;  you can fix the height or let content flow */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+/* Each brand row inside the dropdown */
+.brandRow {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px;
+    margin-bottom: 8px;
+    transition: background 0.2s;
+}
+
+/* The brand icon in each row */
+.brandRowIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* The brand name text (bold 18px) */
+.brandRowText {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Hover effect: same as left rail => lighter background */
+.brandRow:hover {
+    background: #eeeeee;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.selectedBrand {
+    background: #000 !important;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.selectedBrand .brandRowText {
+    color: #fff;
+}
+
+
+.brandRowDivider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 8px 0;
+}
+
+/* The 'Medicaid' label => 14px #333 */
+.medicaidLabel {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
 }
