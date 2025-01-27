@@ -5,30 +5,27 @@
     width: 100%;
 }
 
-/* pinned area => 352px total: 300px banner, 52px tab bar, pinned below nav at 78px. */
+/* pinned area => 300px banner + ~52px tab bar => ~352px below nav (78px) */
 .pinnedArea {
     position: sticky;
-    top: 78px; /* pinned below global nav */
+    top: 78px;
     z-index: 50;
-    height: 352px;
+    height: 320px; /* adjust if you want exactly 352px total */
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-/* The banner => white background, 300px tall, margin-left 300 for left rail offset, width 827. */
 .banner {
     flex: 0 0 215px;
     background-color: #fff;
     color: #000;
-
     margin-left: 300px;
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 48px 68px 0 68px; /* or replicate your partial code from dev's banner if you want the same offsets */
+    padding: 48px 68px 0 68px;
 }
 
 .banner h1 {
@@ -43,7 +40,6 @@
     margin: 0;
 }
 
-/* The tab bar => 52px tall, pinned below banner, margin-left 300, background #fff, etc. */
 .tabBar {
     flex: 0 0 52px;
     margin-left: 300px;
@@ -55,7 +51,6 @@
     box-sizing: border-box;
 }
 
-/* tab button styling => same as dev tabs if you want */
 .tabButton {
     font-size: 1.125rem;
     font-weight: bold;
@@ -68,15 +63,9 @@
     position: relative;
 }
 
-.tabButton:last-of-type {
-    margin-right: 0;
-}
-
 .tabButton:hover {
     color: #000;
 }
-
-/* The colored line below on hover/active => replicate devtabs approach */
 .tabButton::after {
     content: "";
     position: absolute;
@@ -91,8 +80,6 @@
 .tabButton:hover::after {
     width: 100%;
 }
-
-/* active tab => black text + line */
 .active {
     color: #000;
 }
@@ -107,18 +94,36 @@
     border-radius: 4px;
 }
 
-/* The scrollable content region => margin-left 336, same as dev tabs, height: calc(100vh - 78 - 352) */
 .tabContent {
-    margin-left: 336px; /* 300 + 36 if you want that leftover offset */
-    height: calc(100vh - 78px - 352px);
+    margin-left: 336px; /* 300 rail + 36 leftover if you want */
+    height: calc(100vh - 78px - 320px); /* adjust if you set pinnedArea differently */
     overflow-y: auto;
-    padding: 62px 32px 24px;
+    padding: 0 32px 24px;
     background-color: #fff;
     box-sizing: border-box;
 }
 
-/* Hide scrollbar for WebKit if you want */
 .tabContent::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+}
+
+/* Best Practices blocks (do/don't) */
+.bpBlock {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 28px;
+}
+
+.bpIconCircle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
 }
