@@ -1,6 +1,7 @@
 // src/components/ComponentMetrics/ComponentMetrics.js
 
 import React from "react";
+import ComponentDetailInteriorBulletList from "../ComponentDetailInteriorBulletList/ComponentDetailInteriorBulletList";
 import styles from "./ComponentMetrics.module.css";
 
 export default function ComponentMetrics({
@@ -74,16 +75,14 @@ export default function ComponentMetrics({
     );
 }
 
-/** A sub-component that handles a single "cell" with the specified structure. */
 function Cell({
                   brandPrefix = "anthem-",
                   imageSrc = "",
                   boldTitle = "",
                   description = "",
-                  topSpacing = 24,           // e.g. vertical space before bullet list
-                  bulletList = [],           // array of strings
-                  bulletSpacing = 16,        // spacing between bullets
-                  postBulletParagraph = "",  // text after bullet list
+                  topSpacing = 24,
+                  bulletList = [],          // array of strings => "Height: 45px", etc.
+                  postBulletParagraph = "",
               }) {
     const finalSrc = `/images/componentDetailAssets/button/overview/${brandPrefix}${imageSrc}`;
 
@@ -106,18 +105,21 @@ function Cell({
             {/* topSpacing => e.g. 24px before bullet list */}
             <div style={{ height: `${topSpacing}px` }} />
 
-            {/* Bullet list => each bullet ~16px vertical spacing */}
-            {bulletList.map((line, idx) => (
-                <div key={idx} style={{ marginBottom: idx < bulletList.length - 1 ? bulletSpacing : 0 }}>
-                    {line}
-                </div>
-            ))}
+            {/*
+         Instead of manually mapping bulletList,
+         let your new interior bullet list handle it:
+      */}
+            {bulletList.length > 0 && (
+                <ComponentDetailInteriorBulletList bullets={bulletList} />
+            )}
 
-            {/* 16px space before postBulletParagraph (you can adjust if needed) */}
-            {postBulletParagraph && <div style={{ height: "16px" }} />}
-
-            {/* Paragraph after bullet list */}
-            {postBulletParagraph && <p>{postBulletParagraph}</p>}
+            {/* if there's a postBulletParagraph, show it below the bullet list */}
+            {postBulletParagraph && (
+                <>
+                    <div style={{ height: "16px" }} />
+                    <p>{postBulletParagraph}</p>
+                </>
+            )}
         </div>
     );
 }

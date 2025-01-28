@@ -44,14 +44,14 @@ export default function ComponentDetailIcons({
                 {/* Left column */}
                 <div className={styles.iconColumn}>
                     <img src={finalLeftSrc} alt="Left Icon" className={styles.iconImage} />
-                    <p style={{ fontWeight: "bold", marginTop: "8px" }}>{leftBoldTitle}</p>
+                    <p style={{ fontWeight: "bold", marginTop: "16px" }}>{leftBoldTitle}</p>
                     <p>{leftParagraph}</p>
                 </div>
 
                 {/* Right column */}
                 <div className={styles.iconColumn}>
                     <img src={finalRightSrc} alt="Right Icon" className={styles.iconImage} />
-                    <p style={{ fontWeight: "bold", marginTop: "8px" }}>{rightBoldTitle}</p>
+                    <p style={{ fontWeight: "bold", marginTop: "16px" }}>{rightBoldTitle}</p>
                     <p>{rightParagraph}</p>
                 </div>
             </div>

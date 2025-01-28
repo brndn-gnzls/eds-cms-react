@@ -10,7 +10,7 @@
     position: sticky;
     top: 78px; /* pinned below global nav */
     z-index: 50;
-    height: 252px; /* 300 for banner, 52 for tabs */
+    height: 268px; /* 300 for banner, 52 for tabs */
     overflow: hidden; /* so the tab content can't bleed in here */
     display: flex;
     flex-direction: column;
@@ -144,7 +144,7 @@ h2 {
 
 h3 {
     font-size: 1.625rem; /* 26px */
-    line-height: 1.625rem;
+    line-height: 2.625rem;
 }
 
 h4 {

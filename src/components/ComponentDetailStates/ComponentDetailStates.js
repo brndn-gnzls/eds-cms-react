@@ -52,7 +52,7 @@ export default function ComponentDetailStates({
                         return (
                             <div
                                 key={i}
-                                style={{ marginBottom: i < numItems - 1 ? "28px" : "0" }}
+                                style={{ marginBottom: i < numItems - 1 ? "0" : "0" }}
                             >
                                 <p style={{ fontWeight: "bold" }}>{stateBlock.boldTitle}</p>
                                 <p>{stateBlock.paragraph}</p>

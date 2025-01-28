@@ -65,42 +65,50 @@ export default ComponentDetailPage;
 function getOverviewBlocks() {
     return [
 
-        { type: "spacing", height: 62 },
         { type: "h2", content: "Overview" },
         {
             type: "p",
             content:
                 "Buttons capture users' attention and guide them toward important actions. Used selectively, they highlight essential CTAs without overwhelming users with too many focal points.",
         },
-        { type: "spacing", height: 32 },
         { type: "img", src: "img-button-overview-desktop-light-001.svg" },
-        { type: "spacing", height: 16 },
         {
             type: "pItalicSmall",
             content:
                 "The above examples illustrate the different button types, showcasing how each design variation serves a specific purpose and ensures consistency in user interaction.",
         },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         { type: "h3", content: "Live Demo" },
         {
             type: "p",
             content:
                 "Explore the full capabilities of our button components with our advanced demo. This interactive tool lets you customize variants, states, sizes, themes, colors, icons, and text, providing instant visual feedback and code generation for seamless project integration.",
         },
-        { type: "spacing", height: 48 },
         { type: "demoPlaceholder" },
-        { type: "spacing", height: 48 },
-        { type: "h3", content: "Implementation Tips" },
         {
-            type: "p",
-            content:
-                "• Consistency is Key: Maintain consistent use of button variants and sizes throughout your application for a cohesive user experience.\n" +
-                "• Accessibility Matters: Regularly check color contrast and ensure accessible labeling, especially when using icons.\n" +
-                "• Test Responsively: Utilize the mobile viewport preview to guarantee that buttons remain functional and visually appealing on all devices.",
+            type: "h3",
+            content: "Implementation Tips"
         },
-        { type: "spacing", height: 72 },
+        {
+            type: "bulletList",
+            bullets: [
+                {
+                    boldLead: "Consistency is Key:",
+                    body: "Maintain consistent use of button variants..."
+                },
+                {
+                    boldLead: "Accessibility Matters:",
+                    body: "Regularly check color contrast and ensure accessible labeling..."
+                },
+                {
+                    boldLead: "Test Responsively:",
+                    body: "Utilize the mobile viewport preview to guarantee..."
+                }
+            ]
+        },
+        { type: "spacing", height: 48 },
         { type: "hr" },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         { type: "h2", content: "Anatomy" },
         {
             type: "p",
@@ -118,11 +126,21 @@ function getOverviewBlocks() {
         },
         { type: "spacing", height: 16 },
         {
-            type: "p",
-            content:
-                "• Size: Icons are standardized to ensure clear visibility without overpowering the label.\n" +
-                "• Spacing: A set space is provided between the icon and label to prevent visual clutter, keeping focus on the button's message.\n" +
-                "• Placement margins: Icons include preset left and right margins within the button to maintain a balanced, touch-friendly area.",
+            type: "bulletList",
+            bullets: [
+                {
+                    boldLead: "Size:",
+                    body: "Icons are standardized to ensure clear visibility without overpowering the label."
+                },
+                {
+                    boldLead: "Spacing:",
+                    body: "A set space is provided between the icon and label to prevent visual clutter, keeping focus on the button's messages."
+                },
+                {
+                    boldLead: "Placement margins:",
+                    body: "Icons include preset margins within the button to maintain a balanced, touch-friendly area."
+                }
+            ]
         },
         { type: "spacing", height: 24 },
         { type: "pBold", content: "2. Text Label" },
@@ -133,31 +151,54 @@ function getOverviewBlocks() {
         },
         { type: "spacing", height: 16 },
         {
-            type: "p",
-            content:
-                "• Font Family: The font is specified according to the selected brand, ensuring consistency with the brand's design language.\n" +
-                "• Weight: Labels are set in bold for prominence and readability, complementing other interface elements.\n" +
-                "• Size: The font size is preset based on the selected button size and accessibility requirements to ensure readability across all styles.\n" +
-                "• Accessibility: Text and background colors are carefully selected to meet AAA contrast requirements, ensuring optimal readability and accessibility for all users.",
+            type: "bulletList",
+            bullets: [
+                {
+                    boldLead: "Font Family:",
+                    body: "The font is specified according to the selected brand, ensuring consistency with the brand's design language."
+                },
+                {
+                    boldLead: "Weight:",
+                    body: "Labels are set in bold for prominence and readability, complementing other interface elements."
+                },
+                {
+                    boldLead: "Size:",
+                    body: "The font size is preset based on the selected button size and accessibility requirements to ensure readability across all styles."
+},
+                {
+                    boldLead: "Accessibility:",
+                    body: "Text and background colors are carefully selected to meet AAA contrast requirements, ensuring optimal readability and accessibility for all users.."
+                }
+            ]
         },
         { type: "spacing", height: 24 },
         { type: "pBold", content: "3. Container" },
+        {
+            type: "p",
+            content:
+                "The button's container and corner radius are essential in distinguishing it from other interface elements and influencing user perception. Design considerations include:"
+        },
         { type: "spacing", height: 16 },
         {
-            type: "p",
-            content:
-                "The button's container and corner radius are essential in distinguishing it from other interface elements and influencing user perception. Design considerations include:",
+            type: "bulletList",
+            bullets: [
+                {
+                    boldLead: "Color:",
+                    body: "Button background colors are preset based on the selected brand, ensuring readability and accessibility while reflecting each button’s role within the color scheme."
+                },
+                {
+                    boldLead: "Corner Radius:",
+                    body: "The button style applies a brand-specific corner radius that aligns with each brand’s design language and overall system cohesion."
+                },
+                {
+                    boldLead: "Spacing:",
+                    body: "Button margins are preset to enhance visual balance and usability, ensuring sufficient clickability for all users.."
+                }
+            ]
         },
-        {
-            type: "p",
-            content:
-                "• Color: Button background colors are preset based on the selected brand, ensuring readability and accessibility while reflecting each button’s role within the color scheme.\n" +
-                "• Corner Radius: The button style applies a brand-specific corner radius that aligns with each brand’s design language and overall system cohesion.\n" +
-                "• Spacing: Button margins are preset to enhance visual balance and usability, ensuring sufficient clickability for all users.",
-        },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         { type: "hr" },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         { type: "h2", content: "Options" },
         {
             type: "p",
@@ -196,11 +237,12 @@ function getOverviewBlocks() {
                 }
             ]
         },
+        { type: "spacing", height: 28 },
         {
             type: "statesSection",
             heading: "Button States",
             introParagraph:
-                "Defining the visual and interactive variations ... consistent and intuitive user experiences.",
+                "Defining the visual and interactive variations of buttons, encompassing default, hover, focus, press, and disabled states to ensure consistent and intuitive user experiences.",
             leftImages: [
                 "img-button-options-desktop-light-005.svg",
                 "img-button-options-desktop-light-006.svg",
@@ -212,27 +254,27 @@ function getOverviewBlocks() {
                 {
                     boldTitle: "Default",
                     paragraph:
-                        "The default state presents distinct ... interactive elements."
+                        "The default state presents distinct features for each button type, improving visibility and helping users recognize them as interactive elements."
                 },
                 {
                     boldTitle: "Hover",
                     paragraph:
-                        "The hover state activates when ... that it is clickable."
+                        "The hover state activates when the cursor is over the button, providing visual feedback that it is clickable."
                 },
                 {
                     boldTitle: "Focus",
                     paragraph:
-                        "The focus state activates when ... to indicate it is selectable."
+                        "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable."
                 },
                 {
                     boldTitle: "Press",
                     paragraph:
-                        "The focus state activates when ... to indicate it is selectable."
+                        "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable."
                 },
                 {
                     boldTitle: "Disabled",
                     paragraph:
-                        "Buttons appear faded, showing no response to hover or click interactions."
+                        "The disabled state indicates when an action is unavailable. Buttons appear faded, showing no response to hover or click interactions."
                 }
             ]
         },
@@ -271,7 +313,6 @@ function getOverviewBlocks() {
             rightParagraph:
                 "Trailing icons appear after the text label to denote an external link only"
         },
-        { type: "spacing", height: 72 },
         { type: "pBold", content: "Implementation Considerations" },
         {
             type: "p",
@@ -280,37 +321,49 @@ function getOverviewBlocks() {
         },
         { type: "spacing", height: 16 },
         {
-            type: "p",
-            content:
-                "• Consistency: Use icons consistently across similar buttons to establish a recognizable pattern for users.\n" +
-                "• Accessibility: Provide alternative text descriptions for icons to ensure that their purpose is communicated to users relying on screen readers.\n" +
-                "• Visual Balance: Whether using leading, trailing, or combined icons, maintain a harmonious visual balance within the button to ensure that the text and icons are easily distinguishable and aesthetically pleasing.",
+            type: "bulletList",
+            bullets: [
+                {
+                    boldLead: "Consistency:",
+                    body: "Use icons consistently across similar buttons to establish a recognizable pattern for users."
+                },
+                {
+                    boldLead: "Accessibility:",
+                    body: "Provide alternative text descriptions for icons to ensure that their purpose is communicated to users relying on screen readers."
+                },
+                {
+                    boldLead: "Visual Balance:",
+                    body: "Whether using leading, trailing, or combined icons, maintain a harmonious visual balance within the button to ensure that the text and icons are easily distinguishable and aesthetically pleasing."
+                }
+            ]
         },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         { type: "hr" },
-        { type: "spacing", height: 72 },
+        { type: "spacing", height: 48 },
         {
             type: "metricsSection",
             heading: "Metrics",
             introParagraph:
-                "Metrics are vital ... creating a cohesive user experience.",
+                "Metrics are vital for ensuring consistency, usability, and visual harmony in user interfaces." +
+                "They define dimensions and spacing guidelines, including height, width, padding, and font size." +
+                "Adhering to these guidelines ensures elements are aesthetically pleasing accessible, and functional across devices, creating a cohesive user experience.",
             row1Left: {
                 imageSrc: "img-button-metrics-desktop-light-001.svg",
                 boldTitle: "Large Button",
-                description: "Large buttons are designed ... larger touch targets.",
+                description: "Large buttons are designed for primary actions requiring prominence and ease of interaction, especially on larger touch targets.",
                 topSpacing: 24,  // space before bullet list
                 bulletList: [
-                    "Height(bold): 45px",
-                    "Width(bold): Minimum 130px",
-                    "Padding(bold): 48px ↔; 11.5px ↕",
-                    "Font Size(bold): 14px"
+                    "Height: 45px",
+                    "Width: Minimum 130px",
+                    "Padding: 48px ↔; 11.5px ↕",
+                    "Font Size: 14px"
                 ],
-                postBulletParagraph: "Large buttons are best used for key actions ... dialogs."
+                postBulletParagraph: "Large buttons are best used for key actions such as primary call-to-actions on landing pages, forms and modal dialogs."
             },
             row1Right: {
                 imageSrc: "img-button-metrics-desktop-light-002.svg",
                 boldTitle: "Small Button",
-                description: "Small buttons are utilized ... fitting neatly ...",
+                description: "Small buttons are utilized for actions that are secondary or when space is limited, fitting neatly into compact areas.",
                 topSpacing: 16,
                 bulletList: [
                     "Height: 30px",
@@ -318,59 +371,56 @@ function getOverviewBlocks() {
                     "Padding: 30px ↔; 8px ↕",
                     "Font Size: 14px"
                 ],
-                postBulletParagraph: "Use small buttons for actions ... secondary actions."
+                postBulletParagraph: "Use small buttons for actions within lists, toolbars, or as secondary actions."
             },
             row2Left: {
                 imageSrc: "img-button-metrics-desktop-light-003.svg",
                 boldTitle: "Large Button With Icon",
-                description: "Large buttons w/icons are designed for ...",
+                description: "Large buttons with icons are designed for primary actions requiring prominence and ease of interaction.",
                 topSpacing: 16,
                 bulletList: [
                     "Padding: 48px ↔; 12px ↕",
                     "Icon Size: 20x20px, 8px spacing from text"
                 ]
-                // optional postBulletParagraph if needed
             },
             row2Right: {
                 imageSrc: "img-button-metrics-desktop-light-004.svg",
                 boldTitle: "Small Button With Icon",
-                description: "Small buttons with icons are utilized ...",
+                description: "Small buttons with icons are ideal for secondary actions or when space is limited, providing a compact solution.",
                 topSpacing: 16,
                 bulletList: [
-                    "Height: 30px",
-                    "Width: Minimum 80px",
                     "Padding: 30px ↔; 8px ↕",
                     "Icon Size: 16x16px, 4px spacing from text"
                 ],
-                postBulletParagraph: "Additional usage context for small button with icon."
             }
         },
-        { type: "spacing", height: 64 },
+        { type: "hr" },
+        { type: "spacing", height: 48 },
         {
             type: "bestPracticesSection",
             heading: "Best Practices",
             introParagraph:
-                "Ensuring that buttons are effective in guiding user actions requires attention ...",
+                "Ensuring that buttons are effective in guiding user actions requires attention to detail in both desgin and implementation. Below are paired \"Do\" and \"Don't\" best practices, each addressing a specific aspect of button usage to help illustrate optimal and suboptimal practices.",
             doItems: [
                 {
                     title: "Use Clear and Concise Labeling",
                     color: "#007032",
                     symbol: "✓",
-                    paragraph: "Do use actionable, precise language ...",
+                    paragraph: "Do use actionable, precise language that clearly describes the button's function.",
                     imageSrc: "img-button-best-practices-desktop-light-001.svg"
                 },
                 {
                     title: "Maintain Hierarchical Consistency",
                     color: "#007032",
                     symbol: "✓",
-                    paragraph: "Do use button variants ... main actions.",
+                    paragraph: "Do use button variants for visual hierarchies, reserve primary buttons for main actions.",
                     imageSrc: "img-button-best-practices-desktop-light-003.svg"
                 },
                 {
                     title: "Ensure Accessibility",
                     color: "#007032",
                     symbol: "✓",
-                    paragraph: "Do design with adequate contrast ...",
+                    paragraph: "Do design with adequate contrast and accessible labels, employing ARIA attributes where needed.",
                     imageSrc: "img-button-best-practices-desktop-light-005.svg"
                 }
             ],
@@ -379,28 +429,28 @@ function getOverviewBlocks() {
                     title: "Avoid Using Vague or Long Labeling",
                     color: "#BF1722",
                     symbol: "✗",
-                    paragraph: "Don't use ambiguous terms or lengthy descriptions ...",
+                    paragraph: "Don't use ambiguous terms or lengthy descriptions that confuse users.",
                     imageSrc: "img-button-best-practices-desktop-light-002.svg"
                 },
                 {
                     title: "Avoid Multiple Primary Buttons",
                     color: "#BF1722",
                     symbol: "✗",
-                    paragraph: "Don't clutter your interface with multiple primary ...",
+                    paragraph: "Don't clutter your interface with multiple primary buttons that dilute focus.",
                     imageSrc: "img-button-best-practices-desktop-light-004.svg"
                 },
                 {
                     title: "Avoid Unexplained Disabled Buttons",
                     color: "#BF1722",
                     symbol: "✗",
-                    paragraph: "Don't use disabled buttons without explanation, ...",
+                    paragraph: "Don't use disabled buttons without explanation, this leads to user confusion.",
                     imageSrc: "img-button-best-practices-desktop-light-006.svg"
                 }
             ]
         },
-        { type: "spacing", height: 92 },
+        { type: "spacing", height: 48 },
         { type: "hr" },
-        { type: "spacing", height: 92 },
+        { type: "spacing", height: 72 },
         { type: "gettingHelpInternal" },
         { type: "spacing", height: 92 },
     ];
