@@ -12,6 +12,7 @@ const GettingStartedPage = lazy(() => import("../pages/GettingStarted/GettingSta
 const GetStartedDevelop = lazy(() => import("../pages/GetStartedDevelop/GetStartedDevelopPage"));
 const GetStartedDesign = lazy(() => import("../pages/GetStartedDesign/GetStartedDesignPage"));
 const ComponentCatalogPage= lazy(() => import("../pages/ComponentCatalogPage/ComponentCatalogPage"));
+const ComponentDetailPage= lazy(() => import("../pages/ComponentDetailPage/ComponentDetailPage"));
 
 
 const AppRouter = () => {
@@ -70,7 +71,12 @@ const AppRouter = () => {
                         </ProtectedRoute>
                     }
                     />
-
+                    <Route path="/component/button" element={
+                        <ProtectedRoute>
+                            <ComponentDetailPage/>
+                        </ProtectedRoute>
+                    }
+                    />
                 </Routes>
             </Suspense>
         </Router>

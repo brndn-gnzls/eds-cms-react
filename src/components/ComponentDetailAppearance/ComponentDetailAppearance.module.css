@@ -1,0 +1,64 @@
+/* src/components/ComponentDetailAppearance/ComponentDetailAppearance.module.css */
+body {
+    font-size: 1rem;
+    color: #3d3d3d;
+    margin:0;
+    padding:0;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem; /* 40px */
+    line-height: 2.85rem;
+}
+
+h2 {
+    font-size: 2.125rem; /* 34px */
+    line-height: 3.125rem;
+}
+
+h3 {
+    font-size: 1.625rem; /* 26px */
+    line-height: 2.625rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+.appearanceWrapper {
+    /* Optional wrapper styling; up to you. */
+    margin-bottom: 47px; /* for spacing after the section */
+}
+
+.appearanceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(311px, 1fr));
+    /* Ensures each block is at least 311px wide. */
+    gap: 27px;
+}
+
+/* Stacks on small screens */
+@media (max-width: 766px) {
+    .appearanceGrid {
+        grid-template-columns: 0fr;
+    }
+}
+
+.appearanceBlock {
+    /* A simple container for each block; adjust as needed. */
+    display: flex;
+    flex-direction: column;
+}
+
+.appearanceImage {
+    width: 311px;
+    height: 95px;
+    object-fit: contain;
+    /* or you can rely on brand images being exactly 311x96 */
+}
