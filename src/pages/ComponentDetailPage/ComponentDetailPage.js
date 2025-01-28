@@ -64,6 +64,7 @@ export default ComponentDetailPage;
 // Brand switching prepends "anthem-", "healthyblue-", or "wellpoint-".
 function getOverviewBlocks() {
     return [
+
         { type: "spacing", height: 62 },
         { type: "h2", content: "Overview" },
         {
@@ -164,144 +165,111 @@ function getOverviewBlocks() {
                 "In the pursuit of providing a flexible and cohesive user interface, our design system categorizes buttons into three distinct types based on their appearance and intended use: Primary, Secondary, and Tertiary.",
         },
         { type: "spacing", height: 72 },
-        { type: "h3", content: "Appearance" },
         {
-            type: "p",
-            content:
-                "Each button type has distinct visual and functional traits to support various roles, from primary actions to subtle prompts. This section covers appearance options, states, and best practices to create a consistent, intuitive user experience.",
-        },
-        { type: "spacing", height: 24 },
-        { type: "img", src: "img-button-options-desktop-light-001.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Primary" },
-        {
-            type: "p",
-            content:
-                "For the principal call to action on the page. Primary buttons should only appear once per screen.",
-        },
-        { type: "img", src: "img-button-options-desktop-light-002.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Secondary" },
-        {
-            type: "p",
-            content:
-                "Utilize the secondary button to offer alternatives to the main action, or in situations where all actions hold equal importance.",
-        },
-        { type: "img", src: "img-button-options-desktop-light-003.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Tertiary / White" },
-        {
-            type: "p",
-            content:
-                "Employ the tertiary button for actions of lesser importance that offer convenience.",
-        },
-        { type: "img", src: "img-button-options-desktop-light-004.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Ghost" },
-        {
-            type: "p",
-            content: "Use the ghost button for secondary actions on colored backgrounds",
-        },
-        { type: "img", src: "img-button-options-desktop-light-004b.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Two Line" },
-        {
-            type: "p",
-            content: "A two-line button enables quick input changes with distinct actions.",
-        },
-        { type: "spacing", height: 72 },
-        { type: "pBold", content: "Button States" },
-        {
-            type: "p",
-            content:
-                "Defining the visual and interactive variations of buttons, encompassing default, hover, focus, press, and disabled states to ensure consistent and intuitive user experiences.",
-        },
-        { type: "spacing", height: 16 },
-        { type: "img", src: "img-button-options-desktop-light-007.svg" },
-        { type: "spacing", height: 28 },
-        { type: "img", src: "img-button-options-desktop-light-008.svg" },
-        { type: "spacing", height: 28 },
-        { type: "img", src: "img-button-options-desktop-light-009.svg" },
-        { type: "spacing", height: 28 },
-        { type: "img", src: "img-button-options-desktop-light-010.svg" },
-        { type: "spacing", height: 28 },
-        { type: "img", src: "img-button-options-desktop-light-011.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "Default" },
-        {
-            type: "p",
-            content:
-                "The default state presents distinct and unique features for each button type, improving visibility and helping users recognize them as interactive elements.",
-        },
-        { type: "pBold", content: "Hover" },
-        {
-            type: "p",
-            content:
-                "The hover state activates when the cursor is over the button, providing visual feedback that it is clickable.",
-        },
-        { type: "pBold", content: "Focus" },
-        {
-            type: "p",
-            content:
-                "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable.",
-        },
-        { type: "pBold", content: "Press" },
-        {
-            type: "p",
-            content:
-                "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable.",
-        },
-        { type: "pBold", content: "Disabled" },
-        {
-            type: "p",
-            content:
-                "Buttons appear faded, showing no response to hover or click interactions.",
-        },
-        { type: "spacing", height: 72 },
-        { type: "pBold", content: "Size" },
-        {
-            type: "p",
-            content:
-                "Understanding the appropriate usage of button sizes within an interface is crucial for maintaining hierarchy, ensuring accessibility, and enhancing user experience. Our design system provides four distinct sizes for buttons: Large, Medium, Small, and Extra Small.",
-        },
-        { type: "spacing", height: 16 },
-        { type: "img", src: "img-button-options-desktop-light-012.svg" },
-        { type: "spacing", height: 16 },
-        {
-            type: "pItalicSmall",
-            content:
-                "Each size is designed to accommodate different screen sizes, contexts, and user needs, ensuring a versatile and adaptable component library.",
+            type: "appearanceSection",
+            // an array of block objects for the 5 appearances
+            appearanceData: [
+                {
+                    imageSrc: "img-button-options-desktop-light-001.svg",
+                    heading: "Primary",
+                    description: "For the principal call to action on the page. Primary buttons should only appear once per screen."
+                },
+                {
+                    imageSrc: "img-button-options-desktop-light-002.svg",
+                    heading: "Secondary",
+                    description: "Utilize the secondary button to offer alternatives to the main action, or in situations where all actions hold equal importance."
+                },
+                {
+                    imageSrc: "img-button-options-desktop-light-003.svg",
+                    heading: "Tertiary / White",
+                    description: "Employ the tertiary button for actions of lesser importance that offer convenience."
+                },
+                {
+                    imageSrc: "img-button-options-desktop-light-004.svg",
+                    heading: "Ghost",
+                    description: "Use the ghost button for secondary actions on colored backgrounds."
+                },
+                {
+                    imageSrc: "img-button-options-desktop-light-004b.svg",
+                    heading: "Two Line",
+                    description: "A two-line button enables quick input changes with distinct actions."
+                }
+            ]
         },
         {
-            type: "p",
-            content:
-                "Size        Description                                   Height: 44px\n\n" +
-                "Large       Large buttons are designed for high-          Font Size: 14px\n" +
-                "            priority actions that require prominence.     Internal Padding: 48px\n\n" +
-                "Small       Small buttons are used when space is          Height: 30px\n" +
-                "            limited / actions that are less prioritized.  Font Size: 12px\n" +
-                "                                                           Internal Padding: 30px",
+            type: "statesSection",
+            heading: "Button States",
+            introParagraph:
+                "Defining the visual and interactive variations ... consistent and intuitive user experiences.",
+            leftImages: [
+                "img-button-options-desktop-light-005.svg",
+                "img-button-options-desktop-light-006.svg",
+                "img-button-options-desktop-light-007.svg",
+                "img-button-options-desktop-light-008.svg",
+                "img-button-options-desktop-light-009.svg"
+            ],
+            rightStates: [
+                {
+                    boldTitle: "Default",
+                    paragraph:
+                        "The default state presents distinct ... interactive elements."
+                },
+                {
+                    boldTitle: "Hover",
+                    paragraph:
+                        "The hover state activates when ... that it is clickable."
+                },
+                {
+                    boldTitle: "Focus",
+                    paragraph:
+                        "The focus state activates when ... to indicate it is selectable."
+                },
+                {
+                    boldTitle: "Press",
+                    paragraph:
+                        "The focus state activates when ... to indicate it is selectable."
+                },
+                {
+                    boldTitle: "Disabled",
+                    paragraph:
+                        "Buttons appear faded, showing no response to hover or click interactions."
+                }
+            ]
         },
-        { type: "spacing", height: 72 },
-        { type: "pBold", content: "Icon" },
         {
-            type: "p",
-            content:
+            type: "sizeSection",
+            heading: "Size",
+            introParagraph: "Understanding the appropriate usage of button sizes within an interface is crucial for maintaining hierarchy, ensuring accessibility, and enhancing user experience. Our design system provides four distinct sizes for buttons: Large, Medium, Small, and Extra Small.",
+            imageSrc: "img-button-options-desktop-light-010.svg",
+            italicParagraph: "Each size is designed to accommodate different screen sizes, contexts, and user needs, ensuring a versatile and adaptable component library.",
+            tableHead: ["Size", "Description", ""],
+            tableRows: [
+                {
+                    size: "Large",
+                    description: "Large buttons are designed for high-priority actions that require prominence." +
+                        "",
+                    metrics: "Height: 44px\nFont Size: 14px\nInternal Padding: 48px"
+                },
+                {
+                    size: "Small",
+                    description: "Small buttons are used when space is limited / actions that are less prioritized.",
+                    metrics: "Height: 30px\nFont Size: 12px\nInternal Padding: 30px"
+                }
+            ]
+        },
+        {
+            type: "iconSection",
+            heading: "Icon",
+            introParagraph:
                 "Icons in buttons enhance intuitiveness and appeal. Our design system allows leading and trailing icons, used independently for flexibility or together for richer interactions.",
-        },
-        { type: "spacing", height: 16 },
-        { type: "img", src: "img-button-options-desktop-light-014.svg" },
-        { type: "pBold", content: "Leading Icon" },
-        {
-            type: "p",
-            content:
+            leftImageSrc: "img-button-options-desktop-light-011.svg",
+            leftBoldTitle: "Leading Icon",
+            leftParagraph:
                 "Leading icons are positioned before the text label in a button, effectively highlighting its purpose and aiding quick recognition.",
-        },
-        { type: "img", src: "img-button-options-desktop-light-015.svg" },
-        { type: "pBold", content: "External Link / Trailing Icon" },
-        {
-            type: "p",
-            content: "Trailing icons appear after the text label to denote an external link only",
+            rightImageSrc: "img-button-options-desktop-light-012.svg",
+            rightBoldTitle: "External Link / Trailing Icon",
+            rightParagraph:
+                "Trailing icons appear after the text label to denote an external link only"
         },
         { type: "spacing", height: 72 },
         { type: "pBold", content: "Implementation Considerations" },
@@ -321,136 +289,114 @@ function getOverviewBlocks() {
         { type: "spacing", height: 72 },
         { type: "hr" },
         { type: "spacing", height: 72 },
-        { type: "h2", content: "Metrics" },
         {
-            type: "p",
-            content:
-                "Metrics are vital for ensuring consistency, usability, and visual harmony in user interfaces. They define dimensions and spacing guidelines, including height, width, padding, and font size. Adhering to these guidelines ensures elements are aesthetically pleasing, accessible, and functional across devices, creating a cohesive user experience.",
-        },
-        { type: "spacing", height: 32 },
-        { type: "img", src: "img-button-metrics-desktop-light-001.svg" },
-        { type: "pBold", content: "Large Button" },
-        {
-            type: "p",
-            content:
-                "Large buttons are designed for primary actions requiring prominence and ease of interaction, especially on larger touch targets.",
-        },
-        { type: "spacing", height: 24 },
-        {
-            type: "p",
-            content:
-                "• Height(bold): 45px\n" +
-                "• Width(bold): Minimum 130px\n" +
-                "• Padding(bold): 48px ↔; 11.5px ↕\n" +
-                "• Font Size(bold): 14px",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "p",
-            content:
-                "Large buttons are best used for key actions such as primary call-to-actions on landing pages, forms, and modal dialogs.",
-        },
-        { type: "img", src: "img-button-metrics-desktop-light-002.svg" },
-        { type: "pBold", content: "With Icon" },
-        {
-            type: "p",
-            content:
-                "Large buttons are designed for primary actions requiring prominence and ease of interaction, especially on larger touch targets.",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "p",
-            content:
-                "• Height: 46px\n" +
-                "• Width: Minimum 130px\n" +
-                "• Padding: 48px ↔; 12px ↕\n" +
-                "• Font Size: 14px\n" +
-                "• Icon Size: 20x20px, 10px spacing from text",
-        },
-        { type: "pBold", content: "Small Button" },
-        {
-            type: "p",
-            content:
-                "Small buttons are utilized for actions that are secondary or when space is limited, fitting neatly into compact areas.",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "p",
-            content:
-                "• Height: 30px\n" +
-                "• Width: Minimum 90px\n" +
-                "• Padding: 30px ↔; 7.5px ↕\n" +
-                "• Font Size: 12px",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "p",
-            content:
-                "Use small buttons for actions within lists, toolbars, or as secondary actions.",
-        },
-        { type: "spacing", height: 72 },
-        { type: "hr" },
-        { type: "spacing", height: 72 },
-        { type: "h2", content: "Best Practices" },
-        {
-            type: "p",
-            content:
-                "Ensuring that buttons are effective in guiding user actions requires attention to detail in both design and implementation.",
+            type: "metricsSection",
+            heading: "Metrics",
+            introParagraph:
+                "Metrics are vital ... creating a cohesive user experience.",
+            row1Left: {
+                imageSrc: "img-button-metrics-desktop-light-001.svg",
+                boldTitle: "Large Button",
+                description: "Large buttons are designed ... larger touch targets.",
+                topSpacing: 24,  // space before bullet list
+                bulletList: [
+                    "Height(bold): 45px",
+                    "Width(bold): Minimum 130px",
+                    "Padding(bold): 48px ↔; 11.5px ↕",
+                    "Font Size(bold): 14px"
+                ],
+                postBulletParagraph: "Large buttons are best used for key actions ... dialogs."
+            },
+            row1Right: {
+                imageSrc: "img-button-metrics-desktop-light-002.svg",
+                boldTitle: "Small Button",
+                description: "Small buttons are utilized ... fitting neatly ...",
+                topSpacing: 16,
+                bulletList: [
+                    "Height: 30px",
+                    "Width: Minimum 80px",
+                    "Padding: 30px ↔; 8px ↕",
+                    "Font Size: 14px"
+                ],
+                postBulletParagraph: "Use small buttons for actions ... secondary actions."
+            },
+            row2Left: {
+                imageSrc: "img-button-metrics-desktop-light-003.svg",
+                boldTitle: "Large Button With Icon",
+                description: "Large buttons w/icons are designed for ...",
+                topSpacing: 16,
+                bulletList: [
+                    "Padding: 48px ↔; 12px ↕",
+                    "Icon Size: 20x20px, 8px spacing from text"
+                ]
+                // optional postBulletParagraph if needed
+            },
+            row2Right: {
+                imageSrc: "img-button-metrics-desktop-light-004.svg",
+                boldTitle: "Small Button With Icon",
+                description: "Small buttons with icons are utilized ...",
+                topSpacing: 16,
+                bulletList: [
+                    "Height: 30px",
+                    "Width: Minimum 80px",
+                    "Padding: 30px ↔; 8px ↕",
+                    "Icon Size: 16x16px, 4px spacing from text"
+                ],
+                postBulletParagraph: "Additional usage context for small button with icon."
+            }
         },
         { type: "spacing", height: 64 },
         {
-            type: "bestPracticeDo",
-            content: {
-                title: "Use Clear and Concise Labeling",
-                color: "#007032",
-                body: "Do use actionable, precise language that clearly describes the button’s function.",
-                img: "img-button-best-practices-desktop-light-001.svg",
-            },
-        },
-        {
-            type: "bestPracticeDo",
-            content: {
-                title: "Maintain Hierarchical Consistency",
-                color: "#007032",
-                body: "Do use button variants to establish visual hierarchies, reserving primary buttons for main actions.",
-                img: "img-button-best-practices-desktop-light-003.svg",
-            },
-        },
-        {
-            type: "bestPracticeDo",
-            content: {
-                title: "Ensure Accessibility",
-                color: "#007032",
-                body: "Do design with adequate contrast and accessible labels, employing ARIA attributes where needed.",
-                img: "img-button-best-practices-desktop-light-005.svg",
-            },
-        },
-        {
-            type: "bestPracticeDont",
-            content: {
-                title: "Avoid Using Vague or Long Labelling",
-                color: "#BF1722",
-                body: "Don't use ambiguous terms or lengthy descriptions that confuse users.",
-                img: "img-button-best-practices-desktop-light-002.svg",
-            },
-        },
-        {
-            type: "bestPracticeDont",
-            content: {
-                title: "Avoid Multiple Primary Buttons",
-                color: "#BF1722",
-                body: "Don't clutter your interface with multiple primary buttons that dilute focus.",
-                img: "img-button-best-practices-desktop-light-004.svg",
-            },
-        },
-        {
-            type: "bestPracticeDont",
-            content: {
-                title: "Avoid Unexplained Disabled Buttons",
-                color: "#BF1722",
-                body: "Don't use disabled buttons without explanation, which leads to user confusion.",
-                img: "img-button-best-practices-desktop-light-006.svg",
-            },
+            type: "bestPracticesSection",
+            heading: "Best Practices",
+            introParagraph:
+                "Ensuring that buttons are effective in guiding user actions requires attention ...",
+            doItems: [
+                {
+                    title: "Use Clear and Concise Labeling",
+                    color: "#007032",
+                    symbol: "✓",
+                    paragraph: "Do use actionable, precise language ...",
+                    imageSrc: "img-button-best-practices-desktop-light-001.svg"
+                },
+                {
+                    title: "Maintain Hierarchical Consistency",
+                    color: "#007032",
+                    symbol: "✓",
+                    paragraph: "Do use button variants ... main actions.",
+                    imageSrc: "img-button-best-practices-desktop-light-003.svg"
+                },
+                {
+                    title: "Ensure Accessibility",
+                    color: "#007032",
+                    symbol: "✓",
+                    paragraph: "Do design with adequate contrast ...",
+                    imageSrc: "img-button-best-practices-desktop-light-005.svg"
+                }
+            ],
+            dontItems: [
+                {
+                    title: "Avoid Using Vague or Long Labeling",
+                    color: "#BF1722",
+                    symbol: "✗",
+                    paragraph: "Don't use ambiguous terms or lengthy descriptions ...",
+                    imageSrc: "img-button-best-practices-desktop-light-002.svg"
+                },
+                {
+                    title: "Avoid Multiple Primary Buttons",
+                    color: "#BF1722",
+                    symbol: "✗",
+                    paragraph: "Don't clutter your interface with multiple primary ...",
+                    imageSrc: "img-button-best-practices-desktop-light-004.svg"
+                },
+                {
+                    title: "Avoid Unexplained Disabled Buttons",
+                    color: "#BF1722",
+                    symbol: "✗",
+                    paragraph: "Don't use disabled buttons without explanation, ...",
+                    imageSrc: "img-button-best-practices-desktop-light-006.svg"
+                }
+            ]
         },
         { type: "spacing", height: 92 },
         { type: "hr" },

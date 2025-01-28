@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import styles from "./ComponentTabs.module.css";
 import GettingHelpInternal from "../../components/GettingHelpInteral/GettingHelpInternal";
 import LargeAccordion from "../LargeAccordion/LargeAccordion";
-
+import ComponentDetailAppearance from "../ComponentDetailAppearance/ComponentDetailAppearance";
+import ComponentDetailStates from "../ComponentDetailStates/ComponentDetailStates";
+import SizeTable from "../SizeTable/SizeTable";
+import ComponentDetailIcons from "../ComponentDetailIcons/ComponentDetailIcons";
+import ComponentMetrics from "../ComponentMetrics/ComponentMetrics";
+import ComponentDetailBestPractices from "../ComponentDetailBestPractices/ComponentDetailBestPractices";
 export default function ComponentTabs({
                                           currentBrand = "Anthem",
                                           bannerHeading,
@@ -149,6 +154,78 @@ function renderBlock(block, idx, brandPrefix) {
                     />
                 </div>
             );
+        case "appearanceSection":
+            return (
+                <ComponentDetailAppearance
+                    key={idx}
+                    brandPrefix={brandPrefix} // e.g. "anthem-"
+                    blocks={block.appearanceData}
+                />
+            );
+        case "statesSection":
+            return (
+                <ComponentDetailStates
+                    key={idx}
+                    brandPrefix={brandPrefix}
+                    heading={block.heading}
+                    introParagraph={block.introParagraph}
+                    leftImages={block.leftImages}
+                    rightStates={block.rightStates}
+                />
+            );
+        case "sizeSection":
+            return (
+                <SizeTable
+                    key={idx}
+                    brandPrefix={brandPrefix}
+                    heading={block.heading}
+                    introParagraph={block.introParagraph}
+                    imageSrc={block.imageSrc}
+                    italicParagraph={block.italicParagraph}
+                    tableHead={block.tableHead}
+                    tableRows={block.tableRows}
+                />
+            );
+        case "iconSection":
+            return (
+                <ComponentDetailIcons
+                    key={idx}
+                    brandPrefix={brandPrefix}
+                    heading={block.heading}
+                    introParagraph={block.introParagraph}
+                    leftImageSrc={block.leftImageSrc}
+                    leftBoldTitle={block.leftBoldTitle}
+                    leftParagraph={block.leftParagraph}
+                    rightImageSrc={block.rightImageSrc}
+                    rightBoldTitle={block.rightBoldTitle}
+                    rightParagraph={block.rightParagraph}
+                />
+            );
+        case "metricsSection":
+            return (
+                <ComponentMetrics
+                    key={idx}
+                    brandPrefix={brandPrefix}
+                    heading={block.heading}
+                    introParagraph={block.introParagraph}
+                    row1Left={block.row1Left}
+                    row1Right={block.row1Right}
+                    row2Left={block.row2Left}
+                    row2Right={block.row2Right}
+                />
+            );
+        case "bestPracticesSection":
+            return (
+                <ComponentDetailBestPractices
+                    key={idx}
+                    brandPrefix={brandPrefix}
+                    heading={block.heading}
+                    introParagraph={block.introParagraph}
+                    doItems={block.doItems}
+                    dontItems={block.dontItems}
+                />
+            );
+
         default:
             return (
                 <div key={idx} style={{ color: "red" }}>
