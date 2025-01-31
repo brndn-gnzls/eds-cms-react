@@ -12,6 +12,7 @@ import ComponentMetrics from "../ComponentMetrics/ComponentMetrics";
 import ComponentDetailBestPractices from "../ComponentDetailBestPractices/ComponentDetailBestPractices";
 import BulletList from "../BulletList/BulletList";
 import ComponentDetailInteriorBulletList from "../ComponentDetailInteriorBulletList/ComponentDetailInteriorBulletList";
+import AccessibilityTable from "../AccessbilityTable/AccessibilityTable";
 export default function ComponentTabs({
                                           currentBrand = "Anthem",
                                           bannerHeading,
@@ -239,6 +240,13 @@ function renderBlock(block, idx, brandPrefix) {
                 <ComponentDetailInteriorBulletList
                     key={idx}
                     bullets={block.bullets}
+                />
+            );
+        case "accessibilityTable":
+            return (
+                <AccessibilityTable
+                    key={idx}
+                    rows={block.rows || []}
                 />
             );
         default:

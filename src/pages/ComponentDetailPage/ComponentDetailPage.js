@@ -6,6 +6,7 @@ import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
+import {getAccessibilityBlocks} from "./AccessibilityBlocks";
 
 const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
@@ -28,10 +29,7 @@ const ComponentDetailPage = () => {
         },
         {
             label: "Accessibility",
-            blocks: [
-                { type: "h2", content: "Accessibility (Placeholder)" },
-                { type: "p", content: "Content for the 'Accessibility' tab will go here eventually." },
-            ],
+            blocks: getAccessibilityBlocks(),
         },
     ];
 

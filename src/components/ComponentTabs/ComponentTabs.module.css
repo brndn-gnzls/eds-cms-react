@@ -9,7 +9,7 @@
 .pinnedArea {
     position: sticky;
     top: 78px;
-    z-index: 50;
+    z-index: 0;
     height: 320px; /* adjust if you want exactly 352px total */
     overflow: hidden;
     display: flex;
