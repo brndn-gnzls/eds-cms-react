@@ -7,6 +7,7 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 import {getAccessibilityBlocks} from "./AccessibilityBlocks";
+import {usageBlocks} from "./UsageBlocks";
 
 const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
@@ -22,10 +23,7 @@ const ComponentDetailPage = () => {
         },
         {
             label: "Usage",
-            blocks: [
-                { type: "h2", content: "Usage (Placeholder)" },
-                { type: "p", content: "Content for the 'Usage' tab will go here eventually." },
-            ],
+            blocks: usageBlocks(),
         },
         {
             label: "Accessibility",
