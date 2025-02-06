@@ -72,9 +72,7 @@ const AppRouter = () => {
                     }
                     />
                     <Route path="/component/button" element={
-                        <ProtectedRoute>
-                            <ComponentDetailPage/>
-                        </ProtectedRoute>
+                        <ComponentDetailPage/>
                     }
                     />
                 </Routes>

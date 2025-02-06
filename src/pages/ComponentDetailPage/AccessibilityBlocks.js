@@ -1,4 +1,5 @@
 export function getAccessibilityBlocks() {
+
     return [
         // 1) Big heading + intro paragraph
         { type: "h2", content: "Accessibility" },
