@@ -10,7 +10,7 @@ import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 
 // Overview is still static for now
-import { getOverviewBlocks } from "./OverviewBlocks";
+// import { getOverviewBlocks } from "./OverviewBlocks";
 
 // If you want to remove the static usageBlocks import entirely, you can.
 // But here, we’re showing how to fully replace it with dynamic data from Strapi.
@@ -82,6 +82,39 @@ const GET_COMPONENT_DETAIL = gql`
                         insert
                     }
                 }
+
+                Overview {
+                    __typename
+                    ... on ComponentHeadingBlocksHeadingBlock {
+                        headingText
+                        headingLevel
+                    }
+                    ... on ComponentParagraphBlocksParagraphBlock {
+                        content
+                    }
+                    ... on ComponentSpacingBlocksSpacingBlock {
+                        height
+                    }
+                    ... on ComponentSharedBlocksHorizontalRuleBlock {
+                        style
+                    }
+                    ... on ComponentSharedBlocksImageBlock {
+                        folder
+                        src
+                    }
+                    ... on ComponentSharedBlocksItalicCaptionSmall {
+                        content
+                    }
+                    ... on ComponentSharedBlocksGettingHelpInternalBlock {
+                        insert
+                    }
+                    ... on ComponentBulletListBlockBulletListBlock {
+                        items {
+                            boldLead
+                            body
+                        }
+                    }
+                }
             }
         }
     }
@@ -126,14 +159,6 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                     })),
                 };
 
-            case "ComponentBulletListBlockBulletListBlock":
-                return {
-                    type: "bulletList",
-                    bullets: (block.items || []).map((item) => ({
-                        boldLead: item.boldLead || "",
-                        body: item.body || "",
-                    })),
-                };
 
             case "ComponentSharedBlocksHorizontalRuleBlock":
                 return {
@@ -213,6 +238,82 @@ function transformUsageBlocks(strapiBlocks = []) {
     });
 }
 
+// overview transform
+function transformOverviewBlocks(strapiBlocks = []) {
+    return strapiBlocks.map((block) => {
+        switch (block.__typename) {
+            case "ComponentHeadingBlocksHeadingBlock":
+                return {
+                    type: block.headingLevel || "h2",
+                    content: block.headingText || "",
+                };
+
+            case "ComponentSharedBlocksItalicCaptionSmall":
+                return {
+                    type: "pItalicSmall",
+                    content: block.content || null,
+                };
+
+            case "ComponentParagraphBlocksParagraphBlock":
+                return {
+                    type: "p",
+                    content: block.content || "",
+                };
+
+            case "ComponentSpacingBlocksSpacingBlock":
+                return {
+                    type: "spacing",
+                    height: block.height || 16,
+                };
+
+            case "ComponentSharedBlocksHorizontalRuleBlock":
+                return {
+                    type: "hr",
+                    style: block.style || null,
+                };
+
+            case "ComponentSharedBlocksImageBlock":
+                // e.g. folder: "componentDetailUsage", src: "img-button-usage-desktop-light-001.svg"
+                return {
+                    type: "img",
+                    folder: block.folder || "",
+                    src: block.src || "",
+                };
+
+            case "ComponentSharedBlocksGettingHelpInternalBlock":
+                return {
+                    type: "gettingHelpInternal",
+                    insert: block.insert || null,
+                };
+
+            case "ComponentBulletListBlocksBulletListBlock":
+                return {
+                    type: "bulletList",
+                    bullets: (block.items || []).map((item) => ({
+                        boldLead: item.boldLead || "",
+                        body: item.body || "",
+                    })),
+                };
+
+            case "ComponentBulletListBlockBulletListBlock":
+                return {
+                    type: "bulletList",
+                    bullets: (block.items || []).map((item) => ({
+                        boldLead: item.boldLead || "",
+                        body: item.body || "",
+                    })),
+                };
+
+
+            default:
+                return {
+                    type: "unknown",
+                    content: `[Unknown usage block: ${block.__typename}]`,
+                };
+        }
+    });
+}
+
 const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
 
@@ -243,6 +344,9 @@ const ComponentDetailPage = () => {
     const rawAccessibilityBlocks = detailEntry.Accessibility || [];
     const dynamicAccessibilityBlocks = transformAccessibilityBlocks(rawAccessibilityBlocks);
 
+    const rawOverviewBlocks = detailEntry.Overview || [];
+    const dynamicOverviewBlocks = transformOverviewBlocks(rawOverviewBlocks);
+
     // 6) Tabs:
     //    - “Overview” -> still static,
     //    - “Usage” -> dynamic,
@@ -250,7 +354,7 @@ const ComponentDetailPage = () => {
     const tabsData = [
         {
             label: "Overview",
-            blocks: getOverviewBlocks(),
+            blocks: dynamicOverviewBlocks,
         },
         {
             label: "Usage",
