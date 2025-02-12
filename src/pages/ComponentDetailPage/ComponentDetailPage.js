@@ -114,6 +114,9 @@ const GET_COMPONENT_DETAIL = gql`
                             body
                         }
                     }
+                    ... on ComponentIconsBulletListIcon {
+                        content
+                    }
                 }
             }
         }
@@ -304,6 +307,11 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     })),
                 };
 
+            case "ComponentIconsBulletListIcon":
+                return {
+                    type: "pBold",
+                    content: block.content || null,
+                }
 
             default:
                 return {
