@@ -124,6 +124,17 @@ const GET_COMPONENT_DETAIL = gql`
                             description
                         }
                     }
+                    ... on ComponentGridsStatesSectionBlock {
+                        heading
+                        introParagraph
+                        leftImages {
+                            src
+                        }
+                        rightStates {
+                            boldTitle
+                            paragraph
+                        }
+                    }
                 }
             }
         }
@@ -330,6 +341,17 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     })),
                 };
 
+            case "ComponentGridsStatesSectionBlock":
+                return {
+                    type: "statesSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    leftImages: (block.leftImages || []).map((img) => img.src || ""),
+                    rightStates: (block.rightStates || []).map((state) => ({
+                        boldTitle: state.boldTitle || "",
+                        paragraph: state.paragraph || "",
+                    })),
+                };
 
             default:
                 return {
