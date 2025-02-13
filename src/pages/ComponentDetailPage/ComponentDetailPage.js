@@ -117,6 +117,13 @@ const GET_COMPONENT_DETAIL = gql`
                     ... on ComponentIconsBulletListIcon {
                         content
                     }
+                    ... on ComponentGridsImageHeadlineCopyGrid {
+                        appearanceData {
+                            imageSrc
+                            heading
+                            description
+                        }
+                    }
                 }
             }
         }
@@ -312,6 +319,17 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     type: "pBold",
                     content: block.content || null,
                 }
+
+            case "ComponentGridsImageHeadlineCopyGrid":
+                return {
+                    type: "appearanceSection",
+                    appearanceData: (block.appearanceData || []).map((item) => ({
+                        imageSrc: item.imageSrc || "",
+                        heading: item.heading || "",
+                        description: item.description || "",
+                    })),
+                };
+
 
             default:
                 return {
