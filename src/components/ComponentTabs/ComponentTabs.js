@@ -67,7 +67,7 @@ function renderBlock(block, idx, brandPrefix) {
             return <p key={idx}>{block.content}</p>;
         case "pBold":
             return (
-                <p key={idx} style={{ fontWeight: "bold" }}>
+                <p key={idx} style={{ fontWeight: "bold", fontSize: "18px" }}>
                     {block.content}
                 </p>
             );

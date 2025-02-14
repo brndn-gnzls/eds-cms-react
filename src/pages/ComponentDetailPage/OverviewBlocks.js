@@ -310,7 +310,7 @@ export function getOverviewBlocks() {
                 postBulletParagraph: "Use small buttons for actions within lists, toolbars, or as secondary actions."
             },
             row2Left: {
-                imageSrc: "img-button-metrics-desktop-light-003.svg",
+                imageSrc: "g",
                 boldTitle: "Large Button With Icon",
                 description: "Large buttons with icons are designed for primary actions requiring prominence and ease of interaction.",
                 topSpacing: 16,

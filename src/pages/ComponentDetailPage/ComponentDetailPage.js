@@ -1,4 +1,3 @@
-// src/pages/ComponentDetailPage/ComponentDetailPage.js
 
 import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
@@ -9,18 +8,6 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 
-// Overview is still static for now
-// import { getOverviewBlocks } from "./OverviewBlocks";
-
-// If you want to remove the static usageBlocks import entirely, you can.
-// But here, we’re showing how to fully replace it with dynamic data from Strapi.
-// import { usageBlocks } from "./UsageBlocks";
-
-//
-// 1) GraphQL Query for both Usage & Accessibility
-//    We filter by slug="button" if you plan on making it dynamic in the future,
-//    you can add a variable, but for now we’ll keep it hard-coded for demonstration.
-//
 const GET_COMPONENT_DETAIL = gql`
     query GetComponentDetail {
         componentDetailPages_connection {
@@ -133,6 +120,76 @@ const GET_COMPONENT_DETAIL = gql`
                         rightStates {
                             boldTitle
                             paragraph
+                        }
+                    }
+                    ... on ComponentOverviewBlocksSizeSectionBlock {
+                        heading
+                        introParagraph
+                        imageSrc
+                        italicParagraph
+                        tableHeadings {
+                            size
+                            description
+                        }
+                        tableRows {
+                            size
+                            description
+                            metrics
+                        }
+                    }
+                    ... on ComponentSharedBlocksParagraphHeadline {
+                        headline
+                    }
+                    ... on ComponentGridsMetricSectionBlock {
+                        heading
+                        introParagraph
+                        row1Left {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row1Right {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row2Left {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row2Right {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
                         }
                     }
                 }
@@ -259,6 +316,44 @@ function transformUsageBlocks(strapiBlocks = []) {
     });
 }
 
+function transformTableHead(tableHeadings = []) {
+    if (!tableHeadings.length) {
+        return ["Size", "Description", ""];
+    }
+    const first = tableHeadings[0];
+    return [
+        first.size || "Size",
+        first.description || "Description",
+        ""
+    ];
+}
+
+
+function transformMetricsRowArray(rowArr) {
+    if (!rowArr || rowArr.length === 0) {
+        return null;
+    }
+
+    const row = rowArr[0];
+    let bulletItems = [];
+
+    if (row.bulletList && row.bulletList.length > 0) {
+        const firstBulletList = row.bulletList[0];
+        bulletItems = (firstBulletList.items || []).map((item) => ({
+            boldLead: item.boldLead || "",
+            body: item.body || "",
+        }));
+    }
+
+    return {
+        imageSrc: row.imageSrc || "",
+        description: row.description || "",
+        topSpacing: row.topSpacing || 0,
+        bulletList: bulletItems,
+        postBulletParagraph: row.postBulletParagraph || "",
+    };
+}
+
 // overview transform
 function transformOverviewBlocks(strapiBlocks = []) {
     return strapiBlocks.map((block) => {
@@ -352,6 +447,38 @@ function transformOverviewBlocks(strapiBlocks = []) {
                         paragraph: state.paragraph || "",
                     })),
                 };
+            case "ComponentOverviewBlocksSizeSectionBlock":
+                return {
+                    type: "sizeSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    imageSrc: block.imageSrc || "",
+                    italicParagraph: block.italicParagraph || "",
+                    tableHead: transformTableHead(block.tableHeadings),
+                    tableRows: (block.tableRows || []).map((row) => ({
+                        size: row.size || "",
+                        description: row.description || "",
+                        metrics: row.metrics || "",
+                    })),
+                };
+
+            case "ComponentSharedBlocksParagraphHeadline":
+                return {
+                    type: "pBold",
+                    content: block.headline || null,
+                }
+
+            case "ComponentGridsMetricSectionBlock":
+                return {
+                    type: "metricsSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    row1Left: transformMetricsRowArray(block.row1Left),
+                    row1Right: transformMetricsRowArray(block.row1Right),
+                    row2Left: transformMetricsRowArray(block.row2Left),
+                    row2Right: transformMetricsRowArray(block.row2Right),
+                };
+
 
             default:
                 return {
@@ -364,10 +491,6 @@ function transformOverviewBlocks(strapiBlocks = []) {
 
 const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
-
-    // 3) Execute the query
-    //    If you want to filter by slug, you can adjust the query or pass a variable.
-    //    Right now, we just fetch all nodes and pick the 'button' entry.
     const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL);
 
     const bannerHeading = "Button";
@@ -377,7 +500,6 @@ const ComponentDetailPage = () => {
     if (loading) return <p>Loading detail page...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    // 4) Extract & find the “button” entry specifically
     const detailNodes = data?.componentDetailPages_connection?.nodes || [];
     const detailEntry = detailNodes.find((node) => node.slug === "button");
 
@@ -385,7 +507,6 @@ const ComponentDetailPage = () => {
         return <p>No component detail found for “button”.</p>;
     }
 
-    // 5) Transform usage + accessibility
     const rawUsageBlocks = detailEntry.Usage || [];
     const dynamicUsageBlocks = transformUsageBlocks(rawUsageBlocks);
 
@@ -395,10 +516,6 @@ const ComponentDetailPage = () => {
     const rawOverviewBlocks = detailEntry.Overview || [];
     const dynamicOverviewBlocks = transformOverviewBlocks(rawOverviewBlocks);
 
-    // 6) Tabs:
-    //    - “Overview” -> still static,
-    //    - “Usage” -> dynamic,
-    //    - “Accessibility” -> dynamic
     const tabsData = [
         {
             label: "Overview",

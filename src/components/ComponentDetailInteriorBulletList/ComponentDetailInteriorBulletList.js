@@ -17,29 +17,65 @@ import styles from "./ComponentDetailInteriorBulletList.module.css";
  *   ]}
  * />
  */
+// export default function ComponentDetailInteriorBulletList({ bullets = [] }) {
+//     return (
+//         <ul className={styles.bulletList}>
+//             {bullets.map((item, idx) => {
+//                 // Attempt to split at the first colon
+//                 const colonIndex = item.indexOf(":");
+//                 if (colonIndex > -1) {
+//                     // left part (bold), right part (normal)
+//                     const leftPart = item.slice(0, colonIndex).trim();
+//                     const rightPart = item.slice(colonIndex + 1).trim();
+//                     return (
+//                         <li key={idx} className={styles.bulletItem}>
+//                             <span className={styles.boldLead}>{leftPart}:</span>
+//                             {" "}{rightPart}
+//                         </li>
+//                     );
+//                 } else {
+//                     // If no colon found, just show the entire item as normal
+//                     return (
+//                         <li key={idx} className={styles.bulletItem}>
+//                             {item}
+//                         </li>
+//                     );
+//                 }
+//             })}
+//         </ul>
+//     );
+// }
 export default function ComponentDetailInteriorBulletList({ bullets = [] }) {
     return (
         <ul className={styles.bulletList}>
             {bullets.map((item, idx) => {
-                // Attempt to split at the first colon
-                const colonIndex = item.indexOf(":");
-                if (colonIndex > -1) {
-                    // left part (bold), right part (normal)
-                    const leftPart = item.slice(0, colonIndex).trim();
-                    const rightPart = item.slice(colonIndex + 1).trim();
+                // If item is an object, do something like:
+                if (typeof item === "object") {
+                    const leftPart = item.boldLead || "";
+                    const rightPart = item.body || "";
                     return (
                         <li key={idx} className={styles.bulletItem}>
-                            <span className={styles.boldLead}>{leftPart}:</span>
-                            {" "}{rightPart}
+                            <span className={styles.boldLead}>{leftPart}:</span>{" "}
+                            {rightPart}
                         </li>
                     );
+                } else if (typeof item === "string") {
+                    // fallback for plain strings
+                    const colonIndex = item.indexOf(":");
+                    if (colonIndex > -1) {
+                        const leftPart = item.slice(0, colonIndex).trim();
+                        const rightPart = item.slice(colonIndex + 1).trim();
+                        return (
+                            <li key={idx} className={styles.bulletItem}>
+                                <span className={styles.boldLead}>{leftPart}:</span>{" "}
+                                {rightPart}
+                            </li>
+                        );
+                    }
+                    return <li key={idx}>{item}</li>;
                 } else {
-                    // If no colon found, just show the entire item as normal
-                    return (
-                        <li key={idx} className={styles.bulletItem}>
-                            {item}
-                        </li>
-                    );
+                    // unknown
+                    return <li key={idx}>{String(item)}</li>;
                 }
             })}
         </ul>
