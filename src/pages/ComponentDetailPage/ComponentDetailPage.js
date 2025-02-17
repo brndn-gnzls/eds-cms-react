@@ -1,37 +1,578 @@
-// src/pages/ComponentDetailPage/ComponentDetailPage.js
 
 import React, { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
+
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 
+const GET_COMPONENT_DETAIL = gql`
+    query GetComponentDetail {
+        componentDetailPages_connection {
+            nodes {
+                slug
+                Usage {
+                    __typename
+                    ... on ComponentHeadingBlocksHeadingBlock {
+                        headingText
+                        headingLevel
+                    }
+                    ... on ComponentParagraphBlocksParagraphBlock {
+                        content
+                    }
+                    ... on ComponentSpacingBlocksSpacingBlock {
+                        height
+                    }
+                    ... on ComponentSharedBlocksHorizontalRuleBlock {
+                        style
+                    }
+                    ... on ComponentSharedBlocksImageBlock {
+                        folder
+                        src
+                    }
+                    ... on ComponentSharedBlocksItalicCaptionSmall {
+                        content
+                    }
+                }
+
+                Accessibility {
+                    __typename
+                    ... on ComponentHeadingBlocksHeadingBlock {
+                        headingText
+                        headingLevel
+                    }
+                    ... on ComponentParagraphBlocksParagraphBlock {
+                        content
+                    }
+                    ... on ComponentSpacingBlocksSpacingBlock {
+                        height
+                    }
+                    ... on ComponentAccessibilityBlocksAccessibilityTableBlock {
+                        row {
+                            componentName
+                            componentStatus
+                            test
+                        }
+                    }
+                    ... on ComponentBulletListBlockBulletListBlock {
+                        items {
+                            boldLead
+                            body
+                        }
+                    }
+                    ... on ComponentSharedBlocksHorizontalRuleBlock {
+                        style
+                    }
+                    ... on ComponentSharedBlocksGettingHelpInternalBlock {
+                        insert
+                    }
+                }
+
+                Overview {
+                    __typename
+                    ... on ComponentHeadingBlocksHeadingBlock {
+                        headingText
+                        headingLevel
+                    }
+                    ... on ComponentParagraphBlocksParagraphBlock {
+                        content
+                    }
+                    ... on ComponentSpacingBlocksSpacingBlock {
+                        height
+                    }
+                    ... on ComponentSharedBlocksHorizontalRuleBlock {
+                        style
+                    }
+                    ... on ComponentSharedBlocksImageBlock {
+                        folder
+                        src
+                    }
+                    ... on ComponentSharedBlocksItalicCaptionSmall {
+                        content
+                    }
+                    ... on ComponentSharedBlocksGettingHelpInternalBlock {
+                        insert
+                    }
+                    ... on ComponentBulletListBlockBulletListBlock {
+                        items {
+                            boldLead
+                            body
+                        }
+                    }
+                    ... on ComponentIconsBulletListIcon {
+                        content
+                    }
+                    ... on ComponentGridsImageHeadlineCopyGrid {
+                        appearanceData {
+                            imageSrc
+                            heading
+                            description
+                        }
+                    }
+                    ... on ComponentGridsStatesSectionBlock {
+                        heading
+                        introParagraph
+                        leftImages {
+                            src
+                        }
+                        rightStates {
+                            boldTitle
+                            paragraph
+                        }
+                    }
+                    ... on ComponentOverviewBlocksSizeSectionBlock {
+                        heading
+                        introParagraph
+                        imageSrc
+                        italicParagraph
+                        tableHeadings {
+                            size
+                            description
+                        }
+                        tableRows {
+                            size
+                            description
+                            metrics
+                        }
+                    }
+                    ... on ComponentSharedBlocksParagraphHeadline {
+                        headline
+                    }
+                    ... on ComponentGridsMetricSectionBlock {
+                        heading
+                        introParagraph
+                        row1Left {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row1Right {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row2Left {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                        row2Right {
+                            imageSrc
+                            description
+                            topSpacing
+                            bulletList {
+                                items {
+                                    boldLead
+                                    body
+                                }
+                            }
+                            postBulletParagraph
+                        }
+                    }
+                    ... on ComponentGridsBestPracticesSectionBlock {
+                        heading
+                        introParagraph
+                        doItems {
+                            bestPracticeItem {
+                                title
+                                color
+                                symbol
+                                paragraph
+                                imageSrc
+                            }
+                        }
+                        dontItems {
+                            bestPracticeItem {
+                                title
+                                color
+                                symbol
+                                paragraph
+                                imageSrc
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
+/**
+ * 2) Transform Helpers
+ *    - If you want, you can combine them into one
+ *      (since usage & accessibility block shapes are similar).
+ *    - We’ll keep separate for clarity.
+ */
+
+// Accessibility transform
+function transformAccessibilityBlocks(strapiBlocks = []) {
+    return strapiBlocks.map((block) => {
+        switch (block.__typename) {
+            case "ComponentHeadingBlocksHeadingBlock":
+                return {
+                    type: block.headingLevel || "h2",
+                    content: block.headingText || "",
+                };
+
+            case "ComponentParagraphBlocksParagraphBlock":
+                return {
+                    type: "p",
+                    content: block.content || "",
+                };
+
+            case "ComponentSpacingBlocksSpacingBlock":
+                return {
+                    type: "spacing",
+                    height: block.height || 16,
+                };
+
+            case "ComponentAccessibilityBlocksAccessibilityTableBlock":
+                return {
+                    type: "accessibilityTable",
+                    rows: (block.row || []).map((r) => ({
+                        component: r.componentName || "",
+                        status: r.componentStatus || "",
+                        test: r.test || "",
+                    })),
+                };
+
+
+            case "ComponentSharedBlocksHorizontalRuleBlock":
+                return {
+                    type: "hr",
+                    style: block.style || null,
+                };
+
+            case "ComponentSharedBlocksGettingHelpInternalBlock":
+                return {
+                    type: "gettingHelpInternal",
+                    insert: block.insert || null,
+                };
+
+            default:
+                return {
+                    type: "unknown",
+                    content: `[Unknown block type: ${block.__typename}]`,
+                };
+        }
+    });
+}
+
+// Usage transform
+function transformUsageBlocks(strapiBlocks = []) {
+    return strapiBlocks.map((block) => {
+        switch (block.__typename) {
+            case "ComponentHeadingBlocksHeadingBlock":
+                return {
+                    type: block.headingLevel || "h2",
+                    content: block.headingText || "",
+                };
+
+            case "ComponentSharedBlocksItalicCaptionSmall":
+                return {
+                    type: "pItalicSmall",
+                    content: block.content || null,
+                };
+
+            case "ComponentParagraphBlocksParagraphBlock":
+                return {
+                    type: "p",
+                    content: block.content || "",
+                };
+
+            case "ComponentSpacingBlocksSpacingBlock":
+                return {
+                    type: "spacing",
+                    height: block.height || 16,
+                };
+
+            case "ComponentSharedBlocksHorizontalRuleBlock":
+                return {
+                    type: "hr",
+                    style: block.style || null,
+                };
+
+            case "ComponentSharedBlocksImageBlock":
+                // e.g. folder: "componentDetailUsage", src: "img-button-usage-desktop-light-001.svg"
+                return {
+                    type: "img",
+                    folder: block.folder || "",
+                    src: block.src || "",
+                };
+
+            case "ComponentSharedBlocksGettingHelpInternalBlock":
+                return {
+                    type: "gettingHelpInternal",
+                    insert: block.insert || null,
+                };
+
+            default:
+                return {
+                    type: "unknown",
+                    content: `[Unknown usage block: ${block.__typename}]`,
+                };
+        }
+    });
+}
+
+function transformTableHead(tableHeadings = []) {
+    if (!tableHeadings.length) {
+        return ["Size", "Description", ""];
+    }
+    const first = tableHeadings[0];
+    return [
+        first.size || "Size",
+        first.description || "Description",
+        ""
+    ];
+}
+
+
+function transformMetricsRowArray(rowArr) {
+    if (!rowArr || rowArr.length === 0) {
+        return null;
+    }
+
+    const row = rowArr[0];
+    let bulletItems = [];
+
+    if (row.bulletList && row.bulletList.length > 0) {
+        const firstBulletList = row.bulletList[0];
+        bulletItems = (firstBulletList.items || []).map((item) => ({
+            boldLead: item.boldLead || "",
+            body: item.body || "",
+        }));
+    }
+
+    return {
+        imageSrc: row.imageSrc || "",
+        description: row.description || "",
+        topSpacing: row.topSpacing || 0,
+        bulletList: bulletItems,
+        postBulletParagraph: row.postBulletParagraph || "",
+    };
+}
+function transformBestPracticeItems(itemsArr) {
+    if (!itemsArr || itemsArr.length === 0) return [];
+
+    return itemsArr.flatMap((outer) => {
+        const arr = outer.bestPracticeItem || [];
+        return arr.map((bp) => ({
+            title: bp.title || "",
+            color: bp.color || "",
+            symbol: bp.symbol || "",
+            paragraph: bp.paragraph || "",
+            imageSrc: bp.imageSrc || "",
+        }));
+    });
+}
+
+// overview transform
+function transformOverviewBlocks(strapiBlocks = []) {
+    return strapiBlocks.map((block) => {
+        switch (block.__typename) {
+            case "ComponentHeadingBlocksHeadingBlock":
+                return {
+                    type: block.headingLevel || "h2",
+                    content: block.headingText || "",
+                };
+
+            case "ComponentSharedBlocksItalicCaptionSmall":
+                return {
+                    type: "pItalicSmall",
+                    content: block.content || null,
+                };
+
+            case "ComponentParagraphBlocksParagraphBlock":
+                return {
+                    type: "p",
+                    content: block.content || "",
+                };
+
+            case "ComponentSpacingBlocksSpacingBlock":
+                return {
+                    type: "spacing",
+                    height: block.height || 16,
+                };
+
+            case "ComponentSharedBlocksHorizontalRuleBlock":
+                return {
+                    type: "hr",
+                    style: block.style || null,
+                };
+
+            case "ComponentSharedBlocksImageBlock":
+                // e.g. folder: "componentDetailUsage", src: "img-button-usage-desktop-light-001.svg"
+                return {
+                    type: "img",
+                    folder: block.folder || "",
+                    src: block.src || "",
+                };
+
+            case "ComponentSharedBlocksGettingHelpInternalBlock":
+                return {
+                    type: "gettingHelpInternal",
+                    insert: block.insert || null,
+                };
+
+            case "ComponentBulletListBlocksBulletListBlock":
+                return {
+                    type: "bulletList",
+                    bullets: (block.items || []).map((item) => ({
+                        boldLead: item.boldLead || "",
+                        body: item.body || "",
+                    })),
+                };
+
+            case "ComponentBulletListBlockBulletListBlock":
+                return {
+                    type: "bulletList",
+                    bullets: (block.items || []).map((item) => ({
+                        boldLead: item.boldLead || "",
+                        body: item.body || "",
+                    })),
+                };
+
+            case "ComponentIconsBulletListIcon":
+                return {
+                    type: "pBold",
+                    content: block.content || null,
+                }
+
+            case "ComponentGridsImageHeadlineCopyGrid":
+                return {
+                    type: "appearanceSection",
+                    appearanceData: (block.appearanceData || []).map((item) => ({
+                        imageSrc: item.imageSrc || "",
+                        heading: item.heading || "",
+                        description: item.description || "",
+                    })),
+                };
+
+            case "ComponentGridsStatesSectionBlock":
+                return {
+                    type: "statesSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    leftImages: (block.leftImages || []).map((img) => img.src || ""),
+                    rightStates: (block.rightStates || []).map((state) => ({
+                        boldTitle: state.boldTitle || "",
+                        paragraph: state.paragraph || "",
+                    })),
+                };
+            case "ComponentOverviewBlocksSizeSectionBlock":
+                return {
+                    type: "sizeSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    imageSrc: block.imageSrc || "",
+                    italicParagraph: block.italicParagraph || "",
+                    tableHead: transformTableHead(block.tableHeadings),
+                    tableRows: (block.tableRows || []).map((row) => ({
+                        size: row.size || "",
+                        description: row.description || "",
+                        metrics: row.metrics || "",
+                    })),
+                };
+
+            case "ComponentSharedBlocksParagraphHeadline":
+                return {
+                    type: "pBold",
+                    content: block.headline || null,
+                }
+
+            case "ComponentGridsMetricSectionBlock":
+                return {
+                    type: "metricsSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    row1Left: transformMetricsRowArray(block.row1Left),
+                    row1Right: transformMetricsRowArray(block.row1Right),
+                    row2Left: transformMetricsRowArray(block.row2Left),
+                    row2Right: transformMetricsRowArray(block.row2Right),
+                };
+
+            case "ComponentGridsBestPracticesSectionBlock":
+                return {
+                    type: "bestPracticesSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    doItems: transformBestPracticeItems(block.doItems),
+                    dontItems: transformBestPracticeItems(block.dontItems),
+                };
+
+
+            default:
+                return {
+                    type: "unknown",
+                    content: `[Unknown usage block: ${block.__typename}]`,
+                };
+        }
+    });
+}
+
 const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
+    const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL);
 
     const bannerHeading = "Button";
     const bannerBody =
         "Buttons initiate actions, with their labels clearly indicating what will happen when interacted with by users, ensuring an intuitive user experience.";
 
+    if (loading) return <p>Loading detail page...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
+    const detailNodes = data?.componentDetailPages_connection?.nodes || [];
+    const detailEntry = detailNodes.find((node) => node.slug === "button");
+
+    if (!detailEntry) {
+        return <p>No component detail found for “button”.</p>;
+    }
+
+    const rawUsageBlocks = detailEntry.Usage || [];
+    const dynamicUsageBlocks = transformUsageBlocks(rawUsageBlocks);
+
+    const rawAccessibilityBlocks = detailEntry.Accessibility || [];
+    const dynamicAccessibilityBlocks = transformAccessibilityBlocks(rawAccessibilityBlocks);
+
+    const rawOverviewBlocks = detailEntry.Overview || [];
+    const dynamicOverviewBlocks = transformOverviewBlocks(rawOverviewBlocks);
+
     const tabsData = [
         {
             label: "Overview",
-            blocks: getOverviewBlocks(),
+            blocks: dynamicOverviewBlocks,
         },
         {
             label: "Usage",
-            blocks: [
-                { type: "h2", content: "Usage (Placeholder)" },
-                { type: "p", content: "Content for the 'Usage' tab will go here eventually." },
-            ],
+            blocks: dynamicUsageBlocks,
         },
         {
             label: "Accessibility",
-            blocks: [
-                { type: "h2", content: "Accessibility (Placeholder)" },
-                { type: "p", content: "Content for the 'Accessibility' tab will go here eventually." },
-            ],
+            blocks: dynamicAccessibilityBlocks,
         },
     ];
 
@@ -42,6 +583,7 @@ const ComponentDetailPage = () => {
                 currentBrand={currentBrand}
                 onBrandChange={setCurrentBrand}
             />
+
             <div className="container mx-auto min-h-screen relative">
                 <LeftRail />
                 <div className={styles.rightSide}>
@@ -53,405 +595,10 @@ const ComponentDetailPage = () => {
                     />
                 </div>
             </div>
+
             <GlobalFooter />
         </>
     );
 };
 
 export default ComponentDetailPage;
-
-// FULL content. Partial filenames for images: "img-button-overview-desktop-light-001.svg" etc.
-// Brand switching prepends "anthem-", "healthyblue-", or "wellpoint-".
-function getOverviewBlocks() {
-    return [
-
-        { type: "h2", content: "Overview" },
-        {
-            type: "p",
-            content:
-                "Buttons capture users' attention and guide them toward important actions. Used selectively, they highlight essential CTAs without overwhelming users with too many focal points.",
-        },
-        { type: "img", src: "img-button-overview-desktop-light-001.svg" },
-        {
-            type: "pItalicSmall",
-            content:
-                "The above examples illustrate the different button types, showcasing how each design variation serves a specific purpose and ensures consistency in user interaction.",
-        },
-        { type: "spacing", height: 48 },
-        { type: "h3", content: "Live Demo" },
-        {
-            type: "p",
-            content:
-                "Explore the full capabilities of our button components with our advanced demo. This interactive tool lets you customize variants, states, sizes, themes, colors, icons, and text, providing instant visual feedback and code generation for seamless project integration.",
-        },
-        { type: "demoPlaceholder" },
-        {
-            type: "h3",
-            content: "Implementation Tips"
-        },
-        {
-            type: "bulletList",
-            bullets: [
-                {
-                    boldLead: "Consistency is Key:",
-                    body: "Maintain consistent use of button variants..."
-                },
-                {
-                    boldLead: "Accessibility Matters:",
-                    body: "Regularly check color contrast and ensure accessible labeling..."
-                },
-                {
-                    boldLead: "Test Responsively:",
-                    body: "Utilize the mobile viewport preview to guarantee..."
-                }
-            ]
-        },
-        { type: "spacing", height: 48 },
-        { type: "hr" },
-        { type: "spacing", height: 48 },
-        { type: "h2", content: "Anatomy" },
-        {
-            type: "p",
-            content:
-                "Button anatomy is essential for effective interface design. Each element—icons, text labels, and background colors—enhances usability and appeal. This section provides insights into their roles and best practices.",
-        },
-        { type: "spacing", height: 16 },
-        { type: "img", src: "img-button-anatomy-desktop-light-001.svg" },
-        { type: "spacing", height: 16 },
-        { type: "pBold", content: "1. Icons" },
-        {
-            type: "p",
-            content:
-                "Icons serve as visual cues that support the text label, offering a quicker recognition of the action the button performs. They can be placed either before (leading) or after (trailing) the text to enhance the button's message. When using icons:",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "bulletList",
-            bullets: [
-                {
-                    boldLead: "Size:",
-                    body: "Icons are standardized to ensure clear visibility without overpowering the label."
-                },
-                {
-                    boldLead: "Spacing:",
-                    body: "A set space is provided between the icon and label to prevent visual clutter, keeping focus on the button's messages."
-                },
-                {
-                    boldLead: "Placement margins:",
-                    body: "Icons include preset margins within the button to maintain a balanced, touch-friendly area."
-                }
-            ]
-        },
-        { type: "spacing", height: 24 },
-        { type: "pBold", content: "2. Text Label" },
-        {
-            type: "p",
-            content:
-                "The text label provides a direct indication of what action will be performed when the button is clicked. Effective text labels are key to usability:",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "bulletList",
-            bullets: [
-                {
-                    boldLead: "Font Family:",
-                    body: "The font is specified according to the selected brand, ensuring consistency with the brand's design language."
-                },
-                {
-                    boldLead: "Weight:",
-                    body: "Labels are set in bold for prominence and readability, complementing other interface elements."
-                },
-                {
-                    boldLead: "Size:",
-                    body: "The font size is preset based on the selected button size and accessibility requirements to ensure readability across all styles."
-},
-                {
-                    boldLead: "Accessibility:",
-                    body: "Text and background colors are carefully selected to meet AAA contrast requirements, ensuring optimal readability and accessibility for all users.."
-                }
-            ]
-        },
-        { type: "spacing", height: 24 },
-        { type: "pBold", content: "3. Container" },
-        {
-            type: "p",
-            content:
-                "The button's container and corner radius are essential in distinguishing it from other interface elements and influencing user perception. Design considerations include:"
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "bulletList",
-            bullets: [
-                {
-                    boldLead: "Color:",
-                    body: "Button background colors are preset based on the selected brand, ensuring readability and accessibility while reflecting each button’s role within the color scheme."
-                },
-                {
-                    boldLead: "Corner Radius:",
-                    body: "The button style applies a brand-specific corner radius that aligns with each brand’s design language and overall system cohesion."
-                },
-                {
-                    boldLead: "Spacing:",
-                    body: "Button margins are preset to enhance visual balance and usability, ensuring sufficient clickability for all users.."
-                }
-            ]
-        },
-        { type: "spacing", height: 48 },
-        { type: "hr" },
-        { type: "spacing", height: 48 },
-        { type: "h2", content: "Options" },
-        {
-            type: "p",
-            content:
-                "In the pursuit of providing a flexible and cohesive user interface, our design system categorizes buttons into three distinct types based on their appearance and intended use: Primary, Secondary, and Tertiary.",
-        },
-        { type: "spacing", height: 72 },
-        {
-            type: "appearanceSection",
-            // an array of block objects for the 5 appearances
-            appearanceData: [
-                {
-                    imageSrc: "img-button-options-desktop-light-001.svg",
-                    heading: "Primary",
-                    description: "For the principal call to action on the page. Primary buttons should only appear once per screen."
-                },
-                {
-                    imageSrc: "img-button-options-desktop-light-002.svg",
-                    heading: "Secondary",
-                    description: "Utilize the secondary button to offer alternatives to the main action, or in situations where all actions hold equal importance."
-                },
-                {
-                    imageSrc: "img-button-options-desktop-light-003.svg",
-                    heading: "Tertiary / White",
-                    description: "Employ the tertiary button for actions of lesser importance that offer convenience."
-                },
-                {
-                    imageSrc: "img-button-options-desktop-light-004.svg",
-                    heading: "Ghost",
-                    description: "Use the ghost button for secondary actions on colored backgrounds."
-                },
-                {
-                    imageSrc: "img-button-options-desktop-light-004b.svg",
-                    heading: "Two Line",
-                    description: "A two-line button enables quick input changes with distinct actions."
-                }
-            ]
-        },
-        { type: "spacing", height: 28 },
-        {
-            type: "statesSection",
-            heading: "Button States",
-            introParagraph:
-                "Defining the visual and interactive variations of buttons, encompassing default, hover, focus, press, and disabled states to ensure consistent and intuitive user experiences.",
-            leftImages: [
-                "img-button-options-desktop-light-005.svg",
-                "img-button-options-desktop-light-006.svg",
-                "img-button-options-desktop-light-007.svg",
-                "img-button-options-desktop-light-008.svg",
-                "img-button-options-desktop-light-009.svg"
-            ],
-            rightStates: [
-                {
-                    boldTitle: "Default",
-                    paragraph:
-                        "The default state presents distinct features for each button type, improving visibility and helping users recognize them as interactive elements."
-                },
-                {
-                    boldTitle: "Hover",
-                    paragraph:
-                        "The hover state activates when the cursor is over the button, providing visual feedback that it is clickable."
-                },
-                {
-                    boldTitle: "Focus",
-                    paragraph:
-                        "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable."
-                },
-                {
-                    boldTitle: "Press",
-                    paragraph:
-                        "The focus state activates when the button receives focus, providing a visual cue to indicate it is selectable."
-                },
-                {
-                    boldTitle: "Disabled",
-                    paragraph:
-                        "The disabled state indicates when an action is unavailable. Buttons appear faded, showing no response to hover or click interactions."
-                }
-            ]
-        },
-        {
-            type: "sizeSection",
-            heading: "Size",
-            introParagraph: "Understanding the appropriate usage of button sizes within an interface is crucial for maintaining hierarchy, ensuring accessibility, and enhancing user experience. Our design system provides four distinct sizes for buttons: Large, Medium, Small, and Extra Small.",
-            imageSrc: "img-button-options-desktop-light-010.svg",
-            italicParagraph: "Each size is designed to accommodate different screen sizes, contexts, and user needs, ensuring a versatile and adaptable component library.",
-            tableHead: ["Size", "Description", ""],
-            tableRows: [
-                {
-                    size: "Large",
-                    description: "Large buttons are designed for high-priority actions that require prominence." +
-                        "",
-                    metrics: "Height: 44px\nFont Size: 14px\nInternal Padding: 48px"
-                },
-                {
-                    size: "Small",
-                    description: "Small buttons are used when space is limited / actions that are less prioritized.",
-                    metrics: "Height: 30px\nFont Size: 12px\nInternal Padding: 30px"
-                }
-            ]
-        },
-        {
-            type: "iconSection",
-            heading: "Icon",
-            introParagraph:
-                "Icons in buttons enhance intuitiveness and appeal. Our design system allows leading and trailing icons, used independently for flexibility or together for richer interactions.",
-            leftImageSrc: "img-button-options-desktop-light-011.svg",
-            leftBoldTitle: "Leading Icon",
-            leftParagraph:
-                "Leading icons are positioned before the text label in a button, effectively highlighting its purpose and aiding quick recognition.",
-            rightImageSrc: "img-button-options-desktop-light-012.svg",
-            rightBoldTitle: "External Link / Trailing Icon",
-            rightParagraph:
-                "Trailing icons appear after the text label to denote an external link only"
-        },
-        { type: "pBold", content: "Implementation Considerations" },
-        {
-            type: "p",
-            content:
-                "By thoughtfully integrating icons into buttons, designers can leverage visual cues to enhance user understanding and engagement, enriching the user experience while maintaining a clean and coherent interface design.",
-        },
-        { type: "spacing", height: 16 },
-        {
-            type: "bulletList",
-            bullets: [
-                {
-                    boldLead: "Consistency:",
-                    body: "Use icons consistently across similar buttons to establish a recognizable pattern for users."
-                },
-                {
-                    boldLead: "Accessibility:",
-                    body: "Provide alternative text descriptions for icons to ensure that their purpose is communicated to users relying on screen readers."
-                },
-                {
-                    boldLead: "Visual Balance:",
-                    body: "Whether using leading, trailing, or combined icons, maintain a harmonious visual balance within the button to ensure that the text and icons are easily distinguishable and aesthetically pleasing."
-                }
-            ]
-        },
-        { type: "spacing", height: 48 },
-        { type: "hr" },
-        { type: "spacing", height: 48 },
-        {
-            type: "metricsSection",
-            heading: "Metrics",
-            introParagraph:
-                "Metrics are vital for ensuring consistency, usability, and visual harmony in user interfaces." +
-                "They define dimensions and spacing guidelines, including height, width, padding, and font size." +
-                "Adhering to these guidelines ensures elements are aesthetically pleasing accessible, and functional across devices, creating a cohesive user experience.",
-            row1Left: {
-                imageSrc: "img-button-metrics-desktop-light-001.svg",
-                boldTitle: "Large Button",
-                description: "Large buttons are designed for primary actions requiring prominence and ease of interaction, especially on larger touch targets.",
-                topSpacing: 24,  // space before bullet list
-                bulletList: [
-                    "Height: 45px",
-                    "Width: Minimum 130px",
-                    "Padding: 48px ↔; 11.5px ↕",
-                    "Font Size: 14px"
-                ],
-                postBulletParagraph: "Large buttons are best used for key actions such as primary call-to-actions on landing pages, forms and modal dialogs."
-            },
-            row1Right: {
-                imageSrc: "img-button-metrics-desktop-light-002.svg",
-                boldTitle: "Small Button",
-                description: "Small buttons are utilized for actions that are secondary or when space is limited, fitting neatly into compact areas.",
-                topSpacing: 16,
-                bulletList: [
-                    "Height: 30px",
-                    "Width: Minimum 80px",
-                    "Padding: 30px ↔; 8px ↕",
-                    "Font Size: 14px"
-                ],
-                postBulletParagraph: "Use small buttons for actions within lists, toolbars, or as secondary actions."
-            },
-            row2Left: {
-                imageSrc: "img-button-metrics-desktop-light-003.svg",
-                boldTitle: "Large Button With Icon",
-                description: "Large buttons with icons are designed for primary actions requiring prominence and ease of interaction.",
-                topSpacing: 16,
-                bulletList: [
-                    "Padding: 48px ↔; 12px ↕",
-                    "Icon Size: 20x20px, 8px spacing from text"
-                ]
-            },
-            row2Right: {
-                imageSrc: "img-button-metrics-desktop-light-004.svg",
-                boldTitle: "Small Button With Icon",
-                description: "Small buttons with icons are ideal for secondary actions or when space is limited, providing a compact solution.",
-                topSpacing: 16,
-                bulletList: [
-                    "Padding: 30px ↔; 8px ↕",
-                    "Icon Size: 16x16px, 4px spacing from text"
-                ],
-            }
-        },
-        { type: "hr" },
-        { type: "spacing", height: 48 },
-        {
-            type: "bestPracticesSection",
-            heading: "Best Practices",
-            introParagraph:
-                "Ensuring that buttons are effective in guiding user actions requires attention to detail in both desgin and implementation. Below are paired \"Do\" and \"Don't\" best practices, each addressing a specific aspect of button usage to help illustrate optimal and suboptimal practices.",
-            doItems: [
-                {
-                    title: "Use Clear and Concise Labeling",
-                    color: "#007032",
-                    symbol: "✓",
-                    paragraph: "Do use actionable, precise language that clearly describes the button's function.",
-                    imageSrc: "img-button-best-practices-desktop-light-001.svg"
-                },
-                {
-                    title: "Maintain Hierarchical Consistency",
-                    color: "#007032",
-                    symbol: "✓",
-                    paragraph: "Do use button variants for visual hierarchies, reserve primary buttons for main actions.",
-                    imageSrc: "img-button-best-practices-desktop-light-003.svg"
-                },
-                {
-                    title: "Ensure Accessibility",
-                    color: "#007032",
-                    symbol: "✓",
-                    paragraph: "Do design with adequate contrast and accessible labels, employing ARIA attributes where needed.",
-                    imageSrc: "img-button-best-practices-desktop-light-005.svg"
-                }
-            ],
-            dontItems: [
-                {
-                    title: "Avoid Using Vague or Long Labeling",
-                    color: "#BF1722",
-                    symbol: "✗",
-                    paragraph: "Don't use ambiguous terms or lengthy descriptions that confuse users.",
-                    imageSrc: "img-button-best-practices-desktop-light-002.svg"
-                },
-                {
-                    title: "Avoid Multiple Primary Buttons",
-                    color: "#BF1722",
-                    symbol: "✗",
-                    paragraph: "Don't clutter your interface with multiple primary buttons that dilute focus.",
-                    imageSrc: "img-button-best-practices-desktop-light-004.svg"
-                },
-                {
-                    title: "Avoid Unexplained Disabled Buttons",
-                    color: "#BF1722",
-                    symbol: "✗",
-                    paragraph: "Don't use disabled buttons without explanation, this leads to user confusion.",
-                    imageSrc: "img-button-best-practices-desktop-light-006.svg"
-                }
-            ]
-        },
-        { type: "spacing", height: 48 },
-        { type: "hr" },
-        { type: "spacing", height: 72 },
-        { type: "gettingHelpInternal" },
-        { type: "spacing", height: 92 },
-    ];
-}
