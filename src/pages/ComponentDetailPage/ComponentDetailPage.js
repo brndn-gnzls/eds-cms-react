@@ -192,6 +192,28 @@ const GET_COMPONENT_DETAIL = gql`
                             postBulletParagraph
                         }
                     }
+                    ... on ComponentGridsBestPracticesSectionBlock {
+                        heading
+                        introParagraph
+                        doItems {
+                            bestPracticeItem {
+                                title
+                                color
+                                symbol
+                                paragraph
+                                imageSrc
+                            }
+                        }
+                        dontItems {
+                            bestPracticeItem {
+                                title
+                                color
+                                symbol
+                                paragraph
+                                imageSrc
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -353,6 +375,20 @@ function transformMetricsRowArray(rowArr) {
         postBulletParagraph: row.postBulletParagraph || "",
     };
 }
+function transformBestPracticeItems(itemsArr) {
+    if (!itemsArr || itemsArr.length === 0) return [];
+
+    return itemsArr.flatMap((outer) => {
+        const arr = outer.bestPracticeItem || [];
+        return arr.map((bp) => ({
+            title: bp.title || "",
+            color: bp.color || "",
+            symbol: bp.symbol || "",
+            paragraph: bp.paragraph || "",
+            imageSrc: bp.imageSrc || "",
+        }));
+    });
+}
 
 // overview transform
 function transformOverviewBlocks(strapiBlocks = []) {
@@ -477,6 +513,15 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     row1Right: transformMetricsRowArray(block.row1Right),
                     row2Left: transformMetricsRowArray(block.row2Left),
                     row2Right: transformMetricsRowArray(block.row2Right),
+                };
+
+            case "ComponentGridsBestPracticesSectionBlock":
+                return {
+                    type: "bestPracticesSection",
+                    heading: block.heading || "",
+                    introParagraph: block.introParagraph || "",
+                    doItems: transformBestPracticeItems(block.doItems),
+                    dontItems: transformBestPracticeItems(block.dontItems),
                 };
 
 
