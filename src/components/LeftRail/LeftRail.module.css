@@ -16,3 +16,9 @@
     margin-top: 32px;
     border-bottom: none;
 }
+
+@media (max-width: 768px) {
+    .leftRailWrapper {
+        display: none;
+    }
+}

@@ -127,3 +127,9 @@
     justify-content: center;
     margin-right: 8px;
 }
+
+@media (max-width: 768px) {
+    .tabContent {margin-left:0;}
+    .banner {margin-left:0; padding: 48px 68px 0 30px; }
+    .tabBar {margin-left:0; padding: 0 32px 0 32px;}
+}

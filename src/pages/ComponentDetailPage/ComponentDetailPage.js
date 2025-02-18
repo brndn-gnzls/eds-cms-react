@@ -272,6 +272,15 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                     insert: block.insert || null,
                 };
 
+            case "ComponentBulletListBlockBulletListBlock":
+                return {
+                    type: "bulletList",
+                    bullets: (block.items || []).map((item) => ({
+                        boldLead: item.boldLead || "",
+                        body: item.body || "",
+                    })),
+                };
+
             default:
                 return {
                     type: "unknown",
@@ -438,14 +447,6 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     insert: block.insert || null,
                 };
 
-            case "ComponentBulletListBlocksBulletListBlock":
-                return {
-                    type: "bulletList",
-                    bullets: (block.items || []).map((item) => ({
-                        boldLead: item.boldLead || "",
-                        body: item.body || "",
-                    })),
-                };
 
             case "ComponentBulletListBlockBulletListBlock":
                 return {

@@ -2,6 +2,7 @@
     font-size: 1rem;
     line-height: 1.5rem;
     color: #000; /* normal text color */
+    padding: 0 0 192px 0px;
 }
 
 .helpList {
@@ -51,3 +52,12 @@
     padding-bottom: 14px;
 }
 
+
+@media (max-width: 768px) {
+    .gettingHelpWrapper {
+        padding-left: 0px;
+    }
+    .gettingHelpWrapper {
+        padding: 0;
+    }
+}

@@ -155,3 +155,55 @@
     color: #333;
     margin: 8px 0;
 }
+
+/* src/components/GlobalNav/GlobalNav.module.css */
+
+/* Existing styles omitted for brevity... add below: */
+
+/* The hamburger container (3 bars).
+   We'll hide it on desktop with a media query if you want. */
+@media (max-width: 768px) {
+    .hamburger {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        cursor: pointer;
+        margin-left: 16px; /* space between brand switcher and hamburger */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* The 3 bars themselves */
+    .hamburger span {
+        display: block;
+        height: 2px;
+        background: #000;
+        transition: 0.3s ease;
+    }
+
+    /* We'll place them with some spacing */
+    .hamburger span:nth-child(1) {
+        width: 24px;
+    }
+
+    .hamburger span:nth-child(2) {
+        width: 20px;
+    }
+
+    .hamburger span:nth-child(3) {
+        width: 24px;
+    }
+
+    /* Media query to hide pinned left rail if needed:
+       We'll do it in .leftRailWrapper if you want.
+       Or in your global stylesheet: */
+        .leftRailWrapper {
+            display: none;
+        }
+
+    .iconLink {display: none;}
+    .toggleBtn{display: none;}
+    .pipe{display: none;}
+}

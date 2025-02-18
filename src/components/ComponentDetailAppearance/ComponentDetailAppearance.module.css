@@ -43,12 +43,6 @@ h4 {
     gap: 27px;
 }
 
-/* Stacks on small screens */
-@media (max-width: 766px) {
-    .appearanceGrid {
-        grid-template-columns: 0fr;
-    }
-}
 
 .appearanceBlock {
     /* A simple container for each block; adjust as needed. */
@@ -61,4 +55,14 @@ h4 {
     height: 95px;
     object-fit: contain;
     /* or you can rely on brand images being exactly 311x96 */
+}
+
+/* Stacks on small screens */
+@media (max-width: 766px) {
+    .appearanceGrid {
+    }
+
+    .appearanceImage {
+        width: 100%;
+    }
 }

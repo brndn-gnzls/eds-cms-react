@@ -1,4 +1,3 @@
-// src/components/LeftRail/LeftRail.js
 
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
@@ -6,7 +5,6 @@ import { useLocation } from "react-router-dom";
 import Accordion from "../Accordion/Accordion";
 import styles from "./LeftRail.module.css";
 
-/** Strapi query for leftRailAccordions */
 const GET_LEFT_RAIL_ACCORDIONS = gql`
     query LeftRailAccordions {
         leftRailAccordions {

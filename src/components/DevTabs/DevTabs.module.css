@@ -158,3 +158,21 @@ h4 {
     color: #000;
     font-weight: bold;
 }
+
+/* Stacks on small screens */
+@media (max-width: 766px) {
+    .tabContent {
+        margin-left: 0;
+        padding: 62px 0px 24px;
+    }
+    .banner {
+        margin-left: 0;
+        padding: 14px 0px 0px 14px;
+        width: 100%;
+    }
+    .tabBar {
+        margin-left: 0;
+        padding: 0;
+    }
+}
+
