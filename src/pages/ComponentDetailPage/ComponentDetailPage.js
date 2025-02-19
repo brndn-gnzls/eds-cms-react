@@ -1,18 +1,22 @@
 
 import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
+import {useParams} from "react-router-dom";
 
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
-
 const GET_COMPONENT_DETAIL = gql`
-    query GetComponentDetail {
+    query GetComponentDetailPages {
         componentDetailPages_connection {
             nodes {
                 slug
+                # (Optional) If you have these fields in Strapi, uncomment:
+                # bannerHeading
+                # bannerBody
+
                 Usage {
                     __typename
                     ... on ComponentHeadingBlocksHeadingBlock {
@@ -534,47 +538,50 @@ function transformOverviewBlocks(strapiBlocks = []) {
         }
     });
 }
-
 const ComponentDetailPage = () => {
-    const [currentBrand, setCurrentBrand] = useState("Anthem");
-    const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL);
+    // 1) read param => e.g. "button", "checkbox", etc.
+    const { slug } = useParams();
 
-    const bannerHeading = "Button";
-    const bannerBody =
-        "Buttons initiate actions, with their labels clearly indicating what will happen when interacted with by users, ensuring an intuitive user experience.";
-
-    if (loading) return <p>Loading detail page...</p>;
-    if (error) return <p>Error: {error.message}</p>;
-
-    const detailNodes = data?.componentDetailPages_connection?.nodes || [];
-    const detailEntry = detailNodes.find((node) => node.slug === "button");
-
-    if (!detailEntry) {
-        return <p>No component detail found for “button”.</p>;
+    function capitalizeFirst(str) {
+        if (!str) return "";
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
-    const rawUsageBlocks = detailEntry.Usage || [];
-    const dynamicUsageBlocks = transformUsageBlocks(rawUsageBlocks);
+    const [currentBrand, setCurrentBrand] = useState("Anthem");
 
-    const rawAccessibilityBlocks = detailEntry.Accessibility || [];
-    const dynamicAccessibilityBlocks = transformAccessibilityBlocks(rawAccessibilityBlocks);
+    // 2) fetch all detail pages
+    const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL);
 
-    const rawOverviewBlocks = detailEntry.Overview || [];
-    const dynamicOverviewBlocks = transformOverviewBlocks(rawOverviewBlocks);
+    if (loading) return <p>Loading detail page for {slug}...</p>;
+    if (error) return <p>Error: {error.message}</p>;
 
+    // 3) find the correct node
+    const detailNodes = data?.componentDetailPages_connection?.nodes || [];
+    const detailEntry = detailNodes.find((node) => node.slug === slug);
+
+    if (!detailEntry) {
+        return <p>No component detail found for “{slug}” in Strapi.</p>;
+    }
+
+    // 4) build banner text, either from Strapi fields or fallback to slug
+    const bannerHeading =
+        detailEntry.bannerHeading ||
+        capitalizeFirst(slug);
+
+    const bannerBody =
+        detailEntry.bannerBody ||
+        `Detailed documentation for the “${slug}” component, featuring overview, usage, and accessibility best practices.`;
+
+    // 5) transform blocks from strapi
+    const usageBlocks = transformUsageBlocks(detailEntry.Usage || []);
+    const accessibilityBlocks = transformAccessibilityBlocks(detailEntry.Accessibility || []);
+    const overviewBlocks = transformOverviewBlocks(detailEntry.Overview || []);
+
+    // 6) tabs => Overview, Usage, Accessibility
     const tabsData = [
-        {
-            label: "Overview",
-            blocks: dynamicOverviewBlocks,
-        },
-        {
-            label: "Usage",
-            blocks: dynamicUsageBlocks,
-        },
-        {
-            label: "Accessibility",
-            blocks: dynamicAccessibilityBlocks,
-        },
+        { label: "Overview", blocks: overviewBlocks },
+        { label: "Usage", blocks: usageBlocks },
+        { label: "Accessibility", blocks: accessibilityBlocks },
     ];
 
     return (
@@ -587,6 +594,7 @@ const ComponentDetailPage = () => {
 
             <div className="container mx-auto min-h-screen relative">
                 <LeftRail />
+
                 <div className={styles.rightSide}>
                     <ComponentTabs
                         currentBrand={currentBrand}

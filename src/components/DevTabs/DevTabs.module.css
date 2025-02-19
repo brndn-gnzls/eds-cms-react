@@ -160,7 +160,7 @@ h4 {
 }
 
 /* Stacks on small screens */
-@media (max-width: 766px) {
+@media (max-width: 786px) {
     .tabContent {
         margin-left: 0;
         padding: 62px 0px 24px;

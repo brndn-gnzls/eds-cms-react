@@ -1,3 +1,5 @@
+/* src/components/GettingStartedPath/GettingStartedPath.module.css */
+
 .pathWrapper {
     display: flex;
     align-items: center;
@@ -43,19 +45,21 @@
     line-height: 1.5rem;
 }
 
+/* The caret column => right arrow */
 .caretCol {
     margin-left: 34px;
     display: flex;
     align-items: center;
 }
 
+/* Replacing the "˃" char with a CSS arrow pointing right */
 .caret {
-    font-size: 1.2rem;
-    font-weight: bold;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform: rotate(-45deg);
     user-select: none;
-    transform: rotate(0deg);
-}
-
-.postBannerSpace {
-    padding-left: 396px;
+    /* optional: add a transition if you want a hover effect */
 }

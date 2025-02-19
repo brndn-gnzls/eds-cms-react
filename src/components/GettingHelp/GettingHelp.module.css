@@ -54,3 +54,10 @@
 .gettingHelpWrapper {
     padding-left: 366px!important;
 }
+@media (max-width: 786px) {
+    .gettingHelpWrapper{
+        padding-left: 0!important;
+        margin-bottom: 112px;
+    }
+}
+

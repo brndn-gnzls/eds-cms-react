@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 import styles from "./GlobalNav.module.css";
 import MobileDrawer from "../MobileDrawer/MobileDrawer";
 
-// This is the brand switcher logic from your code
 const BRAND_ICONS = {
     Anthem: "/images/brandSwitcher/anthem-global-img-brand.svg",
     "Healthy Blue": "/images/brandSwitcher/healthyblue-global-img-brand.svg",
@@ -20,31 +19,27 @@ const GlobalNav = ({
     const [isLight, setIsLight] = useState(true);
     const handleToggle = () => setIsLight(!isLight);
 
-    // NEW: track mobile drawer state
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-    // Existing icons
+    // Check route => use conditional logo
+    const location = useLocation();
+    const logoText =
+        location.pathname === "/" ? "Enterprise Digital Design System" : "eDS";
+
     const githubIcon = "/images/globalNav/github.svg";
     const figmaIcon = "/images/globalNav/figma.svg";
     const lightIcon = "/images/globalNav/light.svg";
     const darkIcon = "/images/globalNav/dark.svg";
 
-    // We'll show the brand switcher if `showBrandSwitcher` is true
-    // On mobile, brand switcher is to the left of the hamburger with 16px gap
-
-    // For the hamburger → X animation, we add a CSS class if isDrawerOpen is true
-    // We'll animate using transforms in CSS.
-
     return (
         <>
             <header className={styles.navWrapper}>
                 <div className={`container ${styles.navInner}`}>
-                    {/* Left side: eDS Logo */}
+                    {/* Left side => conditional logo */}
                     <div className={styles.navLeft}>
-                        <span className={styles.brandTitle}>eDS</span>
+                        <span className={styles.brandTitle}>{logoText}</span>
                     </div>
 
-                    {/* Right side: brand switcher + icons + pipe + toggle */}
                     <div className={styles.navRight}>
                         {showBrandSwitcher && (
                             <BrandSwitcherDropdown
@@ -53,21 +48,18 @@ const GlobalNav = ({
                             />
                         )}
 
-                        {/* Only show hamburger below 768px in CSS (or keep it always, but it won't do anything on desktop) */}
+                        {/* Hamburger => triggers mobile drawer */}
                         <div
                             className={`${styles.hamburger} ${
                                 isDrawerOpen ? styles.open : ""
                             }`}
                             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                         >
-                            {/* 3 bars, or animate to X */}
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
 
-                        {/* The existing icons remain for desktop, also appear on mobile pinned in the bottom of the drawer.
-                But we can keep them here if we want them in top nav on desktop. */}
                         <a href="https://github.com/" className={styles.iconLink}>
                             <img src={githubIcon} alt="GitHub" />
                         </a>
@@ -86,7 +78,7 @@ const GlobalNav = ({
                 </div>
             </header>
 
-            {/* Mobile Drawer (slides from right) */}
+            {/* Mobile Drawer */}
             <MobileDrawer
                 isOpen={isDrawerOpen}
                 onClose={() => setIsDrawerOpen(false)}
@@ -95,7 +87,6 @@ const GlobalNav = ({
                 figmaIcon={figmaIcon}
                 lightIcon={lightIcon}
                 darkIcon={darkIcon}
-                // optional brand state or anything else
             />
         </>
     );
@@ -104,7 +95,7 @@ const GlobalNav = ({
 export default GlobalNav;
 
 /**
- * Brand switcher purely visual:
+ * Brand switcher purely visual, but now we do a CSS caret
  */
 const BrandSwitcherDropdown = ({ currentBrand, onBrandChange }) => {
     const [open, setOpen] = useState(false);
@@ -120,7 +111,13 @@ const BrandSwitcherDropdown = ({ currentBrand, onBrandChange }) => {
                     alt={currentBrand}
                     className={styles.brandButtonIcon}
                 />
-                {currentBrand} {open ? "˄" : "˅"}
+                {currentBrand}
+                {/* The CSS-based chevron icon, pointing down or up */}
+                <span
+                    className={`${styles.chevronIcon} ${
+                        open ? styles.chevronUp : styles.chevronDown
+                    }`}
+                ></span>
             </button>
 
             {open && (
