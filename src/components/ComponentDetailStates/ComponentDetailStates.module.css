@@ -27,7 +27,6 @@
 /* On small screens, stack them. */
 @media (max-width: 767px) {
     .statesGrid {
-        grid-template-columns: 1fr;
     }
 }
 

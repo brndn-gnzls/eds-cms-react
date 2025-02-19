@@ -5,6 +5,8 @@
     background-color: #fff;
     padding-left: 300px; /* if your left rail is pinned at width=300 */
     box-sizing: border-box;
+    margin-top: 64px;
+    margin-left: 64px;
 }
 
 /* Headings & paragraphs for the overview section */
@@ -101,4 +103,12 @@ h4 {
 
 .util-bg-footer {
     background-color: #FAFAFA;
+}
+
+
+@media (max-width: 768px) {
+    .rightSide{
+        padding-left: 0px;
+        margin-left: 0px;
+    }
 }

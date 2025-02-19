@@ -51,3 +51,10 @@
     height: auto;
     object-fit: contain;
 }
+
+/* Stacks on small screens */
+@media (max-width: 766px) {
+    .metricsImage {
+        width: 100%;
+    }
+}

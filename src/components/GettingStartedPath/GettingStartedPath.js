@@ -1,7 +1,7 @@
 // src/components/GettingStartedPath/GettingStartedPath.js
 
 import React from "react";
-import { Link } from "react-router-dom"; // or remove if using <a>
+import { Link } from "react-router-dom"; // remove if you prefer <a> for external
 import styles from "./GettingStartedPath.module.css";
 
 const GettingStartedPath = ({ icon, heading, body, link }) => {
@@ -17,7 +17,11 @@ const GettingStartedPath = ({ icon, heading, body, link }) => {
             </div>
 
             <div className={styles.caretCol}>
-                <span className={styles.caret}>˃</span>
+                {/*
+          Instead of "˃", we now show a CSS-based arrow.
+          No text, just a <span> with our .caret styles.
+        */}
+                <span className={styles.caret}></span>
             </div>
         </Link>
     );

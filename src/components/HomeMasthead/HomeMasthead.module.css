@@ -18,6 +18,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    user-select: none;
 }
 
 .gradientColor {
@@ -44,12 +45,12 @@
 }
 
 .gradientColor:nth-of-type(1) {
-    background-color: #2b1c49;
+    background-color: #286ce2;
     animation-direction: backwards;
 }
 
 .gradientColor:nth-of-type(2) {
-    background-color: #794cfe;
+    background-color: #00739a;
 }
 
 .gradientColor:nth-of-type(3) {
@@ -58,7 +59,7 @@
 }
 
 .gradientColor:nth-of-type(4) {
-    background-color: #794cfe;
+    background-color: #286ce2;
 }
 
 .gradientBackdrop {
@@ -124,7 +125,7 @@
 /* -------------------------
    SMALL SCREENS (<768px)
    ------------------------- */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
     .mastheadContent {
         padding: 0 20px;
@@ -150,5 +151,9 @@
     .ctaButtons button + button {
         margin-left: 0;
         margin-top: 12px;
+    }
+
+    .getStartedBtn {
+        margin: 0 0 22px 0;
     }
 }

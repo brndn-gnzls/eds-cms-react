@@ -106,8 +106,7 @@ const ComponentCatalogPage = () => {
                 <LeftRail />
 
                 <div className={styles.rightSide}>
-                    {/* 92px top margin => user changed to "64px" + "marginLeft: 64px" in your final code */}
-                    <div style={{ marginTop: "64px", marginLeft: "64px" }}>
+                    <div>
                         {/* Masthead data => headline + body */}
                         <h1 style={{ paddingBottom: "16px" }}>
                             {mastheadData?.headline || "Overview"}
@@ -155,7 +154,7 @@ const ComponentCatalogPage = () => {
                     </div>
 
                     {/* Additional content under the grid => 64px padding left, 192px bottom */}
-                    <div style={{ paddingLeft: "64px", paddingBottom: "192px" }}>
+                    <div>
                         <GettingHelpInternal />
                     </div>
                 </div>

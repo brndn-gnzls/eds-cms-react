@@ -65,3 +65,16 @@ h4 {
     padding-bottom: 32px;
 }
 
+
+
+/* Stacks on small screens */
+@media (max-width: 786px) {
+    .banner {
+        margin-left: 0;
+        padding: 14px 14px 0px 14px;
+        width: 100%;
+    }
+    .introText {margin-left: 0;}
+    .contentArea {margin-left: 0;}
+}
+

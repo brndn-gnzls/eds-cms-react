@@ -1,3 +1,5 @@
+/* src/components/Accordion/Accordion.module.css */
+
 .accordionWrapper {
     padding: 0px 36px 16px 0;
     border-bottom: 1px solid #EEEEEE;
@@ -21,16 +23,9 @@
     font-weight: 700;
 }
 
-.caret {
-    margin-left: auto;
-    font-weight: 700;
-    display: inline-block;
-    transform-origin: center;
-    transition: transform 0.3s ease;
-    font-size: 1.2rem;
-    user-select: none;         /* prevents caret from being text-selected */
-}
+/* Old .caret usage removed, replaced by the new .caretIcon classes below */
 
+/* Our links container when open */
 .linksContainer {
     display: flex;
     flex-direction: column;
@@ -56,4 +51,27 @@
 
 .activeLink {
     background-color: #EEEEEE;
+}
+
+/* NEW CARET ICONS ------------------------------------------ */
+.caretIcon {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: auto; /* push caret to the far right */
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+/* We want the arrow to point RIGHT by default => rotate(-45deg) */
+.caretRight {
+    transform: rotate(-45deg);
+}
+
+/* When open => arrow points DOWN => rotate(45deg) */
+.caretDown {
+    transform: rotate(45deg);
 }

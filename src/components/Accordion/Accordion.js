@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 import styles from "./Accordion.module.css";
 
 const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
-    // If defaultOpen is true, we start isOpen as true.
+    // If defaultOpen is true, we start isOpen as true
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
-    // If you want the accordion to auto-update open/closed
-    // if the route changes, you can watch defaultOpen in a useEffect:
+    // If we want to auto-update open/closed when route changes, watch defaultOpen
     useEffect(() => {
         setIsOpen(defaultOpen);
     }, [defaultOpen]);
@@ -20,19 +19,18 @@ const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
 
     return (
         <div className={styles.accordionWrapper}>
-            {/* Header row */}
+            {/* Header row => label + caret */}
             <div className={styles.headerRow} onClick={toggleAccordion}>
                 <p className={`${styles.headerLabel} ${isOpen ? styles.open : ""}`}>
                     {label}
                 </p>
+
+                {/* Caret: right arrow if closed, down arrow if open */}
                 <span
-                    className={styles.caret}
-                    style={{
-                        transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
-                    }}
-                >
-          ˃
-        </span>
+                    className={`${styles.caretIcon} ${
+                        isOpen ? styles.caretDown : styles.caretRight
+                    }`}
+                ></span>
             </div>
 
             {isOpen && (

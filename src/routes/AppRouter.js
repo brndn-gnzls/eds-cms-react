@@ -71,7 +71,7 @@ const AppRouter = () => {
                         </ProtectedRoute>
                     }
                     />
-                    <Route path="/component/button" element={
+                    <Route path="/component/:slug" element={
                         <ComponentDetailPage/>
                     }
                     />
