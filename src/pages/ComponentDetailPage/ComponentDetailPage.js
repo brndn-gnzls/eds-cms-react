@@ -218,13 +218,14 @@ const GET_COMPONENT_DETAIL = gql`
                             }
                         }
                     }
+                    ... on ComponentCustomBlocksStorybookModule {
+                        componentName
+                    }
                 }
             }
         }
     }
-`;
-
-/**
+`;/**
  * 2) Transform Helpers
  *    - If you want, you can combine them into one
  *      (since usage & accessibility block shapes are similar).
@@ -529,6 +530,11 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     dontItems: transformBestPracticeItems(block.dontItems),
                 };
 
+            case "ComponentCustomBlocksStorybookModule":
+                return {
+                    type: "storybookModule",
+                    componentName: block.componentName
+                };
 
             default:
                 return {
