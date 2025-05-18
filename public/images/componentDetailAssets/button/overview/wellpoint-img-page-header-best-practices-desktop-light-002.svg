@@ -1,0 +1,77 @@
+<svg width="312" height="200" viewBox="0 0 312 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_4940_122020)">
+<rect width="312" height="200" fill="#F7F7F7"/>
+<rect x="0.5" y="0.5" width="311" height="199" stroke="#EEEEEE"/>
+<g clip-path="url(#clip0_4940_122020)">
+<rect x="35" y="17" width="240" height="182" fill="white"/>
+<rect x="65.2129" y="100" width="123.574" height="3.47541" fill="black"/>
+<rect x="65.2129" y="106.949" width="32.1475" height="3.47541" fill="black"/>
+<rect x="65.2129" y="113.902" width="56.4753" height="3.47541" fill="black"/>
+<rect x="65.2129" y="128" width="123.574" height="3.47541" fill="black"/>
+<rect x="65.2129" y="134.949" width="32.1475" height="3.47541" fill="black"/>
+<rect x="65.2129" y="141.902" width="56.4753" height="3.47541" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.498 41H276V84.1582H35.498V41Z" fill="#286CE2"/>
+<mask id="mask0_4940_122020" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="35" y="41" width="241" height="44">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M35.498 41H276V84.1582H35.498V41Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_4940_122020)">
+<g opacity="0.398103">
+<g clip-path="url(#clip1_4940_122020)">
+<path opacity="0.8" d="M38.634 55.2798C13.4828 38.3151 6.84635 4.17343 23.8111 -20.9778L26.5687 -25.0662C43.5334 -50.2174 77.6751 -56.8539 102.826 -39.8892L134.398 -18.5938C159.549 -1.62914 166.186 32.5125 149.221 57.6637L146.463 61.7521C129.499 86.9033 95.3568 93.5398 70.2056 76.5751L38.634 55.2798Z" fill="url(#paint0_linear_4940_122020)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M105.996 -49.2841C89.0317 -24.1329 95.6682 10.0088 120.819 26.9735L147.184 44.7567C147.637 45.0625 148.094 45.3606 148.553 45.6511C166.457 30.4149 192.787 27.9807 213.488 41.0806C217.213 37.9108 220.573 34.187 223.442 29.9337C240.406 4.78252 233.77 -29.3592 208.619 -46.3239L182.254 -64.1071C157.103 -81.0718 122.961 -74.4353 105.996 -49.2841Z" fill="url(#paint1_linear_4940_122020)" style="mix-blend-mode:color"/>
+<path d="M153.421 133.057C128.27 116.092 121.633 81.9508 138.598 56.7996V56.7996C155.563 31.6484 189.705 25.0119 214.856 41.9766L241.22 59.7598C266.372 76.7245 273.008 110.866 256.043 136.017V136.017C239.079 161.169 204.937 167.805 179.786 150.84L153.421 133.057Z" fill="url(#paint2_linear_4940_122020)" style="mix-blend-mode:color"/>
+<path opacity="0.3" d="M216.503 103.819C191.352 86.8542 184.716 52.7125 201.68 27.5613V27.5613C218.645 2.41008 252.787 -4.22641 277.938 12.7383L304.302 30.5215C329.454 47.4862 336.09 81.6279 319.125 106.779V106.779C302.161 131.93 268.019 138.567 242.868 121.602L216.503 103.819Z" fill="url(#paint3_linear_4940_122020)"/>
+</g>
+</g>
+<rect x="54" y="52" width="27" height="5" fill="white"/>
+<rect x="88" y="52" width="12" height="5" fill="white"/>
+<rect x="102.5" y="52.5" width="11" height="4" stroke="white"/>
+<rect x="116.5" y="52.5" width="11" height="4" stroke="white"/>
+<rect x="130.5" y="52.5" width="11" height="4" stroke="white"/>
+<rect x="220.5" y="52.5" width="22" height="4" stroke="white"/>
+<rect x="54" y="63" width="189" height="10" fill="white"/>
+<rect x="54" y="63" width="27" height="10" fill="#2453A6"/>
+<mask id="path-24-inside-1_4940_122020" fill="white">
+<path d="M216 63H243V73H216V63Z"/>
+</mask>
+<path d="M217 73V63H215V73H217Z" fill="#939393" mask="url(#path-24-inside-1_4940_122020)"/>
+</g>
+<rect x="36" y="161" width="239" height="54" fill="#37475A"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_i_4940_122020" x="0" y="0" width="312" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.74902 0 0 0 0 0.0901961 0 0 0 0 0.133333 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_4940_122020"/>
+</filter>
+<linearGradient id="paint0_linear_4940_122020" x1="42.3918" y1="79.2224" x2="160.766" y2="43.0791" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.407698"/>
+<stop offset="0.580241" stop-color="white" stop-opacity="0.181857"/>
+<stop offset="1" stop-opacity="0.0898984"/>
+</linearGradient>
+<linearGradient id="paint1_linear_4940_122020" x1="260.79" y1="-14.7225" x2="160.743" y2="-89.666" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.0735358"/>
+<stop offset="0.581498" stop-color="#6B6B6B" stop-opacity="0.346154"/>
+<stop offset="1" stop-opacity="0.15"/>
+</linearGradient>
+<linearGradient id="paint2_linear_4940_122020" x1="190.782" y1="174.487" x2="288.927" y2="119.936" gradientUnits="userSpaceOnUse">
+<stop stop-color="white" stop-opacity="0.125819"/>
+<stop offset="1" stop-opacity="0.15"/>
+</linearGradient>
+<linearGradient id="paint3_linear_4940_122020" x1="181.872" y1="-75.419" x2="109.932" y2="47.675" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.13549"/>
+</linearGradient>
+<clipPath id="clip0_4940_122020">
+<rect width="240" height="198" fill="white" transform="translate(36 1)"/>
+</clipPath>
+<clipPath id="clip1_4940_122020">
+<rect width="357.317" height="183.866" fill="white" transform="translate(-6.93359 -19.6953)"/>
+</clipPath>
+</defs>
+</svg>

@@ -16,7 +16,7 @@ function ComponentDetailAppearance({ brandPrefix = "anthem-", blocks = [] }) {
                                 alt="appearance block"
                                 className={styles.appearanceImage}
                             />
-                            <div style={{ height: "16px" }} />
+                            <div style={{ height: "16px", marginBottom: "8px" }} />
                             <p style={{ fontWeight: "bold" }}>{block.heading}</p>
                             <p>{block.description}</p>
                         </div>

@@ -9,8 +9,8 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 const GET_COMPONENT_DETAIL = gql`
-    query GetComponentDetailPages {
-        componentDetailPages_connection {
+    query GetComponentDetailPages ($pagination: PaginationArg) {
+        componentDetailPages_connection(pagination: $pagination) {
             nodes {
                 slug
                 # (Optional) If you have these fields in Strapi, uncomment:
@@ -218,19 +218,42 @@ const GET_COMPONENT_DETAIL = gql`
                             }
                         }
                     }
-                    ... on ComponentCustomBlocksStorybookModule {
-                        componentName
-                    }
                 }
             }
         }
     }
-`;/**
+`;
+
+/**
  * 2) Transform Helpers
  *    - If you want, you can combine them into one
  *      (since usage & accessibility block shapes are similar).
  *    - We’ll keep separate for clarity.
  */
+
+// before your component…
+function capitalize(word = "") {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+/**
+ * Converts:
+ *   "bar-graph"        → "Bar Graph"
+ *   "slide-in-panel"   → "Slide-In Panel"
+ *   "foo-bar-baz-qux"  → "Foo-Bar Baz Qux"  (first hyphen kept, rest become spaces)
+ */
+function slugToTitle(slug = "") {
+    const parts = slug.split("-");
+    if (parts.length <= 2) {
+        // two words or fewer: just capitalize & join on space
+        return parts.map(capitalize).join(" ");
+    }
+    // more than two words: keep first hyphen, then spaces
+    const firstTwo = parts.slice(0, 2).map(capitalize).join("-");
+    const rest    = parts.slice(2).map(capitalize).join(" ");
+    return `${firstTwo} ${rest}`;
+}
+
 
 // Accessibility transform
 function transformAccessibilityBlocks(strapiBlocks = []) {
@@ -530,11 +553,6 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     dontItems: transformBestPracticeItems(block.dontItems),
                 };
 
-            case "ComponentCustomBlocksStorybookModule":
-                return {
-                    type: "storybookModule",
-                    componentName: block.componentName
-                };
 
             default:
                 return {
@@ -556,7 +574,14 @@ const ComponentDetailPage = () => {
     const [currentBrand, setCurrentBrand] = useState("Anthem");
 
     // 2) fetch all detail pages
-    const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL);
+    const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL, {
+        variables: {
+            pagination: {
+                page: 1,
+                pageSize: 100
+            }
+        }
+    });
 
     if (loading) return <p>Loading detail page for {slug}...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -572,7 +597,7 @@ const ComponentDetailPage = () => {
     // 4) build banner text, either from Strapi fields or fallback to slug
     const bannerHeading =
         detailEntry.bannerHeading ||
-        capitalizeFirst(slug);
+        slugToTitle(slug);
 
     const bannerBody =
         detailEntry.bannerBody ||

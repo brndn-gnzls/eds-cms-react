@@ -1,0 +1,22 @@
+<svg width="312" height="200" viewBox="0 0 312 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_4429_78410)">
+<rect width="312" height="200" fill="#F7F7F7"/>
+<rect x="0.5" y="0.5" width="311" height="199" stroke="#EEEEEE"/>
+<mask id="path-3-inside-1_4429_78410" fill="white">
+<path d="M72 52H240V148H72V52Z"/>
+</mask>
+<path d="M72 52H240V148H72V52Z" fill="white"/>
+<path d="M72 52V51H71V52H72ZM240 52H241V51H240V52ZM240 148V149H241V148H240ZM72 148H71V149H72V148ZM72 53H240V51H72V53ZM239 52V148H241V52H239ZM240 147H72V149H240V147ZM73 148V52H71V148H73Z" fill="#878787" mask="url(#path-3-inside-1_4429_78410)"/>
+</g>
+<defs>
+<filter id="filter0_i_4429_78410" x="0" y="0" width="312" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.74902 0 0 0 0 0.0901961 0 0 0 0 0.133333 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_4429_78410"/>
+</filter>
+</defs>
+</svg>

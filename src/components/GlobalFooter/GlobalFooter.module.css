@@ -26,14 +26,14 @@
 
 
 .columnHeader {
-    font-size: 1.125rem;
+    font-size: 16px;
     font-weight: bold;
     color: #000;
     margin-bottom: 8px; /* spacing below header text */
 }
 
 .columnBody {
-    font-size: 1rem;
+    font-size: 14px;
     color: #3d3d3d;
     line-height: 1.5;
 }

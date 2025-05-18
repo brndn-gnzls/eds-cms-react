@@ -27,7 +27,7 @@ const AppRouter = () => {
                     <Route path="/get-started/design" element={<GetStartedDesign />} />
                     <Route path="/get-started/develop" element={<GetStartedDevelop />} />
                     <Route path="/components" element={<ComponentCatalogPage />} />
-                    <Route path="/component/:slug" element={<ComponentDetailPage />} />
+                    <Route path="/components/:slug" element={<ComponentDetailPage />} />
                 </Routes>
             </Suspense>
         </Router>

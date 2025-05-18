@@ -7,6 +7,7 @@ import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelpInternal from "../../components/GettingHelpInteral/GettingHelpInternal";
 import styles from "./ComponentCatalogPage.module.css";
+import { Link } from "react-router-dom";
 
 // GraphQL queries as you specified
 const GET_CATALOG_INVENTORIES = gql`
@@ -16,6 +17,7 @@ const GET_CATALOG_INVENTORIES = gql`
             imageUrl
             title
             description
+            slug
         }
     }
 `;
@@ -94,6 +96,7 @@ const ComponentCatalogPage = () => {
         item.imageUrl.includes(brandPrefix)
     );
 
+
     return (
         <>
             <GlobalNav
@@ -134,11 +137,13 @@ const ComponentCatalogPage = () => {
                                 <div key={comp.documentId} className={styles.catalogItem}>
                                     {/* We'll do an <img> for brand image */}
                                     <div style={{ width: "200px", height: "126px" }}>
+                                        <Link to={`/components/${comp.slug}`}>
                                         <img
                                             src={comp.imageUrl}
                                             alt={comp.title}
                                             style={{ width: "100%", height: "100%", objectFit: "contain" }}
                                         />
+                                        </Link>
                                     </div>
                                     <p className={styles.itemName}>{comp.title}</p>
                                     <p className={styles.itemDesc}>

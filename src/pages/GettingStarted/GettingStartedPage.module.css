@@ -18,14 +18,14 @@
 }
 
 .banner h1 {
-    font-size: 2.5rem;
-    line-height: 2.85rem;
+    font-size: 40px;
+    line-height: 44px;
     margin-bottom: 16px;
 }
 
 .banner p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 16px;
+    line-height: 20px;
     margin: 0;
 }
 
@@ -44,9 +44,14 @@
     margin-bottom: 62px;
 }
 
+.introText p {
+    line-height: 18px;
+    line-height: 22px;
+}
+
 h2 {
-    font-size: 2.125rem;
-    line-height: 2.125rem;
+    font-size: 24px;
+    line-height: 28px;
     font-weight: bold;
     margin-bottom: 16px;
 }
@@ -57,7 +62,7 @@ h2 {
 /*}*/
 
 h4 {
-    font-size: 1.125rem;
+    font-size: 16px;
     font-weight: bold;
 }
 

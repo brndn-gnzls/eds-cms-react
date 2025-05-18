@@ -1,0 +1,32 @@
+<svg width="312" height="200" viewBox="0 0 312 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_4558_85137)">
+<rect width="312" height="200" fill="#F7F7F7"/>
+<rect x="0.5" y="0.5" width="311" height="199" stroke="#EEEEEE"/>
+<mask id="path-3-inside-1_4558_85137" fill="white">
+<path d="M46 80H116.667V120H46V80Z"/>
+</mask>
+<path d="M116.667 118H46V122H116.667V118Z" fill="#286CE2" mask="url(#path-3-inside-1_4558_85137)"/>
+<path d="M83.13 105H81.178V97.064L79.562 98.648L78.394 97.352L81.146 94.744H83.13V105Z" fill="#286CE2"/>
+<mask id="path-6-inside-2_4558_85137" fill="white">
+<path d="M120.666 80H191.333V120H120.666V80Z"/>
+</mask>
+<path d="M191.333 119H120.666V121H191.333V119Z" fill="#666666" mask="url(#path-6-inside-2_4558_85137)"/>
+<path d="M152.368 105V103.896L156.384 100.04C157.232 99.224 157.648 98.52 157.648 97.672C157.648 96.712 156.864 95.88 155.696 95.88C154.656 95.88 153.904 96.472 153.408 97.432L152.288 96.712C152.88 95.544 153.952 94.552 155.76 94.552C157.776 94.552 159.056 95.976 159.056 97.656C159.056 98.776 158.608 99.672 157.376 100.84L154.32 103.736H159.168V105H152.368Z" fill="#333333"/>
+<mask id="path-9-inside-3_4558_85137" fill="white">
+<path d="M195.334 80H266.001V120H195.334V80Z"/>
+</mask>
+<path d="M266.001 119H195.334V121H266.001V119Z" fill="#666666" mask="url(#path-9-inside-3_4558_85137)"/>
+<path d="M230.268 105.192C228.716 105.192 227.628 104.6 226.876 103.528L227.916 102.6C228.588 103.496 229.324 103.864 230.316 103.864C231.82 103.864 232.524 102.984 232.524 101.896C232.524 100.712 231.788 99.896 229.948 99.896H229.068V99L231.916 96.008H227.42V94.744H233.692V95.912L230.924 98.792C233.148 99.112 233.948 100.328 233.948 101.896C233.948 103.704 232.7 105.192 230.268 105.192Z" fill="#333333"/>
+</g>
+<defs>
+<filter id="filter0_i_4558_85137" x="0" y="0" width="312" height="200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.439216 0 0 0 0 0.196078 0 0 0 1 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_4558_85137"/>
+</filter>
+</defs>
+</svg>

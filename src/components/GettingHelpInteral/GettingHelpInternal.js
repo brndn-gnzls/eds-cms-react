@@ -5,6 +5,7 @@ const GettingHelpInternal = () => {
     return (
         <div className={styles.gettingHelpWrapper}>
             <h2>Help improve this page</h2>
+
             <p>
                 Your feedback and contributions are invaluable to us as we strive to
                 make our design system documentation as comprehensive and user-friendly
@@ -25,7 +26,7 @@ const GettingHelpInternal = () => {
             </ul>
 
 
-            <h4>Need Help?</h4>
+            <h3>Need Help?</h3>
             <p className={styles.helpTopParagraph}>
                 Your insights and contributions are crucial as we aim to continuously
                 evolve our design system. We're committed to improvement with your help,

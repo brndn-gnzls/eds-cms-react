@@ -40,7 +40,6 @@ const DevTabs = ({
         setActiveIndex(index);
     };
 
-    // If the user has selected index i, we display tabsData[i].blocks
     const currentTabBlocks = tabsData[activeIndex]?.blocks || [];
 
     return (
@@ -55,7 +54,6 @@ const DevTabs = ({
                     <p>{bannerBody}</p>
                 </div>
 
-                {/* The tab bar => we read each tab's label from the tabs array */}
                 <div className={styles.tabBar}>
                     {tabsData.map((tabItem, idx) => {
                         const isActive = idx === activeIndex;
@@ -83,13 +81,15 @@ function renderBlock(block, idx) {
     switch (block.type) {
         case "h2":
             return <h2 key={idx}>{block.content}</h2>;
+        case "h3":
+            return <h3 key={idx}>{block.content}</h3>;
         case "h4":
             return <h4 key={idx}>{block.content}</h4>;
         case "p":
             return <p key={idx}>{block.content}</p>;
         case "pBold":
             return (
-                <p key={idx} style={{ fontWeight: "bold" }}>
+                <p key={idx}>
                     {block.content}
                 </p>
             );

@@ -17,7 +17,7 @@ const HomePage = () => {
                 <HomeNews />
             </div>
 
-            <GlobalFooter/>
+            <GlobalFooter />
         </>
     );
 };
