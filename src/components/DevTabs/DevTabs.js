@@ -14,18 +14,9 @@ import LargeAccordion from "../LargeAccordion/LargeAccordion";
  *
  * Example tabsData:
  * [
- *   {
- *     label: "Get Started",
- *     blocks: [ { type: "h2", content: "... }, ... ]
- *   },
- *   {
- *     label: "Developer Resources",
- *     blocks: [ ... ]
- *   },
- *   {
- *     label: "FAQs",
- *     blocks: [ ... ]
- *   }
+ *   { label: "Get Started", blocks: [ { type: "h2", content: "…" }, … ] },
+ *   { label: "Developer Resources", blocks: […] },
+ *   { label: "FAQs", blocks: […] }
  * ]
  */
 const DevTabs = ({
@@ -35,10 +26,7 @@ const DevTabs = ({
                      tabsData = [],
                  }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleTabClick = (index) => {
-        setActiveIndex(index);
-    };
+    const handleTabClick = (i) => setActiveIndex(i);
 
     const currentTabBlocks = tabsData[activeIndex]?.blocks || [];
 
@@ -61,7 +49,9 @@ const DevTabs = ({
                             <button
                                 key={idx}
                                 onClick={() => handleTabClick(idx)}
-                                className={`${styles.tabButton} ${isActive ? styles.active : ""}`}
+                                className={`${styles.tabButton} ${
+                                    isActive ? styles.active : ""
+                                }`}
                             >
                                 {tabItem.label}
                             </button>
@@ -70,6 +60,7 @@ const DevTabs = ({
                 </div>
             </div>
 
+            {/* content area */}
             <div className={styles.tabContent}>
                 {currentTabBlocks.map((block, idx) => renderBlock(block, idx))}
             </div>
@@ -81,35 +72,43 @@ function renderBlock(block, idx) {
     switch (block.type) {
         case "h2":
             return <h2 key={idx}>{block.content}</h2>;
+
         case "h3":
             return <h3 key={idx}>{block.content}</h3>;
+
         case "h4":
             return <h4 key={idx}>{block.content}</h4>;
+
         case "p":
             return <p key={idx}>{block.content}</p>;
+
         case "pBold":
             return (
-                <p key={idx}>
+                <p key={idx} style={{ fontWeight: "bold" }}>
                     {block.content}
                 </p>
             );
+
         case "pItalicSmall":
             return (
                 <p key={idx} style={{ fontStyle: "italic", fontSize: "14px" }}>
                     {block.content}
                 </p>
             );
+
         case "spacing":
             return <div key={idx} style={{ height: block.height || 16 }} />;
+
         case "img":
             return (
                 <img
                     key={idx}
                     src={block.src}
-                    alt="placeholder"
-                    style={{ margin: "16px 0" }}
+                    alt=""
+                    style={{ margin: "16px 0", maxWidth: "100%" }}
                 />
             );
+
         case "hr":
             return (
                 <hr
@@ -121,20 +120,24 @@ function renderBlock(block, idx) {
                     }}
                 />
             );
+
         case "gettingHelpInternal":
             return (
                 <div key={idx}>
                     <GettingHelpInternal />
                 </div>
             );
+
         case "largeAccordion":
+            // <<<— use the real FAQ items here
+            return <LargeAccordion key={idx} items={block.items} />;
+
+        default:
             return (
-                <div key={idx}>
-                    <LargeAccordion />
+                <div key={idx} style={{ color: "red" }}>
+                    [Unknown block type: {block.type}]
                 </div>
             );
-        default:
-            return <div key={idx}>[Unknown block type: {block.type}]</div>;
     }
 }
 

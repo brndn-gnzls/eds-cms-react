@@ -1,20 +1,13 @@
-// src/pages/GetStartedDevelopPage/GetStartedDevelopPage.js
-
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
-import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import DevTabs from "../../components/DevTabs/DevTabs";
+import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 
-// Local CSS module for pinned layout / .rightSide styling
 import styles from "./GetStartedDevelopPage.module.css";
 
-/**
- * Valid query that returns an array of gettingStartedInternals.
- * Each item in the array has { slug, bannerHeading, bannerBody, bannerImage, tabs }.
- */
 const GET_ALL_INTERNALS = gql`
     query GetAllInternals {
         gettingStartedInternals {
@@ -23,29 +16,54 @@ const GET_ALL_INTERNALS = gql`
             bannerBody
             bannerImage
             tabs
+            faqItems {
+                label
+                content
+            }
         }
     }
 `;
 
-const GetStartedDevelopPage = () => {
-    // 1) Fetch all "gettingStartedInternals"
-    const { loading, error, data } = useQuery(GET_ALL_INTERNALS);
+export default function GetStartedDevelopPage() {
+    const { loading, error, data } = useQuery(GET_ALL_INTERNALS, {
+        variables: {
+            // if you have pagination on this collection type, you can add:
+            // pagination: { page: 1, pageSize: 100 }
+        },
+    });
 
     if (loading) return <p>Loading Develop Page...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
-    // 2) Among them, find the entry with slug === "develop"
-    const allInternals = data?.gettingStartedInternals || [];
+    const allInternals = data.gettingStartedInternals || [];
     const developPage = allInternals.find((entry) => entry.slug === "develop");
-
     if (!developPage) {
         return <p>No develop data found in Strapi</p>;
     }
 
-    // 3) Extract relevant fields
-    const { bannerHeading, bannerBody, bannerImage, tabs } = developPage;
+    const {
+        bannerHeading,
+        bannerBody,
+        bannerImage,
+        tabs,
+        faqItems,
+    } = developPage;
 
-    // 4) Render pinned layout with DevTabs
+    // inject your real faqItems on any "largeAccordion" block
+    const tabsData = tabs.map((tab) => ({
+        label: tab.label,
+        blocks: tab.blocks.map((block) => {
+            if (block.type === "largeAccordion") {
+                return {
+                    type: "largeAccordion",
+                    // pass the array of { label, content } from Strapi
+                    items: faqItems,
+                };
+            }
+            return block;
+        }),
+    }));
+
     return (
         <>
             <GlobalNav />
@@ -58,7 +76,7 @@ const GetStartedDevelopPage = () => {
                         bannerHeading={bannerHeading}
                         bannerBody={bannerBody}
                         bannerImage={bannerImage}
-                        tabsData={tabs}
+                        tabsData={tabsData}
                     />
                 </div>
             </div>
@@ -66,6 +84,4 @@ const GetStartedDevelopPage = () => {
             <GlobalFooter />
         </>
     );
-};
-
-export default GetStartedDevelopPage;
+}
