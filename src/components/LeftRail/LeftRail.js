@@ -1,3 +1,4 @@
+// src/components/LeftRail/LeftRail.js
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { useLocation } from "react-router-dom";
@@ -40,9 +41,11 @@ export default function LeftRail() {
 
     const accordions = data.leftRailAccordions || [];
 
-    // helper to scroll both window and inner container
+    // this will scroll both the window and any [data-main-content] container
     const resetScroll = () => {
+        // top of window
         window.scrollTo(0, 0);
+        // if you have an inner div with data-main-content
         const content = document.querySelector("[data-main-content]");
         if (content) content.scrollTop = 0;
     };
@@ -50,7 +53,6 @@ export default function LeftRail() {
     return (
         <div className={styles.leftRailWrapper}>
             {accordions.map(({ documentId, label, links, urls }) => {
-                // Build array of { label, route, onClick }
                 let linkRoutes = [];
 
                 if (urls && urls.length > 0) {

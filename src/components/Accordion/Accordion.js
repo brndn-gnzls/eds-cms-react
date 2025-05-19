@@ -1,25 +1,31 @@
 // src/components/Accordion/Accordion.js
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Accordion.module.css";
 
-const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
-    // If defaultOpen is true, start open
+export default function Accordion({
+                                      label,
+                                      links,
+                                      defaultOpen = false,
+                                      currentPath
+                                  }) {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
-    // Sync accordion open state when route changes
     useEffect(() => {
         setIsOpen(defaultOpen);
     }, [defaultOpen]);
 
-    const toggleAccordion = () => {
-        setIsOpen((prev) => !prev);
+    const toggleAccordion = () => setIsOpen((o) => !o);
+
+    // fallback scroll‐to‐top if no custom onClick
+    const doScrollTop = () => {
+        window.scrollTo(0, 0);
+        const content = document.querySelector("[data-main-content]");
+        if (content) content.scrollTop = 0;
     };
 
     return (
         <div className={styles.accordionWrapper}>
-            {/* Header row */}
             <div className={styles.headerRow} onClick={toggleAccordion}>
                 <p className={`${styles.headerLabel} ${isOpen ? styles.open : ""}`}>
                     {label}
@@ -35,7 +41,6 @@ const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
                 <div className={styles.linksContainer}>
                     {links.map(({ label: linkLabel, route, onClick }, idx) => {
                         const isActive = route === currentPath;
-
                         return (
                             <Link
                                 key={idx}
@@ -44,16 +49,15 @@ const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
                                     isActive ? styles.activeLink : ""
                                 }`}
                                 onClick={(e) => {
-                                    // prevent dummy routes
                                     if (route === "#") {
                                         e.preventDefault();
-                                        return;
                                     }
-                                    // first run any passed-in callback (e.g. resetScroll)
+                                    // first your custom handler (if any)
                                     if (typeof onClick === "function") {
                                         onClick();
                                     }
-                                    // then let the <Link> navigate normally
+                                    // then always scroll-to-top
+                                    doScrollTop();
                                 }}
                             >
                                 &nbsp;&nbsp;{linkLabel}
@@ -64,6 +68,4 @@ const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
             )}
         </div>
     );
-};
-
-export default Accordion;
+}
