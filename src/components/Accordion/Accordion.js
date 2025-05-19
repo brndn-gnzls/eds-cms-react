@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import styles from "./Accordion.module.css";
 
 const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
-    // If defaultOpen is true, we start isOpen as true
+    // If defaultOpen is true, start open
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
-    // If we want to auto-update open/closed when route changes, watch defaultOpen
+    // Sync accordion open state when route changes
     useEffect(() => {
         setIsOpen(defaultOpen);
     }, [defaultOpen]);
@@ -19,33 +19,41 @@ const Accordion = ({ label, links, defaultOpen = false, currentPath }) => {
 
     return (
         <div className={styles.accordionWrapper}>
-            {/* Header row => label + caret */}
+            {/* Header row */}
             <div className={styles.headerRow} onClick={toggleAccordion}>
                 <p className={`${styles.headerLabel} ${isOpen ? styles.open : ""}`}>
                     {label}
                 </p>
-
-                {/* Caret: right arrow if closed, down arrow if open */}
                 <span
                     className={`${styles.caretIcon} ${
                         isOpen ? styles.caretDown : styles.caretRight
                     }`}
-                ></span>
+                />
             </div>
 
             {isOpen && (
                 <div className={styles.linksContainer}>
-                    {links.map(({ label: linkLabel, route }, index) => {
-                        // If route matches currentPath, highlight
+                    {links.map(({ label: linkLabel, route, onClick }, idx) => {
                         const isActive = route === currentPath;
 
                         return (
                             <Link
-                                key={index}
+                                key={idx}
                                 to={route}
-                                className={`${styles.navLink} ${isActive ? styles.activeLink : ""}`}
+                                className={`${styles.navLink} ${
+                                    isActive ? styles.activeLink : ""
+                                }`}
                                 onClick={(e) => {
-                                    if (route === "#") e.preventDefault();
+                                    // prevent dummy routes
+                                    if (route === "#") {
+                                        e.preventDefault();
+                                        return;
+                                    }
+                                    // first run any passed-in callback (e.g. resetScroll)
+                                    if (typeof onClick === "function") {
+                                        onClick();
+                                    }
+                                    // then let the <Link> navigate normally
                                 }}
                             >
                                 &nbsp;&nbsp;{linkLabel}
