@@ -3,19 +3,13 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
-// Components for pinned nav, left rail, footer, and dev tabs.
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
-import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import DevTabs from "../../components/DevTabs/DevTabs";
+import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 
-// Styles for pinned layout / right side container
 import styles from "./GetStartedDesignPage.module.css";
 
-/**
- * Valid query to fetch all "gettingStartedInternals" items.
- * We'll filter client-side for slug === "design".
- */
 const GET_ALL_INTERNALS = gql`
     query GetAllInternals {
         gettingStartedInternals {
@@ -24,29 +18,49 @@ const GET_ALL_INTERNALS = gql`
             bannerBody
             bannerImage
             tabs
+            faqItems {
+                label
+                content
+            }
         }
     }
 `;
 
-const GetStartedDesignPage = () => {
-    // 1) Execute the query to get an array of all internals
-    const { loading, error, data } = useQuery(GET_ALL_INTERNALS);
+export default function GetStartedDesignPage() {
+    const { loading, error, data } = useQuery(GET_ALL_INTERNALS, {
+        // if you need pagination:
+        // variables: { pagination: { page: 1, pageSize: 100 } },
+    });
+    if (loading) return <p>Loading Design Page…</p>;
+    if (error)   return <p>Error: {error.message}</p>;
 
-    if (loading) return <p>Loading Design Page...</p>;
-    if (error) return <p>Error: {error.message}</p>;
-
-    // 2) Among them, find the entry with slug === "design"
-    const allInternals = data?.gettingStartedInternals || [];
+    const allInternals = data.gettingStartedInternals || [];
     const designPage = allInternals.find((entry) => entry.slug === "design");
-
     if (!designPage) {
         return <p>No design data found in Strapi</p>;
     }
 
-    // 3) Extract fields from designPage
-    const { bannerHeading, bannerBody, bannerImage, tabs } = designPage;
+    const {
+        bannerHeading,
+        bannerBody,
+        bannerImage,
+        tabs,
+        faqItems,
+    } = designPage;
 
-    // 4) Render the pinned layout with left rail + DevTabs
+    // Inject your real faqItems on any "largeAccordion" block
+    const tabsData = tabs.map((tab) => ({
+        label: tab.label,
+        blocks: tab.blocks.map((block) =>
+            block.type === "largeAccordion"
+                ? {
+                    type: "largeAccordion",
+                    items: faqItems,
+                }
+                : block
+        ),
+    }));
+
     return (
         <>
             <GlobalNav />
@@ -59,7 +73,7 @@ const GetStartedDesignPage = () => {
                         bannerHeading={bannerHeading}
                         bannerBody={bannerBody}
                         bannerImage={bannerImage}
-                        tabsData={tabs} // pass the 3-tab array from Strapi
+                        tabsData={tabsData}
                     />
                 </div>
             </div>
@@ -67,6 +81,4 @@ const GetStartedDesignPage = () => {
             <GlobalFooter />
         </>
     );
-};
-
-export default GetStartedDesignPage;
+}

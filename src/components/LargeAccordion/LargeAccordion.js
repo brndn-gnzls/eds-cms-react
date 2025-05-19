@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./LargeAccordion.module.css";
 
+// fallback sample data for testing.
 const PLACEHOLDER_DATA = [
     {
-        id: 0,
-        label: "FAQ #1: Lorem question?",
+        label: "Test FAQ #1: Lorem question?",
         content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Suspendisse eget eros hendrerit, porttitor risus in, interdum turpis. 
 Aliquam non tempus metus, ac efficitur mi. 
@@ -12,7 +12,6 @@ Vestibulum consectetur erat non urna semper, at ultricies mauris tempus.
 Ut sit amet interdum dolor.`,
     },
     {
-        id: 1,
         label: "FAQ #2: More lorem details?",
         content: `Cras non ullamcorper ex, nec egestas lorem. 
 Phasellus ornare, arcu id bibendum ultricies, quam tellus mollis nunc, 
@@ -21,7 +20,6 @@ Sed vel tempus nulla, eget pretium risus.
 Praesent ut arcu elementum, porta libero sed, lobortis libero.`,
     },
     {
-        id: 2,
         label: "FAQ #3: Implementation approach?",
         content: `Duis venenatis augue id ornare cursus. 
 Curabitur pharetra risus et lorem convallis, nec aliquam odio dictum. 
@@ -30,7 +28,6 @@ Etiam feugiat augue eget sem tincidunt aliquet.
 Proin sodales pharetra massa, eget auctor libero lobortis eget.`,
     },
     {
-        id: 3,
         label: "FAQ #4: Another question here?",
         content: `Mauris vitae orci nec lorem volutpat pellentesque. 
 In faucibus lorem eget arcu convallis, sed cursus magna cursus. 
@@ -39,7 +36,6 @@ Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
 Vestibulum a dapibus neque, vel porta mauris.`,
     },
     {
-        id: 4,
         label: "FAQ #5: Last sample question?",
         content: `Sed iaculis justo et condimentum elementum. 
 Morbi pretium, sapien in tempor tincidunt, ex ipsum tempus libero, 
@@ -50,38 +46,32 @@ Phasellus nec ullamcorper dolor.`,
     },
 ];
 
-const LargeAccordion = () => {
+export default function LargeAccordion({ items = [] }) {
+    const data = items.length ? items : PLACEHOLDER_DATA;
     const [openIds, setOpenIds] = useState([]);
 
-    const handleToggle = (itemId) => {
-        if (openIds.includes(itemId)) {
-            setOpenIds(openIds.filter((id) => id !== itemId));
-        } else {
-            setOpenIds([...openIds, itemId]);
-        }
+    const handleToggle = (idx) => {
+        setOpenIds((prev) =>
+            prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+        );
     };
 
     return (
         <div className={styles.accordionWrapper}>
-            {PLACEHOLDER_DATA.map((item) => {
-                const isOpen = openIds.includes(item.id);
-
+            {data.map((item, idx) => {
+                const isOpen = openIds.includes(idx);
                 return (
-                    <div key={item.id} className={styles.accordionRow}>
+                    <div key={idx} className={styles.accordionRow}>
                         <div
                             className={styles.labelRow}
-                            onClick={() => handleToggle(item.id)}
+                            onClick={() => handleToggle(idx)}
                         >
                             <span className={styles.labelText}>{item.label}</span>
                             <span className={styles.icon}>{isOpen ? "–" : "+"}</span>
                         </div>
-
-                        {/* The content area (animated open/close) */}
                         <div
                             className={`${styles.contentArea} ${isOpen ? styles.open : ""}`}
-                            style={{
-                                maxHeight: isOpen ? "1000px" : "0px",
-                            }}
+                            style={{ maxHeight: isOpen ? "1000px" : "0px" }}
                         >
                             <p>{item.content}</p>
                         </div>
@@ -90,6 +80,4 @@ const LargeAccordion = () => {
             })}
         </div>
     );
-};
-
-export default LargeAccordion;
+}
