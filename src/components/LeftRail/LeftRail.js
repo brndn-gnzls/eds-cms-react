@@ -32,7 +32,7 @@ export default function LeftRail() {
     const { loading, error, data } = useQuery(GET_LEFT_RAIL_ACCORDIONS, {
         variables: {
             accordionPagination: { page: 1, pageSize: 100 },
-            urlPagination:       { page: 1, pageSize: 100 },  // <- bump this to cover all your URLs
+            urlPagination:       { page: 1, pageSize: 100 },
         },
     });
     const location = useLocation();
@@ -42,23 +42,32 @@ export default function LeftRail() {
 
     const accordions = data.leftRailAccordions || [];
 
+    // helper to scroll both window and inner container
+    const resetScroll = () => {
+        window.scrollTo(0, 0);
+        const content = document.querySelector("[data-main-content]");
+        if (content) content.scrollTop = 0;
+    };
+
     return (
         <div className={styles.leftRailWrapper}>
             {accordions.map(({ documentId, label, links, urls }) => {
-                // Prefer structured urls if present
+                // Build array of { label, route, onClick }
                 let linkRoutes = [];
+
                 if (urls && urls.length > 0) {
                     linkRoutes = urls.map(({ linkName, url }) => ({
                         label: linkName,
                         route: url.startsWith("/") ? url : `/${url}`,
+                        onClick: resetScroll,
                     }));
                 } else if (links) {
-                    // fallback to old newline-split
                     linkRoutes = links.split("\\n").map((raw) => {
                         const lbl = raw.replace(/\\n/g, "").trim();
                         return {
                             label: lbl,
                             route: staticLinkMap[lbl] || "#",
+                            onClick: resetScroll,
                         };
                     });
                 }
