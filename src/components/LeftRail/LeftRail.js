@@ -1,3 +1,4 @@
+// src/components/LeftRail/LeftRail.js
 
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
@@ -6,58 +7,76 @@ import Accordion from "../Accordion/Accordion";
 import styles from "./LeftRail.module.css";
 
 const GET_LEFT_RAIL_ACCORDIONS = gql`
-    query LeftRailAccordions {
-        leftRailAccordions {
+    query LeftRailAccordions(
+        $accordionPagination: PaginationArg
+        $urlPagination:       PaginationArg
+    ) {
+        leftRailAccordions(pagination: $accordionPagination) {
             documentId
             label
             links
+            urls(pagination: $urlPagination) {
+                linkName
+                url
+            }
         }
     }
 `;
 
-const linkToPathMap = {
-    Design: "/get-started/design",
+const staticLinkMap = {
+    Design:  "/get-started/design",
     Develop: "/get-started/develop",
-    // If you add more pages, just add them here.
 };
 
-const LeftRail = () => {
-    const { loading, error, data } = useQuery(GET_LEFT_RAIL_ACCORDIONS);
+export default function LeftRail() {
+    const { loading, error, data } = useQuery(GET_LEFT_RAIL_ACCORDIONS, {
+        variables: {
+            accordionPagination: { page: 1, pageSize: 100 },
+            urlPagination:       { page: 1, pageSize: 100 },  // <- bump this to cover all your URLs
+        },
+    });
     const location = useLocation();
 
-    if (loading) return <p>Loading Left Rail...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    if (loading) return <p>Loading Left Rail…</p>;
+    if (error)   return <p>Error: {error.message}</p>;
 
-    const leftRailAccordions = data?.leftRailAccordions || [];
+    const accordions = data.leftRailAccordions || [];
 
     return (
         <div className={styles.leftRailWrapper}>
-            {leftRailAccordions.map((accData) => {
-                // Convert each link label -> route
-                const linkRoutes = accData.links
-                    ? accData.links.split("\\n").map((raw) => {
-                        const label = raw.replace(/\\n/g, "").trim();
-                        const route = linkToPathMap[label] || "#";
-                        return { label, route };
-                    })
-                    : [];
+            {accordions.map(({ documentId, label, links, urls }) => {
+                // Prefer structured urls if present
+                let linkRoutes = [];
+                if (urls && urls.length > 0) {
+                    linkRoutes = urls.map(({ linkName, url }) => ({
+                        label: linkName,
+                        route: url.startsWith("/") ? url : `/${url}`,
+                    }));
+                } else if (links) {
+                    // fallback to old newline-split
+                    linkRoutes = links.split("\\n").map((raw) => {
+                        const lbl = raw.replace(/\\n/g, "").trim();
+                        return {
+                            label: lbl,
+                            route: staticLinkMap[lbl] || "#",
+                        };
+                    });
+                }
 
-                // Determine if any linkRoutes matches the current location.pathname
-                // If so, we want this accordion open by default.
-                const shouldOpen = linkRoutes.some((lr) => lr.route === location.pathname);
+                const shouldOpen = linkRoutes.some(
+                    (lr) => lr.route === location.pathname
+                );
 
                 return (
                     <Accordion
-                        key={accData.documentId}
-                        label={accData.label}
-                        links={linkRoutes}        // pass array of {label, route}
-                        defaultOpen={shouldOpen}  // open if any link matches the current path
-                        currentPath={location.pathname} // so Accordion can highlight the selected link
+                        key={documentId}
+                        label={label}
+                        links={linkRoutes}
+                        defaultOpen={shouldOpen}
+                        currentPath={location.pathname}
                     />
                 );
             })}
         </div>
     );
-};
-
-export default LeftRail;
+}

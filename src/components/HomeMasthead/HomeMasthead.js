@@ -52,7 +52,9 @@ const HomeMasthead = () => {
                         <button className={styles.getStartedBtn}>{button1Label}</button>
                     </Link>
 
-                    <button className={styles.componentsBtn}>{button2Label}</button>
+                    <Link to="/components">
+                        <button className={styles.componentsBtn}>{button2Label}</button>
+                    </Link>
                 </div>
             </div>
         </div>

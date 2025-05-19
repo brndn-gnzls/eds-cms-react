@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./GlobalNav.module.css";
 import MobileDrawer from "../MobileDrawer/MobileDrawer";
 
@@ -37,7 +38,11 @@ const GlobalNav = ({
                 <div className={`container ${styles.navInner}`}>
                     {/* Left side => conditional logo */}
                     <div className={styles.navLeft}>
-                        <span className={styles.brandTitle}>{logoText}</span>
+                        <span className={styles.brandTitle}>
+                            <Link to="/">
+                            {logoText}
+                            </Link>
+                        </span>
                     </div>
 
                     <div className={styles.navRight}>

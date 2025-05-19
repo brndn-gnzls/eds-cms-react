@@ -1,8 +1,9 @@
 .gettingHelpWrapper {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #000; /* normal text color */
-    padding: 0 0 192px 0px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3d3d3d; /* normal text color */
+    padding: 0;
+    margin-bottom: 92px;
 }
 
 .helpList {
@@ -29,15 +30,26 @@
 }
 
 .gettingHelpWrapper h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 24px;
+    line-height: 28px;
     margin-bottom: 16px;
 }
 
-.gettingHelpWrapper h4 {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
+.gettingHelpWrapper h3 {
+    font-size: 18px;
+    line-height: 22px;
     margin-bottom: 8px;
+}
+
+.gettingHelpWrapper h4 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.gettingHelpWrapper h3 {
+    font-size: 18px;
+    line-height: 22px
 }
 
 .helpTopParagraph {

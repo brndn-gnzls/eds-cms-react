@@ -26,7 +26,7 @@ const GettingHelpInternal = () => {
             </ul>
 
 
-            <h4>Need Help?</h4>
+            <h3>Need Help?</h3>
             <p className={styles.helpTopParagraph}>
                 Your insights and contributions are crucial as we aim to continuously
                 evolve our design system. We're committed to improvement with your help,

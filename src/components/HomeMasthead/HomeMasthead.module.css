@@ -80,14 +80,14 @@
 }
 
 .mastheadContent h1 {
-    font-size: 2.5rem;
-    line-height: 2.85rem;
+    font-size: 40px;
+    line-height: 44px;
     margin-bottom: 16px; /* 16px gap to p */
 }
 
 .mastheadContent p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 16px;
+    line-height: 24px;
     margin-bottom: 32px; /* 32px gap to buttons */
 }
 
@@ -133,13 +133,13 @@
     }
 
     .mastheadContent h1 {
-        font-size: 2rem;
-        line-height: 2.4rem;
+        font-size: 40px;
+        line-height: 44px;
     }
 
     .mastheadContent p {
-        font-size: 0.875rem;
-        line-height: 1.3rem;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .ctaButtons {

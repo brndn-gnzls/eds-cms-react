@@ -1,7 +1,7 @@
 // src/components/GettingStartedPath/GettingStartedPath.js
 
 import React from "react";
-import { Link } from "react-router-dom"; // remove if you prefer <a> for external
+import { Link } from "react-router-dom"; 
 import styles from "./GettingStartedPath.module.css";
 
 const GettingStartedPath = ({ icon, heading, body, link }) => {
