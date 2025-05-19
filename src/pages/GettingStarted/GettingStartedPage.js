@@ -1,3 +1,5 @@
+// src/pages/GettingStartedPage/GettingStartedPage.js
+
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
@@ -7,18 +9,26 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelp from "../../components/GettingHelp/GettingHelp";
 import styles from "./GettingStartedPage.module.css";
 
-/* Query for the page banner content */
 const GET_GETTING_STARTED_PAGE = gql`
     query GettingStartedPage {
         gettingStartedPage {
-            documentId
             heading
             body
+            leadin {
+                content
+            }
+            headline {
+                headingLevel
+                headingText
+            }
+            headerImage {
+                folder
+                fileName
+            }
         }
     }
 `;
 
-/* Query for the path components */
 const GET_GETTING_STARTED_PATHS = gql`
     query GettingStartedPaths {
         gettingStartedPaths {
@@ -30,7 +40,7 @@ const GET_GETTING_STARTED_PATHS = gql`
     }
 `;
 
-const GettingStartedPage = () => {
+export default function GettingStartedPage() {
     const {
         loading: pageLoading,
         error: pageError,
@@ -43,12 +53,26 @@ const GettingStartedPage = () => {
         data: pathsData,
     } = useQuery(GET_GETTING_STARTED_PATHS);
 
-    if (pageLoading || pathsLoading) return <p>Loading Getting Started Page...</p>;
+    if (pageLoading || pathsLoading) return <p>Loading Getting Started Page…</p>;
     if (pageError) return <p>Error: {pageError.message}</p>;
     if (pathsError) return <p>Error: {pathsError.message}</p>;
 
-    const gsPage = pageData?.gettingStartedPage;
-    const pathItems = pathsData?.gettingStartedPaths || [];
+    const gsPage = pageData.gettingStartedPage;
+    const pathItems = pathsData.gettingStartedPaths || [];
+
+    // headerImage comes back as an array; grab the first entry
+    const headerImg =
+        Array.isArray(gsPage.headerImage) && gsPage.headerImage.length > 0
+            ? gsPage.headerImage[0]
+            : {};
+    const { folder = "", fileName = "" } = headerImg;
+    const bgUrl =
+        folder && fileName
+            ? `/images/${folder}/${fileName}`
+            : undefined;
+
+    // decide which tag to use for the Strapi headline (h2, h3, etc.)
+    const HeadingTag = gsPage.headline?.headingLevel || "h2";
 
     return (
         <>
@@ -58,11 +82,14 @@ const GettingStartedPage = () => {
                 <LeftRail />
 
                 <div className={`${styles.rightSide} min-h-screen`}>
+                    {/* Banner with dynamic background */}
                     <div
                         className={styles.banner}
-                        style={{
-                            backgroundImage: `url("/images/gettingStartedLanding/img-header-getstarted.jpg")`,
-                        }}
+                        style={
+                            bgUrl
+                                ? { backgroundImage: `url("${bgUrl}")` }
+                                : {}
+                        }
                     >
                         <h1>{gsPage.heading}</h1>
                         <p>{gsPage.body}</p>
@@ -70,24 +97,19 @@ const GettingStartedPage = () => {
 
                     <div className={styles.postBannerSpace} />
 
+                    {/* Strapi-driven headline + lead-in */}
                     <div className={styles.introText}>
-                        <h2>Choose your path</h2>
-                        <p>
-                            Let's tailor your journey to fit your needs! Select the path that
-                            matches your role to discover personalized tools, resources, and
-                            guidance that will help you make the most of eDS.
-                        </p>
+                        <HeadingTag>{gsPage.headline.headingText}</HeadingTag>
+                        <p>{gsPage.leadin.content}</p>
                     </div>
 
+                    {/* Paths */}
                     <div className={styles.contentArea}>
                         {pathItems.map((item) => {
-                            // Decide link based on heading
-                            let link = "/get-started"; // Fallback
-                            if (item.heading === "Design") {
-                                link = "/get-started/design";
-                            } else if (item.heading === "Develop") {
+                            let link = "/get-started";
+                            if (item.heading === "Design") link = "/get-started/design";
+                            else if (item.heading === "Develop")
                                 link = "/get-started/develop";
-                            }
 
                             return (
                                 <GettingStartedPath
@@ -108,6 +130,4 @@ const GettingStartedPage = () => {
             <GlobalFooter />
         </>
     );
-};
-
-export default GettingStartedPage;
+}
