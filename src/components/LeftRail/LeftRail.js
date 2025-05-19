@@ -1,5 +1,3 @@
-// src/components/LeftRail/LeftRail.js
-
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { useLocation } from "react-router-dom";

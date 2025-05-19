@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import {useParams} from "react-router-dom";
 
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
@@ -617,6 +618,8 @@ const ComponentDetailPage = () => {
 
     return (
         <>
+            <ScrollToTop/>
+
             <GlobalNav
                 showBrandSwitcher
                 currentBrand={currentBrand}
