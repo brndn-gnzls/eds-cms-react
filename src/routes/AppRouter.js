@@ -22,8 +22,7 @@ const AppRouter = () => {
                 <Routes>
                     {/* Public Routes */}
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/example" element={<ExamplePage />} />
-                    <Route path="/articles" element={<ArticlePage />} />
+                    <Route path="/articles/:articleUrl" element={<ArticlePage />} />
                     <Route path="/test-page" element={<TestPage />} />
                     <Route path="/get-started" element={<GettingStartedPage />} />
                     <Route path="/get-started/design" element={<GetStartedDesign />} />
