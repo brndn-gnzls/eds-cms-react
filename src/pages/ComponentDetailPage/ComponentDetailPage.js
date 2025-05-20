@@ -14,10 +14,7 @@ const GET_COMPONENT_DETAIL = gql`
         componentDetailPages_connection(pagination: $pagination) {
             nodes {
                 slug
-                # (Optional) If you have these fields in Strapi, uncomment:
-                # bannerHeading
-                # bannerBody
-
+                bannerBody
                 Usage {
                     __typename
                     ... on ComponentHeadingBlocksHeadingBlock {
@@ -567,6 +564,7 @@ const ComponentDetailPage = () => {
     // 1) read param => e.g. "button", "checkbox", etc.
     const { slug } = useParams();
 
+
     function capitalizeFirst(str) {
         if (!str) return "";
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -595,14 +593,11 @@ const ComponentDetailPage = () => {
         return <p>No component detail found for “{slug}” in Strapi.</p>;
     }
 
-    // 4) build banner text, either from Strapi fields or fallback to slug
-    const bannerHeading =
-        detailEntry.bannerHeading ||
-        slugToTitle(slug);
+    // pull bannerBody off the matched entry
+    const bannerHeading = slugToTitle(slug);
+    const bannerBody    = detailEntry.bannerBody;
 
-    const bannerBody =
-        detailEntry.bannerBody ||
-        `Detailed documentation for the “${slug}” component, featuring overview, usage, and accessibility best practices.`;
+
 
     // 5) transform blocks from strapi
     const usageBlocks = transformUsageBlocks(detailEntry.Usage || []);

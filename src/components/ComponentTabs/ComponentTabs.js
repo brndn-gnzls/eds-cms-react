@@ -50,7 +50,7 @@ export default function ComponentTabs({
                     })}
                 </div>
             </div>
-            <div className={styles.tabContent}>
+            <div className={styles.tabContent} data-main-content>
                 {currentBlocks.map((block, i) => renderBlock(block, i, brandPrefix))}
             </div>
         </div>
