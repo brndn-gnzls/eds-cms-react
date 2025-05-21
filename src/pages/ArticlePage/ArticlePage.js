@@ -168,7 +168,7 @@ export default function ArticlePage() {
                     className={styles.banner}
                     style={{
                         backgroundImage: article.articleBanner
-                            ? `url("${article.articleBanner}")`
+                            ? `url("/${article.articleBanner}")`
                             : "none",
                     }}
                 >

@@ -1,10 +1,10 @@
 // src/components/HomeNews/HomeNews.js
-
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
+import { Link } from "react-router-dom";
 import styles from "./HomeNews.module.css";
 
-// Single type for top heading/paragraph
+// 1) Top heading/paragraph stays the same
 const GET_HOME_NEWS_TOP = gql`
     query GetHomeNewsTop {
         homeNewsTop {
@@ -14,43 +14,46 @@ const GET_HOME_NEWS_TOP = gql`
     }
 `;
 
-// Collection type for multiple articles (no nested data/attributes)
-const GET_NEWS_ARTICLES = gql`
-    query GetNewsArticles {
-        newsArticles {
-            documentId
-            storyImageUrl
-            storyHeading
-            storyBody
-            authorInfo
+// 2) New articles query
+const GET_ARTICLES = gql`
+    query GetArticles {
+        articles {
+            url
+            title
+            articleBanner
+            articleAuthorName
+            articleAuthorRole
+            articleComposition {
+                ... on ComponentSharedBlocksParagraphHeadline {
+                    headline
+                }
+            }
         }
     }
 `;
 
-const HomeNews = () => {
-    // 1) Fetch top heading/paragraph
+export default function HomeNews() {
+    // fetch top lock-up
     const {
         loading: topLoading,
         error: topError,
         data: topData,
     } = useQuery(GET_HOME_NEWS_TOP);
 
-    // 2) Fetch multiple articles
+    // fetch articles
     const {
         loading: articlesLoading,
         error: articlesError,
         data: articlesData,
-    } = useQuery(GET_NEWS_ARTICLES);
+    } = useQuery(GET_ARTICLES);
 
-    if (topLoading || articlesLoading) return <p>Loading Latest Updates...</p>;
+    if (topLoading || articlesLoading)
+        return <p>Loading Latest Updates…</p>;
     if (topError) return <p>Error (top lockup): {topError.message}</p>;
     if (articlesError) return <p>Error (articles): {articlesError.message}</p>;
 
-    // Extract top heading/paragraph from single type
     const { topHeading, topParagraph } = topData.homeNewsTop;
-
-    // Extract array of news articles from collection
-    const articles = articlesData.newsArticles || [];
+    const articles = articlesData.articles || [];
 
     return (
         <section className={styles.newsWrapper}>
@@ -60,35 +63,55 @@ const HomeNews = () => {
                 <p>{topParagraph}</p>
             </div>
 
-            {/* Render each article lockup */}
-            {articles.map((item) => {
+            {/* Article List */}
+            {articles.map((article) => {
                 const {
-                    documentId,
-                    storyImageUrl,
-                    storyHeading,
-                    storyBody,
-                    authorInfo,
-                } = item;
+                    url,
+                    title,
+                    articleBanner,
+                    articleAuthorName,
+                    articleAuthorRole,
+                    articleComposition,
+                } = article;
+
+                // thumbnail = banner image
+                const storyImageUrl = articleBanner
+                    ? `/${articleBanner.replace(/^\/+/, "")}`
+                    : "";
+
+                // first ParagraphHeadline block for storyBody
+                const headlineBlock = (articleComposition || []).find(
+                    (b) => b.headline
+                );
+                const storyBody = headlineBlock ? headlineBlock.headline : "";
 
                 return (
-                    <div key={documentId} className={styles.newsStory}>
-                        <div
-                            className={styles.newsImage}
-                            style={{
-                                backgroundImage: `url(${storyImageUrl})`,
-                            }}
-                        />
+                    <div key={url} className={styles.newsStory}>
+                        <Link to={`/articles/${url}`}>
+                            <div
+                                className={styles.newsImage}
+                                style={{
+                                    backgroundImage: storyImageUrl
+                                        ? `url("${storyImageUrl}")`
+                                        : "none",
+                                }}
+                            />
+                        </Link>
+
                         <div className={styles.newsText}>
-                            <h2>{storyHeading}</h2>
+                            <Link to={`/articles/${url}`}>
+                                <h2>{title}</h2>
+                            </Link>
                             <p>{storyBody}</p>
                             <div className={styles.bottomBorder} />
-                            <p>{authorInfo}</p>
+                            <p>
+                                <strong>{articleAuthorName}</strong>{" "}
+                                {articleAuthorRole}
+                            </p>
                         </div>
                     </div>
                 );
             })}
         </section>
     );
-};
-
-export default HomeNews;
+}
