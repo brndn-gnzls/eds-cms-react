@@ -1,4 +1,5 @@
 // src/components/HomeNews/HomeNews.js
+
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
@@ -14,13 +15,13 @@ const GET_HOME_NEWS_TOP = gql`
     }
 `;
 
-// 2) New articles query
+// 2) Updated articles query to pull in `thumbnail`
 const GET_ARTICLES = gql`
     query GetArticles {
         articles {
             url
             title
-            articleBanner
+            thumbnail
             articleAuthorName
             articleAuthorRole
             articleComposition {
@@ -40,15 +41,14 @@ export default function HomeNews() {
         data: topData,
     } = useQuery(GET_HOME_NEWS_TOP);
 
-    // fetch articles
+    // fetch articles with thumbnail
     const {
         loading: articlesLoading,
         error: articlesError,
         data: articlesData,
     } = useQuery(GET_ARTICLES);
 
-    if (topLoading || articlesLoading)
-        return <p>Loading Latest Updates…</p>;
+    if (topLoading || articlesLoading) return <p>Loading Latest Updates…</p>;
     if (topError) return <p>Error (top lockup): {topError.message}</p>;
     if (articlesError) return <p>Error (articles): {articlesError.message}</p>;
 
@@ -68,15 +68,15 @@ export default function HomeNews() {
                 const {
                     url,
                     title,
-                    articleBanner,
+                    thumbnail,
                     articleAuthorName,
                     articleAuthorRole,
                     articleComposition,
                 } = article;
 
-                // thumbnail = banner image
-                const storyImageUrl = articleBanner
-                    ? `/${articleBanner.replace(/^\/+/, "")}`
+                // Use thumbnail for the small listing image
+                const storyImageUrl = thumbnail
+                    ? `/${thumbnail.replace(/^\/+/, "")}`
                     : "";
 
                 // first ParagraphHeadline block for storyBody
