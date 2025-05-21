@@ -75,6 +75,7 @@ export default function GettingStartedPage() {
 
     // decide which tag to use for the Strapi headline (h2, h3, etc.)
     const HeadingTag = gsPage.headline?.headingLevel || "h2";
+    console.log(bgUrl);
 
     return (
         <>
