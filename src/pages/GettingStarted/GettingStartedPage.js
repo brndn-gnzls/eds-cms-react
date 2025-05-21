@@ -5,8 +5,9 @@ import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GettingStartedPath from "../../components/GettingStartedPath/GettingStartedPath";
-import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
+import NotificationBox from "../../components/NotificationBox/NotificationBox";
 import GettingHelp from "../../components/GettingHelp/GettingHelp";
+import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./GettingStartedPage.module.css";
 
 const GET_GETTING_STARTED_PAGE = gql`
@@ -24,6 +25,10 @@ const GET_GETTING_STARTED_PAGE = gql`
             headerImage {
                 folder
                 fileName
+            }
+            notificationBox {
+                borderColor
+                content
             }
         }
     }
@@ -66,10 +71,7 @@ export default function GettingStartedPage() {
             ? gsPage.headerImage[0]
             : {};
     const { folder = "", fileName = "" } = headerImg;
-    const bgUrl =
-        folder && fileName
-            ? `/images/${folder}/${fileName}`
-            : undefined;
+    const bgUrl = folder && fileName ? `/images/${folder}/${fileName}` : undefined;
 
     // decide which tag to use for the Strapi headline (h2, h3, etc.)
     const HeadingTag = gsPage.headline?.headingLevel || "h2";
@@ -85,11 +87,7 @@ export default function GettingStartedPage() {
                     {/* Banner with dynamic background */}
                     <div
                         className={styles.banner}
-                        style={
-                            bgUrl
-                                ? { backgroundImage: `url("${bgUrl}")` }
-                                : {}
-                        }
+                        style={bgUrl ? { backgroundImage: `url("${bgUrl}")` } : {}}
                     >
                         <h1>{gsPage.heading}</h1>
                         <p>{gsPage.body}</p>
@@ -102,6 +100,14 @@ export default function GettingStartedPage() {
                         <HeadingTag>{gsPage.headline.headingText}</HeadingTag>
                         <p>{gsPage.leadin.content}</p>
                     </div>
+
+                    {/* Notification Box(es) */}
+                    {Array.isArray(gsPage.notificationBox) &&
+                        gsPage.notificationBox.map((box, i) => (
+                            <NotificationBox key={i} color={box.borderColor}>
+                                <div dangerouslySetInnerHTML={{ __html: box.content }} />
+                            </NotificationBox>
+                        ))}
 
                     {/* Paths */}
                     <div className={styles.contentArea}>
