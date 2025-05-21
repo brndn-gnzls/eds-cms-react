@@ -71,14 +71,14 @@ const GlobalNav = ({
                         <a href="https://figma.com/" className={styles.iconLink}>
                             <img src={figmaIcon} alt="Figma" />
                         </a>
-                        <span className={styles.pipe}>|</span>
+                        {/*<span className={styles.pipe}>|</span>*/}
 
-                        <button className={styles.toggleBtn} onClick={handleToggle}>
-                            <img
-                                src={isLight ? lightIcon : darkIcon}
-                                alt={isLight ? "Light Mode" : "Dark Mode"}
-                            />
-                        </button>
+                        {/*<button className={styles.toggleBtn} onClick={handleToggle}>*/}
+                        {/*    <img*/}
+                        {/*        src={isLight ? lightIcon : darkIcon}*/}
+                        {/*        alt={isLight ? "Light Mode" : "Dark Mode"}*/}
+                        {/*    />*/}
+                        {/*</button>*/}
                     </div>
                 </div>
             </header>
