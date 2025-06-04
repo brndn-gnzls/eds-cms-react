@@ -32,7 +32,6 @@ const GET_ARTICLES = gql`
         }
     }
 `;
-
 export default function HomeNews() {
     // fetch top lock-up
     const {
