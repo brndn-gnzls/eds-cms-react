@@ -42,7 +42,7 @@ export default function ComponentDetailBestPractices({
      */
 
         // For safety, only map up to min length of 3. If there's exactly 3 each, perfect.
-    const rowCount = Math.min(doItems.length, dontItems.length, 3);
+    const rowCount = Math.min(doItems.length, dontItems.length, );
 
     return (
         <div className={styles.bestWrapper}>
@@ -103,7 +103,7 @@ function PracticeCell({
      * color/symbol fallback => defaultColor/defaultSymbol if omitted.
      */
     const color = item.color || defaultColor;
-    const symbol = item.symbol || defaultSymbol;
+    const symbol = defaultSymbol;
     const finalSrc = `/images/componentDetailAssets/button/overview/${brandPrefix}${item.imageSrc || ""}`;
 
     return (

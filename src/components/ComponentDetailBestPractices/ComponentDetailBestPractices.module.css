@@ -51,9 +51,11 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    color: #fff;
+    color: #fff !important;
     font-weight: bold;
-    font-size: 0.9rem; /* adjust if needed */
+    font-size: 1rem; /* adjust if needed */
+    font-family: Arial, sans-serif !important;
+    -webkit-text-fill-color: #fff !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +71,7 @@
 .cellParagraph {
     margin-bottom: 16px; /* space after paragraph before the image */
     line-height: 1.5;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* The brand image */

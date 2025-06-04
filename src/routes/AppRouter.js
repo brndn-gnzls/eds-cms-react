@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
 // Lazy load components
-const ExamplePage = lazy(() => import("../pages/ExamplePage/ExamplePage"));
 const ArticlePage = lazy(() => import("../pages/ArticlePage/ArticlePage"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const TestPage = lazy(() => import("../pages/TestPage/TestPage"));

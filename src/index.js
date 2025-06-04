@@ -8,6 +8,10 @@ import App from "./App";
 import "./styles/fonts.css";
 import "./global.css";
 
+if("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+}
+
 // Sentry init (optional, as before):
 Sentry.init({
     dsn: "https://69a40c264a8b244489b619435fb10e95@o4508077516128256.ingest.us.sentry.io/4508077519077376",

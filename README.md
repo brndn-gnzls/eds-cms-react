@@ -1,3 +1,2 @@
-# 🔁 Elevance EDS React Base Configuration
+# Elevance EDS React Base
 
-This repo contains our base React configuration for Elevance's Enterprise Design System.

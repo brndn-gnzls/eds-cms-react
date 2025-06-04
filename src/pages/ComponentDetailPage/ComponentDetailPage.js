@@ -1,16 +1,17 @@
-
 import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
-import styles from "./ComponentDetailPage.module.css";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
+import StorybookEmbed from "../../components/StorybookEmbed/StorybookEmbed"; // <-- import your embed component
+import styles from "./ComponentDetailPage.module.css";
+
 const GET_COMPONENT_DETAIL = gql`
-    query GetComponentDetailPages ($pagination: PaginationArg) {
+    query GetComponentDetailPages($pagination: PaginationArg) {
         componentDetailPages_connection(pagination: $pagination) {
             nodes {
                 slug
@@ -216,6 +217,9 @@ const GET_COMPONENT_DETAIL = gql`
                             }
                         }
                     }
+                    ... on ComponentCustomBlocksStorybookModule {
+                        componentName
+                    }
                 }
             }
         }
@@ -248,10 +252,9 @@ function slugToTitle(slug = "") {
     }
     // more than two words: keep first hyphen, then spaces
     const firstTwo = parts.slice(0, 2).map(capitalize).join("-");
-    const rest    = parts.slice(2).map(capitalize).join(" ");
+    const rest = parts.slice(2).map(capitalize).join(" ");
     return `${firstTwo} ${rest}`;
 }
-
 
 // Accessibility transform
 function transformAccessibilityBlocks(strapiBlocks = []) {
@@ -284,7 +287,6 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                         test: r.test || "",
                     })),
                 };
-
 
             case "ComponentSharedBlocksHorizontalRuleBlock":
                 return {
@@ -378,13 +380,8 @@ function transformTableHead(tableHeadings = []) {
         return ["Size", "Description", ""];
     }
     const first = tableHeadings[0];
-    return [
-        first.size || "Size",
-        first.description || "Description",
-        ""
-    ];
+    return [first.size || "Size", first.description || "Description", ""];
 }
-
 
 function transformMetricsRowArray(rowArr) {
     if (!rowArr || rowArr.length === 0) {
@@ -410,6 +407,7 @@ function transformMetricsRowArray(rowArr) {
         postBulletParagraph: row.postBulletParagraph || "",
     };
 }
+
 function transformBestPracticeItems(itemsArr) {
     if (!itemsArr || itemsArr.length === 0) return [];
 
@@ -427,7 +425,7 @@ function transformBestPracticeItems(itemsArr) {
 
 // overview transform
 function transformOverviewBlocks(strapiBlocks = []) {
-    return strapiBlocks.map((block) => {
+    return strapiBlocks.map((block, idx) => {
         switch (block.__typename) {
             case "ComponentHeadingBlocksHeadingBlock":
                 return {
@@ -473,7 +471,6 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     insert: block.insert || null,
                 };
 
-
             case "ComponentBulletListBlockBulletListBlock":
                 return {
                     type: "bulletList",
@@ -487,7 +484,7 @@ function transformOverviewBlocks(strapiBlocks = []) {
                 return {
                     type: "pBold",
                     content: block.content || null,
-                }
+                };
 
             case "ComponentGridsImageHeadlineCopyGrid":
                 return {
@@ -510,6 +507,7 @@ function transformOverviewBlocks(strapiBlocks = []) {
                         paragraph: state.paragraph || "",
                     })),
                 };
+
             case "ComponentOverviewBlocksSizeSectionBlock":
                 return {
                     type: "sizeSection",
@@ -529,7 +527,7 @@ function transformOverviewBlocks(strapiBlocks = []) {
                 return {
                     type: "pBold",
                     content: block.headline || null,
-                }
+                };
 
             case "ComponentGridsMetricSectionBlock":
                 return {
@@ -551,24 +549,26 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     dontItems: transformBestPracticeItems(block.dontItems),
                 };
 
+            case "ComponentCustomBlocksStorybookModule":
+                // Render the Storybook iframe directly for this block
+                return {
+                    type: "storybook",
+                    componentName: block.componentName || "",
+                    key: `storybook-${idx}`,
+                };
 
             default:
                 return {
                     type: "unknown",
-                    content: `[Unknown usage block: ${block.__typename}]`,
+                    content: `[Unknown overview block: ${block.__typename}]`,
                 };
         }
     });
 }
+
 const ComponentDetailPage = () => {
     // 1) read param => e.g. "button", "checkbox", etc.
     const { slug } = useParams();
-
-
-    function capitalizeFirst(str) {
-        if (!str) return "";
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
 
     const [currentBrand, setCurrentBrand] = useState("Anthem");
 
@@ -577,9 +577,9 @@ const ComponentDetailPage = () => {
         variables: {
             pagination: {
                 page: 1,
-                pageSize: 100
-            }
-        }
+                pageSize: 100,
+            },
+        },
     });
 
     if (loading) return <p>Loading detail page for {slug}...</p>;
@@ -595,11 +595,9 @@ const ComponentDetailPage = () => {
 
     // pull bannerBody off the matched entry
     const bannerHeading = slugToTitle(slug);
-    const bannerBody    = detailEntry.bannerBody;
+    const bannerBody = detailEntry.bannerBody;
 
-
-
-    // 5) transform blocks from strapi
+    // 5) transform blocks from Strapi
     const usageBlocks = transformUsageBlocks(detailEntry.Usage || []);
     const accessibilityBlocks = transformAccessibilityBlocks(detailEntry.Accessibility || []);
     const overviewBlocks = transformOverviewBlocks(detailEntry.Overview || []);
@@ -613,7 +611,7 @@ const ComponentDetailPage = () => {
 
     return (
         <>
-            <ScrollToTop/>
+            <ScrollToTop />
 
             <GlobalNav
                 showBrandSwitcher

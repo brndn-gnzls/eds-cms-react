@@ -1,5 +1,4 @@
 // src/components/Accordion/Accordion.js
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Accordion.module.css";
@@ -8,7 +7,7 @@ export default function Accordion({
                                       label,
                                       links,
                                       defaultOpen = false,
-                                      currentPath,
+                                      currentPath
                                   }) {
     const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -16,17 +15,19 @@ export default function Accordion({
         setIsOpen(defaultOpen);
     }, [defaultOpen]);
 
-    const toggleAccordion = () => setIsOpen((prev) => !prev);
+    const toggleAccordion = () => setIsOpen((o) => !o);
+
+    // fallback scroll‐to‐top if no custom onClick
+    const doScrollTop = () => {
+        window.scrollTo(0, 0);
+        const content = document.querySelector("[data-main-content]");
+        if (content) content.scrollTop = 0;
+    };
 
     return (
         <div className={styles.accordionWrapper}>
-            {/* Header row */}
             <div className={styles.headerRow} onClick={toggleAccordion}>
-                <p
-                    className={`${styles.headerLabel} ${
-                        isOpen ? styles.open : ""
-                    }`}
-                >
+                <p className={`${styles.headerLabel} ${isOpen ? styles.open : ""}`}>
                     {label}
                 </p>
                 <span
@@ -36,7 +37,6 @@ export default function Accordion({
                 />
             </div>
 
-            {/* Links */}
             {isOpen && (
                 <div className={styles.linksContainer}>
                     {links.map(({ label: linkLabel, route, onClick }, idx) => {
@@ -49,10 +49,15 @@ export default function Accordion({
                                     isActive ? styles.activeLink : ""
                                 }`}
                                 onClick={(e) => {
-                                    // prevent bogus “#” links
-                                    if (route === "#") e.preventDefault();
-                                    // fire your scroll‐reset (or any other) callback
-                                    if (typeof onClick === "function") onClick();
+                                    if (route === "#") {
+                                        e.preventDefault();
+                                    }
+                                    // first your custom handler (if any)
+                                    if (typeof onClick === "function") {
+                                        onClick();
+                                    }
+                                    // then always scroll-to-top
+                                    doScrollTop();
                                 }}
                             >
                                 &nbsp;&nbsp;{linkLabel}

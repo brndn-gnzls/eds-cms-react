@@ -71,12 +71,13 @@ export default function GettingStartedPage() {
             ? gsPage.headerImage[0]
             : {};
     const { folder = "", fileName = "" } = headerImg;
-    const bgUrl = folder && fileName ? `/images/${folder}/${fileName}` : undefined;
+    // const bgUrl = folder && fileName ? `/images/${folder}/${fileName}` : undefined;
+    const bgUrl = "images/gettingStartedLanding/img-header-getstarted.jpg";
 
     // decide which tag to use for the Strapi headline (h2, h3, etc.)
     const HeadingTag = gsPage.headline?.headingLevel || "h2";
-    console.log(bgUrl);
 
+    console.log(bgUrl);
     return (
         <>
             <GlobalNav />

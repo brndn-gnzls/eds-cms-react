@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./ComponentTabs.module.css";
+
 import GettingHelpInternal from "../../components/GettingHelpInteral/GettingHelpInternal";
 import LargeAccordion from "../LargeAccordion/LargeAccordion";
 import ComponentDetailAppearance from "../ComponentDetailAppearance/ComponentDetailAppearance";
@@ -13,6 +14,8 @@ import ComponentDetailBestPractices from "../ComponentDetailBestPractices/Compon
 import BulletList from "../BulletList/BulletList";
 import ComponentDetailInteriorBulletList from "../ComponentDetailInteriorBulletList/ComponentDetailInteriorBulletList";
 import AccessibilityTable from "../AccessbilityTable/AccessibilityTable";
+import StorybookEmbed from "../StorybookEmbed/StorybookEmbed";
+
 export default function ComponentTabs({
                                           currentBrand = "Anthem",
                                           bannerHeading,
@@ -23,7 +26,7 @@ export default function ComponentTabs({
 
     let brandPrefix = "anthem-";
     if (currentBrand === "Healthy Blue") brandPrefix = "healthyblue-";
-    if (currentBrand === "Wellpoint") brandPrefix = "wellpoint-";
+    if (currentBrand === "Wellpoint")   brandPrefix = "wellpoint-";
 
     const handleTabClick = (idx) => setActiveIndex(idx);
     const currentBlocks = tabsData[activeIndex]?.blocks || [];
@@ -50,6 +53,7 @@ export default function ComponentTabs({
                     })}
                 </div>
             </div>
+
             <div className={styles.tabContent} data-main-content>
                 {currentBlocks.map((block, i) => renderBlock(block, i, brandPrefix))}
             </div>
@@ -61,24 +65,33 @@ function renderBlock(block, idx, brandPrefix) {
     switch (block.type) {
         case "h2":
             return <h2 key={idx}>{block.content}</h2>;
+
         case "h3":
             return <h3 key={idx}>{block.content}</h3>;
+
         case "p":
             return <p key={idx}>{block.content}</p>;
+
         case "pBold":
             return (
-                <p key={idx} style={{ fontWeight: "bold", fontSize: "18px", marginBottom: "8px" }}>
+                <p
+                    key={idx}
+                    style={{ fontWeight: "bold", fontSize: "18px", marginBottom: "8px" }}
+                >
                     {block.content}
                 </p>
             );
+
         case "pItalicSmall":
             return (
                 <p key={idx} style={{ fontStyle: "italic", fontSize: "14px" }}>
                     {block.content}
                 </p>
             );
+
         case "spacing":
             return <div key={idx} style={{ height: block.height || 16 }} />;
+
         case "hr":
             return (
                 <hr
@@ -86,11 +99,13 @@ function renderBlock(block, idx, brandPrefix) {
                     style={{ border: 0, borderTop: "1px solid #eeeeee", margin: "16px 0" }}
                 />
             );
+
         case "img": {
-            // fallback to "overview" if folder not specified
+            // fallback to “overview” if folder not specified
             const folder = block.folder ?? "overview";
-            // e.g. => "usage" or "overview"
+            // e.g. “button/usage/anthem-img.png”
             const finalSrc = `/images/componentDetailAssets/button/${folder}/${brandPrefix}${block.src}`;
+
             return (
                 <img
                     key={idx}
@@ -100,6 +115,7 @@ function renderBlock(block, idx, brandPrefix) {
                 />
             );
         }
+
         case "demoPlaceholder":
             return (
                 <div
@@ -112,10 +128,13 @@ function renderBlock(block, idx, brandPrefix) {
                     }}
                 />
             );
+
         case "gettingHelpInternal":
             return <GettingHelpInternal key={idx} />;
+
         case "largeAccordion":
             return <LargeAccordion key={idx} />;
+
         case "bestPracticeDo":
             return (
                 <div key={idx} className={styles.bpBlock}>
@@ -138,6 +157,7 @@ function renderBlock(block, idx, brandPrefix) {
                     />
                 </div>
             );
+
         case "bestPracticeDont":
             return (
                 <div key={idx} className={styles.bpBlock}>
@@ -160,14 +180,16 @@ function renderBlock(block, idx, brandPrefix) {
                     />
                 </div>
             );
+
         case "appearanceSection":
             return (
                 <ComponentDetailAppearance
                     key={idx}
-                    brandPrefix={brandPrefix} // e.g. "anthem-"
+                    brandPrefix={brandPrefix}
                     blocks={block.appearanceData}
                 />
             );
+
         case "statesSection":
             return (
                 <ComponentDetailStates
@@ -179,6 +201,7 @@ function renderBlock(block, idx, brandPrefix) {
                     rightStates={block.rightStates}
                 />
             );
+
         case "sizeSection":
             return (
                 <SizeTable
@@ -192,6 +215,7 @@ function renderBlock(block, idx, brandPrefix) {
                     tableRows={block.tableRows}
                 />
             );
+
         case "iconSection":
             return (
                 <ComponentDetailIcons
@@ -207,6 +231,7 @@ function renderBlock(block, idx, brandPrefix) {
                     rightParagraph={block.rightParagraph}
                 />
             );
+
         case "metricsSection":
             return (
                 <ComponentMetrics
@@ -220,6 +245,7 @@ function renderBlock(block, idx, brandPrefix) {
                     row2Right={block.row2Right}
                 />
             );
+
         case "bestPracticesSection":
             return (
                 <ComponentDetailBestPractices
@@ -231,13 +257,10 @@ function renderBlock(block, idx, brandPrefix) {
                     dontItems={block.dontItems}
                 />
             );
+
         case "bulletList":
-            return (
-                <BulletList
-                    key={idx}
-                    bullets={block.bullets}
-                />
-            );
+            return <BulletList key={idx} bullets={block.bullets} />;
+
         case "interiorBulletList":
             return (
                 <ComponentDetailInteriorBulletList
@@ -245,13 +268,20 @@ function renderBlock(block, idx, brandPrefix) {
                     bullets={block.bullets}
                 />
             );
+
         case "accessibilityTable":
+            return <AccessibilityTable key={idx} rows={block.rows || []} />;
+
+        case "storybook":
+            // We use idx here as the key, and pass componentName + a default story="primary"
             return (
-                <AccessibilityTable
+                <StorybookEmbed
                     key={idx}
-                    rows={block.rows || []}
+                    componentName={block.componentName}
+                    story="primary"
                 />
             );
+
         default:
             return (
                 <div key={idx} style={{ color: "red" }}>
