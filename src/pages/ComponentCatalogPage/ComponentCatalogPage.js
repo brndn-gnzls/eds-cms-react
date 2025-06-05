@@ -105,12 +105,12 @@ const ComponentCatalogPage = () => {
                 onBrandChange={setCurrentBrand}
             />
 
-            <div className="container mx-auto min-h-screen relative">
+            {/* CHANGED: use styles.containerRow just like your detail page */}
+            <div className={styles.containerRow}>
                 <LeftRail />
-
                 <div className={styles.rightSide}>
                     <div>
-                        {/* Masthead data => headline + body */}
+                        {/* ...the rest of your content stays unchanged... */}
                         <h1 style={{ paddingBottom: "16px" }}>
                             {mastheadData?.headline || "Overview"}
                         </h1>
@@ -118,11 +118,8 @@ const ComponentCatalogPage = () => {
                             {mastheadData?.body ||
                                 "An a-z component guide, featuring everything from basic elements..."}
                         </p>
-
                         <hr className={styles.line} />
                         <div style={{ height: "42px" }} />
-
-                        {/* H2 lockup => "Components" heading + body */}
                         <h2 style={{ paddingBottom: "16px" }}>
                             {lockupData?.headline || "Components"}
                         </h2>
@@ -130,19 +127,16 @@ const ComponentCatalogPage = () => {
                             {lockupData?.body ||
                                 "Explore our scalable components below for detailed documentation..."}
                         </p>
-
-                        {/* The 3-col grid with filtered items */}
                         <div className={styles.catalogGrid}>
                             {filteredItems.map((comp) => (
                                 <div key={comp.documentId} className={styles.catalogItem}>
-                                    {/* We'll do an <img> for brand image */}
                                     <div style={{ width: "200px", height: "126px" }}>
                                         <Link to={`/components/${comp.slug}`}>
-                                        <img
-                                            src={comp.imageUrl}
-                                            alt={comp.title}
-                                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                                        />
+                                            <img
+                                                src={comp.imageUrl}
+                                                alt={comp.title}
+                                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                                            />
                                         </Link>
                                     </div>
                                     <p className={styles.itemName}>{comp.title}</p>
@@ -152,13 +146,10 @@ const ComponentCatalogPage = () => {
                                 </div>
                             ))}
                         </div>
-
                         <div style={{ height: "92px" }} />
                         <hr className={styles.line} />
                         <div style={{ height: "92px" }} />
                     </div>
-
-                    {/* Additional content under the grid => 64px padding left, 192px bottom */}
                     <div>
                         <GettingHelpInternal />
                     </div>
@@ -169,5 +160,6 @@ const ComponentCatalogPage = () => {
         </>
     );
 };
+
 
 export default ComponentCatalogPage;

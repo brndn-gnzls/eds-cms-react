@@ -1,7 +1,7 @@
 /* src/components/Accordion/Accordion.module.css */
 
 .accordionWrapper {
-    padding: 0px 36px 16px 0;
+    padding: 26px 36px 16px 0;
     border-bottom: 1px solid #EEEEEE;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .headerLabel {
-    margin: 0;
+    margin: 1px 0 7px 0;
     font-weight: 400;
     user-select: none;
 }

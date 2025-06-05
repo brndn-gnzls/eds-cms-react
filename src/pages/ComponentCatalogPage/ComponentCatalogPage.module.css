@@ -1,12 +1,20 @@
-/* src/pages/ComponentCatalogPage/ComponentCatalogPage.module.css */
+.containerRow {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;   /* Adjust as needed for your site */
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fafbfc;
+    position: relative;
+    box-sizing: border-box;
+}
 
 .rightSide {
-    min-height: 100vh;
+    flex: 1 1 0;
+    min-width: 0;
     background-color: #fff;
-    padding-left: 300px; /* if your left rail is pinned at width=300 */
+    padding: 52px 32px 24px 32px;
     box-sizing: border-box;
-    margin-top: 64px;
-    margin-left: 64px;
 }
 
 /* Headings & paragraphs for the overview section */
@@ -31,7 +39,6 @@
     margin: 0;
 }
 
-/* The 3-col grid with 28px col gap, 62px row gap. */
 .catalogGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -39,7 +46,6 @@
     column-gap: 32px;
 }
 
-/* Force 3 columns on desktop. Using a media query for ~1024px */
 @media (min-width: 1024px) {
     .catalogGrid {
         grid-template-columns: repeat(3, 200px);

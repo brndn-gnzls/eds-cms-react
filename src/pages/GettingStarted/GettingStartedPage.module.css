@@ -1,6 +1,22 @@
-.rightSide {
+/* src/pages/GettingStartedPage/GettingStartedPage.module.css */
+
+.containerRow {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;   /* adjust as needed for your site */
+    margin: 0 auto;
     min-height: 100vh;
+    background: #fafbfc;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.rightSide {
+    flex: 1 1 0;
+    min-width: 0;
     background-color: #fff;
+    padding: 0 32px 24px 0px;
+    box-sizing: border-box;
 }
 
 .banner {
@@ -13,7 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 48px 158px 0 361px;
+    padding: 28px 31px 0 40px;
     box-sizing: border-box;
 }
 
@@ -31,21 +47,15 @@
 
 .postBannerSpace {
     height: 48px;
-    margin-left: 345px;
-}
-
-.contentArea {
-    margin-left: 393px;
-    padding-bottom: 40px;
+    /* Remove margin-left */
 }
 
 .introText {
-    margin-left: 360px;
     margin-bottom: 62px;
+    margin-left: 36px;
 }
 
 .introText p {
-    line-height: 18px;
     line-height: 22px;
 }
 
@@ -56,11 +66,6 @@ h2 {
     margin-bottom: 16px;
 }
 
-/* Turns off border on second GettingStartedPath component */
-/*.contentArea > div:nth-child(2) {*/
-/*    border-bottom: none;*/
-/*}*/
-
 h4 {
     font-size: 16px;
     font-weight: bold;
@@ -70,16 +75,17 @@ h4 {
     padding-bottom: 32px;
 }
 
+.contentArea {
+    padding-bottom: 40px;
+    margin-left: 36px;
+}
 
-
-/* Stacks on small screens */
+/* Responsive: stack content */
 @media (max-width: 786px) {
     .banner {
-        margin-left: 0;
         padding: 14px 14px 0px 14px;
         width: 100%;
     }
     .introText {margin-left: 0;}
     .contentArea {margin-left: 0;}
 }
-
