@@ -88,7 +88,22 @@ function renderBlock(block, idx) {
                     {block.content}
                 </p>
             );
-
+        case "link":
+            return (
+                <p key={idx} style={{ margin: "16px 0" }}>
+                    <a
+                        href={block.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            color: "#1a73e8",
+                            textDecoration: "underline"
+                        }}
+                    >
+                        {block.label}
+                    </a>
+                </p>
+            );
         case "pItalicSmall":
             return (
                 <p key={idx} style={{ fontStyle: "italic", fontSize: "14px" }}>
