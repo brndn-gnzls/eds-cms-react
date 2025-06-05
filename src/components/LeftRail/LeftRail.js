@@ -52,7 +52,6 @@ export default function LeftRail() {
 
     return (
         <div className={styles.leftRailWrapper}>
-            <div className={styles.stickyNavContent}>
                 {accordions.map(({ documentId, label, links, urls }) => {
                     let linkRoutes = [];
 
@@ -87,7 +86,6 @@ export default function LeftRail() {
                         />
                     );
                 })}
-            </div>
         </div>
     );
 }
