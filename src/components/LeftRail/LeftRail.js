@@ -52,40 +52,42 @@ export default function LeftRail() {
 
     return (
         <div className={styles.leftRailWrapper}>
-            {accordions.map(({ documentId, label, links, urls }) => {
-                let linkRoutes = [];
+            <div className={styles.stickyNavContent}>
+                {accordions.map(({ documentId, label, links, urls }) => {
+                    let linkRoutes = [];
 
-                if (urls && urls.length > 0) {
-                    linkRoutes = urls.map(({ linkName, url }) => ({
-                        label: linkName,
-                        route: url.startsWith("/") ? url : `/${url}`,
-                        onClick: resetScroll,
-                    }));
-                } else if (links) {
-                    linkRoutes = links.split("\\n").map((raw) => {
-                        const lbl = raw.replace(/\\n/g, "").trim();
-                        return {
-                            label: lbl,
-                            route: staticLinkMap[lbl] || "#",
+                    if (urls && urls.length > 0) {
+                        linkRoutes = urls.map(({ linkName, url }) => ({
+                            label: linkName,
+                            route: url.startsWith("/") ? url : `/${url}`,
                             onClick: resetScroll,
-                        };
-                    });
-                }
+                        }));
+                    } else if (links) {
+                        linkRoutes = links.split("\\n").map((raw) => {
+                            const lbl = raw.replace(/\\n/g, "").trim();
+                            return {
+                                label: lbl,
+                                route: staticLinkMap[lbl] || "#",
+                                onClick: resetScroll,
+                            };
+                        });
+                    }
 
-                const shouldOpen = linkRoutes.some(
-                    (lr) => lr.route === location.pathname
-                );
+                    const shouldOpen = linkRoutes.some(
+                        (lr) => lr.route === location.pathname
+                    );
 
-                return (
-                    <Accordion
-                        key={documentId}
-                        label={label}
-                        links={linkRoutes}
-                        defaultOpen={shouldOpen}
-                        currentPath={location.pathname}
-                    />
-                );
-            })}
+                    return (
+                        <Accordion
+                            key={documentId}
+                            label={label}
+                            links={linkRoutes}
+                            defaultOpen={shouldOpen}
+                            currentPath={location.pathname}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }

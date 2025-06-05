@@ -1,12 +1,21 @@
-/* src/pages/ComponentCatalogPage/ComponentCatalogPage.module.css */
+.containerRow {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;   /* Adjust as needed for your site */
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fafbfc;
+    position: relative;
+    box-sizing: border-box;
+}
 
 .rightSide {
-    min-height: 100vh;
+    flex: 1 1 0;
+    min-width: 0;
     background-color: #fff;
-    padding-left: 300px; /* if your left rail is pinned at width=300 */
+    padding: 0 32px 24px 32px; /* Add spacing as needed */
     box-sizing: border-box;
-    margin-top: 64px;
-    margin-left: 64px;
+    /* REMOVE padding-left: 300px; and margin-left: 64px; */
 }
 
 /* Headings & paragraphs for the overview section */

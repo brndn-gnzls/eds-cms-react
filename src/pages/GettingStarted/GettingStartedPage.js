@@ -77,15 +77,14 @@ export default function GettingStartedPage() {
     // decide which tag to use for the Strapi headline (h2, h3, etc.)
     const HeadingTag = gsPage.headline?.headingLevel || "h2";
 
-    console.log(bgUrl);
     return (
         <>
             <GlobalNav />
 
-            <div className="container mx-auto min-h-screen relative">
+            <div className={styles.containerRow}>
                 <LeftRail />
 
-                <div className={`${styles.rightSide} min-h-screen`}>
+                <div className={styles.rightSide}>
                     {/* Banner with dynamic background */}
                     <div
                         className={styles.banner}
@@ -116,8 +115,7 @@ export default function GettingStartedPage() {
                         {pathItems.map((item) => {
                             let link = "/get-started";
                             if (item.heading === "Design") link = "/get-started/design";
-                            else if (item.heading === "Develop")
-                                link = "/get-started/develop";
+                            else if (item.heading === "Develop") link = "/get-started/develop";
 
                             return (
                                 <GettingStartedPath

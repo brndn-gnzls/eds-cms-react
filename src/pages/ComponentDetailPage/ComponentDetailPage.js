@@ -612,16 +612,15 @@ const ComponentDetailPage = () => {
     return (
         <>
             <ScrollToTop />
-
             <GlobalNav
                 showBrandSwitcher
                 currentBrand={currentBrand}
                 onBrandChange={setCurrentBrand}
             />
 
-            <div className="container mx-auto min-h-screen relative">
+            {/* Use containerRow to center and flex */}
+            <div className={styles.containerRow}>
                 <LeftRail />
-
                 <div className={styles.rightSide}>
                     <ComponentTabs
                         currentBrand={currentBrand}
