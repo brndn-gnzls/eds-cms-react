@@ -9,6 +9,7 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
 import StorybookEmbed from "../../components/StorybookEmbed/StorybookEmbed"; // <-- import your embed component
 import styles from "./ComponentDetailPage.module.css";
+import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 const GET_COMPONENT_DETAIL = gql`
     query GetComponentDetailPages($pagination: PaginationArg) {
@@ -630,7 +631,7 @@ const ComponentDetailPage = () => {
                     />
                 </div>
             </div>
-
+            <BackToTopButton />
             <GlobalFooter />
         </>
     );

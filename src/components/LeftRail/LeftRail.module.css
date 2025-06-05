@@ -11,10 +11,6 @@
     position: relative;
 }
 
-.stickyNavContent {
-    position: sticky;
-    top: 78px; /* or whatever your GlobalNav height is */
-}
 
 @media (max-width: 768px) {
     .leftRailWrapper {
