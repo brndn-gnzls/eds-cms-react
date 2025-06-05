@@ -89,6 +89,14 @@ function renderBlock(block, idx, brandPrefix) {
                 </p>
             );
 
+        case "singleBullet":
+            return (
+                <div key={idx} style={{ display: "flex", alignItems: "flex-start", margin: "8px 0" }}>
+                    <span style={{ fontSize: "1.2em", marginRight: "8px", lineHeight: 1.5 }}>&bull;</span>
+                    <span>{block.label}</span>
+                </div>
+            );
+
         case "pBold":
             return (
                 <p
