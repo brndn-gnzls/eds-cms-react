@@ -65,9 +65,8 @@ export default function GetStartedDesignPage() {
         <>
             <GlobalNav />
 
-            <div className="container mx-auto min-h-screen relative">
+            <div className={styles.containerRow}>
                 <LeftRail />
-
                 <div className={styles.rightSide}>
                     <DevTabs
                         bannerHeading={bannerHeading}

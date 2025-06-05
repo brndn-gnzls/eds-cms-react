@@ -13,9 +13,8 @@
     flex: 1 1 0;
     min-width: 0;
     background-color: #fff;
-    padding: 0 32px 24px 32px; /* Add spacing as needed */
+    padding: 52px 32px 24px 32px;
     box-sizing: border-box;
-    /* REMOVE padding-left: 300px; and margin-left: 64px; */
 }
 
 /* Headings & paragraphs for the overview section */
@@ -40,7 +39,6 @@
     margin: 0;
 }
 
-/* The 3-col grid with 28px col gap, 62px row gap. */
 .catalogGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -48,7 +46,6 @@
     column-gap: 32px;
 }
 
-/* Force 3 columns on desktop. Using a media query for ~1024px */
 @media (min-width: 1024px) {
     .catalogGrid {
         grid-template-columns: repeat(3, 200px);
