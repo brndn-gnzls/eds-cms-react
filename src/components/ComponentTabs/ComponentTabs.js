@@ -15,6 +15,7 @@ import BulletList from "../BulletList/BulletList";
 import ComponentDetailInteriorBulletList from "../ComponentDetailInteriorBulletList/ComponentDetailInteriorBulletList";
 import AccessibilityTable from "../AccessbilityTable/AccessibilityTable";
 import StorybookEmbed from "../StorybookEmbed/StorybookEmbed";
+import NotificationBox from "../NotificationBox/NotificationBox";
 
 export default function ComponentTabs({
                                           currentBrand = "Anthem",
@@ -292,6 +293,14 @@ function renderBlock(block, idx, brandPrefix) {
                     key={idx}
                     bullets={block.bullets}
                 />
+            );
+
+        case "notificationBox":
+            return (
+                <NotificationBox key={idx} color={block.borderColor}>
+                    {/* If you want to support links and formatting, use dangerouslySetInnerHTML */}
+                    <div dangerouslySetInnerHTML={{ __html: block.content }} />
+                </NotificationBox>
             );
 
         case "accessibilityTable":

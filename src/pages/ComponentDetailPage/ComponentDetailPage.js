@@ -12,7 +12,7 @@ import styles from "./ComponentDetailPage.module.css";
 import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 
 const GET_COMPONENT_DETAIL = gql`
-    query GetComponentDetailPages($pagination: PaginationArg) {
+    query GetComponentDetailPages ($pagination: PaginationArg) {
         componentDetailPages_connection(pagination: $pagination) {
             nodes {
                 slug
@@ -80,6 +80,9 @@ const GET_COMPONENT_DETAIL = gql`
                         headingText
                         headingLevel
                     }
+                    ... on ComponentCustomBlocksStorybookModule {
+                        componentName
+                    }
                     ... on ComponentParagraphBlocksParagraphBlock {
                         content
                     }
@@ -140,6 +143,10 @@ const GET_COMPONENT_DETAIL = gql`
                             description
                             metrics
                         }
+                    }
+                    ... on ComponentSharedBlocksNotificationBox {
+                        borderColor
+                        content
                     }
                     ... on ComponentSharedBlocksParagraphHeadline {
                         headline
@@ -217,9 +224,6 @@ const GET_COMPONENT_DETAIL = gql`
                                 imageSrc
                             }
                         }
-                    }
-                    ... on ComponentCustomBlocksStorybookModule {
-                        componentName
                     }
                 }
             }
@@ -440,6 +444,13 @@ function transformOverviewBlocks(strapiBlocks = []) {
                     content: block.content || null,
                 };
 
+            case "ComponentSharedBlocksNotificationBox":
+                return {
+                    type: "notificationBox",
+                    borderColor: block.borderColor || "#000",
+                    content: block.content || "",
+                };
+
             case "ComponentParagraphBlocksParagraphBlock":
                 return {
                     type: "p",
@@ -618,6 +629,7 @@ const ComponentDetailPage = () => {
                 currentBrand={currentBrand}
                 onBrandChange={setCurrentBrand}
             />
+
 
             {/* Use containerRow to center and flex */}
             <div className={styles.containerRow}>
