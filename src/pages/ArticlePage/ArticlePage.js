@@ -85,9 +85,11 @@ export default function ArticlePage() {
 
             case "p":
                 return (
-                    <p key={i} style={{ margin: "16px 0" }}>
-                        {b.content}
-                    </p>
+                    <p
+                        key={i}
+                        style={{ margin: "16px 0" }}
+                        dangerouslySetInnerHTML={{ __html: b.content }}
+                    />
                 );
 
             case "pBold":
@@ -100,9 +102,8 @@ export default function ArticlePage() {
                             lineHeight: "32px",
                             marginBottom: "8px",
                         }}
-                    >
-                        {b.content}
-                    </p>
+                        dangerouslySetInnerHTML={{ __html: b.content }}
+                    />
                 );
 
             case "pItalicSmall":
