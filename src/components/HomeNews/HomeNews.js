@@ -101,7 +101,7 @@ export default function HomeNews() {
                             <Link to={`/articles/${url}`}>
                                 <h2>{title}</h2>
                             </Link>
-                            <p>{storyBody}</p>
+                            <p dangerouslySetInnerHTML={{ __html: storyBody }} />
                             <div className={styles.bottomBorder} />
                             <p>
                                 <strong>{articleAuthorName}</strong>{" "}

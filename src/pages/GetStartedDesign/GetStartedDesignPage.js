@@ -7,6 +7,7 @@ import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import DevTabs from "../../components/DevTabs/DevTabs";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
+import ResourceGrid from "../../components/ResourceGrid/ResourceGrid";
 
 import styles from "./GetStartedDesignPage.module.css";
 
@@ -68,6 +69,7 @@ export default function GetStartedDesignPage() {
             <div className={styles.containerRow}>
                 <LeftRail />
                 <div className={styles.rightSide}>
+                    <ResourceGrid />
                     <DevTabs
                         bannerHeading={bannerHeading}
                         bannerBody={bannerBody}

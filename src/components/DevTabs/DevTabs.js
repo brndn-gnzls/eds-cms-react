@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import styles from "./DevTabs.module.css";
 import GettingHelpInternal from "../GettingHelpInteral/GettingHelpInternal";
 import LargeAccordion from "../LargeAccordion/LargeAccordion";
+import ResourceGrid from "../ResourceGrid/ResourceGrid";
+
 
 /**
  * DevTabs expects 4 props:
@@ -153,8 +155,15 @@ function renderBlock(block, idx) {
             );
 
         case "largeAccordion":
-            // <<<— use the real FAQ items here
             return <LargeAccordion key={idx} items={block.items} />;
+
+        case "resourceGrid":
+            return (
+                <ResourceGrid
+                    key={idx}
+                    items={block.items}
+                />
+            );
 
         default:
             return (

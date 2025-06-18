@@ -39,6 +39,13 @@ const GET_COMPONENT_DETAIL = gql`
                     ... on ComponentSharedBlocksItalicCaptionSmall {
                         content
                     }
+                    ... on ComponentGlobalLink {
+                        url
+                        label
+                    }
+                    ... on ComponentGlobalSingleBullet {
+                        content
+                    }
                 }
 
                 Accessibility {
@@ -72,6 +79,13 @@ const GET_COMPONENT_DETAIL = gql`
                     ... on ComponentSharedBlocksGettingHelpInternalBlock {
                         insert
                     }
+                    ... on ComponentGlobalLink {
+                        url
+                        label
+                    }
+                    ... on ComponentGlobalSingleBullet {
+                        content
+                    }
                 }
 
                 Overview {
@@ -88,6 +102,13 @@ const GET_COMPONENT_DETAIL = gql`
                     }
                     ... on ComponentSpacingBlocksSpacingBlock {
                         height
+                    }
+                    ... on ComponentGlobalLink {
+                        url
+                        label
+                    }
+                    ... on ComponentGlobalSingleBullet {
+                        content
                     }
                     ... on ComponentSharedBlocksHorizontalRuleBlock {
                         style
@@ -230,7 +251,6 @@ const GET_COMPONENT_DETAIL = gql`
         }
     }
 `;
-
 /**
  * 2) Transform Helpers
  *    - If you want, you can combine them into one
@@ -305,6 +325,22 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                     insert: block.insert || null,
                 };
 
+
+            case "ComponentGlobalLink":
+                return {
+                    type: "link",
+                    url: block.url,
+                    label: block.label,
+                };
+
+            case "ComponentGlobalSingleBullet":
+                return {
+                    type: "singleBullet",
+                    content: block.content,  // use "label" for consistency with renderer
+                };
+
+
+
             case "ComponentBulletListBlockBulletListBlock":
                 return {
                     type: "bulletList",
@@ -338,6 +374,21 @@ function transformUsageBlocks(strapiBlocks = []) {
                     type: "pItalicSmall",
                     content: block.content || null,
                 };
+
+
+            case "ComponentGlobalLink":
+                return {
+                    type: "link",
+                    url: block.url,
+                    label: block.label,
+                };
+
+            case "ComponentGlobalSingleBullet":
+                return {
+                    type: "singleBullet",
+                    label: block.content,  // use "label" for consistency with renderer
+                };
+
 
             case "ComponentParagraphBlocksParagraphBlock":
                 return {
@@ -442,6 +493,19 @@ function transformOverviewBlocks(strapiBlocks = []) {
                 return {
                     type: "pItalicSmall",
                     content: block.content || null,
+                };
+
+            case "ComponentGlobalLink":
+                return {
+                    type: "link",
+                    url: block.url,
+                    label: block.label,
+                };
+
+            case "ComponentGlobalSingleBullet":
+                return {
+                    type: "singleBullet",
+                    label: block.content,  // use "label" for consistency with renderer
                 };
 
             case "ComponentSharedBlocksNotificationBox":
