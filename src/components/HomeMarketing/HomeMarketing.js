@@ -24,20 +24,21 @@ const HomeMarketing = () => {
 
     return (
         <section className={styles.marketingWrapper}>
-            {/* Left Column: text lockup */}
-            <div className={styles.leftColumn}>
-                <h2>{heading2}</h2>
-                <h3>{heading3}</h3>
-                <p>{paragraph}</p>
-                <button className={styles.tryItBtn}>{buttonLabel}</button>
-            </div>
+            <div className={styles.marketingInner}>
+                {/* Left Column: text lockup */}
+                <div className={styles.leftColumn}>
+                    <h2>{heading2}</h2>
+                    <h3>{heading3}</h3>
+                    <p>{paragraph}</p>
+                    <button className={styles.tryItBtn}>{buttonLabel}</button>
+                </div>
 
-            <div
-                className={styles.rightColumn}
-                style={{
-                    backgroundImage: `url(${imageUrl})`,
-                }}
-            />
+                {/* Right Column: image */}
+                <div
+                    className={styles.rightColumn}
+                    style={{ backgroundImage: `url(${imageUrl})` }}
+                />
+            </div>
         </section>
     );
 };

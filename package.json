@@ -23,7 +23,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "move": "mv storybook-static build/storybook",
+    "bundle": "npm run build && storybook build && npm run move",
+    "serve": "http-serve build -p 5500"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +57,7 @@
     "@storybook/react-webpack5": "^9.0.4",
     "autoprefixer": "^10.4.20",
     "eslint-plugin-storybook": "^9.0.4",
+    "http-serve": "^1.0.1",
     "postcss": "^8.4.49",
     "prop-types": "^15.8.1",
     "storybook": "^9.0.4",
