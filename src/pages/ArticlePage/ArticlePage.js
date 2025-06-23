@@ -9,7 +9,7 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ArticlePage.module.css";
 
 const GET_ARTICLES = gql`
-    query GetArticles {
+    query Articles {
         articles {
             url
             title
@@ -17,14 +17,47 @@ const GET_ARTICLES = gql`
             articleAuthorName
             articleAuthorRole
             articleComposition {
-                ... on ComponentSpacingBlocksSpacingBlock { height }
-                ... on ComponentSharedBlocksParagraphHeadline { headline }
-                ... on ComponentSharedBlocksImageBlock { folder src }
-                ... on ComponentSharedBlocksItalicCaptionSmall { content }
-                ... on ComponentParagraphBlocksParagraphBlock { id content }
-                ... on ComponentHeadingBlocksHeadingBlock { headingText headingLevel }
-                ... on ComponentBulletListBlockBulletListBlock { items { boldLead body } }
-                ... on ComponentSharedBlocksHorizontalRuleBlock { style }
+                ... on ComponentSpacingBlocksSpacingBlock {
+                    id
+                    height
+                }
+                ... on ComponentSharedBlocksParagraphHeadline {
+                    id
+                    headline
+                }
+                ... on ComponentSharedBlocksImageBlock {
+                    id
+                    folder
+                    src
+                }
+                ... on ComponentSharedBlocksItalicCaptionSmall {
+                    id
+                    content
+                }
+                ... on ComponentParagraphBlocksParagraphBlock {
+                    id
+                    content
+                }
+                ... on ComponentHeadingBlocksHeadingBlock {
+                    id
+                    headingText
+                    headingLevel
+                }
+                ... on ComponentBulletListBlockBulletListBlock {
+                    id
+                    items {
+                        boldLead
+                        body
+                    }
+                }
+                ... on ComponentSharedBlocksHorizontalRuleBlock {
+                    id
+                    style
+                }
+                ... on ComponentGlobalSingleBullet {
+                    id
+                    content
+                }
             }
         }
     }
@@ -50,6 +83,9 @@ export default function ArticlePage() {
             }
             if (blk.headline) {
                 return { type: "pBold", content: blk.headline };
+            }
+            if (blk.__typename === "ComponentGlobalSingleBullet") {
+                return { type: "singleBullet", label: blk.content };
             }
             if (blk.folder && blk.src) {
                 return { type: "img", src: `/${blk.folder}/${blk.src}` };
@@ -111,9 +147,8 @@ export default function ArticlePage() {
                     <p
                         key={i}
                         style={{ fontStyle: "italic", fontSize: "14px", margin: "16px 0" }}
-                    >
-                        {b.content}
-                    </p>
+                        dangerouslySetInnerHTML={{ __html: b.content }}
+                    />
                 );
 
             case "spacing":
@@ -139,6 +174,14 @@ export default function ArticlePage() {
                             </li>
                         ))}
                     </ul>
+                );
+
+            case "singleBullet":
+                return (
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", margin: "8px 0 0 0" }}>
+                        <span style={{ marginRight: "8px", lineHeight: 1.5 }}>&bull;</span>
+                        <span>{b.label}</span>
+                    </div>
                 );
 
             case "hr":
