@@ -26,7 +26,7 @@ const StorybookEmbed = ({ componentName, story = "primary", height = 500 }) => {
     const storyId = `${group}-${comp}--${variant}`;
 
     // 2) Use ?path=/story/... so that Storybook shows full UI (including Controls)
-    const srcUrl = `http://localhost:6006/?path=/story/${storyId}`;
+    const srcUrl = `http://127.0.0.1:5500/storybook/?path=/story/components-button--primary`;
 
     return (
         <div

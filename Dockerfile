@@ -9,13 +9,13 @@ ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 ENV NODE_ENV=$namespace
 
 RUN npm install
-RUN npm run build
+RUN npm run bundle
 
 FROM node:20
 WORKDIR /app
 
-RUN npm install -g serve@14.2.4
+RUN npm install -g http-serve@1.0.1
 COPY --from=builder /app/build ./
 
-EXPOSE 5000
-CMD ["serve", "-s", "-p", "5000", "."]
+EXPOSE 5500
+CMD ["http-serve", "-p", "5500"]
