@@ -11,9 +11,9 @@ const HomePage = () => {
             <GlobalNav />
 
             {/* Main page content (constrained to .container) */}
+            <HomeMasthead />
+            <HomeMarketing />
             <div className="container mx-auto flex flex-col min-h-screen">
-                <HomeMasthead />
-                <HomeMarketing />
                 <HomeNews />
             </div>
 
