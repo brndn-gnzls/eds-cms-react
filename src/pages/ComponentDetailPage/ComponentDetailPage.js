@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // <- Added useEffect
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
@@ -7,9 +7,10 @@ import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import ComponentTabs from "../../components/ComponentTabs/ComponentTabs";
-import StorybookEmbed from "../../components/StorybookEmbed/StorybookEmbed"; // <-- import your embed component
+import StorybookEmbed from "../../components/StorybookEmbed/StorybookEmbed";
 import styles from "./ComponentDetailPage.module.css";
 import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
+import {useLoading} from "../../LoadingContext";
 
 const GET_COMPONENT_DETAIL = gql`
     query GetComponentDetailPages ($pagination: PaginationArg) {
@@ -641,25 +642,30 @@ function transformOverviewBlocks(strapiBlocks = []) {
         }
     });
 }
+const COMPONENT_NAME = "ComponentDetailPage";
 
 const ComponentDetailPage = () => {
-    // 1) read param => e.g. "button", "checkbox", etc.
     const { slug } = useParams();
-
+    const { startLoading, stopLoading } = useLoading();
     const [currentBrand, setCurrentBrand] = useState("Anthem");
 
-    // 2) fetch all detail pages
     const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL, {
-        variables: {
-            pagination: {
-                page: 1,
-                pageSize: 100,
-            },
-        },
+        variables: { pagination: { page: 1, pageSize: 100 } },
     });
 
-    if (loading) return <p>Loading detail page for {slug}...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+    // <- Start global loading indicator on component mount
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        return () => stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
+
+    // <- Stop global loading indicator when query completes
+    useEffect(() => {
+        if (!loading) stopLoading(COMPONENT_NAME);
+    }, [loading, stopLoading]);
+
+    // <- Removed local loading/error UI, delegate fully to global loader
+    if (loading || error) return null;
 
     // 3) find the correct node
     const detailNodes = data?.componentDetailPages_connection?.nodes || [];

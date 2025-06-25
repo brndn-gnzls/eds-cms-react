@@ -1,6 +1,6 @@
 // src/pages/ComponentCatalogPage/ComponentCatalogPage.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react"; // <- Added useEffect
 import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
@@ -8,8 +8,8 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelpInternal from "../../components/GettingHelpInteral/GettingHelpInternal";
 import styles from "./ComponentCatalogPage.module.css";
 import { Link } from "react-router-dom";
+import { useLoading } from "../../LoadingContext"; // <- Added useLoading
 
-// GraphQL queries as you specified
 const GET_CATALOG_INVENTORIES = gql`
     query ComponentCatalogInventories($pagination: PaginationArg) {
         componentCatalogInventories(pagination: $pagination) {
@@ -40,50 +40,46 @@ const GET_GENERAL_H2_LOCKUP = gql`
     }
 `;
 
-// The page
+const COMPONENT_NAME = "ComponentCatalogPage"; // <- Component name for global loading
+
 const ComponentCatalogPage = () => {
-    // 1) Brand switch state (local)
     const [currentBrand, setCurrentBrand] = useState("Anthem");
+    const { startLoading, stopLoading } = useLoading(); // <- Global loading hook
 
-    // 2) Apollo queries
-    // a) fetch all inventory items with pagination = {pageSize: 100}
-    const {
-        loading: invLoading,
-        error: invError,
-        data: invData,
-    } = useQuery(GET_CATALOG_INVENTORIES, {
-        variables: { pagination: { pageSize: 100 } },
-    });
+    const { loading: invLoading, error: invError, data: invData } = useQuery(
+        GET_CATALOG_INVENTORIES,
+        { variables: { pagination: { pageSize: 100 } } }
+    );
 
-    // b) fetch the masthead single type
-    const {
-        loading: mastLoading,
-        error: mastError,
-        data: mastData,
-    } = useQuery(GET_CATALOG_MASTHEAD);
+    const { loading: mastLoading, error: mastError, data: mastData } = useQuery(
+        GET_CATALOG_MASTHEAD
+    );
 
-    // c) fetch the h2 lockup single type
-    const {
-        loading: h2Loading,
-        error: h2Error,
-        data: h2Data,
-    } = useQuery(GET_GENERAL_H2_LOCKUP);
+    const { loading: h2Loading, error: h2Error, data: h2Data } = useQuery(
+        GET_GENERAL_H2_LOCKUP
+    );
 
-    // 3) Handle loading/errors
-    if (invLoading || mastLoading || h2Loading) {
-        return <p>Loading Component Catalog...</p>;
-    }
-    if (invError) return <p>Error: {invError.message}</p>;
-    if (mastError) return <p>Error: {mastError.message}</p>;
-    if (h2Error) return <p>Error: {h2Error.message}</p>;
+    // <- Start global loading indicator on component mount
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        return () => stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
 
-    // 4) Extract data
+    // <- Stop global loading indicator when all queries finish
+    useEffect(() => {
+        if (!invLoading && !mastLoading && !h2Loading) {
+            stopLoading(COMPONENT_NAME);
+        }
+    }, [invLoading, mastLoading, h2Loading, stopLoading]);
+
+    // <- Removed local loader/error UI, return null to let global loader handle UI
+    if (invLoading || mastLoading || h2Loading || invError || mastError || h2Error)
+        return null;
+
     const inventoryItems = invData?.componentCatalogInventories || [];
     const mastheadData = mastData?.componentCatalogMasthead;
     const lockupData = h2Data?.generalH2Lockup;
 
-    // 5) Filter inventory by brand prefix
-    // (e.g. "anthem-", "healthyblue-", "wellpoint-")
     let brandPrefix = "anthem-";
     if (currentBrand === "Healthy Blue") brandPrefix = "healthyblue-";
     if (currentBrand === "Wellpoint") brandPrefix = "wellpoint-";
@@ -96,7 +92,6 @@ const ComponentCatalogPage = () => {
         item.imageUrl.includes(brandPrefix)
     );
 
-
     return (
         <>
             <GlobalNav
@@ -105,12 +100,10 @@ const ComponentCatalogPage = () => {
                 onBrandChange={setCurrentBrand}
             />
 
-            {/* CHANGED: use styles.containerRow just like your detail page */}
             <div className={styles.containerRow}>
                 <LeftRail />
                 <div className={styles.rightSide}>
                     <div>
-                        {/* ...the rest of your content stays unchanged... */}
                         <h1 style={{ paddingBottom: "16px" }}>
                             {mastheadData?.headline || "Overview"}
                         </h1>
@@ -129,13 +122,20 @@ const ComponentCatalogPage = () => {
                         </p>
                         <div className={styles.catalogGrid}>
                             {filteredItems.map((comp) => (
-                                <div key={comp.documentId} className={styles.catalogItem}>
+                                <div
+                                    key={comp.documentId}
+                                    className={styles.catalogItem}
+                                >
                                     <div style={{ width: "200px", height: "126px" }}>
                                         <Link to={`/components/${comp.slug}`}>
                                             <img
                                                 src={comp.imageUrl}
                                                 alt={comp.title}
-                                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "100%",
+                                                    objectFit: "contain",
+                                                }}
                                             />
                                         </Link>
                                     </div>
@@ -160,6 +160,5 @@ const ComponentCatalogPage = () => {
         </>
     );
 };
-
 
 export default ComponentCatalogPage;

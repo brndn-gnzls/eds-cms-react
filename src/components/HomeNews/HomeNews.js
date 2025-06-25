@@ -1,11 +1,11 @@
 // src/components/HomeNews/HomeNews.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 import styles from "./HomeNews.module.css";
+import { useLoading } from "../../LoadingContext";
 
-// 1) Top heading/paragraph stays the same
 const GET_HOME_NEWS_TOP = gql`
     query GetHomeNewsTop {
         homeNewsTop {
@@ -15,7 +15,6 @@ const GET_HOME_NEWS_TOP = gql`
     }
 `;
 
-// 2) Updated articles query to pull in `thumbnail`
 const GET_ARTICLES = gql`
     query GetArticles {
         articles {
@@ -32,37 +31,36 @@ const GET_ARTICLES = gql`
         }
     }
 `;
+
+const COMPONENT_NAME = "HomeNews";
+
 export default function HomeNews() {
-    // fetch top lock-up
-    const {
-        loading: topLoading,
-        error: topError,
-        data: topData,
-    } = useQuery(GET_HOME_NEWS_TOP);
+    const { startLoading, stopLoading } = useLoading();
 
-    // fetch articles with thumbnail
-    const {
-        loading: articlesLoading,
-        error: articlesError,
-        data: articlesData,
-    } = useQuery(GET_ARTICLES);
+    const { loading: topLoading, error: topError, data: topData } = useQuery(GET_HOME_NEWS_TOP);
+    const { loading: articlesLoading, error: articlesError, data: articlesData } = useQuery(GET_ARTICLES);
 
-    if (topLoading || articlesLoading) return <p>Loading Latest Updates…</p>;
-    if (topError) return <p>Error (top lockup): {topError.message}</p>;
-    if (articlesError) return <p>Error (articles): {articlesError.message}</p>;
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        return () => stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
+
+    useEffect(() => {
+        if (!topLoading && !articlesLoading) stopLoading(COMPONENT_NAME);
+    }, [topLoading, articlesLoading, stopLoading]);
+
+    if (topLoading || articlesLoading || topError || articlesError) return null;
 
     const { topHeading, topParagraph } = topData.homeNewsTop;
     const articles = articlesData.articles || [];
 
     return (
         <section className={styles.newsWrapper}>
-            {/* Top Lock-up */}
             <div className={styles.topLockup}>
                 <h2>{topHeading}</h2>
                 <p>{topParagraph}</p>
             </div>
 
-            {/* Article List */}
             {articles.map((article) => {
                 const {
                     url,
@@ -73,15 +71,9 @@ export default function HomeNews() {
                     articleComposition,
                 } = article;
 
-                // Use thumbnail for the small listing image
-                const storyImageUrl = thumbnail
-                    ? `/${thumbnail.replace(/^\/+/, "")}`
-                    : "";
+                const storyImageUrl = thumbnail ? `/${thumbnail.replace(/^\/+/, "")}` : "";
 
-                // first ParagraphHeadline block for storyBody
-                const headlineBlock = (articleComposition || []).find(
-                    (b) => b.headline
-                );
+                const headlineBlock = (articleComposition || []).find((b) => b.headline);
                 const storyBody = headlineBlock ? headlineBlock.headline : "";
 
                 return (
@@ -90,9 +82,7 @@ export default function HomeNews() {
                             <div
                                 className={styles.newsImage}
                                 style={{
-                                    backgroundImage: storyImageUrl
-                                        ? `url("${storyImageUrl}")`
-                                        : "none",
+                                    backgroundImage: storyImageUrl ? `url("${storyImageUrl}")` : "none",
                                 }}
                             />
                         </Link>
@@ -104,8 +94,7 @@ export default function HomeNews() {
                             <p dangerouslySetInnerHTML={{ __html: storyBody }} />
                             <div className={styles.bottomBorder} />
                             <p>
-                                <strong>{articleAuthorName}</strong>{" "}
-                                {articleAuthorRole}
+                                <strong>{articleAuthorName}</strong> {articleAuthorRole}
                             </p>
                         </div>
                     </div>

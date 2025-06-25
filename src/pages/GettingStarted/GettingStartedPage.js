@@ -1,6 +1,6 @@
 // src/pages/GettingStartedPage/GettingStartedPage.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import LeftRail from "../../components/LeftRail/LeftRail";
@@ -9,6 +9,7 @@ import NotificationBox from "../../components/NotificationBox/NotificationBox";
 import GettingHelp from "../../components/GettingHelp/GettingHelp";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./GettingStartedPage.module.css";
+import { useLoading } from "../../LoadingContext";
 
 const GET_GETTING_STARTED_PAGE = gql`
     query GettingStartedPage {
@@ -45,36 +46,35 @@ const GET_GETTING_STARTED_PATHS = gql`
     }
 `;
 
+const COMPONENT_NAME = "GettingStartedPage";
+
 export default function GettingStartedPage() {
-    const {
-        loading: pageLoading,
-        error: pageError,
-        data: pageData,
-    } = useQuery(GET_GETTING_STARTED_PAGE);
+    const { startLoading, stopLoading } = useLoading();
 
-    const {
-        loading: pathsLoading,
-        error: pathsError,
-        data: pathsData,
-    } = useQuery(GET_GETTING_STARTED_PATHS);
+    const { loading: pageLoading, error: pageError, data: pageData } = useQuery(GET_GETTING_STARTED_PAGE);
+    const { loading: pathsLoading, error: pathsError, data: pathsData } = useQuery(GET_GETTING_STARTED_PATHS);
 
-    if (pageLoading || pathsLoading) return <p>Loading Getting Started Page…</p>;
-    if (pageError) return <p>Error: {pageError.message}</p>;
-    if (pathsError) return <p>Error: {pathsError.message}</p>;
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        return () => stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
+
+    useEffect(() => {
+        if (!pageLoading && !pathsLoading) stopLoading(COMPONENT_NAME);
+    }, [pageLoading, pathsLoading, stopLoading]);
+
+    if (pageLoading || pathsLoading || pageError || pathsError) return null;
 
     const gsPage = pageData.gettingStartedPage;
     const pathItems = pathsData.gettingStartedPaths || [];
 
-    // headerImage comes back as an array; grab the first entry
     const headerImg =
         Array.isArray(gsPage.headerImage) && gsPage.headerImage.length > 0
             ? gsPage.headerImage[0]
             : {};
     const { folder = "", fileName = "" } = headerImg;
-    // const bgUrl = folder && fileName ? `/images/${folder}/${fileName}` : undefined;
     const bgUrl = "images/gettingStartedLanding/img-header-getstarted.jpg";
 
-    // decide which tag to use for the Strapi headline (h2, h3, etc.)
     const HeadingTag = gsPage.headline?.headingLevel || "h2";
 
     return (
@@ -85,7 +85,6 @@ export default function GettingStartedPage() {
                 <LeftRail />
 
                 <div className={styles.rightSide}>
-                    {/* Banner with dynamic background */}
                     <div
                         className={styles.banner}
                         style={bgUrl ? { backgroundImage: `url("${bgUrl}")` } : {}}
@@ -96,13 +95,11 @@ export default function GettingStartedPage() {
 
                     <div className={styles.postBannerSpace} />
 
-                    {/* Strapi-driven headline + lead-in */}
                     <div className={styles.introText}>
                         <HeadingTag>{gsPage.headline.headingText}</HeadingTag>
                         <p>{gsPage.leadin.content}</p>
                     </div>
 
-                    {/* Notification Box(es) */}
                     {Array.isArray(gsPage.notificationBox) &&
                         gsPage.notificationBox.map((box, i) => (
                             <NotificationBox key={i} color={box.borderColor}>
@@ -110,7 +107,6 @@ export default function GettingStartedPage() {
                             </NotificationBox>
                         ))}
 
-                    {/* Paths */}
                     <div className={styles.contentArea}>
                         {pathItems.map((item) => {
                             let link = "/get-started";
