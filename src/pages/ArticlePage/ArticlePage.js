@@ -180,7 +180,7 @@ export default function ArticlePage() {
                 return (
                     <div key={i} style={{ display: "flex", alignItems: "flex-start", margin: "8px 0 0 0" }}>
                         <span style={{ marginRight: "8px", lineHeight: 1.5 }}>&bull;</span>
-                        <span>{b.label}</span>
+                        <span dangerouslySetInnerHTML={{__html: b.label}}/>
                     </div>
                 );
 
