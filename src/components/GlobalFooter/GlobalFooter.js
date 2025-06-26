@@ -23,16 +23,15 @@ const GET_FOOTER = gql`
     }
 `;
 
-function renderLinks(text) {
-    if (!text) return null;
-    return text
-        .split("\n")
-        .filter((line) => line.trim() !== "")
-        .map((line, i) => (
-            <a key={i} href="#" className={styles.footerLink}>
-                {line}
-            </a>
-        ));
+function renderLinks(htmlString) {
+    if (!htmlString) return null;
+
+    return (
+        <div
+            className={styles.footerLinks}
+            dangerouslySetInnerHTML={{ __html: htmlString }}
+        />
+    );
 }
 
 const COMPONENT_NAME = "GlobalFooter";
