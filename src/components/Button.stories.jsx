@@ -7,27 +7,31 @@ export default {
     component: Button,
     argTypes: {
         variant: {
-            control: { type: "radio", options: ["primary", "secondary"] },
+            options: ["primary", "disabled"],
+            control: { type: "radio" },
         },
         size: {
-            control: { type: "select", options: ["large", "small"] },
+            options: ["large", "small"],
+            control: { type: "select" },
         },
-        children: { control: { type: "text" } },
+        children: { control: "text" },
     },
 };
 
 const Template = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const AnthemButton = Template.bind({});
+AnthemButton.args = {
+    brand: "Anthem",
     variant: "primary",
     size: "large",
-    children: "Primary Button",
+    children: "Anthem Primary",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    variant: "secondary",
+export const HealthyBlueButton = Template.bind({});
+HealthyBlueButton.args = {
+    brand: "HealthyBlue",
+    variant: "primary",
     size: "large",
-    children: "Secondary Button",
+    children: "HealthyBlue Primary",
 };

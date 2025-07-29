@@ -1,0 +1,33 @@
+{
+  "Primitives": {
+    "Value": {
+      "pageHeader": {
+        "backgroundB": {
+          "Anthem": {
+            "gradient": {
+              "1": {
+                "100": { "value": "#286ce200", "type": "color" },
+                "200": { "value": "#286ce2", "type": "color" }
+              },
+              "2": {
+                "100": { "value": "#ffffff00", "type": "color" },
+                "200": { "value": "#ffffff", "type": "color" }
+              },
+              "3": {
+                "100": { "value": "#ffffff", "type": "color" },
+                "200": { "value": "#ffffff", "type": "color" }
+              }
+            }
+          }
+        }
+      },
+      "button": {
+        "Anthem": {
+          "background": {
+            "press": { "value": "#131331", "type": "color" }
+          }
+        }
+      }
+    }
+  }
+}

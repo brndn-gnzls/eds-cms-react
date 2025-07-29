@@ -1,0 +1,30 @@
+{
+  "leftNav": {
+    "padding": {
+      "right": {
+        "header": {
+          "title": {
+            "value": "15px",
+            "type": "dimension"
+          }
+        }
+      },
+      "left": {
+        "header": {
+          "description": {
+            "value": "52px",
+            "type": "dimension"
+          }
+        },
+        "menuItem": {
+          "value": "52px",
+          "type": "dimension"
+        }
+      }
+    },
+    "width": {
+      "value": "265px",
+      "type": "dimension"
+    }
+  }
+}

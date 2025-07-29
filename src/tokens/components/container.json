@@ -1,0 +1,10 @@
+{
+  "Primitives/Value/container/minWidth": {
+    "value": "168px",
+    "type": "dimension"
+  },
+  "Primitives/Value/container/maxWidth": {
+    "value": "1128px",
+    "type": "dimension"
+  }
+}

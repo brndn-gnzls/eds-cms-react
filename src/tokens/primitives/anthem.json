@@ -1,0 +1,66 @@
+{
+  "colors": {
+    "primary": {
+      "100": { "value": "#286ce2", "type": "color" }
+    },
+    "dataViz": {
+      "100": { "value": "#2453a6", "type": "color" },
+      "200": { "value": "#0092fa", "type": "color" },
+      "300": { "value": "#0c7905", "type": "color" },
+      "400": { "value": "#cb2a73", "type": "color" },
+      "500": { "value": "#511284", "type": "color" }
+    },
+    "secondary": {
+      "100": { "value": "#2453a6", "type": "color" },
+      "200": { "value": "#37475a", "type": "color" },
+      "300": { "value": "#53b1ac", "type": "color" },
+      "400": { "value": "#d20a3c", "type": "color" }
+    },
+    "alert": {
+      "success": { "value": "#0c7905", "type": "color" },
+      "pending": { "value": "#a35c00", "type": "color" },
+      "error": { "value": "#cb0042", "type": "color" },
+      "info": { "value": "#286ce2", "type": "color" }
+    },
+    "brand": {
+      "100": { "value": "#0079c2", "type": "color" }
+    },
+    "gradient": {
+      "1": {
+        "100": { "value": "#286ce2", "type": "color" },
+        "200": { "value": "#2453a6", "type": "color" }
+      },
+      "2": {
+        "100": { "value": "#fafafa", "type": "color" },
+        "200": { "value": "#ffffff", "type": "color" }
+      },
+      "3": {
+        "100": { "value": "#f59a5f", "type": "color" },
+        "200": { "value": "#e95a3c", "type": "color" }
+      },
+      "4": {
+        "100": { "value": "#118ad7", "type": "color" },
+        "200": { "value": "#286ce2", "type": "color" }
+      },
+      "5": {
+        "100": { "value": "#58abdf", "type": "color" },
+        "200": { "value": "#286ce2", "type": "color" }
+      },
+      "6": {
+        "100": { "value": "#2ab5ca", "type": "color" },
+        "200": { "value": "#286ce2", "type": "color" }
+      }
+    }
+  },
+  "fontFamily": {
+    "member": { "value": "Elevance Sans", "type": "fontFamilies" }
+  },
+  "fontWeight": {
+    "light": { "value": "Light", "type": "fontWeights" },
+    "regular": { "value": "Regular", "type": "fontWeights" },
+    "medium": { "value": "Medium", "type": "fontWeights" },
+    "semibold": { "value": "Semibold", "type": "fontWeights" },
+    "bold": { "value": "Bold", "type": "fontWeights" }
+  },
+  "brandName": { "value": "Anthem", "type": "string" }
+}

@@ -1,0 +1,24 @@
+{
+  "button": {
+    "padding": {
+      "horizontal": {
+        "small": {
+          "value": "30px",
+          "type": "dimension"
+        }
+      }
+    },
+    "height": {
+      "small": {
+        "value": "30px",
+        "type": "dimension"
+      }
+    },
+    "minWidth": {
+      "large": {
+        "value": "120px",
+        "type": "dimension"
+      }
+    }
+  }
+}

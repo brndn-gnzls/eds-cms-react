@@ -15,12 +15,38 @@ const GET_LEFT_RAIL_ACCORDIONS = gql`
     }
 `;
 
-// Maps label => route
 const linkToPathMap = {
+    // Components
+    Overview: "/components",
+    Accordion: "/components/accordion",
+    Alerts: "/components/alert",
+    Badge: "/components/badge",
+    Button: "/components/button",
+    "Bar Graph": "/components/bar-graph",
+    "Button Group": "/components/button-group",
+    Checkbox: "/components/checkbox",
+    Container: "/components/container",
+    Divider: "/components/divider",
+    Radio: "/components/radio",
+    Dropdown: "/components/dropdown",
+    "Left Navigation": "/components/left-navigation",
+    Link: "/components/link",
+    "Page Header": "/components/page-header",
+    "Progress Bar": "/components/progress-bar",
+    "Radio Button": "/components/radio-button",
+    "Section Header": "/components/section-header",
+    "Slide-In Panel": "/components/slide-in-panel",
+    Tabs: "/components/tabs",
+    "Text Field": "/components/text-field",
+    Toggle: "/components/toggle",
+    Tooltip: "/components/tooltip",
+
+    // Get Started (already correct)
+    Overview: "/get-started",
     Design: "/get-started/design",
     Develop: "/get-started/develop",
-    // etc.
 };
+
 
 export default function MobileDrawer({
                                          isOpen,
@@ -54,23 +80,50 @@ export default function MobileDrawer({
                 {/* The top portion => can hold a heading or just the accordion */}
                 <div className={styles.accordionWrapper}>
                     {leftRailAccordions.map((accData) => {
-                        const linkRoutes = accData.links
-                            ? accData.links.split("\\n").map((raw) => {
-                                const label = raw.replace(/\\n/g, "").trim();
-                                const route = linkToPathMap[label] || "#";
-                                return { label, route };
-                            })
+                        const labelText = accData.label.trim();
+
+                        let linkRoutes = accData.links
+                            ? accData.links
+                                .split("\\n")
+                                .map((raw) => {
+                                    const label = raw.replace(/\\n/g, "").trim();
+
+                                    // Conditionally handle "Overview" based on the parent accordion
+                                    let route;
+                                    if (label === "Overview") {
+                                        if (labelText === "Components") route = "/components";
+                                        else if (labelText === "Get Started") route = "/get-started";
+                                        else route = "#";
+                                    } else {
+                                        route = linkToPathMap[label] || "#";
+                                    }
+
+                                    return { label, route };
+                                })
                             : [];
+
+                        // Pull the Overview link out to place it first
+                        const overviewLink = linkRoutes.find(link => link.label === "Overview");
+                        const otherLinks = linkRoutes.filter(link => link.label !== "Overview");
+
+                        // Sort the remaining links alphabetically
+                        otherLinks.sort((a, b) => a.label.localeCompare(b.label));
+
+                        // Ensure Overview is first, followed by sorted links
+                        linkRoutes = overviewLink ? [overviewLink, ...otherLinks] : otherLinks;
 
                         return (
                             <AccordionSection
                                 key={accData.documentId}
-                                label={accData.label}
+                                label={labelText}
                                 links={linkRoutes}
                                 currentPath={location.pathname}
                             />
                         );
                     })}
+
+
+
                 </div>
 
                 {/* Pinned bottom row => GH + Figma left, toggle right */}

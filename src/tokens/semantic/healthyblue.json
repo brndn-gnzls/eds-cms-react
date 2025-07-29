@@ -1,0 +1,220 @@
+{
+  "Semantic": {
+    "Light": {
+      "HealthyBlue": {
+        "surface": {
+          "primary": {
+            "value": "{primitives.color.primary.100}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{primitives.color.secondary.100}",
+            "type": "color"
+          },
+          "white": {
+            "value": "{global.color.grays.0}",
+            "type": "color"
+          },
+          "subdued": {
+            "value": "{global.color.grays.500}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{global.color.button.background.hover}",
+            "type": "color"
+          },
+          "press": {
+            "value": "{global.color.button.background.press}",
+            "type": "color"
+          },
+          "info": {
+            "value": "{primitives.color.alert.info}",
+            "type": "color"
+          },
+          "positive": {
+            "value": "{primitives.color.alert.success}",
+            "type": "color"
+          },
+          "urgent": {
+            "value": "{primitives.color.alert.pending}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{primitives.color.alert.error}",
+            "type": "color"
+          },
+          "toggleHoverOff": {
+            "value": "{global.color.grays.600}",
+            "type": "color"
+          },
+          "containerGray": {
+            "value": "{global.color.grays.100}",
+            "type": "color"
+          },
+          "sectionHeader": {
+            "value": "{primitives.color.secondary.300}",
+            "type": "color"
+          },
+          "dataViz100": {
+            "value": "{primitives.color.dataViz.100}",
+            "type": "color"
+          },
+          "dataViz200": {
+            "value": "{primitives.color.dataViz.200}",
+            "type": "color"
+          },
+          "dataViz300": {
+            "value": "{primitives.color.dataViz.300}",
+            "type": "color"
+          },
+          "dataViz400": {
+            "value": "{primitives.color.dataViz.400}",
+            "type": "color"
+          },
+          "dataViz500": {
+            "value": "{primitives.color.dataViz.500}",
+            "type": "color"
+          },
+          "midGray": {
+            "value": "{global.color.grays.400}",
+            "type": "color"
+          }
+        },
+        "text": {
+          "base": {
+            "value": "{global.color.grays.600}",
+            "type": "color"
+          },
+          "primary": {
+            "value": "{primitives.color.primary.100}",
+            "type": "color"
+          },
+          "white": {
+            "value": "{global.color.grays.0}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{primitives.color.alert.error}",
+            "type": "color"
+          },
+          "subdued": {
+            "value": "{global.color.grays.500}",
+            "type": "color"
+          },
+          "urgent": {
+            "value": "{primitives.color.alert.pending}",
+            "type": "color"
+          },
+          "positive": {
+            "value": "{primitives.color.alert.success}",
+            "type": "color"
+          },
+          "info": {
+            "value": "{primitives.color.alert.info}",
+            "type": "color"
+          },
+          "press": {
+            "value": "{global.color.button.background.press}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{primitives.color.secondary.100}",
+            "type": "color"
+          },
+          "toggleOff": {
+            "value": "{global.color.grays.100}",
+            "type": "color"
+          }
+        },
+        "icon": {
+          "primary": {
+            "value": "{primitives.color.primary.100}",
+            "type": "color"
+          },
+          "white": {
+            "value": "{global.color.grays.0}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{primitives.color.alert.error}",
+            "type": "color"
+          },
+          "base": {
+            "value": "{global.color.grays.500}",
+            "type": "color"
+          },
+          "info": {
+            "value": "{primitives.color.alert.info}",
+            "type": "color"
+          },
+          "positive": {
+            "value": "{primitives.color.alert.success}",
+            "type": "color"
+          },
+          "urgent": {
+            "value": "{primitives.color.alert.pending}",
+            "type": "color"
+          },
+          "subdued": {
+            "value": "{global.color.grays.300}",
+            "type": "color"
+          },
+          "active": {
+            "value": "{global.color.grays.600}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{primitives.color.secondary.100}",
+            "type": "color"
+          }
+        },
+        "border": {
+          "base": {
+            "value": "{global.color.grays.500}",
+            "type": "color"
+          },
+          "primary": {
+            "value": "{primitives.color.primary.100}",
+            "type": "color"
+          },
+          "white": {
+            "value": "{global.color.grays.0}",
+            "type": "color"
+          },
+          "info": {
+            "value": "{primitives.color.alert.info}",
+            "type": "color"
+          },
+          "positive": {
+            "value": "{primitives.color.alert.success}",
+            "type": "color"
+          },
+          "urgent": {
+            "value": "{primitives.color.alert.pending}",
+            "type": "color"
+          },
+          "critical": {
+            "value": "{primitives.color.alert.error}",
+            "type": "color"
+          },
+          "subdued": {
+            "value": "{global.color.grays.300}",
+            "type": "color"
+          },
+          "black": {
+            "value": "{global.color.grays.700}",
+            "type": "color"
+          },
+          "midGray": {
+            "value": "{global.color.grays.400}",
+            "type": "color"
+          },
+          "secondary": {
+            "value": "{primitives.color.secondary.100}",
+            "type": "color"
+          }
+        }
+      }
+    }
+  }
+}

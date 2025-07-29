@@ -1,0 +1,12 @@
+{
+  "buttonGroup": {
+    "dropShadow" : {
+      "background": {
+        "value": "#000014",
+        "type": "color"
+      },
+      "y": "-2px",
+      "type": "color"
+    }
+  }
+}

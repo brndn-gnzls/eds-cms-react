@@ -1,0 +1,30 @@
+{
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/1/100": {
+    "value": "#286ce200",
+    "type": "color"
+  },
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/1/200": {
+    "value": "#286ce2",
+    "type": "color"
+  },
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/2/100": {
+    "value": "#ffffff00",
+    "type": "color"
+  },
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/2/200": {
+    "value": "#ffffff",
+    "type": "color"
+  },
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/3/100": {
+    "value": "#ffffff",
+    "type": "color"
+  },
+  "Primitives/Value/pageHeader/backgroundB/Anthem/gradient/3/200": {
+    "value": "#ffffff",
+    "type": "color"
+  },
+  "Primitives/Value/button/Anthem/background/press": {
+    "value": "#131331",
+    "type": "color"
+  }
+}

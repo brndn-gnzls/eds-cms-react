@@ -1,0 +1,10 @@
+{
+  "Primitives/Value/checkbox/padding/top/input": {
+    "value": "3px",
+    "type": "dimension"
+  },
+  "Primitives/Value/checkbox/padding/top/errorIcon": {
+    "value": "3px",
+    "type": "dimension"
+  }
+}

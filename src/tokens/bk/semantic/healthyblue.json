@@ -1,0 +1,206 @@
+{
+  "Semantic/Light/HealthyBlue/surface/primary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/primary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/secondary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/secondary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/white": {
+    "value": "{#/Primitives/Value/colors/grays/0}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/subdued": {
+    "value": "{#/Primitives/Value/colors/grays/500}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/hover": {
+    "value": "{#/Primitives/Value/button/HealthyBlue/background/hover}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/press": {
+    "value": "{#/Primitives/Value/button/HealthyBlue/background/press}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/info": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/info}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/positive": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/success}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/urgent": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/pending}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/critical": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/error}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/toggleHoverOff": {
+    "value": "{#/Primitives/Value/colors/grays/600}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/containerGray": {
+    "value": "{#/Primitives/Value/colors/grays/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/sectionHeader": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/secondary/300}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/dataViz100": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/dataViz/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/dataViz200": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/dataViz/200}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/dataViz300": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/dataViz/300}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/dataViz400": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/dataViz/400}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/dataViz500": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/dataViz/500}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/surface/midGray": {
+    "value": "{#/Primitives/Value/colors/grays/400}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/base": {
+    "value": "{#/Primitives/Value/colors/grays/600}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/primary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/primary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/white": {
+    "value": "{#/Primitives/Value/colors/grays/0}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/critical": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/error}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/subdued": {
+    "value": "{#/Primitives/Value/colors/grays/500}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/urgent": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/pending}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/positive": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/success}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/info": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/info}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/press": {
+    "value": "{#/Primitives/Value/button/HealthyBlue/background/press}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/secondary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/secondary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/text/toggleOff": {
+    "value": "{#/Primitives/Value/colors/grays/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/primary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/primary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/white": {
+    "value": "{#/Primitives/Value/colors/grays/0}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/critical": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/error}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/base": {
+    "value": "{#/Primitives/Value/colors/grays/500}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/info": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/info}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/positive": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/success}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/urgent": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/pending}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/subdued": {
+    "value": "{#/Primitives/Value/colors/grays/300}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/active": {
+    "value": "{#/Primitives/Value/colors/grays/600}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/icon/secondary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/secondary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/base": {
+    "value": "{#/Primitives/Value/colors/grays/500}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/primary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/primary/100}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/white": {
+    "value": "{#/Primitives/Value/colors/grays/0}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/info": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/info}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/positive": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/success}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/urgent": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/pending}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/critical": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/alert/error}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/subdued": {
+    "value": "{#/Primitives/Value/colors/grays/300}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/black": {
+    "value": "{#/Primitives/Value/colors/grays/700}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/midGray": {
+    "value": "{#/Primitives/Value/colors/grays/400}",
+    "type": "color"
+  },
+  "Semantic/Light/HealthyBlue/border/secondary": {
+    "value": "{#/Primitives/Value/HealthyBlue/colors/secondary/100}",
+    "type": "color"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "tooltip": {
+    "width": {
+      "min": { "value": "190px", "type": "dimension" },
+      "max": { "value": "340px", "type": "dimension" }
+    }
+  }
+}

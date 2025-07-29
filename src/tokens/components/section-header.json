@@ -1,0 +1,22 @@
+{
+  "sectionHeader": {
+    "divider": {
+      "width": {
+        "subheaderSmall": { "value": "3px", "type": "dimension" },
+        "subheaderLarge": { "value": "3px", "type": "dimension" },
+        "compounded": { "value": "141px", "type": "dimension" },
+        "default": { "value": "45px", "type": "dimension" }
+      },
+      "height": {
+        "subheaderSmall": { "value": "22px", "type": "dimension" },
+        "subheaderLarge": { "value": "28px", "type": "dimension" }
+      }
+    },
+    "padding": {
+      "top": {
+        "subheaderSmall": { "value": "3px", "type": "dimension" },
+        "subheaderLarge": { "value": "3px", "type": "dimension" }
+      }
+    }
+  }
+}

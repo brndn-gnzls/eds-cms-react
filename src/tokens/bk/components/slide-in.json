@@ -1,0 +1,18 @@
+{
+"Primitives/Value/slideIn/width/overlay": {
+"value": "636px",
+"type": "dimension"
+},
+"Primitives/Value/slideIn/width/card": {
+"value": "804px",
+"type": "dimension"
+},
+"Primitives/Value/slideIn/width/cardContent": {
+"value": "552px",
+"type": "dimension"
+},
+"Primitives/Value/slideIn/padding/right/buttonGroup": {
+"value": "156px",
+"type": "dimension"
+}
+}

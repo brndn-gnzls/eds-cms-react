@@ -1,0 +1,53 @@
+{
+  "color": {
+    "primary": {
+      "100": { "value": "#00739a", "type": "color" }
+    },
+    "secondary": {
+      "100": { "value": "#003359", "type": "color" },
+      "200": { "value": "#4e7c31", "type": "color" },
+      "300": { "value": "#dd7c0d", "type": "color" },
+      "400": { "value": "#d20a3c", "type": "color" },
+      "500": { "value": "#006b8f", "type": "color" },
+      "600": { "value": "#0099cc", "type": "color" }
+    },
+    "alert": {
+      "success": { "value": "#4e7c31", "type": "color" },
+      "pending": { "value": "#bc5b03", "type": "color" },
+      "error": { "value": "#d20a3c", "type": "color" },
+      "info": { "value": "#007ea8", "type": "color" }
+    },
+    "dataViz": {
+      "100": { "value": "#0a437c", "type": "color" },
+      "200": { "value": "#dd7c0d", "type": "color" },
+      "300": { "value": "#54565b", "type": "color" },
+      "400": { "value": "#0099cc", "type": "color" },
+      "500": { "value": "#949496", "type": "color" }
+    },
+    "gradient": {
+      "1": {
+        "100": { "value": "#0099cc", "type": "color" },
+        "200": { "value": "#006b8f", "type": "color" }
+      },
+      "2": {
+        "100": { "value": "#286ce2", "type": "color" },
+        "200": { "value": "#003359", "type": "color" }
+      },
+      "3": {
+        "100": { "value": "#54565b", "type": "color" },
+        "200": { "value": "#a8a8aa", "type": "color" }
+      }
+    }
+  },
+  "fontFamily": {
+    "member": { "value": "Elevance Sans", "type": "fontFamilies" }
+  },
+  "fontWeight": {
+    "light": { "value": "Light", "type": "fontWeights" },
+    "regular": { "value": "Regular", "type": "fontWeights" },
+    "medium": { "value": "Medium", "type": "fontWeights" },
+    "semibold": { "value": "Semibold", "type": "fontWeights" },
+    "bold": { "value": "Bold", "type": "fontWeights" }
+  },
+  "brandName": { "value": "HealthyBlue", "type": "string" }
+}

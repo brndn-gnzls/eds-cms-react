@@ -1,0 +1,110 @@
+{
+    "Brand/Anthem/button/border/ghost/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/HealthyBlue/button/border/ghost/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/Wellpoint/button/border/ghost/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/Anthem/button/background/primary/default": {
+        "value": "#003366",
+        "type": "color"
+    },
+    "Brand/HealthyBlue/button/background/primary/default": {
+        "value": "#005680",
+        "type": "color"
+    },
+    "Brand/Wellpoint/button/background/primary/default": {
+        "value": "#AB0036",
+        "type": "color"
+    },
+    "Brand/Anthem/button/background/primary/hover": {
+        "value": "#002244",
+        "type": "color"
+    },
+    "Brand/HealthyBlue/button/background/primary/hover": {
+        "value": "#004060",
+        "type": "color"
+    },
+    "Brand/Wellpoint/button/background/primary/hover": {
+        "value": "#93002D",
+        "type": "color"
+    },
+    "Brand/Anthem/button/background/primary/press": {
+        "value": "#131331",
+        "type": "color"
+    },
+    "Brand/HealthyBlue/button/background/primary/press": {
+        "value": "#18475D",
+        "type": "color"
+    },
+    "Brand/Wellpoint/button/background/primary/press": {
+        "value": "#231E33",
+        "type": "color"
+    },
+    "Brand/Anthem/button/text/primary/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/HealthyBlue/button/text/primary/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/Wellpoint/button/text/primary/default": {
+        "value": "#FFFFFF",
+        "type": "color"
+    },
+    "Brand/Anthem/button/border/borderRadius": {
+        "value": "4px",
+        "type": "dimension"
+    },
+    "Brand/HealthyBlue/button/border/borderRadius": {
+        "value": "4px",
+        "type": "dimension"
+    },
+    "Brand/Wellpoint/button/border/borderRadius": {
+        "value": "4px",
+        "type": "dimension"
+    },
+    "Brand/Anthem/button/padding/horizontal/large": {
+        "value": "16px 32px",
+        "type": "dimension"
+    },
+    "Brand/HealthyBlue/button/padding/horizontal/large": {
+        "value": "16px 32px",
+        "type": "dimension"
+    },
+    "Brand/Wellpoint/button/padding/horizontal/large": {
+        "value": "16px 32px",
+        "type": "dimension"
+    },
+    "Brand/Anthem/button/font/size/large/single": {
+        "value": "16px",
+        "type": "dimension"
+    },
+    "Brand/HealthyBlue/button/font/size/large/single": {
+        "value": "16px",
+        "type": "dimension"
+    },
+    "Brand/Wellpoint/button/font/size/large/single": {
+        "value": "16px",
+        "type": "dimension"
+    },
+    "Brand/Anthem/button/font/weight/large/single": {
+        "value": "600",
+        "type": "text"
+    },
+    "Brand/HealthyBlue/button/font/weight/large/single": {
+        "value": "600",
+        "type": "text"
+    },
+    "Brand/Wellpoint/button/font/weight/large/single": {
+        "value": "600",
+        "type": "text"
+    }
+}

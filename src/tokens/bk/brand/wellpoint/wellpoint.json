@@ -1,0 +1,3594 @@
+{
+  "Brand/Wellpoint/button/border/ghost/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/ghost/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/ghost/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/ghost/press": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/ghost/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/primary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondaryWhite/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondaryWhite/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/secondaryWhite/press": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/border/size": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/border/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-3xl}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/background/primary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/primary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/primary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/primary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/primary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondaryWhite/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondaryWhite/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/hover}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondaryWhite/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondaryWhite/press": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/secondaryWhite/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/ghost/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/background/ghost/press": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/primary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/primary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/primary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/primary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/primary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondaryWhite/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondaryWhite/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondaryWhite/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondaryWhite/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/secondaryWhite/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/ghost/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/ghost/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/ghost/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/ghost/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/text/ghost/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/primary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/primary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/primary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/primary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/primary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondary/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondary/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondary/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondary/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondary/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondaryWhite/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondaryWhite/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondaryWhite/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondaryWhite/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/secondaryWhite/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/ghost/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/ghost/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/ghost/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/ghost/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/ghost/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/button/icon/size/large": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/icon/size/small": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/weight/large/single": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/button/font/weight/large/doubleTop": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Regular}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/button/font/weight/large/doubleBottom": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/button/font/weight/small": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/button/font/size/large/single": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/size/large/doubleTop": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/size/large/doubleBottom": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/size/small": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/lineHeight/large/single": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/lineHeight/large/doubleTop": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/lineHeight/large/doubleBottom": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/font/lineHeight/small": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/height/large": {
+    "value": "{#/Primitives/Value/sizing/11}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/height/small": {
+    "value": "{#/Primitives/Value/button/height/small}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/horizontal/large": {
+    "value": "{#/Primitives/Value/spacing/12}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/horizontal/small": {
+    "value": "{#/Primitives/Value/button/padding/horizontal/small}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/vertical/large": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/vertical/small": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/gap/large": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/padding/gap/small": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/minWidth/large": {
+    "value": "{#/Primitives/Value/button/minWidth/large}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/button/minWidth/small": {
+    "value": "{#/Primitives/Value/sizing/20}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/icon/white": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/base": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/critical": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/positive": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/info": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/info}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/subdued": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/active": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/active}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/icon/size/default": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/icon/size/guidance": {
+    "value": "{#/Primitives/Value/sizing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/border/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/border/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/border/base": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/border/active": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/border/critical": {
+    "value": "{#/Semantic/Light/Wellpoint/border/error}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/border/positive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/border/size": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/border/weight": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/text/label": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/placeholder": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/input": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/critical": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/positive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/info": {
+    "value": "{#/Semantic/Light/Wellpoint/text/info}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/help": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/guidance": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/text/help2": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/background/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textField/font/weight/label": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/textField/font/weight/input": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/textField/font/size/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/size/input": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/size/optional": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/size/characterCount": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/size/validations": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/lineHeight/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/font/lineHeight/input": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/none}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/height/input": {
+    "value": "{#/Primitives/Value/sizing/11}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/height/singleLine": {
+    "value": "{#/Primitives/Value/sizing/11}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/height/multiLine": {
+    "value": "{#/Primitives/Value/textField/height/multiLine}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/horizontal/input": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/vertical/input": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/labelOptional": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/iconText": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/inputPassword": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/textIcon": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/validationList": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/gap/inputIcon": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/top/characterCount": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/top/input": {
+    "value": "{#/Primitives/Value/spacing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/top/inputLabel": {
+    "value": "{#/Primitives/Value/spacing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/top/multilineIcon": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/padding/bottom/inputLabel": {
+    "value": "{#/Primitives/Value/spacing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/width/minWidth": {
+    "value": "{#/Primitives/Value/textField/width/min}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textField/width/maxWidth": {
+    "value": "{#/Primitives/Value/textField/width/max}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/text/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/text/errorMessage": {
+    "value": "{#/Semantic/Light/Wellpoint/text/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/text/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/text/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/text/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/text/error": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/checked/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/checked/input/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/checked/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/checked/input/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/checked/input/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/unchecked/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/unchecked/input/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/unchecked/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/unchecked/input/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/background/unchecked/input/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/checked/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/error": {
+    "value": "{#/Semantic/Light/Wellpoint/border/error}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/unchecked/focusActive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/border/size": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/icon/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/icon/error": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/checkbox/icon/size/check": {
+    "value": "{#/Primitives/Value/sizing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/icon/size/error": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/font/weight": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/checkbox/font/size/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/font/size/errorMessage": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/font/lineHeight/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/font/lineHeight/errorMessage": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/padding/horizontal": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/padding/top/input": {
+    "value": "{#/Primitives/Value/checkbox/padding/top/input}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/padding/top/errorIcon": {
+    "value": "{#/Primitives/Value/checkbox/padding/top/errorIcon}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/checkbox/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/none}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/text/internal/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/internal/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/internal/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/internal/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/internal/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/white/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/white/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/white/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/white/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/white/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/external/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/external/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/external/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/external/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/external/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/inline/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/inline/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/inline/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/inline/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/text/inline/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/internal/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/internal/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/internal/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/internal/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/internal/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/white/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/white/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/white/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/white/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/white/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/external/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/external/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/external/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/external/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/external/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/icon/size": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/border/internal/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/border/external/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/border/inline/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/border/white/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/link/border/width/focus": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/font/weight": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/link/font/size": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/font/lineHeight": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/padding/horizontal/focus": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/padding/vertical/focus": {
+    "value": "{#/Primitives/Value/spacing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/link/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/text/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/text/link": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/background/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/innerShadow/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/innerShadow/info": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/innerShadow/success": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/innerShadow/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/innerShadow/size": {
+    "value": "{#/Primitives/Value/sizing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/border/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/border/size": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/icon/error": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/icon/info": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/icon/success": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/icon/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/icon/dismissIcon": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/alert/icon/size": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/font/weight/default": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/alert/font/weight/link": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/alert/font/size": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/font/lineHeight": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/vertical": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/left": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/right": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/horizontal/dismissIcon": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/alert/padding/top/icon": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/background/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/background/menuItem/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/background/menuItem/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/border/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/border/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/border/error": {
+    "value": "{#/Semantic/Light/Wellpoint/border/error}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/border/active": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/border/size/menuItem": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/border/size/menuItemTop": {
+    "value": "{#/Primitives/Value/sizing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/border/size/input": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/text/input": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/text/menuItem/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/text/menuItem/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/text/label": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/text/optional": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/text/placeholder": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/icon/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/active}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/icon/error": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/icon/tooltip": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/dropdown/icon/size/default": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/icon/size/tooltip": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/input": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/menuItem": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/label": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/error": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Regular}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/optional": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/weight/menuItem active": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/dropdown/font/lineHeight/input": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/lineHeight/option": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/lineHeight/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/lineHeight/error": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/lineHeight/optional": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/size/menuItem": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/size/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/size/error": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/size/input": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/font/size/optional": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/none}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/gap/vertical": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/gap/labelOptional": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/gap/iconText": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/gap/textInput": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/menuItem/horizontal": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/menuItem/vertical": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/menuItem/container": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/input/vertical": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/input/horizontal": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/input/textPadding": {
+    "value": "{#/Primitives/Value/spacing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/dropdown/padding/label/padding": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/container/background/white": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/container/background/gray": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/container/border/default": {
+    "value": "{#/Primitives/Value/colors/grays/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/container/border/size": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/container/minWidth": {
+    "value": "{#/Primitives/Value/container/minWidth}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/container/maxWidth": {
+    "value": "{#/Primitives/Value/container/maxWidth}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/fill/on/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/on/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/on/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/on/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/on/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/off/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/off/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/toggleHoverOff}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/off/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/off/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/off/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/fill/handle": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/text/state/on": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/text/state/off": {
+    "value": "{#/Semantic/Light/Wellpoint/text/toggleOff}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/text/label": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/text/error": {
+    "value": "{#/Semantic/Light/Wellpoint/text/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/icon/error": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/icon/size/error": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/border/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/toggle/border/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-full}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/border/spacing/focusActive": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/border/size": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/weight/toggle": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/toggle/font/weight/label": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/toggle/font/weight/error": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/toggle/font/size/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/size/toggle": {
+    "value": "{#/Primitives/Value/fontSize/xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/size/error": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/lineHeight/toggle": {
+    "value": "{#/Primitives/Value/lineHeight/xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/lineHeight/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/font/lineHeight/error": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/width/handle": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/height/handle": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/vertical/toggleSwitch": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/vertical/toggleOnSwitch": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/vertical/toggleOffSwitch": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/vertical/delete": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/left/toggleOnSwitch": {
+    "value": "{#/Primitives/Value/spacing/150}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/left/toggleOffSwitch": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/right/toggleOnSwitch": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/toggle/padding/right/toggleOffSwitch": {
+    "value": "{#/Primitives/Value/spacing/150}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/divider/fill/light": {
+    "value": "{#/Semantic/Light/Wellpoint/border/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/divider/fill/dark": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/divider/fill/white": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/divider/weight/thin": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/divider/weight/thick": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/divider/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/none}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/text/white": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/text/gray": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/success": {
+    "value": "{#/Semantic/Light/Anthem/surface/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/info": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/warning": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/optionalWhite": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/optionalGray": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/urgent": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/darkNeutral": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/badgeDarkNeutral}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/background/purple": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/badgePurple}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/badgeInfo/font/weight": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/badgeInfo/font/size": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/font/lineHeight": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/borderRadius": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/padding/vertical": {
+    "value": "{#/Primitives/Value/spacing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/padding/horizontal": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/badgeInfo/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/text/standard/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/text/timeline/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/text/milestone/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/dataVisualization1": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/dataVisualization2": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/dataVisualization3": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/dataVisualization4": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz400}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/dataVisualization5": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz500}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/standard/bar/totalBarFill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/timeline/bar/progressBar": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/timeline/bar/totalBarFill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/timeline/marker/markerFill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/bar/progressBar1": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/bar/progressBar2": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/bar/progressBar3": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/bar/totalBarFill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/marker/markerFill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/legend/legend1": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/legend/legend2": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/fill/milestone/legend/legend3": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/standard/totalBarBorder": {
+    "value": "{#/Semantic/Light/Wellpoint/border/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/milestone/marker1": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/milestone/marker2": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/milestone/marker3": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/dataViz300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/milestone/marker4": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/milestone/totalBarBorder": {
+    "value": "{#/Semantic/Light/Wellpoint/border/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/timeline/markerBlue": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/timeline/totalBarBorder": {
+    "value": "{#/Semantic/Light/Wellpoint/border/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/timeline/markerGray": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/border/borderRadius/standard": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-full}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/border/borderRadius/milestone": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-full}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/border/borderRadius/timeline": {
+    "value": "{#/Primitives/Value/borderRadius/rounded-full}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/border/size/standard": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/border/size/timeline": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/border/size/milestone": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/icon/milestone/helpIcon": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/info}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/standard/title": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/standard/description": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/standard/progressValue": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/standard/totalValue": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/timeline/milestone": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/timeline/date": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/milestone/milestone": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/milestone/number": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/weight/milestone/date": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/barGraph/font/size/standard/title": {
+    "value": "{#/Primitives/Value/fontSize/lg}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/standard/description": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/standard/number": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/timeline/milestone": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/timeline/date": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/milestone/milestone": {
+    "value": "{#/Primitives/Value/fontSize/lg}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/milestone/number": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/size/milestone/date": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/standard/title": {
+    "value": "{#/Primitives/Value/lineHeight/lg}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/standard/description": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/standard/number": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/timeline/milestone": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/timeline/date": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/milestone/milestone": {
+    "value": "{#/Primitives/Value/lineHeight/lg}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/milestone/number": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/font/lineHeight/milestone/date": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/standard/heightThick": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/standard/heightThin": {
+    "value": "{#/Primitives/Value/sizing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/timeline/horizontalBarHeight": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/timeline/marker": {
+    "value": "{#/Primitives/Value/sizing/11}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/milestone/horizontalBarHeight": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/height/milestone/marker": {
+    "value": "{#/Primitives/Value/sizing/11}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/standard/verticalGraph": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/standard/horizontalValue": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/standard/horizontalVariant": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/standard/verticalVariant": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/milestone/legend": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/milestone/legendGroup": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/milestone/container": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/gap/milestone/label": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/horizontal/timeline/verticalGraph": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/horizontal/milestone/verticalGraph": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/vertical/timeline/horizontalGraph": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/vertical/timeline/verticalGraph": {
+    "value": "{#/Primitives/Value/spacing/8}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/vertical/timeline/helpIcon": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/vertical/milestone/horizontalGraph": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/vertical/milestone/verticalGraph": {
+    "value": "{#/Primitives/Value/spacing/7}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/left/timeline/milestoneRight": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/left/milestone/milestoneRight": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/right/timeline/milestoneLeft": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/right/milestone/milestoneLeft": {
+    "value": "{#/Primitives/Value/spacing/32}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/bottom/timeline/milestoneTop": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/bottom/milestone/milestoneTop": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/top/milestone/milestoneBottom": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/padding/top/timeline/milestoneBottom": {
+    "value": "{#/Primitives/Value/spacing/24}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/width/timeline/verticalBarWidth": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/width/timeline/marker": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/width/milestone/verticalBarWidth": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/barGraph/width/milestone/marker": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/fill/divider/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/fill/divider/compounded": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/fill/divider/subheaderLarge": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/fill/divider/subheaderSmall": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/button&sectionHeader}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/header/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/header/compounded": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/header/subheaderLarge": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/header/subheaderSmall": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/description/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/text/description/compounded": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/sectionHeader/width/divider/default": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/width/default}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/width/divider/compounded": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/width/compounded}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/width/divider/subheaderLarge": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/width/subheaderLarge}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/width/divider/subheaderSmall": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/width/subheaderSmall}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/height/divider/default": {
+    "value": "{#/Primitives/Value/sizing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/height/compounded": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/height/subheaderLarge": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/height/subheaderLarge}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/height/subheaderSmall": {
+    "value": "{#/Primitives/Value/sectionHeader/divider/height/subheaderSmall}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/gap/header/default": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/gap/header/compounded": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/gap/header/subheaderLarge": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/gap/header/subheaderSmall": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/top/subheaderLarge": {
+    "value": "{#/Primitives/Value/sectionHeader/padding/top/subheaderLarge}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/sectionHeader/padding/top/subheaderSmall": {
+    "value": "{#/Primitives/Value/sectionHeader/padding/top/subheaderSmall}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/fill/complete/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/fill/complete/success": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/fill/line/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/fill/line/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/fill/line/success": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/border/current/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/border/current/success": {
+    "value": "{#/Semantic/Light/Wellpoint/border/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/border/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/midGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/border/width/outline": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/border/borderRadius/complete": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/border/height/outline": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/border/weight": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/text/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/text/active/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/text/active/success": {
+    "value": "{#/Semantic/Light/Wellpoint/text/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/icon/complete": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/progressBar/icon/size/complete": {
+    "value": "{#/Primitives/Value/sizing/350}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/font/fontWeight/complete": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/progressBar/font/fontWeight/current": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/progressBar/font/fontWeight/inactive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/progressBar/font/size": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/font/lineHeight": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/height/step/complete": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/height/horizontal/line": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/height/vertical/line": {
+    "value": "{#/Primitives/Value/progressBar/line/height/vertical}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/height/container": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/width/horizontal/line": {
+    "value": "{#/Primitives/Value/progressBar/line/width/horizontal}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/width/vertical/line": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/width/step/complete": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/width/container": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/maxWidth/text": {
+    "value": "{#/Primitives/Value/progressBar/text/maxWidth}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/minWidth/horizontal/line": {
+    "value": "{#/Primitives/Value/progressBar/line/minWidth/horizontal}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/progressBar/minHeight/vertical/line": {
+    "value": "{#/Primitives/Value/sizing/7}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/icon/close": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/icon/help/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/icon/help/resting": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/icon/size/close": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/icon/size/help": {
+    "value": "{#/Primitives/Value/sizing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/text": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/background": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/border/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tooltip/border/size": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/font/weight": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/tooltip/font/size": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/font/lineHeight": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/padding/horizontal/content": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/padding/vertical/content": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/maxWidth": {
+    "value": "{#/Primitives/Value/tooltip/maxWidth}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tooltip/minWidth": {
+    "value": "{#/Primitives/Value/tooltip/minWidth}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/icon/default": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/icon/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/icon/size": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/text/title": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/text/content": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/text/description": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/background/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/background/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/accordion/font/weight/content": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/accordion/font/weight/description": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/accordion/font/size/content": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/font/size/description": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/font/lineHeight/content": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/font/lineHeight/description": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/padding/vertical/container": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/padding/horizontal/container": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/accordion/padding/gap/title": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/text/minimal/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/focusActive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/focusInactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/minimal/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/focusActive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/focusInactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/text/text/press": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/active": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/tab}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/activeFocus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/inactiveFocus": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/press": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/active}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/icon/minimal/size": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/border/minimal/active": {
+    "value": "{#/Semantic/Light/Wellpoint/border/link}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/minimal/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/minimal/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/minimal/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/minimal/press": {
+    "value": "{#/Semantic/Light/Wellpoint/border/black}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/pointer/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/pointer/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/pointer/gap/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/border/pointer/spread/focus": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/border/size/minimal/active": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/border/size/minimal/inactive": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/border/size/pointer/inactive": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/border/size/pointer/focus": {
+    "value": "{#/Primitives/Value/sizing/050}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/background/pointer/arrow/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/arrow/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/activeFocus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/inactiveFocus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/focusContainer": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/background/pointer/press": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/press}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/tab/font/weight/minimal/labelActive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/tab/font/weight/minimal/labelInactive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/tab/font/weight/pointer/labelSemibold": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/tab/font/weight/pointer/labelMedium": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/tab/font/size/minimal/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/font/size/pointer/labelPointerThick": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/font/size/pointer/labelPointerThin": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/font/lineHeight/minimal/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/font/lineHeight/pointer/labelPointerThick": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/font/lineHeight/pointer/labelPointerThin": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/disabled": {
+    "value": "{#/Primitives/Value/opacity/30}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/horizontal/minimal/container": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/horizontal/minimal/tabItem": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/horizontal/minimal/tabGroup": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/horizontal/pointer/container": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/horizontal/pointer/tabItemFocus": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/vertical/minimal/container": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/vertical/minimal/tabItem": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/vertical/minimal/tabGroup": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/vertical/pointer/containerThick": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/vertical/pointer/containerThin": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/gap/minimal/container": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/gap/minimal/tabItem": {
+    "value": "{#/Primitives/Value/spacing/0}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/gap/minimal/tabGroup": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/padding/bottom/pointer/tabItem": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/width/pointer/arrow": {
+    "value": "{#/Primitives/Value/sizing/8}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/height/pointer/arrow": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/height/pointer/thick/minHeight": {
+    "value": "{#/Primitives/Value/sizing/16}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/height/pointer/thin/minHeight": {
+    "value": "{#/Primitives/Value/sizing/12}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/tab/height/pointer/thin/maxHeight": {
+    "value": "{#/Primitives/Value/sizing/12}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/textColors/text/darkGray": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/lightGray": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/white": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/primary": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/error": {
+    "value": "{#/Semantic/Light/Wellpoint/text/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/pending": {
+    "value": "{#/Semantic/Light/Wellpoint/text/urgent}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/textColors/text/success": {
+    "value": "{#/Semantic/Light/Wellpoint/text/positive}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/buttonGroup/background/container": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/buttonGroup/dropShadow/background": {
+    "value": "{#/Primitives/Value/buttonGroup/dropShadow/background}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/buttonGroup/dropShadow/y": {
+    "value": "{#/Primitives/Value/buttonGroup/dropShadow/y}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/buttonGroup/dropShadow/blur": {
+    "value": "{#/Primitives/Value/sizing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/buttonGroup/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/buttonGroup/padding/horizontal/container": {
+    "value": "{#/Primitives/Value/spacing/3}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/buttonGroup/padding/vertical/container": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/text/default": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/text/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/text/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/text/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/text/errorMessage": {
+    "value": "{#/Semantic/Light/Wellpoint/text/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/text/error": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/icon/error": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/icon/size": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/background/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/background/input/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/background/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/background/input/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/background/input/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/focusSelected": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/error": {
+    "value": "{#/Semantic/Light/Wellpoint/border/error}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/focusActive": {
+    "value": "{#/Semantic/Light/Wellpoint/border/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/border/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/input/hoverSelected": {
+    "value": "{#/Semantic/Light/Wellpoint/border/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/border/weight": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/border/size": {
+    "value": "{#/Primitives/Value/sizing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/fill/input/default": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/fill/input/hover": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/secondary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/fill/input/focus": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/fill/input/disabled": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/fill/input/error": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/critical}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/radio/fill/size": {
+    "value": "{#/Primitives/Value/sizing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/font/weight": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/radio/font/size/label": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/font/size/errorMessage": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/font/lineHeight/label": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/font/lineHeight/errorMessage": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/padding/gap": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/padding/horizontal": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/padding/top/input": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/radio/padding/top/errorIcon": {
+    "value": "{#/Primitives/Value/radio/padding/top/errorIcon}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/fill/standard/linkWindow": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/fill/standard/memberTab": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/1/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/1/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/1/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/1/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/1/300": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/1/300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/2/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/2/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/2/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/2/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/3/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/3/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/3/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/3/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/3/300": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/3/300}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/4/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/4/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/gradient/4/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundA/gradient/4/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundA/fill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/fill": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/1/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/1/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/1/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/1/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/2/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/2/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/2/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/2/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/3/100": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/3/100}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/background/headerBackgroundB/gradient/3/200": {
+    "value": "{#/Primitives/Value/pageHeader/backgroundB/Wellpoint/gradient/3/200}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/border/searchBeta": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/border/standardSearch": {
+    "value": "{#/Semantic/Light/Wellpoint/border/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/border/members/memberTab": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/border/size/searchBeta": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/border/size/standardSearch": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/border/size/standard": {
+    "value": "{#/Primitives/Value/sizing/025}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/border/borderRadius/search": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/border/borderRadius/memberTab": {
+    "value": "{#/Primitives/Value/sizing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/text/welcomeDashboard": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/text/standard/memberActive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/text/standard/memberInactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/pageHeader/font/weight/welcomeDashboard/memberName": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/pageHeader/font/weight/standard/memberTab": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/pageHeader/font/size/welcomeDashboard/memberName": {
+    "value": "{#/Primitives/Value/fontSize/6xl}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/font/size/standard/memberTab": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/font/lineHeight/welcomeDashboard/memberName": {
+    "value": "{#/Primitives/Value/lineHeight/6xl}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/font/lineHeight/standard/memberTab": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/standard/container": {
+    "value": "{#/Primitives/Value/spacing/36}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/standard/linkWindow": {
+    "value": "{#/Primitives/Value/spacing/36}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/standard/memberTab": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/search": {
+    "value": "{#/Primitives/Value/spacing/36}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/welcomeDashboard/header": {
+    "value": "{#/Primitives/Value/spacing/36}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/horizontal/searchBeta": {
+    "value": "{#/Primitives/Value/spacing/36}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/vertical/standard/container": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/vertical/standard/linkWindow": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/vertical/standard/memberTab": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/vertical/search": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/vertical/searchBeta": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/top/welcomeDashboard/header": {
+    "value": "{#/Primitives/Value/spacing/20}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/gap/welcomeDashboard/text": {
+    "value": "{#/Primitives/Value/spacing/150}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/gap/container": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/gap/memberSelection": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/gap/headerText": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/gap/memberContainer": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/pageHeader/padding/bottom/welcomeDashboard/header": {
+    "value": "{#/Primitives/Value/spacing/44}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/background/overlay": {
+    "value": "{#/Primitives/Value/slideIn/background/overlay}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/background/card": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/background/backArrow": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/containerGray}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/border/card": {
+    "value": "{#/Primitives/Value/slideIn/border/card}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/icon/backArrow": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/text/header": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/text/content": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/slideIn/font/weight/content": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Regular}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/slideIn/font/size/content": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/font/lineHeight/content": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/width/overlay": {
+    "value": "{#/Primitives/Value/slideIn/width/overlay}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/width/card": {
+    "value": "{#/Primitives/Value/slideIn/width/card}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/width/cardContent": {
+    "value": "{#/Primitives/Value/slideIn/width/cardContent}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/padding/gap/cardContent": {
+    "value": "{#/Primitives/Value/spacing/8}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/slideIn/padding/right/buttonGroup": {
+    "value": "{#/Primitives/Value/slideIn/padding/right/buttonGroup}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/text/internalLink": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/menuItem/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/menuItem/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/link/noAccordion": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/link/accordion": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/link/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/link/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/sectionHeader": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/title/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/title/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/title/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/text/base}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/description/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/description/active": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/text/header/description/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/text/subdued}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/internalLink": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/link/accordion": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/link/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/header/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/header/active": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/icon/header/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/icon/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/menuItem/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/link/link": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/header/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/header/inactive": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/header/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/header/arrow/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/background/header/arrow/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/white}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/border/header/active": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/border/header/expand": {
+    "value": "{#/Semantic/Light/Wellpoint/surface/primary}",
+    "type": "color"
+  },
+  "Brand/Wellpoint/leftNav/border/borderRadius/menuItem/active": {
+    "value": "{#/Primitives/Value/borderRadius/rounded}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/internalLink": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/menuItem/inactive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/menuItem/active": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/link/noAccordion": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/link/accordion": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/link/active": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/link/expand": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/title/inactive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/title/active": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/title/expand": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Semibold}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/description/inactive": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/description/active": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/weight/header/description/expand": {
+    "value": "{#/Primitives/Value/Wellpoint/fontWeight/Medium}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/leftNav/font/size/internalLink": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/menuItem/inactive": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/menuItem/active": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/link/noAccordion": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/link/accordion": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/link/active": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/link/expand": {
+    "value": "{#/Primitives/Value/fontSize/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/title/inactive": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/title/active": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/title/expand": {
+    "value": "{#/Primitives/Value/fontSize/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/description/inactive": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/description/active": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/size/header/description/expand": {
+    "value": "{#/Primitives/Value/fontSize/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/internalLink": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/menuItem/inactive": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/menuItem/active": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/link/noAccordion": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/link/accordion": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/link/active": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/link/expand": {
+    "value": "{#/Primitives/Value/lineHeight/sm}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/title/inactive": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/title/active": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/title/expand": {
+    "value": "{#/Primitives/Value/lineHeight/base}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/description/inactive": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/description/active": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/font/lineHeight/header/description/expand": {
+    "value": "{#/Primitives/Value/lineHeight/2xs}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/internalLink": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/menuItem/inactive": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/menuItem/activeHover": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/link/noAccordion": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/link/accordion": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/link/activeHover": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/link/expand": {
+    "value": "{#/Primitives/Value/spacing/250}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/header/container/inactive": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/header/container/active": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/header/container/expand": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/container/resourcesBenefits": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/container/resourcesBenefits2": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/vertical/container/resourcesClaims": {
+    "value": "{#/Primitives/Value/spacing/6}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/internalLink": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/sectionHeader": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/menuItem/inactive": {
+    "value": "{#/Primitives/Value/leftNav/padding/left/menuItem}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/link/noAccordion": {
+    "value": "{#/Primitives/Value/spacing/9}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/link/accordion": {
+    "value": "{#/Primitives/Value/spacing/9}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/link/expand": {
+    "value": "{#/Primitives/Value/spacing/9}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/header/container/inactive": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/header/description/inactive": {
+    "value": "{#/Primitives/Value/leftNav/padding/left/header/description}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/header/description/active": {
+    "value": "{#/Primitives/Value/leftNav/padding/left/header/description}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/left/header/description/expand": {
+    "value": "{#/Primitives/Value/leftNav/padding/left/header/description}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/internalLink": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/sectionHeader": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/menuItem/inactive": {
+    "value": "{#/Primitives/Value/spacing/9}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/link/noAccordion": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/link/accordion": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/link/expand": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/header/container/inactive": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/header/container/active": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/header/container/expand": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/header/title/active": {
+    "value": "{#/Primitives/Value/leftNav/padding/right/header/title}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/right/header/title/expand": {
+    "value": "{#/Primitives/Value/leftNav/padding/right/header/title}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/internalLink": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/link/accordion": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/link/expand": {
+    "value": "{#/Primitives/Value/spacing/2}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/content/inactive": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/content/active": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/content/expand": {
+    "value": "{#/Primitives/Value/spacing/1}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/title/inactive": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/title/active": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/title/expand": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/border/active": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/header/border/expand": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/container/resourcesBenefits": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/container/resourcesBenefits2": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/gap/container/resourcesClaims": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/horizontal/menuItem/active": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/horizontal/menuItem/activeHover": {
+    "value": "{#/Primitives/Value/spacing/9}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/horizontal/link/active": {
+    "value": "{#/Primitives/Value/spacing/4}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/padding/horizontal/link/activeHover": {
+    "value": "{#/Primitives/Value/spacing/5}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/menuItem/inactive": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/menuItem/active": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/sectionHeader": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/link/noAccordion": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/link/accordion": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/link/active": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/link/expand": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/header/inactive": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/header/active": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/leftNav/width/header/expand": {
+    "value": "{#/Primitives/Value/leftNav/width}",
+    "type": "dimension"
+  },
+  "Brand/Wellpoint/fontFamily": {
+    "value": "{#/Primitives/Value/Wellpoint/fontFamily/Member}",
+    "type": "text"
+  },
+  "Brand/Wellpoint/brandName": {
+    "value": "{#/Primitives/Value/Wellpoint/brandName}",
+    "type": "text"
+  },
+  "Primitives/Value/button/Wellpoint/background/press": {
+    "value": "#231e33",
+    "type": "color"
+  }
+}

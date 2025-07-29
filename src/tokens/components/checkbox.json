@@ -1,0 +1,16 @@
+{
+  "checkbox": {
+    "padding": {
+      "top": {
+        "input": {
+          "value": "3px",
+          "type": "dimension"
+        },
+        "errorIcon": {
+          "value": "3px",
+          "type": "dimension"
+        }
+      }
+    }
+  }
+}

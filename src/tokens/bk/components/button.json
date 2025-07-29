@@ -1,0 +1,14 @@
+{
+  "Primitives/Value/button/padding/horizontal/small": {
+    "value": "30px",
+    "type": "dimension"
+  },
+  "Primitives/Value/button/height/small": {
+    "value": "30px",
+    "type": "dimension"
+  },
+  "Primitives/Value/button/minWidth/large": {
+    "value": "120px",
+    "type": "dimension"
+  }
+}

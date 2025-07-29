@@ -1,0 +1,10 @@
+{
+"Primitives/Value/tooltip/maxWidth": {
+"value": "340px",
+"type": "dimension"
+},
+"Primitives/Value/tooltip/minWidth": {
+"value": "190px",
+"type": "dimension"
+}
+}

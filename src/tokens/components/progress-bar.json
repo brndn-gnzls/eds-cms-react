@@ -1,0 +1,30 @@
+{
+  "progressBar": {
+    "line": {
+      "width": {
+        "horizontal": {
+          "value": "150px",
+          "type": "dimension"
+        }
+      },
+      "minWidth": {
+        "horizontal": {
+          "value": "124px",
+          "type": "dimension"
+        }
+      },
+      "height": {
+        "vertical": {
+          "value": "150px",
+          "type": "dimension"
+        }
+      }
+    },
+    "text": {
+      "maxWidth": {
+        "value": "136px",
+        "type": "dimension"
+      }
+    }
+  }
+}

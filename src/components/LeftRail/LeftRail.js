@@ -27,6 +27,7 @@ const GET_LEFT_RAIL_ACCORDIONS = gql`
 const staticLinkMap = {
     Design:  "/get-started/design",
     Develop: "/get-started/develop",
+    Overview: "/get-started"
 };
 
 const COMPONENT_NAME = "LeftRail";
@@ -54,7 +55,11 @@ export default function LeftRail() {
 
     if (loading || error) return null;
 
-    const accordions = data.leftRailAccordions || [];
+    const accordions = [...(data.leftRailAccordions || [])].sort((a, b) => {
+        if (a.label === "Get Started") return -1;
+        if (b.label === "Get Started") return 1;
+        return 0;
+    });
 
     const resetScroll = () => {
         window.scrollTo(0, 0);

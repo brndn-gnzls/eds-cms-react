@@ -1,0 +1,34 @@
+{
+"Primitives/Value/sectionHeader/divider/width/subheaderSmall": {
+"value": "3px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/divider/width/subheaderLarge": {
+"value": "3px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/divider/width/compounded": {
+"value": "141px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/divider/width/default": {
+"value": "45px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/divider/height/subheaderSmall": {
+"value": "22px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/divider/height/subheaderLarge": {
+"value": "28px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/padding/top/subheaderSmall": {
+"value": "3px",
+"type": "dimension"
+},
+"Primitives/Value/sectionHeader/padding/top/subheaderLarge": {
+"value": "3px",
+"type": "dimension"
+}
+}
