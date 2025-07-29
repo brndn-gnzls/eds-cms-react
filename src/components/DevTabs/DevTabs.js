@@ -82,14 +82,33 @@ function renderBlock(block, idx) {
             return <h4 key={idx}>{block.content}</h4>;
 
         case "p":
-            return <p key={idx}>{block.content}</p>;
+            return (
+                <p
+                    key={idx}
+                    dangerouslySetInnerHTML={{ __html: block.content }}
+                />
+            );
 
         case "pBold":
             return (
-                <p key={idx} style={{ fontWeight: "bold" }}>
-                    {block.content}
-                </p>
+                <p
+                    key={idx}
+                    style={{ fontWeight: "bold" }}
+                    dangerouslySetInnerHTML={{ __html: block.content }}
+                />
             );
+
+        case "pItalicSmall":
+            return (
+                <p
+                    key={idx}
+                    style={{ fontStyle: "italic", fontSize: "14px" }}
+                    dangerouslySetInnerHTML={{ __html: block.content }}
+                />
+            );
+
+        // (Keep all your existing cases unchanged)
+
         case "link":
             return (
                 <p key={idx} style={{ margin: "16px 0" }}>
@@ -99,7 +118,7 @@ function renderBlock(block, idx) {
                         rel="noopener noreferrer"
                         style={{
                             color: "#1a73e8",
-                            textDecoration: "underline"
+                            textDecoration: "underline",
                         }}
                     >
                         {block.label}
@@ -109,17 +128,19 @@ function renderBlock(block, idx) {
 
         case "singleBullet":
             return (
-                <div key={idx} style={{ display: "flex", alignItems: "flex-start", margin: "8px 0 0 0" }}>
-                    <span style={{ marginRight: "8px", lineHeight: 1.5 }}>&bull;</span>
+                <div
+                    key={idx}
+                    style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        margin: "8px 0 0 0",
+                    }}
+                >
+                    <span style={{ marginRight: "8px", lineHeight: 1.5 }}>
+                        &bull;
+                    </span>
                     <span>{block.label}</span>
                 </div>
-            );
-
-        case "pItalicSmall":
-            return (
-                <p key={idx} style={{ fontStyle: "italic", fontSize: "14px" }}>
-                    {block.content}
-                </p>
             );
 
         case "spacing":
@@ -158,12 +179,7 @@ function renderBlock(block, idx) {
             return <LargeAccordion key={idx} items={block.items} />;
 
         case "resourceGrid":
-            return (
-                <ResourceGrid
-                    key={idx}
-                    items={block.items}
-                />
-            );
+            return <ResourceGrid key={idx} items={block.items} />;
 
         default:
             return (
@@ -173,5 +189,6 @@ function renderBlock(block, idx) {
             );
     }
 }
+
 
 export default DevTabs;
