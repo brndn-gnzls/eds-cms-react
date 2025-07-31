@@ -179,6 +179,7 @@ const GET_COMPONENT_DETAIL = gql`
                         row1Left {
                             imageSrc
                             description
+                            boldTitle
                             topSpacing
                             bulletList {
                                 items {
@@ -191,6 +192,7 @@ const GET_COMPONENT_DETAIL = gql`
                         row1Right {
                             imageSrc
                             description
+                            boldTitle
                             topSpacing
                             bulletList {
                                 items {
@@ -203,6 +205,7 @@ const GET_COMPONENT_DETAIL = gql`
                         row2Left {
                             imageSrc
                             description
+                            boldTitle
                             topSpacing
                             bulletList {
                                 items {
@@ -215,6 +218,7 @@ const GET_COMPONENT_DETAIL = gql`
                         row2Right {
                             imageSrc
                             description
+                            boldTitle
                             topSpacing
                             bulletList {
                                 items {
@@ -458,6 +462,7 @@ function transformMetricsRowArray(rowArr) {
 
     return {
         imageSrc: row.imageSrc || "",
+        boldTitle: row.boldTitle || "",
         description: row.description || "",
         topSpacing: row.topSpacing || 0,
         bulletList: bulletItems,

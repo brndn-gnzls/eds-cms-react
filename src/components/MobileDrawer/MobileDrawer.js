@@ -1,7 +1,6 @@
 // src/components/MobileDrawer/MobileDrawer.js
-
-import React, { useState } from "react";
-import { gql, useQuery } from "@apollo/client";
+import React, { useRef, useEffect } from "react";
+import { useQuery, gql } from "@apollo/client";
 import { useLocation, Link } from "react-router-dom";
 import styles from "./MobileDrawer.module.css";
 
@@ -16,37 +15,31 @@ const GET_LEFT_RAIL_ACCORDIONS = gql`
 `;
 
 const linkToPathMap = {
-    // Components
     Overview: "/components",
     Accordion: "/components/accordion",
-    Alerts: "/components/alert",
+    Alert: "/components/alert",
     Badge: "/components/badge",
-    Button: "/components/button",
     "Bar Graph": "/components/bar-graph",
+    Button: "/components/button",
     "Button Group": "/components/button-group",
     Checkbox: "/components/checkbox",
     Container: "/components/container",
     Divider: "/components/divider",
-    Radio: "/components/radio",
     Dropdown: "/components/dropdown",
-    "Left Navigation": "/components/left-navigation",
+    "Left Hand Nav": "/components/left-navigation",
     Link: "/components/link",
     "Page Header": "/components/page-header",
     "Progress Bar": "/components/progress-bar",
     "Radio Button": "/components/radio-button",
     "Section Header": "/components/section-header",
-    "Slide-In Panel": "/components/slide-in-panel",
+    "Slide In": "/components/slide-in-panel",
     Tabs: "/components/tabs",
     "Text Field": "/components/text-field",
     Toggle: "/components/toggle",
     Tooltip: "/components/tooltip",
-
-    // Get Started (already correct)
-    Overview: "/get-started",
     Design: "/get-started/design",
     Develop: "/get-started/develop",
 };
-
 
 export default function MobileDrawer({
                                          isOpen,
@@ -57,59 +50,74 @@ export default function MobileDrawer({
                                          lightIcon,
                                          darkIcon,
                                      }) {
-    // Query the same data as LeftRail
+    const MOBILE_MAX = 768;
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > MOBILE_MAX && isOpen) {
+                onClose();
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [isOpen, onClose]);
     const { loading, error, data } = useQuery(GET_LEFT_RAIL_ACCORDIONS);
     const location = useLocation();
-
     const leftRailAccordions = data?.leftRailAccordions || [];
+    const drawerRef = useRef({ startY: undefined });
 
-    if (loading) return null; // or a small spinner
-    if (error) return null;
+    if (loading || error) return null;
 
-    // We'll apply a special class if `isOpen` is true
+    const handleTouchStart = (e) => {
+        drawerRef.current.startY = e.touches[0].clientY;
+    };
+    const handleTouchEnd = (e) => {
+        const endY = e.changedTouches[0].clientY;
+        const startY = drawerRef.current.startY;
+        if (startY !== undefined && startY - endY > 50) {
+            onClose();
+        }
+    };
+
     return (
         <>
-            {/* Overlay */}
             <div
                 className={`${styles.overlay} ${isOpen ? styles.showOverlay : ""}`}
                 onClick={onClose}
-            ></div>
+            />
 
-            {/* Drawer itself */}
-            <div className={`${styles.drawer} ${isOpen ? styles.openDrawer : ""}`}>
-                {/* The top portion => can hold a heading or just the accordion */}
+            <div
+                ref={drawerRef}
+                className={`${styles.drawer} ${isOpen ? styles.openDrawer : ""}`}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            >
                 <div className={styles.accordionWrapper}>
                     {leftRailAccordions.map((accData) => {
                         const labelText = accData.label.trim();
-
                         let linkRoutes = accData.links
-                            ? accData.links
-                                .split("\\n")
-                                .map((raw) => {
-                                    const label = raw.replace(/\\n/g, "").trim();
+                            ?.split("\\n")
+                            .map((raw) => {
+                                const label = raw.replace(/\\n/g, "").trim();
+                                let route;
+                                if (label === "Overview") {
+                                    route =
+                                        labelText === "Components"
+                                            ? "/components"
+                                            : labelText === "Get Started"
+                                                ? "/get-started"
+                                                : "#";
+                                } else {
+                                    route = linkToPathMap[label] || "#";
+                                }
+                                if (route === "#") {
+                                    console.warn("Unmapped label:", label, "in section:", labelText);
+                                }
+                                return { label, route };
+                            }) || [];
 
-                                    // Conditionally handle "Overview" based on the parent accordion
-                                    let route;
-                                    if (label === "Overview") {
-                                        if (labelText === "Components") route = "/components";
-                                        else if (labelText === "Get Started") route = "/get-started";
-                                        else route = "#";
-                                    } else {
-                                        route = linkToPathMap[label] || "#";
-                                    }
-
-                                    return { label, route };
-                                })
-                            : [];
-
-                        // Pull the Overview link out to place it first
-                        const overviewLink = linkRoutes.find(link => link.label === "Overview");
-                        const otherLinks = linkRoutes.filter(link => link.label !== "Overview");
-
-                        // Sort the remaining links alphabetically
+                        const overviewLink = linkRoutes.find((l) => l.label === "Overview");
+                        const otherLinks = linkRoutes.filter((l) => l.label !== "Overview");
                         otherLinks.sort((a, b) => a.label.localeCompare(b.label));
-
-                        // Ensure Overview is first, followed by sorted links
                         linkRoutes = overviewLink ? [overviewLink, ...otherLinks] : otherLinks;
 
                         return (
@@ -118,15 +126,12 @@ export default function MobileDrawer({
                                 label={labelText}
                                 links={linkRoutes}
                                 currentPath={location.pathname}
+                                onClose={onClose}
                             />
                         );
                     })}
-
-
-
                 </div>
 
-                {/* Pinned bottom row => GH + Figma left, toggle right */}
                 <div className={styles.bottomRow}>
                     <div className={styles.bottomLeft}>
                         <a href="https://github.com/" className={styles.iconLink}>
@@ -136,7 +141,6 @@ export default function MobileDrawer({
                             <img src={figmaIcon} alt="Figma" />
                         </a>
                     </div>
-
                     <button className={styles.toggleBtn}>
                         <img
                             src={isLight ? lightIcon : darkIcon}
@@ -149,10 +153,7 @@ export default function MobileDrawer({
     );
 }
 
-function AccordionSection({ label, links, currentPath }) {
-    // We'll just auto-open them all in mobile, or you can do an actual accordion.
-    // For simplicity, let’s keep it open.
-    // If you want an actual accordion, replicate the logic from your existing Accordion.
+function AccordionSection({ label, links, currentPath, onClose }) {
     return (
         <div className={styles.mobileAccordionWrapper}>
             <p className={styles.accordionLabel}>{label}</p>
@@ -163,9 +164,8 @@ function AccordionSection({ label, links, currentPath }) {
                         <Link
                             key={i}
                             to={link.route}
-                            className={`${styles.mobileLink} ${
-                                isActive ? styles.activeLink : ""
-                            }`}
+                            onClick={onClose}
+                            className={`${styles.mobileLink} ${isActive ? styles.activeLink : ""}`}
                         >
                             {link.label}
                         </Link>

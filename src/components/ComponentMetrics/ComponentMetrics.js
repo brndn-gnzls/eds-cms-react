@@ -29,8 +29,6 @@ export default function ComponentMetrics({
      *   topSpacing: 24, // e.g. spacing before bullet list
      *   etc...
      * }
-     *
-     * We'll handle spacing in code for clarity. Customize as needed.
      */
 
     return (
