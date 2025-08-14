@@ -80,8 +80,8 @@
 }
 
 .mastheadContent h1 {
-    font-size: 40px;
-    line-height: 44px;
+    font-size: 64px;
+    line-height: 64px;
     margin-bottom: 16px; /* 16px gap to p */
 }
 
@@ -100,26 +100,26 @@
 }
 
 .getStartedBtn {
-    width: 174px;
+    width: 190px;
     height: 44px;
     padding: 8px 16px;
     background: #fff;
     border: none;
     color: #000;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
     margin-right: 14px;
 }
 
 .componentsBtn {
-    width: 174px;
+    width: 190px;
     height: 44px;
     padding: 8px 16px;
     background: transparent;
     color: #fff;
     border: 2px solid #fff;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* -------------------------

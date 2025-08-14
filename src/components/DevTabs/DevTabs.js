@@ -34,15 +34,15 @@ const DevTabs = ({
 
     return (
         <div className={styles.devTabsContainer}>
-            {/* pinned area => banner + tab bar */}
             <div className={styles.pinnedArea}>
-                <div
+                 <div
                     className={styles.banner}
                     style={{ backgroundImage: `url("${bannerImage}")` }}
                 >
                     <h1>{bannerHeading}</h1>
                     <p>{bannerBody}</p>
-                </div>
+                </div>          {/* pinned area => banner + tab bar */}
+ 
 
                 <div className={styles.tabBar}>
                     {tabsData.map((tabItem, idx) => {

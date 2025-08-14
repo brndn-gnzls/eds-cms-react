@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // <- Added useEffect
+import React, { useState, useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
@@ -11,6 +11,7 @@ import StorybookEmbed from "../../components/StorybookEmbed/StorybookEmbed";
 import styles from "./ComponentDetailPage.module.css";
 import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 import {useLoading} from "../../LoadingContext";
+
 
 const GET_COMPONENT_DETAIL = gql`
     query GetComponentDetailPages ($pagination: PaginationArg) {
@@ -40,11 +41,14 @@ const GET_COMPONENT_DETAIL = gql`
                     ... on ComponentSharedBlocksItalicCaptionSmall {
                         content
                     }
-                    ... on ComponentGlobalLink {
-                        url
-                        label
+                    ... on ComponentBulletListBlockBulletListBlock {
+                        items {
+                            boldLead
+                            body
+                        }
                     }
-                    ... on ComponentGlobalSingleBullet {
+                    ... on ComponentSharedBlocksNotificationBox {
+                        borderColor
                         content
                     }
                 }
@@ -80,11 +84,8 @@ const GET_COMPONENT_DETAIL = gql`
                     ... on ComponentSharedBlocksGettingHelpInternalBlock {
                         insert
                     }
-                    ... on ComponentGlobalLink {
-                        url
-                        label
-                    }
-                    ... on ComponentGlobalSingleBullet {
+                    ... on ComponentSharedBlocksNotificationBox {
+                        borderColor
                         content
                     }
                 }
@@ -103,13 +104,6 @@ const GET_COMPONENT_DETAIL = gql`
                     }
                     ... on ComponentSpacingBlocksSpacingBlock {
                         height
-                    }
-                    ... on ComponentGlobalLink {
-                        url
-                        label
-                    }
-                    ... on ComponentGlobalSingleBullet {
-                        content
                     }
                     ... on ComponentSharedBlocksHorizontalRuleBlock {
                         style
@@ -256,6 +250,7 @@ const GET_COMPONENT_DETAIL = gql`
         }
     }
 `;
+
 /**
  * 2) Transform Helpers
  *    - If you want, you can combine them into one
@@ -302,6 +297,14 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                     content: block.content || "",
                 };
 
+            case "ComponentSharedBlocksNotificationBox":
+                return {
+                    type: "notificationBox",
+                    borderColor: block.borderColor || "#000",
+                    content: block.content || "",
+                };
+
+
             case "ComponentSpacingBlocksSpacingBlock":
                 return {
                     type: "spacing",
@@ -329,22 +332,6 @@ function transformAccessibilityBlocks(strapiBlocks = []) {
                     type: "gettingHelpInternal",
                     insert: block.insert || null,
                 };
-
-
-            case "ComponentGlobalLink":
-                return {
-                    type: "link",
-                    url: block.url,
-                    label: block.label,
-                };
-
-            case "ComponentGlobalSingleBullet":
-                return {
-                    type: "singleBullet",
-                    content: block.content,  // use "label" for consistency with renderer
-                };
-
-
 
             case "ComponentBulletListBlockBulletListBlock":
                 return {
@@ -374,26 +361,19 @@ function transformUsageBlocks(strapiBlocks = []) {
                     content: block.headingText || "",
                 };
 
+            case "ComponentSharedBlocksNotificationBox":
+                return {
+                    type: "notificationBox",
+                    borderColor: block.borderColor || "#000",
+                    content: block.content || "",
+                };
+
+
             case "ComponentSharedBlocksItalicCaptionSmall":
                 return {
                     type: "pItalicSmall",
                     content: block.content || null,
                 };
-
-
-            case "ComponentGlobalLink":
-                return {
-                    type: "link",
-                    url: block.url,
-                    label: block.label,
-                };
-
-            case "ComponentGlobalSingleBullet":
-                return {
-                    type: "singleBullet",
-                    label: block.content,  // use "label" for consistency with renderer
-                };
-
 
             case "ComponentParagraphBlocksParagraphBlock":
                 return {
@@ -426,6 +406,15 @@ function transformUsageBlocks(strapiBlocks = []) {
                     type: "gettingHelpInternal",
                     insert: block.insert || null,
                 };
+
+                case "ComponentBulletListBlockBulletListBlock":
+                    return {
+                        type: "bulletList",
+                        bullets: (block.items || []).map((item) => ({
+                            boldLead: item.boldLead || "",
+                            body: item.body || "",
+                        })),
+                    };
 
             default:
                 return {
@@ -499,19 +488,6 @@ function transformOverviewBlocks(strapiBlocks = []) {
                 return {
                     type: "pItalicSmall",
                     content: block.content || null,
-                };
-
-            case "ComponentGlobalLink":
-                return {
-                    type: "link",
-                    url: block.url,
-                    label: block.label,
-                };
-
-            case "ComponentGlobalSingleBullet":
-                return {
-                    type: "singleBullet",
-                    label: block.content,  // use "label" for consistency with renderer
                 };
 
             case "ComponentSharedBlocksNotificationBox":
@@ -647,15 +623,23 @@ function transformOverviewBlocks(strapiBlocks = []) {
         }
     });
 }
+
 const COMPONENT_NAME = "ComponentDetailPage";
 
 const ComponentDetailPage = () => {
+    // 1) read param => e.g. "button", "checkbox", etc.
     const { slug } = useParams();
     const { startLoading, stopLoading } = useLoading();
     const [currentBrand, setCurrentBrand] = useState("Anthem");
 
+    // 2) fetch all detail pages
     const { loading, error, data } = useQuery(GET_COMPONENT_DETAIL, {
-        variables: { pagination: { page: 1, pageSize: 100 } },
+        variables: {
+            pagination: {
+                page: 1,
+                pageSize: 100,
+            },
+        },
     });
 
     // <- Start global loading indicator on component mount

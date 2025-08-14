@@ -118,7 +118,6 @@ h4 {
 
 @media (max-width: 768px) {
     .rightSide{
-        padding-left: 0px;
         margin-left: 0px;
     }
 }

@@ -15,30 +15,34 @@ const GET_LEFT_RAIL_ACCORDIONS = gql`
 `;
 
 const linkToPathMap = {
+    // Components
     Overview: "/components",
     Accordion: "/components/accordion",
     Alert: "/components/alert",
     Badge: "/components/badge",
-    "Bar Graph": "/components/bar-graph",
     Button: "/components/button",
+    "Bar Graph": "/components/bar-graph",
     "Button Group": "/components/button-group",
     Checkbox: "/components/checkbox",
     Container: "/components/container",
     Divider: "/components/divider",
+    Radio: "/components/radio",
     Dropdown: "/components/dropdown",
-    "Left Hand Nav": "/components/left-navigation",
+    "Left Hand Nav": "/components/left-hand-navigation",
     Link: "/components/link",
     "Page Header": "/components/page-header",
     "Progress Bar": "/components/progress-bar",
     "Radio Button": "/components/radio-button",
     "Section Header": "/components/section-header",
-    "Slide In": "/components/slide-in-panel",
+    "Slide In": "/components/slide-in",
     Tabs: "/components/tabs",
     "Text Field": "/components/text-field",
     Toggle: "/components/toggle",
     Tooltip: "/components/tooltip",
+
+    // Get Started
+    Overview: "/get-started",
     Design: "/get-started/design",
-    Develop: "/get-started/develop",
 };
 
 export default function MobileDrawer({
@@ -134,19 +138,19 @@ export default function MobileDrawer({
 
                 <div className={styles.bottomRow}>
                     <div className={styles.bottomLeft}>
-                        <a href="https://github.com/" className={styles.iconLink}>
+                        {/* <a href="https://github.com/" className={styles.iconLink}>
                             <img src={githubIcon} alt="GitHub" />
-                        </a>
-                        <a href="https://figma.com/" className={styles.iconLink}>
+                        </a> */}
+                        <a href="https://www.figma.com/design/ba5zjxivV4dOt9E7APGMlm/eDS---Member-Library?node-id=17569-2465&t=g0UvOhY1idhxK0G9-0" target="_blank" rel="noreferrer" className={styles.iconLink}>
                             <img src={figmaIcon} alt="Figma" />
                         </a>
                     </div>
-                    <button className={styles.toggleBtn}>
+                    {/* <button className={styles.toggleBtn}>
                         <img
                             src={isLight ? lightIcon : darkIcon}
                             alt={isLight ? "Light Mode" : "Dark Mode"}
                         />
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </>

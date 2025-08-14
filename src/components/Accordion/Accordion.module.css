@@ -47,11 +47,10 @@
 
 .navLink:hover {
     background-color: #EEEEEE;
-    border-left: 8px solid #007032;
 }
 .activeLink {
-    background-color: #EEEEEE;
-    border-left: 8px solid #007032;
+    border-left: 5px solid #007032;
+    font-weight: 600;
 }
 
 /* NEW CARET ICONS ------------------------------------------ */

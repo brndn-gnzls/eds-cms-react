@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8ad8672-5ddb-4cc7-b96a-f8b0d08ea56c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/preview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tokens/_temp.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Accordion/Accordion.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Accordion/Accordion.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BackToTopButton/BackToTopButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BackToTopButton/BackToTopButton.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button.stories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button.stories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComponentDetailAppearance/ComponentDetailAppearance.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComponentDetailAppearance/ComponentDetailAppearance.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComponentDetailBestPractices/ComponentDetailBestPractices.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComponentDetailBestPractices/ComponentDetailBestPractices.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComponentMetrics/ComponentMetrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComponentMetrics/ComponentMetrics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComponentTabs/ComponentTabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComponentTabs/ComponentTabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ComponentTabs/ComponentTabs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ComponentTabs/ComponentTabs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DevTabs/DevTabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DevTabs/DevTabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DevTabs/DevTabs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DevTabs/DevTabs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GettingHelp/GettingHelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GettingHelp/GettingHelp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GettingHelp/GettingHelp.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GettingHelp/GettingHelp.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GettingHelpInteral/GettingHelpInternal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GettingHelpInteral/GettingHelpInternal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GettingStartedPath/GettingStartedPath.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GettingStartedPath/GettingStartedPath.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalFooter/GlobalFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalFooter/GlobalFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoader/GlobalLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalLoader/GlobalLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoader/check-loader-gif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalLoader/check-loader-gif.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalNav/GlobalNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalNav/GlobalNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeMarketing/HomeMarketing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMarketing/HomeMarketing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeMarketing/HomeMarketing.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMarketing/HomeMarketing.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeMasthead/HomeMasthead.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMasthead/HomeMasthead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeMasthead/HomeMasthead.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMasthead/HomeMasthead.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeNews/HomeNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeNews/HomeNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LargeAccordion/LargeAccordion.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LargeAccordion/LargeAccordion.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LeftRail/LeftRail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LeftRail/LeftRail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileDrawer/MobileDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileDrawer/MobileDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileDrawer/MobileDrawer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileDrawer/MobileDrawer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NotificationBox/NotificationBox.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NotificationBox/NotificationBox.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResourceGrid/ResourceGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResourceGrid/ResourceGrid.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResourceGrid/ResourceGrid.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResourceGrid/ResourceGrid.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StorybookEmbed/StorybookEmbed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StorybookEmbed/StorybookEmbed.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ArticlePage/ArticlePage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ComponentCatalogPage/ComponentCatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ComponentCatalogPage/ComponentCatalogPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ComponentCatalogPage/ComponentCatalogPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ComponentCatalogPage/ComponentCatalogPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ComponentDetailPage/ComponentDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ComponentDetailPage/ComponentDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/GetStartedDesign/GetStartedDesignPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GetStartedDesign/GetStartedDesignPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/GetStartedDevelop/GetStartedDevelopPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GetStartedDevelop/GetStartedDevelopPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/GettingStarted/GettingStartedPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/GettingStarted/GettingStartedPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/AppRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/anthem/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/anthem/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/healthyblue/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/healthyblue/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/wellpoint/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/brand/wellpoint/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/checkbox.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/left-nav.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/progress-bar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/radio.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/section-header.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/slide-in.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/text-field.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/components/tooltip.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/glbls/_err_effects.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/glbls/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/glbls/sizing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/glbls/spacing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/glbls/typography.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/primitives/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/primitives/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/primitives/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/semantic/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/semantic/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/bk/semantic/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/anthem/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/anthem/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/healthyblue/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/healthyblue/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/wellpoint/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/brand/wellpoint/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/button-tokens.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/button-group.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/checkbox.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/left-nav.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/page-header.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/progress-bar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/radio.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/section-header.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/slide-in.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/text-field.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/components/tooltip.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/globals/colors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/globals/effects.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/globals/sizing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/globals/spacing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/globals/typography.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/tokens/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/primitives/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/primitives/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/primitives/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/semantic/anthem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/semantic/healthyblue.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tokens/semantic/wellpoint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/token_build/css/variables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/token_build/js/tokens.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "brndn-gnzls"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/brndn-gnzls/eds-cms-react.git",
+    "accountId": "3b08c229-f0ec-4d36-a8af-616a7141d73f"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="31Br88wqee82TykZ8hFgqn5qvi6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "fix/mobile-nav",
+    "last_opened_file_path": "/home/wrvthlss/Projects/eds-cms-react/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/snap/webstorm/497/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.27812.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8ad8672-5ddb-4cc7-b96a-f8b0d08ea56c" name="Changes" comment="" />
+      <created>1755008146552</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755008146552</updated>
+      <workItem from="1755008153423" duration="2960000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

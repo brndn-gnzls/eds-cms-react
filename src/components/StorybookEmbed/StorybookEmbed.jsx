@@ -1,32 +1,13 @@
-// src/components/StorybookEmbed/StorybookEmbed.jsx
 import React from "react";
 import PropTypes from "prop-types";
 
-/**
- * StorybookEmbed
- *
- * Given a Storybook “componentName” (e.g. "Button") and an optional “story” (e.g. "primary"),
- * this builds an iframe URL that points to the full Storybook UI (so you see Controls).
- *
- * Assumptions:
- *   • Your Storybook is running at http://localhost:6006
- *   • Your stories have title: "Components/Button" (→ storyId = "components-button--primary")
- *
- * Props:
- *   - componentName: e.g. "Button"
- *   - story:         e.g. "primary" | "secondary" (defaults to "primary")
- *   - height:        iframe height in pixels (defaults to 500)
- */
 const StorybookEmbed = ({ componentName, story = "primary", height = 500 }) => {
-    // 1) Build storyId. Storybook lowercases group + name + variant:
-    //     "Components/Button" + "primary" → "components-button--primary"
     const group   = "components";
     const comp    = componentName.toLowerCase();
     const variant = story.toLowerCase();
     const storyId = `${group}-${comp}--${variant}`;
 
-    // 2) Use ?path=/story/... so that Storybook shows full UI (including Controls)
-    const srcUrl = `http://127.0.0.1:5500/storybook/?path=/story/components-button--primary`;
+    const srcUrl = `https://dev.eds.dfe.awsdns.internal.das/storybook/?path=/story/${storyId}`;
 
     return (
         <div

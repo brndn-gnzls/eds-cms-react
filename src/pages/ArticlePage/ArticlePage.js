@@ -1,5 +1,5 @@
 // src/pages/ArticlePage/ArticlePage.js
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
 import {useParams, Navigate, Link} from "react-router-dom";
 
@@ -7,6 +7,7 @@ import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import GlobalNav from "../../components/GlobalNav/GlobalNav";
 import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import styles from "./ArticlePage.module.css";
+import { useLoading } from "../../LoadingContext";
 
 const GET_ARTICLES = gql`
     query Articles {
@@ -63,12 +64,23 @@ const GET_ARTICLES = gql`
     }
 `;
 
+const COMPONENT_NAME = "ArticlePage";
+
 export default function ArticlePage() {
     const { articleUrl } = useParams();
     const { loading, error, data } = useQuery(GET_ARTICLES);
+    const { startLoading, stopLoading } = useLoading();
 
-    if (loading) return <p>Loading article…</p>;
-    if (error)   return <p>Error: {error.message}</p>;
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        return () => stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
+
+    useEffect(() => {
+        if (!loading) stopLoading(COMPONENT_NAME);
+    }, [loading, stopLoading]);
+
+    if (loading || error) return null; // Avoid individual loaders here
 
     const article = data.articles.find((a) => a.url === articleUrl);
     if (!article) return <Navigate to="/articles" replace />;
@@ -228,7 +240,7 @@ export default function ArticlePage() {
                 <main className={`flex-grow ${styles.articleContent}`}>
                     {blocks.map(renderBlock)}
                     <Link to="/">
-                        <button className={styles.getStartedBtn}>Back to articles</button>
+                        <button className={styles.getStartedBtn}>Back to Articles</button>
                     </Link>
                 </main>
             </div>

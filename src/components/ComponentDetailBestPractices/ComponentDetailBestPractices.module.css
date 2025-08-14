@@ -64,18 +64,19 @@
 
 .cellTitle {
     font-weight: bold;
-    margin: 0; /* remove default p margin to keep them inline */
-    font-size: 1rem; /* adjust if needed */
+    margin: 0;
+    font-size: 16px;
 }
 
 .cellParagraph {
     margin-bottom: 16px; /* space after paragraph before the image */
     line-height: 1.5;
-    font-size: 1rem;
+    font-size: 14px;
 }
 
 /* The brand image */
 .practiceImage {
     max-width: 100%;
     height: auto;
+    margin-bottom: 16px;
 }

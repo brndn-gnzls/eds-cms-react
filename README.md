@@ -1,2 +1,2 @@
-# Elevance EDS React Base
-- fix/do-dont-bold
+# eDS React
+UI code for design system

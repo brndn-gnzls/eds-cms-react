@@ -15,7 +15,7 @@
     flex: 1 1 0;
     min-width: 0;
     background-color: #fff;
-    padding: 0 32px 24px 0;
+    padding: 0 32px 24px 32px;
     box-sizing: border-box;
 }
 
@@ -33,6 +33,11 @@
     width: 100%;
 }
 
+p a {
+    color: #007032 !important;
+    text-decoration: underline !important;
+}
+
 .banner h1 {
     font-size: 40px;
     line-height: 44px;
@@ -43,6 +48,20 @@
     font-size: 16px;
     line-height: 20px;
     margin: 0;
+}
+h1 {
+    font-size: 40px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 28px;
 }
 
 /* Responsive: stack content */
