@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from './Button';
 
-/* Webpack + raw-loader: brand CSS as strings */
+/* Webpack + raw-loader: brand CSS as strings (single brand injected at a time) */
 import anthemTokens from '!!raw-loader!../design-tokens/anthem/button.css';
 import healthyblueTokens from '!!raw-loader!../design-tokens/healthyblue/button.css';
 import wellpointTokens from '!!raw-loader!../design-tokens/wellpoint/button.css';
@@ -24,12 +24,27 @@ const BRAND_MAP = {
     },
 };
 
-/** Alias our component uses in Task 1 */
-const ALIAS_ROW = {
-    label: 'Surface Primary (Button BG)',
-    aliasVar: '--semantic-surface-primary',
-    canonicalSuffix: 'surface-primary',
-};
+/** Aliases our component uses (brand‑agnostic). These resolve on the button element via .btn--{brand}. */
+const TOKEN_ROWS = [
+    // Surfaces (backgrounds)
+    { label: 'Surface / Primary', aliasVar: '--semantic-surface-primary', canonicalSuffix: 'surface-primary' },
+    { label: 'Surface / Secondary', aliasVar: '--semantic-surface-secondary', canonicalSuffix: 'surface-secondary' },
+    { label: 'Surface / Press', aliasVar: '--semantic-surface-press', canonicalSuffix: 'surface-press' },
+    { label: 'Surface / White', aliasVar: '--semantic-surface-white', canonicalSuffix: 'surface-white' },
+    { label: 'Surface / Subdued', aliasVar: '--semantic-surface-subdued', canonicalSuffix: 'surface-subdued' },
+
+    // Borders
+    { label: 'Border / Primary', aliasVar: '--semantic-border-primary', canonicalSuffix: 'border-primary' },
+    { label: 'Border / White', aliasVar: '--semantic-border-white', canonicalSuffix: 'border-white' },
+
+    // Text
+    { label: 'Text / White', aliasVar: '--semantic-text-white', canonicalSuffix: 'text-white' },
+    { label: 'Text / Primary', aliasVar: '--semantic-text-primary', canonicalSuffix: 'text-primary' },
+
+    // Icons
+    { label: 'Icon / White', aliasVar: '--semantic-icon-white', canonicalSuffix: 'icon-white' },
+    { label: 'Icon / Primary', aliasVar: '--semantic-icon-primary', canonicalSuffix: 'icon-primary' },
+];
 
 export default {
     title: 'Components/Button',
@@ -59,14 +74,13 @@ export default {
     },
 };
 
+/** Inject one brand stylesheet into the preview iframe at a time (keeps things deterministic). */
 const useBrandCss = (brandKey) => {
     const [ready, setReady] = useState(false);
     const brand = BRAND_MAP[brandKey] ?? BRAND_MAP.anthem;
-    const canonicalVar = `${brand.canonicalPrefix}${ALIAS_ROW.canonicalSuffix}`;
 
     useEffect(() => {
         setReady(false);
-
         let styleTag = document.getElementById('dynamic-brand-styles');
         if (!styleTag) {
             styleTag = document.createElement('style');
@@ -75,28 +89,28 @@ const useBrandCss = (brandKey) => {
         }
         styleTag.innerHTML = brand.css;
 
-        // Let the browser apply styles before we read computed values
         const t = setTimeout(() => setReady(true), 60);
         return () => clearTimeout(t);
     }, [brandKey, brand.css]);
 
-    return { ready, canonicalVar, brandKey };
+    return { ready, canonicalPrefix: brand.canonicalPrefix, brandKey };
 };
 
-const TokenTable = ({ aliasVar, canonicalVar, brandKey, ready }) => {
-    // Recompute when brand changes AND when styles have applied
-    const value = useMemo(() => {
-        if (!ready) return '…';
-        const v = getComputedStyle(document.documentElement).getPropertyValue(aliasVar).trim();
-        return v || 'N/A';
-    }, [aliasVar, brandKey, ready]);
-
-    const swatchStyle = {
-        width: 24,
-        height: 24,
-        border: '1px solid #ccc',
-        background: `var(${aliasVar})`,
-    };
+/** Read resolved values from the *button element* (where the aliases are defined),
+ *  then paint the swatch with the resolved color (hex/rgb) so it shows outside the button scope.
+ */
+const TokenTable = ({ btnEl, canonicalPrefix, ready, brandKey }) => {
+    const rows = useMemo(() => {
+        if (!ready || !btnEl) {
+            return TOKEN_ROWS.map(r => ({ ...r, value: '…', canonicalVar: `${canonicalPrefix}${r.canonicalSuffix}` }));
+        }
+        const cs = getComputedStyle(btnEl);
+        return TOKEN_ROWS.map(r => {
+            const value = cs.getPropertyValue(r.aliasVar).trim() || 'N/A';
+            const canonicalVar = `${canonicalPrefix}${r.canonicalSuffix}`;
+            return { ...r, value, canonicalVar };
+        });
+    }, [btnEl, ready, canonicalPrefix, brandKey]);
 
     return (
         <div style={{ marginTop: 24 }}>
@@ -107,18 +121,27 @@ const TokenTable = ({ aliasVar, canonicalVar, brandKey, ready }) => {
                     <th style={{ padding: 8 }}>Token</th>
                     <th style={{ padding: 8 }}>Alias (Component uses)</th>
                     <th style={{ padding: 8 }}>Resolves to (Brand-scoped)</th>
-                    <th style={{ padding: 8 }}>Computed</th>
+                    <th style={{ padding: 8 }}>Computed (from button)</th>
                     <th style={{ padding: 8 }}>Preview</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td style={{ padding: 8 }}>{ALIAS_ROW.label}</td>
-                    <td style={{ padding: 8 }}><code>{ALIAS_ROW.aliasVar}</code></td>
-                    <td style={{ padding: 8 }}><code>{canonicalVar}</code></td>
-                    <td style={{ padding: 8 }}>{value}</td>
-                    <td style={{ padding: 8 }}><div style={swatchStyle} /></td>
-                </tr>
+                {rows.map(row => (
+                    <tr key={row.aliasVar}>
+                        <td style={{ padding: 8 }}>{row.label}</td>
+                        <td style={{ padding: 8 }}><code>{row.aliasVar}</code></td>
+                        <td style={{ padding: 8 }}><code>{row.canonicalVar}</code></td>
+                        <td style={{ padding: 8 }}>{row.value}</td>
+                        <td style={{ padding: 8 }}>
+                            <div style={{
+                                width: 24,
+                                height: 24,
+                                border: '1px solid #ccc',
+                                background: (row.value && row.value !== 'N/A' && row.value !== '…') ? row.value : 'transparent',
+                            }} />
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>
@@ -126,17 +149,27 @@ const TokenTable = ({ aliasVar, canonicalVar, brandKey, ready }) => {
 };
 
 const Template = (args) => {
-    const { ready, canonicalVar, brandKey } = useBrandCss(args.brand);
+    const { ready, canonicalPrefix, brandKey } = useBrandCss(args.brand);
+
+    // Find the actual button element after render in the Canvas iframe
+    const [btnEl, setBtnEl] = useState(null);
+    useEffect(() => {
+        const id = setTimeout(() => {
+            const el = document.querySelector('.btn');
+            setBtnEl(el || null);
+        }, 0);
+        return () => clearTimeout(id);
+    }, [ready, args.brand, args.variant, args.size, args.disabled]);
 
     return (
         <div style={{ fontFamily: 'Arial', padding: 20 }}>
             <Button {...args} />
             {ready && (
                 <TokenTable
-                    aliasVar={ALIAS_ROW.aliasVar}
-                    canonicalVar={canonicalVar}
-                    brandKey={brandKey}
+                    btnEl={btnEl}
+                    canonicalPrefix={canonicalPrefix}
                     ready={ready}
+                    brandKey={brandKey}
                 />
             )}
         </div>

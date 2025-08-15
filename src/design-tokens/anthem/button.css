@@ -232,18 +232,6 @@
     --primitives-page-header-background-b-anthem-gradient-2-200: #ffffff;
     --primitives-page-header-background-b-anthem-gradient-3-100: #ffffff;
     --primitives-page-header-background-b-anthem-gradient-3-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-100: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-200: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-200: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-1-100: #1a3673;
-    --primitives-page-header-background-b-wellpoint-gradient-1-200: #1a3673;
-    --primitives-page-header-background-b-wellpoint-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-3-200: #ffffff;
     --primitives-radio-padding-top-error-icon: 3px;
     --primitives-section-header-padding-top-subheader-large: 3px;
     --primitives-slide-in-border-card: #000000;
@@ -274,4 +262,14 @@
 
 .btn--anthem {
     --semantic-surface-primary: var(--semantic-anthem-surface-primary);
+    --semantic-border-white: var(--semantic-anthem-border-white);
+    --semantic-border-primary: var(--semantic-anthem-border-primary);
+    --semantic-surface-secondary: var(--semantic-anthem-surface-secondary);
+    --semantic-surface-press: var(--semantic-anthem-surface-press);
+    --semantic-surface-white: var(--semantic-anthem-surface-white);
+    --semantic-surface-subdued: var(--semantic-anthem-surface-subdued);
+    --semantic-text-white: var(--semantic-anthem-text-white);
+    --semantic-text-primary: var(--semantic-anthem-text-primary);
+    --semantic-icon-white: var(--semantic-anthem-icon-white);
+    --semantic-icon-primary: var(--semantic-anthem-icon-primary);
 }

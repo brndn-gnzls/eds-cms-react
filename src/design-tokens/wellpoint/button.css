@@ -231,18 +231,6 @@
     --primitives-page-header-background-a-gradient-3-300: #000000;
     --primitives-page-header-background-a-gradient-4-100: #ffffff;
     --primitives-page-header-background-a-gradient-4-200: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-1-100: #286ce2;
-    --primitives-page-header-background-b-wellpoint-gradient-1-200: #286ce2;
-    --primitives-page-header-background-b-wellpoint-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-wellpoint-gradient-3-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-100: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-200: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-200: #ffffff;
     --primitives-page-header-background-b-wellpoint-gradient-1-100: #1a3673;
     --primitives-page-header-background-b-wellpoint-gradient-1-200: #1a3673;
     --primitives-page-header-background-b-wellpoint-gradient-2-100: #ffffff;
@@ -279,4 +267,14 @@
 
 .btn--wellpoint {
     --semantic-surface-primary: var(--semantic-wellpoint-surface-primary);
+    --semantic-border-white: var(--semantic-wellpoint-border-white);
+    --semantic-border-primary: var(--semantic-wellpoint-border-primary);
+    --semantic-surface-secondary: var(--semantic-wellpoint-surface-secondary);
+    --semantic-surface-press: var(--semantic-wellpoint-surface-press);
+    --semantic-surface-white: var(--semantic-wellpoint-surface-white);
+    --semantic-surface-subdued: var(--semantic-wellpoint-surface-subdued);
+    --semantic-text-white: var(--semantic-wellpoint-text-white);
+    --semantic-text-primary: var(--semantic-wellpoint-text-primary);
+    --semantic-icon-white: var(--semantic-wellpoint-icon-white);
+    --semantic-icon-primary: var(--semantic-wellpoint-icon-primary);
 }
