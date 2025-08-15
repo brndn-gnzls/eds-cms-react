@@ -53,7 +53,7 @@ h4 {
 
 .appearanceImage {
     width: 311px;
-    height: 95px;
+    height: 246px;
     object-fit: contain;
     /* or you can rely on brand images being exactly 311x96 */
 }

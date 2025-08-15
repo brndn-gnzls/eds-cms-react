@@ -28,11 +28,11 @@ const AppRouter = () => {
     }, []);
 
     return (
-        <LoadingProvider> {/* <-- Add this wrapper */}
+        <LoadingProvider>
             <Router>
-                <GlobalLoader /> {/* <-- unified global loader */}
+                <GlobalLoader /> 
                 <ScrollToTop />
-                <Suspense fallback={<div>Loading…</div>}>
+                <Suspense fallback={<GlobalLoader />}>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
                         <Route path="/articles/:articleUrl" element={<ArticlePage />} />

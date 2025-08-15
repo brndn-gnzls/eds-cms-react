@@ -80,40 +80,28 @@ export default function ComponentDetailBestPractices({
     );
 }
 
-/** PracticeCell => renders the do/don’t item:
- *  1) Icon + bold heading inline
- *  2) Paragraph
- *  3) Brand-based image
- */
+// Simple markdown-to-HTML (bold only)
+function markdownBold(input) {
+    return input.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+}
+
 function PracticeCell({
                           brandPrefix = "anthem-",
                           item = {},
                           defaultColor = "#007032",
                           defaultSymbol = "✓",
                       }) {
-    /**
-     * item shape:
-     * {
-     *   title: "Use Clear and Concise Labeling",
-     *   color: "#007032",
-     *   symbol: "✓",
-     *   paragraph: "...",
-     *   imageSrc: "img-button-best-practices-desktop-light-001.svg"
-     * }
-     * color/symbol fallback => defaultColor/defaultSymbol if omitted.
-     */
     const color = item.color || defaultColor;
     const symbol = defaultSymbol;
     const finalSrc = `/images/componentDetailAssets/button/overview/${brandPrefix}${item.imageSrc || ""}`;
 
+    // Apply the bold markdown transformation
+    const htmlContent = markdownBold(item.paragraph || "");
+
     return (
         <div className={styles.practiceCell}>
-            {/* Heading row => icon + bold heading in one line */}
             <div className={styles.headingRow}>
-                <div
-                    className={styles.iconCircle}
-                    style={{ backgroundColor: color }}
-                >
+                <div className={styles.iconCircle} style={{ backgroundColor: color }}>
                     {symbol}
                 </div>
                 <p className={styles.cellTitle} style={{ color }}>
@@ -121,12 +109,12 @@ function PracticeCell({
                 </p>
             </div>
 
-            {/* The paragraph */}
-            <p className={styles.cellParagraph}>
-                {item.paragraph}
-            </p>
+            {/* Safely inject transformed HTML */}
+            <p
+                className={styles.cellParagraph}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+            />
 
-            {/* Brand-based image => only if item.imageSrc is provided */}
             {item.imageSrc && (
                 <img
                     src={finalSrc}

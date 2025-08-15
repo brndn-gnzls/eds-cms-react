@@ -8,8 +8,11 @@ import GlobalFooter from "../../components/GlobalFooter/GlobalFooter";
 import GettingHelpInternal from "../../components/GettingHelpInteral/GettingHelpInternal";
 import styles from "./ComponentCatalogPage.module.css";
 import { Link } from "react-router-dom";
+import BackToTopButton from "../../components/BackToTopButton/BackToTopButton";
 import { useLoading } from "../../LoadingContext"; // <- Added useLoading
 
+
+// GraphQL queries as you specified
 const GET_CATALOG_INVENTORIES = gql`
     query ComponentCatalogInventories($pagination: PaginationArg) {
         componentCatalogInventories(pagination: $pagination) {
@@ -43,21 +46,32 @@ const GET_GENERAL_H2_LOCKUP = gql`
 const COMPONENT_NAME = "ComponentCatalogPage"; // <- Component name for global loading
 
 const ComponentCatalogPage = () => {
+    // 1) Brand switch state (local)
     const [currentBrand, setCurrentBrand] = useState("Anthem");
     const { startLoading, stopLoading } = useLoading(); // <- Global loading hook
+    // 2) Apollo queries
+    // a) fetch all inventory items with pagination = {pageSize: 100}
+    const {
+        loading: invLoading,
+        error: invError,
+        data: invData,
+    } = useQuery(GET_CATALOG_INVENTORIES, {
+        variables: { pagination: { pageSize: 100 } },
+    });
 
-    const { loading: invLoading, error: invError, data: invData } = useQuery(
-        GET_CATALOG_INVENTORIES,
-        { variables: { pagination: { pageSize: 100 } } }
-    );
+    // b) fetch the masthead single type
+    const {
+        loading: mastLoading,
+        error: mastError,
+        data: mastData,
+    } = useQuery(GET_CATALOG_MASTHEAD);
 
-    const { loading: mastLoading, error: mastError, data: mastData } = useQuery(
-        GET_CATALOG_MASTHEAD
-    );
-
-    const { loading: h2Loading, error: h2Error, data: h2Data } = useQuery(
-        GET_GENERAL_H2_LOCKUP
-    );
+    // c) fetch the h2 lockup single type
+    const {
+        loading: h2Loading,
+        error: h2Error,
+        data: h2Data,
+    } = useQuery(GET_GENERAL_H2_LOCKUP);
 
     // <- Start global loading indicator on component mount
     useEffect(() => {
@@ -92,6 +106,7 @@ const ComponentCatalogPage = () => {
         item.imageUrl.includes(brandPrefix)
     );
 
+
     return (
         <>
             <GlobalNav
@@ -100,10 +115,12 @@ const ComponentCatalogPage = () => {
                 onBrandChange={setCurrentBrand}
             />
 
+            {/* CHANGED: use styles.containerRow just like your detail page */}
             <div className={styles.containerRow}>
                 <LeftRail />
                 <div className={styles.rightSide}>
                     <div>
+                        {/* ...the rest of your content stays unchanged... */}
                         <h1 style={{ paddingBottom: "16px" }}>
                             {mastheadData?.headline || "Overview"}
                         </h1>
@@ -122,20 +139,13 @@ const ComponentCatalogPage = () => {
                         </p>
                         <div className={styles.catalogGrid}>
                             {filteredItems.map((comp) => (
-                                <div
-                                    key={comp.documentId}
-                                    className={styles.catalogItem}
-                                >
+                                <div key={comp.documentId} className={styles.catalogItem}>
                                     <div style={{ width: "200px", height: "126px" }}>
                                         <Link to={`/components/${comp.slug}`}>
                                             <img
                                                 src={comp.imageUrl}
                                                 alt={comp.title}
-                                                style={{
-                                                    width: "100%",
-                                                    height: "100%",
-                                                    objectFit: "contain",
-                                                }}
+                                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
                                             />
                                         </Link>
                                     </div>
@@ -155,10 +165,11 @@ const ComponentCatalogPage = () => {
                     </div>
                 </div>
             </div>
-
+            <BackToTopButton/>
             <GlobalFooter />
         </>
     );
 };
+
 
 export default ComponentCatalogPage;

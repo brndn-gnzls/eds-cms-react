@@ -6,7 +6,7 @@ import styles from "./Accordion.module.css";
 export default function Accordion({
                                       label,
                                       links,
-                                      defaultOpen = false,
+                                      defaultOpen = true,
                                       currentPath
                                   }) {
     const [isOpen, setIsOpen] = useState(defaultOpen);

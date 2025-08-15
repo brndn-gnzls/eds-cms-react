@@ -1,69 +1,62 @@
-/* src/components/MobileDrawer/MobileDrawer.module.css */
-
-/* Drawer container: hidden by default, slides from right */
+/* Drawer container */
 .drawer {
     position: fixed;
-    top: 78px; /* The height of your GlobalNav */
-    right: -255px; /* start off-screen to the right */
+    top: 78px;
+    right: -255px;
     width: 255px;
     height: calc(100vh - 78px);
     background-color: #fff;
     transition: right 0.3s ease;
-    z-index: 9998; /* under the nav bar if nav has z-index 9999 */
+    z-index: 9998;
     display: flex;
     flex-direction: column;
     padding: 24px;
     box-sizing: border-box;
 }
 
-/* When isOpen is true => move it in */
 .openDrawer {
     right: 0;
 }
 
-/* Semi-transparent overlay behind the drawer */
 .overlay {
     position: fixed;
     top: 78px;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.0); /* invisible by default */
+    background: rgba(0, 0, 0, 0.0);
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 9997; /* behind drawer but above page content */
+    z-index: 9997;
     pointer-events: none;
 }
 
 .showOverlay {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 1;
     pointer-events: auto;
 }
 
-/* The accordion wrapper inside the drawer */
 .accordionWrapper {
-    flex: 1; /* take up remaining space so the bottom row is pinned at bottom */
+    flex: 1;
     overflow-y: auto;
 }
 
-/* Each label + links block */
 .mobileAccordionWrapper {
     margin-bottom: 16px;
 }
 
-/* The label for the group */
 .accordionLabel {
     font-weight: bold;
     margin-bottom: 8px;
     font-size: 1rem;
 }
 
-/* The links */
 .mobileLinks {
     display: flex;
     flex-direction: column;
 }
+
 .mobileLink {
     text-decoration: none;
     color: #000;
@@ -72,23 +65,23 @@
     border-radius: 6px;
     margin-bottom: 4px;
 }
+
 .mobileLink:hover {
     background-color: #eeeeee;
 }
+
 .activeLink {
     background-color: #eeeeee;
 }
 
-/* Bottom row with GH + Figma left, toggle right */
 .bottomRow {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 16px; /* some spacing from the accordions */
+    padding-top: 16px;
     border-top: 1px solid #ddd;
 }
 
-/* Left side => GH + Figma, 16px gap */
 .bottomLeft {
     display: flex;
     align-items: center;
@@ -109,6 +102,7 @@
     cursor: pointer;
     padding: 0;
 }
+
 .toggleBtn img {
     width: 24px;
     height: 24px;

@@ -1,0 +1,52 @@
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--primitives-anthem-font-family-member), sans-serif;
+    background-color: var(--semantic-surface-primary);
+    border-style: solid;
+    cursor: pointer;
+    border: none;
+}
+
+.btn--large {
+}
+
+.btn--primary:hover {
+}
+.btn--primary:active {
+}
+.btn--primary:disabled {
+    cursor: not-allowed;
+}
+
+.btn--secondary {
+    background-color: transparent;
+}
+.btn--secondary:hover {
+}
+.btn--secondary:disabled {
+    cursor: not-allowed;
+}
+
+.btn--secondary-white {
+}
+.btn--secondary-white:hover {
+}
+.btn--secondary-white:disabled {
+    cursor: not-allowed;
+}
+
+.btn--ghost {
+    background-color: transparent;
+}
+.btn--ghost:hover {
+}
+.btn--ghost:disabled {
+}
+
+.btn--disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}

@@ -59,9 +59,23 @@
     display: inline-block;
     width: 8px;
     height: 8px;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-right: 2px solid #5d5d5d;
+    border-bottom: 2px solid #5d5d5d;
     transform: rotate(-45deg);
     user-select: none;
     /* optional: add a transition if you want a hover effect */
+}
+h1 {
+    font-size: 40px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 28px;
 }

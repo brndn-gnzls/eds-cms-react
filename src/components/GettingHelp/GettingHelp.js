@@ -14,14 +14,14 @@ const GettingHelp = () => {
 
             <ul className={styles.helpList}>
                 <li>
-                    <a href="designsystem+Suggestions@elevancehealth.com" className={styles.helpLink}>Suggest an improvement</a> – learn more about the eDS intake process for proposing modifications and changes to existing components.
+                    <a href="mailto:designsystem+Suggestions@elevancehealth.com" className={styles.helpLink}>Suggest an improvement</a> – learn more about the eDS intake process for proposing modifications and changes to existing components.
                 </li>
             </ul>
 
 
             <h3>Need Help?</h3>
             <p className={styles.helpTopParagraph}>
-            Your insights and contributions are crucial as we aim to continuously evolve our design system. For more detailed feedback, concerns or proposals, don’t hesitate to <a href="designsystem+generalsupport@elevancehealth.com" className={styles.helpLink}>get in touch</a>.
+            Your insights and contributions are crucial as we aim to continuously evolve our design system. For more detailed feedback, concerns or proposals, don’t hesitate to <a href="mailto:designsystem+generalsupport@elevancehealth.com" className={styles.helpLink}>send us an email.</a>.
             </p>
 
         </div>

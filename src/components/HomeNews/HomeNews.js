@@ -1,11 +1,12 @@
 // src/components/HomeNews/HomeNews.js
-
 import React, { useEffect } from "react";
+
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 import styles from "./HomeNews.module.css";
 import { useLoading } from "../../LoadingContext";
 
+// 1) Top heading/paragraph stays the same
 const GET_HOME_NEWS_TOP = gql`
     query GetHomeNewsTop {
         homeNewsTop {
@@ -15,6 +16,7 @@ const GET_HOME_NEWS_TOP = gql`
     }
 `;
 
+// 2) Updated articles query to pull in `thumbnail`
 const GET_ARTICLES = gql`
     query GetArticles {
         articles {
@@ -37,8 +39,19 @@ const COMPONENT_NAME = "HomeNews";
 export default function HomeNews() {
     const { startLoading, stopLoading } = useLoading();
 
-    const { loading: topLoading, error: topError, data: topData } = useQuery(GET_HOME_NEWS_TOP);
-    const { loading: articlesLoading, error: articlesError, data: articlesData } = useQuery(GET_ARTICLES);
+    // fetch top lock-up
+    const {
+        loading: topLoading,
+        error: topError,
+        data: topData,
+    } = useQuery(GET_HOME_NEWS_TOP);
+
+    // fetch articles with thumbnail
+    const {
+        loading: articlesLoading,
+        error: articlesError,
+        data: articlesData,
+    } = useQuery(GET_ARTICLES);
 
     useEffect(() => {
         startLoading(COMPONENT_NAME);
@@ -56,11 +69,13 @@ export default function HomeNews() {
 
     return (
         <section className={styles.newsWrapper}>
+            {/* Top Lock-up */}
             <div className={styles.topLockup}>
                 <h2>{topHeading}</h2>
                 <p>{topParagraph}</p>
             </div>
 
+            {/* Article List */}
             {articles.map((article) => {
                 const {
                     url,
@@ -71,9 +86,15 @@ export default function HomeNews() {
                     articleComposition,
                 } = article;
 
-                const storyImageUrl = thumbnail ? `/${thumbnail.replace(/^\/+/, "")}` : "";
+                // Use thumbnail for the small listing image
+                const storyImageUrl = thumbnail
+                    ? `/${thumbnail.replace(/^\/+/, "")}`
+                    : "";
 
-                const headlineBlock = (articleComposition || []).find((b) => b.headline);
+                // first ParagraphHeadline block for storyBody
+                const headlineBlock = (articleComposition || []).find(
+                    (b) => b.headline
+                );
                 const storyBody = headlineBlock ? headlineBlock.headline : "";
 
                 return (
@@ -82,7 +103,9 @@ export default function HomeNews() {
                             <div
                                 className={styles.newsImage}
                                 style={{
-                                    backgroundImage: storyImageUrl ? `url("${storyImageUrl}")` : "none",
+                                    backgroundImage: storyImageUrl
+                                        ? `url("${storyImageUrl}")`
+                                        : "none",
                                 }}
                             />
                         </Link>
@@ -94,7 +117,8 @@ export default function HomeNews() {
                             <p dangerouslySetInnerHTML={{ __html: storyBody }} />
                             <div className={styles.bottomBorder} />
                             <p>
-                                <strong>{articleAuthorName}</strong> {articleAuthorRole}
+                                <strong>{articleAuthorName}</strong>{" "}
+                                {articleAuthorRole}
                             </p>
                         </div>
                     </div>

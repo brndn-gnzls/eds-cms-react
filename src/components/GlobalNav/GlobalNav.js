@@ -1,16 +1,19 @@
 // src/components/GlobalNav/GlobalNav.js
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./GlobalNav.module.css";
 import MobileDrawer from "../MobileDrawer/MobileDrawer";
+import { useLoading } from "../../LoadingContext";
 
 const BRAND_ICONS = {
     Anthem: "/images/brandSwitcher/anthem-global-img-brand.svg",
     "Healthy Blue": "/images/brandSwitcher/healthyblue-global-img-brand.svg",
     Wellpoint: "/images/brandSwitcher/wellpoint-global-img-brand.svg",
 };
+
+const COMPONENT_NAME = "GlobalNav";
 
 const GlobalNav = ({
                        showBrandSwitcher = false,
@@ -31,6 +34,13 @@ const GlobalNav = ({
     const figmaIcon = "/images/globalNav/figma.svg";
     const lightIcon = "/images/globalNav/light.svg";
     const darkIcon = "/images/globalNav/dark.svg";
+
+    const {startLoading, stopLoading} = useLoading();
+
+    useEffect(() => {
+        startLoading(COMPONENT_NAME);
+        stopLoading(COMPONENT_NAME);
+    }, [startLoading, stopLoading]);
 
     return (
         <>
@@ -65,10 +75,10 @@ const GlobalNav = ({
                             <span></span>
                         </div>
 
-                        <a href="https://github.com/" className={styles.iconLink}>
+                        {/* <a href="https://github.com/" className={styles.iconLink}>
                             <img src={githubIcon} alt="GitHub" />
-                        </a>
-                        <a href="https://figma.com/" className={styles.iconLink}>
+                        </a> */}
+                        <a href="https://www.figma.com/design/ba5zjxivV4dOt9E7APGMlm/eDS---Member-Library?node-id=17569-2465&t=g0UvOhY1idhxK0G9-0" target="_blank" rel="noreferrer" className={styles.iconLink}>
                             <img src={figmaIcon} alt="Figma" />
                         </a>
                         {/* <span className={styles.pipe}>|</span>
