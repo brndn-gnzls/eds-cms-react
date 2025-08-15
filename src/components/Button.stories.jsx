@@ -1,53 +1,47 @@
 /* eslint import/no-webpack-loader-syntax: off */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from './Button';
 
+/* Webpack + raw-loader: brand CSS as strings */
 import anthemTokens from '!!raw-loader!../design-tokens/anthem/button.css';
 import healthyblueTokens from '!!raw-loader!../design-tokens/healthyblue/button.css';
 import wellpointTokens from '!!raw-loader!../design-tokens/wellpoint/button.css';
 
-const brandTokenMap = {
-    anthem: anthemTokens,
-    healthyblue: healthyblueTokens,
-    wellpoint: wellpointTokens,
+/** Map the Storybook control value -> brand assets + canonical token prefix */
+const BRAND_MAP = {
+    anthem: {
+        css: anthemTokens,
+        canonicalPrefix: '--semantic-anthem-',
+    },
+    wellpoint: {
+        css: wellpointTokens,
+        canonicalPrefix: '--semantic-wellpoint-',
+    },
+    healthyblue: {
+        css: healthyblueTokens,
+        canonicalPrefix: '--semantic-healthy-blue-',
+    },
 };
 
-const tokenDefinitions = [
-    { name: 'Disabled Height', var: '--brand-button-disabled', type: 'size' },
-    { name: 'Font Size Small', var: '--brand-button-font-size-small', type: 'size' },
-    { name: 'Font Size Large', var: '--brand-button-font-size-large-single', type: 'size' },
-    { name: 'Font Weight Small', var: '--brand-button-font-weight-small', type: 'fontWeight' },
-    { name: 'Primary Background', var: '--brand-button-background-primary-default', type: 'color' },
-    { name: 'Primary Text', var: '--brand-button-text-primary-default', type: 'color' },
-    { name: 'Secondary Background', var: '--brand-button-background-secondary-hover', type: 'color' },
-    { name: 'Secondary Text', var: '--brand-button-text-secondary-default', type: 'color' },
-    { name: 'Ghost Text', var: '--brand-button-text-ghost-default', type: 'color' },
-    { name: 'Disabled Background', var: '--brand-button-background-primary-disabled', type: 'color' },
-    { name: 'Disabled Text', var: '--brand-button-text-primary-disabled', type: 'color' },
-    { name: 'Button Border Size', var: '--brand-button-border-size', type: 'size' },
-    { name: 'Button Height Large', var: '--brand-button-height-large', type: 'size' },
-    { name: 'Button Height Small', var: '--brand-button-height-small', type: 'size' },
-    { name: 'Padding Horizontal Large', var: '--brand-button-padding-horizontal-large', type: 'size' },
-    { name: 'Padding Vertical Large', var: '--brand-button-padding-vertical-large', type: 'size' },
-];
+/** Alias our component uses in Task 1 */
+const ALIAS_ROW = {
+    label: 'Surface Primary (Button BG)',
+    aliasVar: '--semantic-surface-primary',
+    canonicalSuffix: 'surface-primary',
+};
 
 export default {
     title: 'Components/Button',
     component: Button,
     parameters: {
-        controls: {
-            include: ['brand', 'variant', 'size', 'disabled', 'children'],
-        },
+        controls: { include: ['brand', 'variant', 'size', 'disabled', 'children'] },
         actions: { disable: true },
         a11y: { disable: true },
         docs: { disable: true },
         vitest: { disable: true },
         chromatic: { disableSnapshot: true },
-        options: {
-            enableShortcuts: false,
-            showPanel: true,
-        },
+        options: { enableShortcuts: false, showPanel: true },
         interactions: { disable: true },
     },
     argTypes: {
@@ -65,74 +59,85 @@ export default {
     },
 };
 
-const Template = (args) => {
-    const [cssLoaded, setCssLoaded] = useState(false);
-    const tokens = brandTokenMap[args.brand] || anthemTokens;
+const useBrandCss = (brandKey) => {
+    const [ready, setReady] = useState(false);
+    const brand = BRAND_MAP[brandKey] ?? BRAND_MAP.anthem;
+    const canonicalVar = `${brand.canonicalPrefix}${ALIAS_ROW.canonicalSuffix}`;
 
     useEffect(() => {
-        let styleElement = document.getElementById('dynamic-brand-styles');
-        if (!styleElement) {
-            styleElement = document.createElement('style');
-            styleElement.id = 'dynamic-brand-styles';
-            document.head.appendChild(styleElement);
-        }
-        styleElement.innerHTML = tokens;
+        setReady(false);
 
-        const timeout = setTimeout(() => setCssLoaded(true), 50);
-        return () => clearTimeout(timeout);
-    }, [args.brand, tokens]);
+        let styleTag = document.getElementById('dynamic-brand-styles');
+        if (!styleTag) {
+            styleTag = document.createElement('style');
+            styleTag.id = 'dynamic-brand-styles';
+            document.head.appendChild(styleTag);
+        }
+        styleTag.innerHTML = brand.css;
+
+        // Let the browser apply styles before we read computed values
+        const t = setTimeout(() => setReady(true), 60);
+        return () => clearTimeout(t);
+    }, [brandKey, brand.css]);
+
+    return { ready, canonicalVar, brandKey };
+};
+
+const TokenTable = ({ aliasVar, canonicalVar, brandKey, ready }) => {
+    // Recompute when brand changes AND when styles have applied
+    const value = useMemo(() => {
+        if (!ready) return '…';
+        const v = getComputedStyle(document.documentElement).getPropertyValue(aliasVar).trim();
+        return v || 'N/A';
+    }, [aliasVar, brandKey, ready]);
+
+    const swatchStyle = {
+        width: 24,
+        height: 24,
+        border: '1px solid #ccc',
+        background: `var(${aliasVar})`,
+    };
 
     return (
-        <div style={{ fontFamily: 'Arial', padding: '20px' }}>
+        <div style={{ marginTop: 24 }}>
+            <h3>🎨 Design Tokens (Rendered Values)</h3>
+            <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+                <thead>
+                <tr style={{ textAlign: 'left', borderBottom: '2px solid #ddd' }}>
+                    <th style={{ padding: 8 }}>Token</th>
+                    <th style={{ padding: 8 }}>Alias (Component uses)</th>
+                    <th style={{ padding: 8 }}>Resolves to (Brand-scoped)</th>
+                    <th style={{ padding: 8 }}>Computed</th>
+                    <th style={{ padding: 8 }}>Preview</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style={{ padding: 8 }}>{ALIAS_ROW.label}</td>
+                    <td style={{ padding: 8 }}><code>{ALIAS_ROW.aliasVar}</code></td>
+                    <td style={{ padding: 8 }}><code>{canonicalVar}</code></td>
+                    <td style={{ padding: 8 }}>{value}</td>
+                    <td style={{ padding: 8 }}><div style={swatchStyle} /></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    );
+};
+
+const Template = (args) => {
+    const { ready, canonicalVar, brandKey } = useBrandCss(args.brand);
+
+    return (
+        <div style={{ fontFamily: 'Arial', padding: 20 }}>
             <Button {...args} />
-            {cssLoaded && (
-                <div style={{ marginTop: '32px' }}>
-                    <h3>🎨 Design Tokens (Rendered Values)</h3>
-                    <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-                        <thead>
-                        <tr style={{ textAlign: 'left', borderBottom: '2px solid #ddd' }}>
-                            <th style={{ padding: '8px' }}>Token</th>
-                            <th style={{ padding: '8px' }}>CSS Variable</th>
-                            <th style={{ padding: '8px' }}>Preview</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {tokenDefinitions.map(token => (
-                            <tr key={token.var}>
-                                <td style={{ padding: '8px' }}>{token.name}</td>
-                                <td style={{ padding: '8px' }}><code>{token.var}</code></td>
-                                <td style={{ padding: '8px' }}>
-                                    {token.type === 'color' && (
-                                        <div style={{
-                                            width: '24px',
-                                            height: '24px',
-                                            backgroundColor: `var(${token.var})`,
-                                            border: '1px solid #ccc'
-                                        }} />
-                                    )}
-                                    {token.type === 'fontWeight' && (
-                                        <span style={{ fontWeight: `var(${token.var})` }}>
-                        Aa (Semibold)
-                      </span>
-                                    )}
-                                    {token.type === 'size' && (
-                                        <span style={{
-                                            display: 'inline-block',
-                                            background: '#f9f9f9',
-                                            border: '1px solid #ddd',
-                                            padding: '2px 4px',
-                                            borderRadius: '4px'
-                                        }}>
-                        {getComputedStyle(document.documentElement)
-                            .getPropertyValue(token.var).trim() || 'N/A'}
-                      </span>
-                                    )}
-                                </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
-                </div>
+            {ready && (
+                <TokenTable
+                    aliasVar={ALIAS_ROW.aliasVar}
+                    canonicalVar={canonicalVar}
+                    brandKey={brandKey}
+                    ready={ready}
+                />
             )}
         </div>
     );
