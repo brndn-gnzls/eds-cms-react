@@ -260,16 +260,23 @@
     --primitives-anthem-font-weight-bold: 700;
 }
 
-.btn--anthem {
-    --semantic-surface-primary: var(--semantic-anthem-surface-primary);
-    --semantic-border-white: var(--semantic-anthem-border-white);
-    --semantic-border-primary: var(--semantic-anthem-border-primary);
-    --semantic-surface-secondary: var(--semantic-anthem-surface-secondary);
-    --semantic-surface-press: var(--semantic-anthem-surface-press);
-    --semantic-surface-white: var(--semantic-anthem-surface-white);
-    --semantic-surface-subdued: var(--semantic-anthem-surface-subdued);
-    --semantic-text-white: var(--semantic-anthem-text-white);
-    --semantic-text-primary: var(--semantic-anthem-text-primary);
-    --semantic-icon-white: var(--semantic-anthem-icon-white);
-    --semantic-icon-primary: var(--semantic-anthem-icon-primary);
-}
+    .btn--anthem {
+        /* Surfaces used by states */
+        --semantic-surface-primary:  var(--semantic-anthem-surface-primary);
+        --semantic-surface-secondary:var(--semantic-anthem-surface-secondary);
+        --semantic-surface-press:    var(--semantic-anthem-surface-press);
+        --semantic-surface-white:    var(--semantic-anthem-surface-white);
+        --semantic-surface-subdued:  var(--semantic-anthem-surface-subdued);
+
+        /* Borders used by states */
+        --semantic-border-primary:   var(--semantic-anthem-border-primary);
+        --semantic-border-white:     var(--semantic-anthem-border-white);
+
+        /* Text used by states */
+        --semantic-text-white:       var(--semantic-anthem-text-white);
+        --semantic-text-primary:     var(--semantic-anthem-text-primary);
+
+        /* Icons used by states */
+        --semantic-icon-white:       var(--semantic-anthem-icon-white);
+        --semantic-icon-primary:     var(--semantic-anthem-icon-primary);
+    }

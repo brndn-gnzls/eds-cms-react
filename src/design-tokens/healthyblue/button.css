@@ -271,17 +271,19 @@
     --primitives-healthy-blue-font-weight-semibold: 600;
     --primitives-healthy-blue-font-weight-bold: 700;
 }
-
 .btn--healthyblue {
-    --semantic-surface-primary: var(--semantic-healthy-blue-surface-primary);
-    --semantic-border-white: var(--semantic-healthy-blue-border-white);
-    --semantic-border-primary: var(--semantic-healthy-blue-border-primary);
-    --semantic-surface-secondary: var(--semantic-healthy-blue-surface-secondary);
-    --semantic-surface-press: var(--semantic-healthy-blue-surface-press);
-    --semantic-surface-white: var(--semantic-healthy-blue-surface-white);
-    --semantic-surface-subdued: var(--semantic-healthy-blue-surface-subdued);
-    --semantic-text-white: var(--semantic-healthy-blue-text-white);
-    --semantic-text-primary: var(--semantic-healthy-blue-text-primary);
-    --semantic-icon-white: var(--semantic-healthy-blue-icon-white);
-    --semantic-icon-primary: var(--semantic-healthy-blue-icon-primary);
+    --semantic-surface-primary:  var(--semantic-healthy-blue-surface-primary);
+    --semantic-surface-secondary:var(--semantic-healthy-blue-surface-secondary);
+    --semantic-surface-press:    var(--semantic-healthy-blue-surface-press);
+    --semantic-surface-white:    var(--semantic-healthy-blue-surface-white);
+    --semantic-surface-subdued:  var(--semantic-healthy-blue-surface-subdued);
+
+    --semantic-border-primary:   var(--semantic-healthy-blue-border-primary);
+    --semantic-border-white:     var(--semantic-healthy-blue-border-white);
+
+    --semantic-text-white:       var(--semantic-healthy-blue-text-white);
+    --semantic-text-primary:     var(--semantic-healthy-blue-text-primary);
+
+    --semantic-icon-white:       var(--semantic-healthy-blue-icon-white);
+    --semantic-icon-primary:     var(--semantic-healthy-blue-icon-primary);
 }

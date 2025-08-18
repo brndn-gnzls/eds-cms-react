@@ -266,15 +266,18 @@
 }
 
 .btn--wellpoint {
-    --semantic-surface-primary: var(--semantic-wellpoint-surface-primary);
-    --semantic-border-white: var(--semantic-wellpoint-border-white);
-    --semantic-border-primary: var(--semantic-wellpoint-border-primary);
-    --semantic-surface-secondary: var(--semantic-wellpoint-surface-secondary);
-    --semantic-surface-press: var(--semantic-wellpoint-surface-press);
-    --semantic-surface-white: var(--semantic-wellpoint-surface-white);
-    --semantic-surface-subdued: var(--semantic-wellpoint-surface-subdued);
-    --semantic-text-white: var(--semantic-wellpoint-text-white);
-    --semantic-text-primary: var(--semantic-wellpoint-text-primary);
-    --semantic-icon-white: var(--semantic-wellpoint-icon-white);
-    --semantic-icon-primary: var(--semantic-wellpoint-icon-primary);
+    --semantic-surface-primary:  var(--semantic-wellpoint-surface-primary);
+    --semantic-surface-secondary:var(--semantic-wellpoint-surface-secondary);
+    --semantic-surface-press:    var(--semantic-wellpoint-surface-press);
+    --semantic-surface-white:    var(--semantic-wellpoint-surface-white);
+    --semantic-surface-subdued:  var(--semantic-wellpoint-surface-subdued);
+
+    --semantic-border-primary:   var(--semantic-wellpoint-border-primary);
+    --semantic-border-white:     var(--semantic-wellpoint-border-white);
+
+    --semantic-text-white:       var(--semantic-wellpoint-text-white);
+    --semantic-text-primary:     var(--semantic-wellpoint-text-primary);
+
+    --semantic-icon-white:       var(--semantic-wellpoint-icon-white);
+    --semantic-icon-primary:     var(--semantic-wellpoint-icon-primary);
 }
