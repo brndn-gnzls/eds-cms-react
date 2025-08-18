@@ -4,9 +4,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from './Button';
 
 /* Webpack + raw-loader: brand CSS as strings (single brand injected at a time) */
-import anthemTokens from '!!raw-loader!../design-tokens/anthem/button.css';
-import healthyblueTokens from '!!raw-loader!../design-tokens/healthyblue/button.css';
-import wellpointTokens from '!!raw-loader!../design-tokens/wellpoint/button.css';
+import anthemTokens from '!!raw-loader!../design-tokens/anthem/button.css?v=dev1';
+import healthyblueTokens from '!!raw-loader!../design-tokens/healthyblue/button.css?v=dev1';
+import wellpointTokens from '!!raw-loader!../design-tokens/wellpoint/button.css?v=dev1';
 
 /** Map the Storybook control value -> brand assets + canonical token prefix */
 const BRAND_MAP = {
