@@ -271,21 +271,38 @@
     --primitives-healthy-blue-font-weight-semibold: 600;
     --primitives-healthy-blue-font-weight-bold: 700;
 }
-.btn--healthyblue {
-    --semantic-surface-primary:  var(--semantic-healthy-blue-surface-primary);
-    --semantic-surface-secondary:var(--semantic-healthy-blue-surface-secondary);
-    --semantic-surface-press:    var(--semantic-healthy-blue-surface-press);
-    --semantic-surface-white:    var(--semantic-healthy-blue-surface-white);
-    --semantic-surface-subdued:  var(--semantic-healthy-blue-surface-subdued);
 
-    --semantic-border-primary:   var(--semantic-healthy-blue-border-primary);
-    --semantic-border-white:     var(--semantic-healthy-blue-border-white);
+.textfield--healthyblue {
+    /* Icons */
+    --semantic-icon-white:    var(--semantic-healthy-blue-icon-white);
+    --semantic-icon-base:     var(--semantic-healthy-blue-icon-base);
+    --semantic-icon-primary:  var(--semantic-healthy-blue-icon-primary);
+    --semantic-icon-critical: var(--semantic-healthy-blue-icon-critical);
+    --semantic-icon-urgent:   var(--semantic-healthy-blue-icon-urgent);
+    --semantic-icon-positive: var(--semantic-healthy-blue-icon-positive);
+    --semantic-icon-info:     var(--semantic-healthy-blue-icon-info);
+    --semantic-icon-subdued:  var(--semantic-healthy-blue-icon-subdued);
+    --semantic-icon-active:   var(--semantic-healthy-blue-icon-active);
 
-    --semantic-text-white:       var(--semantic-healthy-blue-text-white);
-    --semantic-text-primary:     var(--semantic-healthy-blue-text-primary);
+    /* Borders */
+    --semantic-border-urgent:   var(--semantic-healthy-blue-border-urgent);
+    --semantic-border-base:     var(--semantic-healthy-blue-border-base);
+    --semantic-border-active:   var(--semantic-healthy-blue-border-primary);
+    --semantic-border-critical: var(--semantic-healthy-blue-border-critical);
+    --semantic-border-positive: var(--semantic-healthy-blue-border-positive);
 
-    --semantic-icon-white:       var(--semantic-healthy-blue-icon-white);
-    --semantic-icon-primary:     var(--semantic-healthy-blue-icon-primary);
+    /* Text */
+    --semantic-text-label:       var(--semantic-healthy-blue-text-base);
+    --semantic-text-placeholder: var(--semantic-healthy-blue-text-subdued);
+    --semantic-text-input:       var(--semantic-healthy-blue-text-base);
+    --semantic-text-critical:    var(--semantic-healthy-blue-text-base);
+    --semantic-text-urgent:      var(--semantic-healthy-blue-text-base);
+    --semantic-text-positive:    var(--semantic-healthy-blue-text-base);
+    --semantic-text-info:        var(--semantic-healthy-blue-text-info);
+    --semantic-text-help:        var(--semantic-healthy-blue-text-base);
+    --semantic-text-guidance:    var(--semantic-healthy-blue-text-subdued);
+    --semantic-text-help2:       var(--semantic-healthy-blue-text-base);
+
+    /* Surfaces */
+    --semantic-surface-background: var(--semantic-healthy-blue-surface-white);
 }
-
-
