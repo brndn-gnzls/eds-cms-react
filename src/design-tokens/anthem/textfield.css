@@ -1,56 +1,56 @@
 :root {
-    --primitives-healthy-blue-font-family-member: ElevanceSans;
-    --semantic-healthy-blue-surface-primary: #00739a;
-    --semantic-healthy-blue-border-primary: #00739a;
-    --semantic-healthy-blue-text-primary: #00739a;
-    --semantic-healthy-blue-border-secondary: #003359;
-    --semantic-healthy-blue-text-secondary: #003359;
-    --semantic-healthy-blue-text-press: #18475d;
-    --semantic-healthy-blue-text-white: #ffffff;
-    --semantic-healthy-blue-text-toggle-off: #f7f7f7;
-    --semantic-healthy-blue-text-subdued: #666666;
-    --semantic-healthy-blue-text-base: #333333;
-    --semantic-healthy-blue-text-info: #007ea8;
-    --semantic-healthy-blue-text-positive: #4e7c31;
-    --semantic-healthy-blue-text-urgent: #bc5b03;
-    --semantic-healthy-blue-text-critical: #d20a3c;
-    --semantic-healthy-blue-border-white: #ffffff;
-    --semantic-healthy-blue-border-subdued: #cccccc;
-    --semantic-healthy-blue-border-mid-gray: #878787;
-    --semantic-healthy-blue-border-base: #666666;
-    --semantic-healthy-blue-border-black: #000000;
-    --semantic-healthy-blue-border-info: #007ea8;
-    --semantic-healthy-blue-border-positive: #4e7c31;
-    --semantic-healthy-blue-border-urgent: #bc5b03;
-    --semantic-healthy-blue-border-critical: #d20a3c;
-    --semantic-healthy-blue-surface-secondary: #003359;
-    --semantic-healthy-blue-surface-section-header: #dd7c0d;
-    --semantic-healthy-blue-surface-hover: #005680;
-    --semantic-healthy-blue-surface-press: #18475d;
-    --semantic-healthy-blue-surface-white: #ffffff;
-    --semantic-healthy-blue-surface-container-gray: #f7f7f7;
-    --semantic-healthy-blue-surface-subdued: #666666;
-    --semantic-healthy-blue-surface-mid-gray: #878787;
-    --semantic-healthy-blue-surface-toggle-hover-off: #333333;
-    --semantic-healthy-blue-surface-info: #007ea8;
-    --semantic-healthy-blue-surface-positive: #4e7c31;
-    --semantic-healthy-blue-surface-urgent: #bc5b03;
-    --semantic-healthy-blue-surface-critical: #d20a3c;
-    --semantic-healthy-blue-surface-data-viz100: #0a437c;
-    --semantic-healthy-blue-surface-data-viz200: #dd7c0d;
-    --semantic-healthy-blue-surface-data-viz300: #54565b;
-    --semantic-healthy-blue-surface-data-viz400: #0099cc;
-    --semantic-healthy-blue-surface-data-viz500: #949496;
-    --semantic-healthy-blue-icon-primary: #00739a;
-    --semantic-healthy-blue-icon-secondary: #003359;
-    --semantic-healthy-blue-icon-white: #ffffff;
-    --semantic-healthy-blue-icon-subdued: #cccccc;
-    --semantic-healthy-blue-icon-base: #666666;
-    --semantic-healthy-blue-icon-active: #333333;
-    --semantic-healthy-blue-icon-info: #007ea8;
-    --semantic-healthy-blue-icon-positive: #4e7c31;
-    --semantic-healthy-blue-icon-urgent: #bc5b03;
-    --semantic-healthy-blue-icon-critical: #d20a3c;
+    --primitives-anthem-font-family-member: ElevanceSans;
+    --semantic-anthem-surface-primary: #286ce2;
+    --semantic-anthem-border-primary: #286ce2;
+    --semantic-anthem-surface-secondary: #2453a6;
+    --semantic-anthem-border-secondary: #2453a6;
+    --semantic-anthem-surface-badge-dark-neutral: #37475a;
+    --semantic-anthem-surface-section-header: #53b1ac;
+    --semantic-anthem-surface-press: #131331;
+    --semantic-anthem-surface-white: #ffffff;
+    --semantic-anthem-surface-container-gray: #f7f7f7;
+    --semantic-anthem-surface-mid-gray: #878787;
+    --semantic-anthem-surface-subdued: #666666;
+    --semantic-anthem-surface-toggle-hover-off: #333333;
+    --semantic-anthem-surface-info: #286ce2;
+    --semantic-anthem-surface-positive: #0c7905;
+    --semantic-anthem-surface-urgent: #a35c00;
+    --semantic-anthem-surface-critical: #cb0042;
+    --semantic-anthem-surface-data-viz100: #2453a6;
+    --semantic-anthem-surface-data-viz200: #0092fa;
+    --semantic-anthem-surface-data-viz300: #0c7905;
+    --semantic-anthem-surface-data-viz400: #cb2a73;
+    --semantic-anthem-surface-data-viz500: #511284;
+    --semantic-anthem-border-white: #ffffff;
+    --semantic-anthem-border-subdued: #cccccc;
+    --semantic-anthem-border-mid-gray: #878787;
+    --semantic-anthem-text-primary: #286ce2;
+    --semantic-anthem-text-secondary: #2453a6;
+    --semantic-anthem-text-press: #131331;
+    --semantic-anthem-text-white: #ffffff;
+    --semantic-anthem-text-toggle-off: #f7f7f7;
+    --semantic-anthem-text-subdued: #666666;
+    --semantic-anthem-text-base: #333333;
+    --semantic-anthem-text-info: #286ce2;
+    --semantic-anthem-text-positive: #0c7905;
+    --semantic-anthem-text-urgent: #a35c00;
+    --semantic-anthem-text-critical: #cb0042;
+    --semantic-anthem-icon-primary: #286ce2;
+    --semantic-anthem-icon-secondary: #2453a6;
+    --semantic-anthem-icon-white: #ffffff;
+    --semantic-anthem-icon-subdued: #cccccc;
+    --semantic-anthem-icon-base: #666666;
+    --semantic-anthem-icon-active: #333333;
+    --semantic-anthem-icon-info: #286ce2;
+    --semantic-anthem-icon-positive: #0c7905;
+    --semantic-anthem-icon-urgent: #a35c00;
+    --semantic-anthem-icon-critical: #cb0042;
+    --semantic-anthem-border-base: #666666;
+    --semantic-anthem-border-black: #000000;
+    --semantic-anthem-border-info: #286ce2;
+    --semantic-anthem-border-positive: #0c7905;
+    --semantic-anthem-border-urgent: #a35c00;
+    --semantic-anthem-border-critical: #cb0042;
     --primitives-colors-grays-100: #f7f7f7;
     --primitives-colors-grays-200: #e5e5e5;
     --primitives-colors-grays-300: #cccccc;
@@ -226,24 +226,12 @@
     --primitives-page-header-background-a-gradient-3-300: #000000;
     --primitives-page-header-background-a-gradient-4-100: #ffffff;
     --primitives-page-header-background-a-gradient-4-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-100: #286ce2;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-200: #286ce2;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-100: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-200: #00739a;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-100: #1a3673;
-    --primitives-page-header-background-b-healthy-blue-gradient-1-200: #1a3673;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-2-200: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-100: #ffffff;
-    --primitives-page-header-background-b-healthy-blue-gradient-3-200: #ffffff;
+    --primitives-page-header-background-b-anthem-gradient-1-100: #286ce2;
+    --primitives-page-header-background-b-anthem-gradient-1-200: #286ce2;
+    --primitives-page-header-background-b-anthem-gradient-2-100: #ffffff;
+    --primitives-page-header-background-b-anthem-gradient-2-200: #ffffff;
+    --primitives-page-header-background-b-anthem-gradient-3-100: #ffffff;
+    --primitives-page-header-background-b-anthem-gradient-3-200: #ffffff;
     --primitives-radio-padding-top-error-icon: 3px;
     --primitives-section-header-padding-top-subheader-large: 3px;
     --primitives-slide-in-border-card: #000000;
@@ -265,27 +253,44 @@
     --primitives-text-field-width-max: 596px;
     --primitives-tooltip-min-width: 190px;
     --primitives-tooltip-max-width: 340px;
-    --primitives-healthy-blue-font-weight-light: 300;
-    --primitives-healthy-blue-font-weight-regular: 400;
-    --primitives-healthy-blue-font-weight-medium: 500;
-    --primitives-healthy-blue-font-weight-semibold: 600;
-    --primitives-healthy-blue-font-weight-bold: 700;
-}
-.btn--healthyblue {
-    --semantic-surface-primary:  var(--semantic-healthy-blue-surface-primary);
-    --semantic-surface-secondary:var(--semantic-healthy-blue-surface-secondary);
-    --semantic-surface-press:    var(--semantic-healthy-blue-surface-press);
-    --semantic-surface-white:    var(--semantic-healthy-blue-surface-white);
-    --semantic-surface-subdued:  var(--semantic-healthy-blue-surface-subdued);
-
-    --semantic-border-primary:   var(--semantic-healthy-blue-border-primary);
-    --semantic-border-white:     var(--semantic-healthy-blue-border-white);
-
-    --semantic-text-white:       var(--semantic-healthy-blue-text-white);
-    --semantic-text-primary:     var(--semantic-healthy-blue-text-primary);
-
-    --semantic-icon-white:       var(--semantic-healthy-blue-icon-white);
-    --semantic-icon-primary:     var(--semantic-healthy-blue-icon-primary);
+    --primitives-anthem-font-weight-light: 300;
+    --primitives-anthem-font-weight-regular: 400;
+    --primitives-anthem-font-weight-medium: 500;
+    --primitives-anthem-font-weight-semibold: 600;
+    --primitives-anthem-font-weight-bold: 700;
 }
 
+.textfield--anthem {
+    /* Icons */
+    --semantic-icon-white:    var(--semantic-anthem-icon-white);
+    --semantic-icon-base:     var(--semantic-anthem-icon-base);
+    --semantic-icon-primary:  var(--semantic-anthem-icon-primary);
+    --semantic-icon-critical: var(--semantic-anthem-icon-critical);
+    --semantic-icon-urgent:   var(--semantic-anthem-icon-urgent);
+    --semantic-icon-positive: var(--semantic-anthem-icon-positive);
+    --semantic-icon-info:     var(--semantic-anthem-icon-info);
+    --semantic-icon-subdued:  var(--semantic-anthem-icon-subdued);
+    --semantic-icon-active:   var(--semantic-anthem-icon-active);
 
+    /* Borders */
+    --semantic-border-urgent:   var(--semantic-anthem-border-urgent);
+    --semantic-border-base:     var(--semantic-anthem-border-base);
+    --semantic-border-active:   var(--semantic-anthem-border-primary);
+    --semantic-border-critical: var(--semantic-anthem-border-critical);
+    --semantic-border-positive: var(--semantic-anthem-border-positive);
+
+    /* Text */
+    --semantic-text-label:       var(--semantic-anthem-text-base);
+    --semantic-text-placeholder: var(--semantic-anthem-text-subdued);
+    --semantic-text-input:       var(--semantic-anthem-text-base);
+    --semantic-text-critical:    var(--semantic-anthem-text-base);
+    --semantic-text-urgent:      var(--semantic-anthem-text-base);
+    --semantic-text-positive:    var(--semantic-anthem-text-base);
+    --semantic-text-info:        var(--semantic-anthem-text-info);
+    --semantic-text-help:        var(--semantic-anthem-text-base);
+    --semantic-text-guidance:    var(--semantic-anthem-text-subdued);
+    --semantic-text-help2:       var(--semantic-anthem-text-base);
+
+    /* Surfaces */
+    --semantic-surface-background: var(--semantic-anthem-surface-white);
+}
