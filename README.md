@@ -1,2 +1,2 @@
 # eDS React
-UI code for design system.
+UI code for design system, with storybook integration.
