@@ -312,7 +312,7 @@ function renderBlock(block, idx, brandPrefix) {
                 <StorybookEmbed
                     key={idx}
                     componentName={block.componentName}
-                    story="primary"
+                    story="default"
                 />
             );
 
